@@ -13,7 +13,7 @@
         <!--Tremor Test Page-->
         <scene sceneID="In9-Hz-qI7">
             <objects>
-                <viewController title="tremorTestPage" id="1Uj-q2-Mg8" userLabel="Tremor Test Page" sceneMemberID="viewController">
+                <viewController title="tremorTestPage" id="1Uj-q2-Mg8" userLabel="Tremor Test Page" customClass="MainPage" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t2o-Nv-hpU"/>
                         <viewControllerLayoutGuide type="bottom" id="iDc-IJ-eYD"/>
@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Rest Tremor Test"/>
                                 <connections>
-                                    <segue destination="sAN-Yt-SR5" kind="show" id="nAt-Ii-XhB"/>
+                                    <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="dzh-Gm-nFK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sx-pf-u9B">
@@ -42,15 +42,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ECX-n4-fWD"/>
+                    <connections>
+                        <segue destination="ZG0-Uf-h8y" kind="show" identifier="CountdownPage" id="4Lz-JT-tIw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi7-5d-aL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1234.4000000000001" y="1835.5322338830586"/>
         </scene>
-        <!--View Controller-->
+        <!--Countdown Page-->
         <scene sceneID="GHc-7e-gM4">
             <objects>
-                <viewController id="ZG0-Uf-h8y" sceneMemberID="viewController">
+                <viewController id="ZG0-Uf-h8y" customClass="CountdownPage" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AgZ-a4-jYo"/>
                         <viewControllerLayoutGuide type="bottom" id="ECy-a1-9W0"/>
@@ -58,15 +61,6 @@
                     <view key="view" contentMode="scaleToFill" id="lLR-gC-uoe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKz-7r-qFh">
-                                <rect key="frame" x="76" y="114" width="161" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="61"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
@@ -415,8 +409,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="5ur-AG-nUn"/>
-        <segue reference="1S4-qH-Lkh"/>
-        <segue reference="JH3-nY-GFC"/>
-        <segue reference="6AM-6c-EXN"/>
+        <segue reference="1La-ea-kVx"/>
+        <segue reference="ewk-B8-NUk"/>
     </inferredMetricsTieBreakers>
 </document>
