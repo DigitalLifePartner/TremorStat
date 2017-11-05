@@ -14,11 +14,11 @@ protocol MotionGraphContainer {
     
     var motionManager: CMMotionManager? { get set }
     
-    var updateIntervalLabel: UILabel! { get }
+    //var updateIntervalLabel: UILabel! { get }
     
-    var updateIntervalSlider: UISlider! { get }
+    //var updateIntervalSlider: UISlider! { get }
     
-    var updateIntervalFormatter: MeasurementFormatter { get }
+    //var updateIntervalFormatter: MeasurementFormatter { get }
     
     var valueLabels: [UILabel]! { get }
     
@@ -46,11 +46,11 @@ extension MotionGraphContainer {
         sortedLabels[2].text = String(format: "z: %+6.4f", xyz[2])
     }
     
-    var formattedUpdateInterval: String {
-        updateIntervalFormatter.numberFormatter.minimumFractionDigits = 3
-        updateIntervalFormatter.numberFormatter.maximumFractionDigits = 3
+    //var formattedUpdateInterval: String {
+        //updateIntervalFormatter.numberFormatter.minimumFractionDigits = 3
+        //updateIntervalFormatter.numberFormatter.maximumFractionDigits = 3
         
-        let updateInterval = Measurement(value: Double(updateIntervalSlider.value), unit: UnitDuration.seconds)
-        return updateIntervalFormatter.string(from: updateInterval)
-    }
+        //let updateInterval = Measurement(value: Double(updateIntervalSlider.value), unit: UnitDuration.seconds)
+        //return updateIntervalFormatter.string(from: updateInterval)
+   // }
 }
