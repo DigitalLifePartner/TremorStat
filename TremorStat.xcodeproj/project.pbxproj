@@ -125,7 +125,7 @@
 				TargetAttributes = {
 					B579FE3E1DDD1D2700A8C0C7 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = DUV5LZ574A;
+						DevelopmentTeam = E2E74B2ZSJ;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -310,7 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DUV5LZ574A;
+				DEVELOPMENT_TEAM = E2E74B2ZSJ;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -326,7 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DUV5LZ574A;
+				DEVELOPMENT_TEAM = E2E74B2ZSJ;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

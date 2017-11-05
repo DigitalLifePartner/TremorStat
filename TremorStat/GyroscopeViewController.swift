@@ -50,6 +50,7 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     // MARK: MotionGraphContainer implementation
     
     func startUpdates() {
+        motionManager = CMMotionManager()
         guard let motionManager = motionManager, motionManager.isGyroAvailable else { return }
         
         updateIntervalLabel.text = formattedUpdateInterval
