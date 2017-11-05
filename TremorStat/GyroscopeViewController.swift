@@ -18,7 +18,9 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
     var finishedTest = false
     
-    var gyroArray: Array<double3>!
+    var gyroArrayX: Array<Double>!
+    var gyroArrayY: Array<Double>!
+    var gyroArrayZ: Array<Double>!
     
     // MARK: Properties
     @IBOutlet weak var timeNotification: UILabel!
@@ -94,7 +96,10 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
                 self.timeRemaining.text = String(Int((self.timeLeft)))
                 self.rotationRate = [gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z]
                 self.graphView.add(self.rotationRate)
-                self.gyroArray.append(self.rotationRate)
+                self.gyroArrayX.append(gyroData.rotationRate.x)
+                self.gyroArrayY.append(gyroData.rotationRate.y)
+                self.gyroArrayZ.append(gyroData.rotationRate.z)
+                
                 //self.setValueLabels(xyz: rotationRate)
                 
                 // stop condition
@@ -114,7 +119,9 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
         if finishedTest == true {
             finishedTest = false
             var nextController = segue.destination as! ApprovalPage
-            nextController.dataArray = self.gyroArray
+            nextController.gyroArrayX = self.gyroArrayX
+            nextController.gyroArrayY = self.gyroArrayY
+            nextController.gyroArrayZ = self.gyroArrayZ
         }
     }
     

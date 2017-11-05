@@ -12,12 +12,18 @@ import simd
 class ApprovalPage: UIViewController {
 
     @IBOutlet weak var graphView: GraphView!
-    var dataArray: Array<double3>!
+    var gyroArrayX: Array<Double>!
+    var gyroArrayY: Array<Double>!
+    var gyroArrayZ: Array<Double>!
+    
+    var gyroArrayAll: double3!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for i in 0...dataArray.count{
-            graphView.add(dataArray[i])
+        for i in 0...gyroArrayX.count{
+            gyroArrayAll = [ gyroArrayX[i], gyroArrayY[i], gyroArrayZ[i] ]
+            graphView.add(gyroArrayAll)
         }
         // Do any additional setup after loading the view.
     }
