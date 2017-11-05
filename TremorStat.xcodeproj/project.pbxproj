@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		99C4ACBE1FAEDC21003D036C /* CountdownPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBD1FAEDC21003D036C /* CountdownPage.swift */; };
 		99C4ACC01FAEDC3C003D036C /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBF1FAEDC3C003D036C /* MainPage.swift */; };
+		99E91AB21FAF9D3A007D8E92 /* ApprovalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E91AB11FAF9D3A007D8E92 /* ApprovalPage.swift */; };
 		B50882BD1DDE4A4600B4C55D /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50882BC1DDE4A4600B4C55D /* GraphView.swift */; };
 		B56014361DEDEDB700B70E24 /* MagnetometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56014351DEDEDB700B70E24 /* MagnetometerViewController.swift */; };
 		B579FE431DDD1D2700A8C0C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579FE421DDD1D2700A8C0C7 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		99C4ACBD1FAEDC21003D036C /* CountdownPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownPage.swift; sourceTree = "<group>"; };
 		99C4ACBF1FAEDC3C003D036C /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		99E91AB11FAF9D3A007D8E92 /* ApprovalPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalPage.swift; sourceTree = "<group>"; };
 		B50882BC1DDE4A4600B4C55D /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		B56014351DEDEDB700B70E24 /* MagnetometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetometerViewController.swift; sourceTree = "<group>"; };
 		B579FE3F1DDD1D2700A8C0C7 /* TremorStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TremorStat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				B579FE4E1DDD1D2700A8C0C7 /* Info.plist */,
 				99C4ACBD1FAEDC21003D036C /* CountdownPage.swift */,
 				99C4ACBF1FAEDC3C003D036C /* MainPage.swift */,
+				99E91AB11FAF9D3A007D8E92 /* ApprovalPage.swift */,
 			);
 			path = TremorStat;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				B579FE551DDD1DF700A8C0C7 /* DeviceMotionViewController.swift in Sources */,
 				B579FE571DDD1F6F00A8C0C7 /* UIViewController+Enumerate.swift in Sources */,
 				B587D9E21DDE7F4B0087CE3D /* GraphSegment.swift in Sources */,
+				99E91AB21FAF9D3A007D8E92 /* ApprovalPage.swift in Sources */,
 				B56014361DEDEDB700B70E24 /* MagnetometerViewController.swift in Sources */,
 				B5DEC4AC1DECB6DA00B8FC91 /* AccelerometerViewController.swift in Sources */,
 				99C4ACBE1FAEDC21003D036C /* CountdownPage.swift in Sources */,

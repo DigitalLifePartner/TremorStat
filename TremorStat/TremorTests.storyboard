@@ -22,20 +22,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzs-dE-JPW">
-                                <rect key="frame" x="129" y="394" width="117" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Rest Tremor Test"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sx-pf-u9B">
+                                <rect key="frame" x="90" y="110" width="200" height="125"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68193522110000004" green="0.91379092579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Active Tremor Test">
+                                    <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="dzh-Gm-nFK"/>
+                                    <segue destination="iZu-XT-ei2" kind="show" id="SMc-QI-Chf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sx-pf-u9B">
-                                <rect key="frame" x="81" y="110" width="213" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Active Tremor Test"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzs-dE-JPW">
+                                <rect key="frame" x="90" y="380" width="200" height="125"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68193522108764548" green="0.91379092575975307" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Rest Tremor Test">
+                                    <color key="titleShadowColor" red="0.18771935959879427" green="0.13061459067706316" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="P0u-9c-j3K" kind="show" id="1La-ea-kVx"/>
+                                    <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="dzh-Gm-nFK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,6 +77,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgi-YQ-y9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1234.4000000000001" y="2793.5532233883059"/>
+        </scene>
+        <!--Approval Page-->
+        <scene sceneID="5gG-d5-St8">
+            <objects>
+                <viewController id="iZu-XT-ei2" customClass="ApprovalPage" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wME-1V-DUh"/>
+                        <viewControllerLayoutGuide type="bottom" id="wqZ-Ax-Do4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ksH-eh-VZd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To Be Implemented" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SN-2o-XoK">
+                                <rect key="frame" x="113" y="323" width="148" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9CY-gI-DLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2886" y="3570"/>
         </scene>
         <!--Active Tremor Test-->
         <scene sceneID="ON0-Su-pON">
@@ -388,10 +421,10 @@
             </objects>
             <point key="canvasLocation" x="-230" y="3570"/>
         </scene>
-        <!--View Controller-->
+        <!--Approval Page-->
         <scene sceneID="vph-oP-6XO">
             <objects>
-                <viewController id="2BO-H9-fOx" sceneMemberID="viewController">
+                <viewController id="2BO-H9-fOx" customClass="ApprovalPage" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5CH-nR-CSw"/>
                         <viewControllerLayoutGuide type="bottom" id="aEQ-mi-yjC"/>
@@ -399,17 +432,62 @@
                     <view key="view" contentMode="scaleToFill" id="8qr-dn-RzC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ3-pS-TSL">
+                                <rect key="frame" x="90" y="125" width="200" height="125"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68193522110000004" green="0.91379092579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="YES">
+                                    <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="qyd-Ac-0zB"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" id="5by-VC-t54"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHJ-Sa-UQg">
+                                <rect key="frame" x="90" y="275" width="200" height="125"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68193522110000004" green="0.91379092579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="NO - I want to Restart">
+                                    <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="b3m-2J-IdX"/>
+                                    <segue destination="ZG0-Uf-h8y" kind="show" id="kkN-vG-9mq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moF-mi-vcE">
+                                <rect key="frame" x="90" y="425" width="200" height="125"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68193522110000004" green="0.91379092579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="NO">
+                                    <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="Gwy-E1-UZF"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" id="Ivh-Sr-mdL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you wish to keep this data?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdQ-3J-raS">
+                                <rect key="frame" x="73" y="54" width="233" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HK5-Bv-g41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1234" y="4340"/>
+            <point key="canvasLocation" x="-1234.4000000000001" y="4339.8800599700153"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kiH-Ky-qfR"/>
-        <segue reference="1La-ea-kVx"/>
-        <segue reference="6AM-6c-EXN"/>
+        <segue reference="5ur-AG-nUn"/>
+        <segue reference="kkN-vG-9mq"/>
+        <segue reference="ewk-B8-NUk"/>
     </inferredMetricsTieBreakers>
 </document>
