@@ -96,6 +96,7 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
                 
                 // stop condition
                 if self.timeLeft <= 0 {
+                    self.finishedTest = true
                     self.stopTest = true
                     self.stopUpdates()
                     self.goToApprove()
@@ -107,10 +108,11 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     // should any other segue happen during a test - stop the test
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.stopUpdates()
-        /*if finishedTest == true {
-            var tremorTestViewData = segue.destination as! TremorTestViewData
-            tremorTestViewData.dataArray = self.array;
-        }*/
+        if finishedTest == true {
+            finishedTest = false
+            var nextController = segue.destination as! ApprovalPage
+            nextController.graphView = self.graphView
+        }
     }
     
     func stopUpdates() {
