@@ -47,6 +47,37 @@
             </objects>
             <point key="canvasLocation" x="-1234.4000000000001" y="1835.5322338830586"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="GHc-7e-gM4">
+            <objects>
+                <viewController id="ZG0-Uf-h8y" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AgZ-a4-jYo"/>
+                        <viewControllerLayoutGuide type="bottom" id="ECy-a1-9W0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lLR-gC-uoe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKz-7r-qFh">
+                                <rect key="frame" x="76" y="114" width="161" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="61"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="P0u-9c-j3K" kind="show" identifier="ActionTremor" id="JH3-nY-GFC"/>
+                        <segue destination="sAN-Yt-SR5" kind="show" identifier="RestTremor" id="1S4-qH-Lkh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgi-YQ-y9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1234.4000000000001" y="2793.5532233883059"/>
+        </scene>
         <!--Active Tremor Test-->
         <scene sceneID="ON0-Su-pON">
             <objects>
@@ -160,6 +191,9 @@
                                 <rect key="frame" x="171" y="580" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="EXIT"/>
+                                <connections>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" id="ewk-B8-NUk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,11 +217,12 @@
                         <outletCollection property="valueLabels" destination="FSL-Bq-o6T" collectionClass="NSMutableArray" id="Jn1-7z-H5x"/>
                         <outletCollection property="valueLabels" destination="NUQ-sW-u4e" collectionClass="NSMutableArray" id="1pZ-Rq-Mub"/>
                         <outletCollection property="valueLabels" destination="lRY-6V-6KX" collectionClass="NSMutableArray" id="hpJ-V5-Js8"/>
+                        <segue destination="2BO-H9-fOx" kind="show" id="5ur-AG-nUn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOw-zr-uyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1870" y="2795"/>
+            <point key="canvasLocation" x="-2178" y="3570"/>
         </scene>
         <!--Rest Tremor Test-->
         <scene sceneID="7qW-3M-d1t">
@@ -325,7 +360,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="EXIT"/>
                                 <connections>
-                                    <segue destination="1Uj-q2-Mg8" kind="show" identifier="MainPage" id="gfj-1J-7kL"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" identifier="MainPage" id="6AM-6c-EXN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -352,11 +387,36 @@
                         <outletCollection property="valueLabels" destination="exR-gz-uiN" collectionClass="NSMutableArray" id="l0r-x6-9SC"/>
                         <outletCollection property="valueLabels" destination="aX5-oK-9xd" collectionClass="NSMutableArray" id="9wg-qp-yJK"/>
                         <outletCollection property="valueLabels" destination="5H5-05-SWq" collectionClass="NSMutableArray" id="cag-DA-SAX"/>
+                        <segue destination="2BO-H9-fOx" kind="show" identifier="ApprovePage" id="kiH-Ky-qfR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZh-dQ-eK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-583.20000000000005" y="2793.5532233883059"/>
+            <point key="canvasLocation" x="-230" y="3570"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vph-oP-6XO">
+            <objects>
+                <viewController id="2BO-H9-fOx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5CH-nR-CSw"/>
+                        <viewControllerLayoutGuide type="bottom" id="aEQ-mi-yjC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8qr-dn-RzC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HK5-Bv-g41" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1234" y="4340"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5ur-AG-nUn"/>
+        <segue reference="1S4-qH-Lkh"/>
+        <segue reference="JH3-nY-GFC"/>
+        <segue reference="6AM-6c-EXN"/>
+    </inferredMetricsTieBreakers>
 </document>

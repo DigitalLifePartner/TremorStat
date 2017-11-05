@@ -28,7 +28,7 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
     func goBackToMain() {
         print("Going Back To Main")
-        performSegue(withIdentifier: "MainPage", sender: self)
+        performSegue(withIdentifier: "ApprovePage", sender: self)
     }
     
     @IBOutlet weak var updateIntervalLabel: UILabel!
