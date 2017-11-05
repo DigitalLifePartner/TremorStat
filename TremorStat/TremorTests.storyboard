@@ -351,7 +351,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSV-Hu-2ff">
                                 <rect key="frame" x="171" y="585" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="EXIT"/>
                                 <connections>
                                     <segue destination="1Uj-q2-Mg8" kind="show" identifier="MainPage" id="6AM-6c-EXN"/>
@@ -408,8 +408,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5ur-AG-nUn"/>
+        <segue reference="kiH-Ky-qfR"/>
         <segue reference="1La-ea-kVx"/>
-        <segue reference="ewk-B8-NUk"/>
+        <segue reference="6AM-6c-EXN"/>
     </inferredMetricsTieBreakers>
 </document>

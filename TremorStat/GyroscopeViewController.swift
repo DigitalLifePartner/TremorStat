@@ -27,6 +27,8 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     var motionManager: CMMotionManager?
     
     func goBackToMain() {
+        
+        // segue back to a previous page
         print("Going Back To Main")
         performSegue(withIdentifier: "ApprovePage", sender: self)
     }
@@ -61,21 +63,31 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     // MARK: MotionGraphContainer implementation
     
     func startUpdates() {
+        
+        // set the motionmanager equal to this to prevent gryo availability issue
         motionManager = CMMotionManager()
+        
+        // check for gyro availability
         guard let motionManager = motionManager, motionManager.isGyroAvailable else { return }
         
         updateIntervalLabel.text = formattedUpdateInterval
         
+        // get the interval for gryo updates based on slider
         motionManager.gyroUpdateInterval = TimeInterval(updateIntervalSlider.value)
         motionManager.showsDeviceMovementDisplay = true
         
+        // start reading from gyro
         motionManager.startGyroUpdates(to: .main) { gyroData, error in
             guard let gyroData = gyroData else { return }
+            
+            // update time left in the test based on the interval from the slider
             self.timeLeft = self.timeLeft - TimeInterval(self.updateIntervalSlider.value)
             self.timeRemaining.text = String(Int((self.timeLeft)))
             let rotationRate: double3 = [gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z]
             self.graphView.add(rotationRate)
             self.setValueLabels(xyz: rotationRate)
+            
+            // stop condition
             if self.timeLeft <= 0 {
                 self.stopUpdates()
                 self.goBackToMain()
@@ -83,8 +95,15 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
         }
     }
     
+    // should any other segue happen during a test - stop the test
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.stopUpdates()
+    }
+    
     func stopUpdates() {
         guard let motionManager = motionManager, motionManager.isAccelerometerAvailable else { return }
+        
+        // stop getting gryo readings
         motionManager.stopGyroUpdates()
         print("Stopping Gyro")
     }
