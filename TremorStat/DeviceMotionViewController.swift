@@ -23,11 +23,11 @@ class DeviceMotionViewController: UIViewController, MotionGraphContainer {
     }
     
     private var graphViews: [GraphView] = []
-
+    
     // MARK: MotionGraphContainer properties
     
     var motionManager: CMMotionManager?
-
+    
     @IBOutlet weak var updateIntervalLabel: UILabel!
     
     @IBOutlet weak var updateIntervalSlider: UISlider!
@@ -115,10 +115,10 @@ class DeviceMotionViewController: UIViewController, MotionGraphContainer {
             }
         }
     }
-
+    
     func stopUpdates() {
         guard let motionManager = motionManager, motionManager.isDeviceMotionActive else { return }
-
+        
         motionManager.stopDeviceMotionUpdates()
     }
     
@@ -144,3 +144,4 @@ fileprivate enum DeviceMotion: Int {
     
     static let allTypes: [DeviceMotion] = [.attitude, .rotationRate, .gravity, .userAcceleration]
 }
+

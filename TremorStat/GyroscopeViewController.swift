@@ -12,7 +12,7 @@ import simd
 
 class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
-    var timeLeft = 30.0
+    var timeLeft = 3.0
     
     // MARK: Properties
     @IBOutlet weak var timeNotification: UILabel!
@@ -25,6 +25,11 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     // MARK: MotionGraphContainer properties
     
     var motionManager: CMMotionManager?
+    
+    func goBackToMain() {
+        print("Going Back To Main")
+        performSegue(withIdentifier: "MainPage", sender: self)
+    }
     
     @IBOutlet weak var updateIntervalLabel: UILabel!
     
@@ -40,19 +45,17 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
         super.viewWillAppear(animated)
         timeNotification.text = "Time Remaining:"
         timeRemaining.text = "30"
-
         startUpdates()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        self.stopUpdates()
         super.viewDidDisappear(animated)
-        
-        stopUpdates()
     }
     
     
     @IBAction func intervalSliderChanged(_ sender: UISlider) {
-        startUpdates()
+        //startUpdates()
     }
     
     // MARK: MotionGraphContainer implementation
@@ -69,17 +72,22 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
         motionManager.startGyroUpdates(to: .main) { gyroData, error in
             guard let gyroData = gyroData else { return }
             self.timeLeft = self.timeLeft - TimeInterval(self.updateIntervalSlider.value)
-            self.timeRemaining.text = String(self.timeLeft)
+            self.timeRemaining.text = String(Int((self.timeLeft)))
             let rotationRate: double3 = [gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z]
             self.graphView.add(rotationRate)
             self.setValueLabels(xyz: rotationRate)
+            if self.timeLeft <= 0 {
+                self.stopUpdates()
+                self.goBackToMain()
+            }
         }
     }
     
     func stopUpdates() {
         guard let motionManager = motionManager, motionManager.isAccelerometerAvailable else { return }
-        
         motionManager.stopGyroUpdates()
+        print("Stopping Gyro")
     }
     
 }
+

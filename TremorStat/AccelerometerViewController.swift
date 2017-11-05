@@ -73,3 +73,4 @@ class AccelerometerViewController: UIViewController, MotionGraphContainer {
         motionManager.stopAccelerometerUpdates()
     }
 }
+
