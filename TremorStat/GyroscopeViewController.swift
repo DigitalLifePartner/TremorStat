@@ -16,6 +16,8 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
     var stopTest = false
     
+    var finishedTest = false
+    
     // MARK: Properties
     @IBOutlet weak var timeNotification: UILabel!
     // MARK: Interface Builder actions
@@ -58,6 +60,7 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
         super.viewDidDisappear(animated)
     }
     
+    var rotationRate: double3!
     
     @IBAction func intervalSliderChanged(_ sender: UISlider) {
         //startUpdates()
@@ -87,8 +90,8 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
                 // update time left in the test based on the interval from the slider
                 self.timeLeft = self.timeLeft - TimeInterval(self.updateIntervalSlider.value)
                 self.timeRemaining.text = String(Int((self.timeLeft)))
-                let rotationRate: double3 = [gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z]
-                self.graphView.add(rotationRate)
+                self.rotationRate = [gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z]
+                self.graphView.add(self.rotationRate)
                 //self.setValueLabels(xyz: rotationRate)
                 
                 // stop condition
@@ -104,6 +107,10 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     // should any other segue happen during a test - stop the test
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.stopUpdates()
+        /*if finishedTest == true {
+            var tremorTestViewData = segue.destination as! TremorTestViewData
+            tremorTestViewData.dataArray = self.array;
+        }*/
     }
     
     func stopUpdates() {
