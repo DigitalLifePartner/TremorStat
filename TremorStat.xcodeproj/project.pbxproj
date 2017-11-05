@@ -21,6 +21,7 @@
 		B5DEC4AC1DECB6DA00B8FC91 /* AccelerometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerViewController.swift */; };
 		B5DEC4AE1DECE09D00B8FC91 /* GyroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEC4AD1DECE09D00B8FC91 /* GyroscopeViewController.swift */; };
 		BF0EFFF21FAEA0C30076F4E2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */; };
+		BF0EFFF41FAEB2690076F4E2 /* TremorTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B5DEC4AD1DECE09D00B8FC91 /* GyroscopeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GyroscopeViewController.swift; sourceTree = "<group>"; };
 		B5DEC4AF1DECEBE900B8FC91 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TremorTests.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				B587D9E31DDE7FA70087CE3D /* CGContext+GraphLines.swift */,
 				B579FE421DDD1D2700A8C0C7 /* AppDelegate.swift */,
 				B579FE461DDD1D2700A8C0C7 /* Main.storyboard */,
+				BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */,
 				B579FE491DDD1D2700A8C0C7 /* Assets.xcassets */,
 				B579FE4B1DDD1D2700A8C0C7 /* LaunchScreen.storyboard */,
 				B579FE4E1DDD1D2700A8C0C7 /* Info.plist */,
@@ -154,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0EFFF41FAEB2690076F4E2 /* TremorTests.storyboard in Resources */,
 				B579FE4D1DDD1D2700A8C0C7 /* LaunchScreen.storyboard in Resources */,
 				BF0EFFF21FAEA0C30076F4E2 /* Default-568h@2x.png in Resources */,
 				B579FE4A1DDD1D2700A8C0C7 /* Assets.xcassets in Resources */,
