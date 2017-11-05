@@ -53,7 +53,7 @@ class AccelerometerViewController: UIViewController, MotionGraphContainer {
     func startUpdates() {
         guard let motionManager = motionManager, motionManager.isAccelerometerAvailable else { return }
         
-        updateIntervalLabel.text = formattedUpdateInterval
+        //updateIntervalLabel.text = formattedUpdateInterval
         
         motionManager.accelerometerUpdateInterval = TimeInterval(updateIntervalSlider.value)
         motionManager.showsDeviceMovementDisplay = true

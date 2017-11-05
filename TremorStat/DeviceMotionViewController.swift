@@ -81,9 +81,9 @@ class DeviceMotionViewController: UIViewController, MotionGraphContainer {
         guard let motionManager = motionManager, motionManager.isDeviceMotionAvailable else { return }
         
         showGraph(selectedDeviceMotion)
-        updateIntervalLabel.text = formattedUpdateInterval
+        //updateIntervalLabel.text = formattedUpdateInterval
         
-        motionManager.deviceMotionUpdateInterval = TimeInterval(updateIntervalSlider.value)
+        motionManager.deviceMotionUpdateInterval = TimeInterval(0.1)
         motionManager.showsDeviceMovementDisplay = true
         
         motionManager.startDeviceMotionUpdates(using: .xArbitraryZVertical, to: .main) { deviceMotion, error in

@@ -58,9 +58,9 @@ class MagnetometerViewController: UIViewController, MotionGraphContainer {
     func startUpdates() {
         guard let motionManager = motionManager, motionManager.isGyroAvailable else { return }
         
-        updateIntervalLabel.text = formattedUpdateInterval
+        //updateIntervalLabel.text = formattedUpdateInterval
         
-        motionManager.magnetometerUpdateInterval = TimeInterval(updateIntervalSlider.value)
+        motionManager.magnetometerUpdateInterval = TimeInterval(0.1)
         motionManager.showsDeviceMovementDisplay = true
         
         motionManager.startMagnetometerUpdates(to: .main) { magnetometerData, error in

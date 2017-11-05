@@ -12,7 +12,7 @@ import simd
 
 class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
-    var timeLeft = 3.0
+    var timeLeft = 30.0
     
     var stopTest = false
     
@@ -77,10 +77,10 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
             // check for gyro availability
             guard let motionManager = motionManager, motionManager.isGyroAvailable else { return }
             
-            updateIntervalLabel.text = formattedUpdateInterval
+            //updateIntervalLabel.text = formattedUpdateInterval
             
             // get the interval for gryo updates based on slider
-            motionManager.gyroUpdateInterval = TimeInterval(updateIntervalSlider.value)
+            motionManager.gyroUpdateInterval = TimeInterval(0.025) //updateIntervalSlider.value
             motionManager.showsDeviceMovementDisplay = true
             
             // start reading from gyro
@@ -88,7 +88,7 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
                 guard let gyroData = gyroData else { return }
                 
                 // update time left in the test based on the interval from the slider
-                self.timeLeft = self.timeLeft - TimeInterval(self.updateIntervalSlider.value)
+                self.timeLeft = self.timeLeft - TimeInterval(0.025)
                 self.timeRemaining.text = String(Int((self.timeLeft)))
                 self.rotationRate = [gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z]
                 self.graphView.add(self.rotationRate)
