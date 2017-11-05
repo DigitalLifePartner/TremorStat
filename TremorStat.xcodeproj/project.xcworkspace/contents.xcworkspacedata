@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/dpukanic/Desktop/TremorStat/TremorStat.xcodeproj">
+      location = "group:../TremorStat/User_Holding_Device.png">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
