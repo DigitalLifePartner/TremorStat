@@ -89,7 +89,7 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
                 self.timeRemaining.text = String(Int((self.timeLeft)))
                 let rotationRate: double3 = [gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z]
                 self.graphView.add(rotationRate)
-                self.setValueLabels(xyz: rotationRate)
+                //self.setValueLabels(xyz: rotationRate)
                 
                 // stop condition
                 if self.timeLeft <= 0 {
