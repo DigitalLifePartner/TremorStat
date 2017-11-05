@@ -10,6 +10,7 @@
 		99C4ACBE1FAEDC21003D036C /* CountdownPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBD1FAEDC21003D036C /* CountdownPage.swift */; };
 		99C4ACC01FAEDC3C003D036C /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBF1FAEDC3C003D036C /* MainPage.swift */; };
 		99E91AB21FAF9D3A007D8E92 /* ApprovalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E91AB11FAF9D3A007D8E92 /* ApprovalPage.swift */; };
+		99E91AB61FAFB360007D8E92 /* User_Holding_Device.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E91AB51FAFB360007D8E92 /* User_Holding_Device.png */; };
 		B50882BD1DDE4A4600B4C55D /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50882BC1DDE4A4600B4C55D /* GraphView.swift */; };
 		B56014361DEDEDB700B70E24 /* MagnetometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56014351DEDEDB700B70E24 /* MagnetometerViewController.swift */; };
 		B579FE431DDD1D2700A8C0C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579FE421DDD1D2700A8C0C7 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		99C4ACBD1FAEDC21003D036C /* CountdownPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownPage.swift; sourceTree = "<group>"; };
 		99C4ACBF1FAEDC3C003D036C /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		99E91AB11FAF9D3A007D8E92 /* ApprovalPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalPage.swift; sourceTree = "<group>"; };
+		99E91AB51FAFB360007D8E92 /* User_Holding_Device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = User_Holding_Device.png; path = TremorStat/User_Holding_Device.png; sourceTree = "<group>"; };
 		B50882BC1DDE4A4600B4C55D /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		B56014351DEDEDB700B70E24 /* MagnetometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetometerViewController.swift; sourceTree = "<group>"; };
 		B579FE3F1DDD1D2700A8C0C7 /* TremorStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TremorStat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +73,7 @@
 		B579FE361DDD1D2700A8C0C7 = {
 			isa = PBXGroup;
 			children = (
+				99E91AB51FAFB360007D8E92 /* User_Holding_Device.png */,
 				BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */,
 				B5DEC4AF1DECEBE900B8FC91 /* README.md */,
 				B579FE411DDD1D2700A8C0C7 /* TremorStat */,
@@ -175,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E91AB61FAFB360007D8E92 /* User_Holding_Device.png in Resources */,
 				BF0EFFF91FAEBABA0076F4E2 /* UserProfile.storyboard in Resources */,
 				BF0EFFF41FAEB2690076F4E2 /* TremorTests.storyboard in Resources */,
 				B579FE4D1DDD1D2700A8C0C7 /* LaunchScreen.storyboard in Resources */,
