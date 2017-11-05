@@ -14,6 +14,8 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
     var timeLeft = 3.0
     
+    var stopTest = false
+    
     // MARK: Properties
     @IBOutlet weak var timeNotification: UILabel!
     // MARK: Interface Builder actions
@@ -26,10 +28,10 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
     var motionManager: CMMotionManager?
     
-    func goBackToMain() {
+    func goToApprove() {
         
         // segue back to a previous page
-        print("Going Back To Main")
+        print("Going To Approve")
         performSegue(withIdentifier: "ApprovePage", sender: self)
     }
     
@@ -47,6 +49,7 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
         super.viewWillAppear(animated)
         timeNotification.text = "Time Remaining:"
         timeRemaining.text = "30"
+        stopTest = false
         startUpdates()
     }
     
@@ -64,33 +67,36 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
     func startUpdates() {
         
-        // set the motionmanager equal to this to prevent gryo availability issue
-        motionManager = CMMotionManager()
-        
-        // check for gyro availability
-        guard let motionManager = motionManager, motionManager.isGyroAvailable else { return }
-        
-        updateIntervalLabel.text = formattedUpdateInterval
-        
-        // get the interval for gryo updates based on slider
-        motionManager.gyroUpdateInterval = TimeInterval(updateIntervalSlider.value)
-        motionManager.showsDeviceMovementDisplay = true
-        
-        // start reading from gyro
-        motionManager.startGyroUpdates(to: .main) { gyroData, error in
-            guard let gyroData = gyroData else { return }
+        if stopTest == false {
+            // set the motionmanager equal to this to prevent gryo availability issue
+            motionManager = CMMotionManager()
             
-            // update time left in the test based on the interval from the slider
-            self.timeLeft = self.timeLeft - TimeInterval(self.updateIntervalSlider.value)
-            self.timeRemaining.text = String(Int((self.timeLeft)))
-            let rotationRate: double3 = [gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z]
-            self.graphView.add(rotationRate)
-            self.setValueLabels(xyz: rotationRate)
+            // check for gyro availability
+            guard let motionManager = motionManager, motionManager.isGyroAvailable else { return }
             
-            // stop condition
-            if self.timeLeft <= 0 {
-                self.stopUpdates()
-                self.goBackToMain()
+            updateIntervalLabel.text = formattedUpdateInterval
+            
+            // get the interval for gryo updates based on slider
+            motionManager.gyroUpdateInterval = TimeInterval(updateIntervalSlider.value)
+            motionManager.showsDeviceMovementDisplay = true
+            
+            // start reading from gyro
+            motionManager.startGyroUpdates(to: .main) { gyroData, error in
+                guard let gyroData = gyroData else { return }
+                
+                // update time left in the test based on the interval from the slider
+                self.timeLeft = self.timeLeft - TimeInterval(self.updateIntervalSlider.value)
+                self.timeRemaining.text = String(Int((self.timeLeft)))
+                let rotationRate: double3 = [gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z]
+                self.graphView.add(rotationRate)
+                self.setValueLabels(xyz: rotationRate)
+                
+                // stop condition
+                if self.timeLeft <= 0 {
+                    self.stopTest = true
+                    self.stopUpdates()
+                    self.goToApprove()
+                }
             }
         }
     }
@@ -102,7 +108,7 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
     func stopUpdates() {
         guard let motionManager = motionManager, motionManager.isAccelerometerAvailable else { return }
-        
+        self.stopTest = false
         // stop getting gryo readings
         motionManager.stopGyroUpdates()
         print("Stopping Gyro")
