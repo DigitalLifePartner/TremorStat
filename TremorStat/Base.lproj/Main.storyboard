@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="386" y="107"/>
         </scene>
-        <!--View Controller-->
+        <!--tremorTestPage-->
         <scene sceneID="In9-Hz-qI7">
             <objects>
-                <viewController id="1Uj-q2-Mg8" sceneMemberID="viewController">
+                <viewController title="tremorTestPage" id="1Uj-q2-Mg8" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t2o-Nv-hpU"/>
                         <viewControllerLayoutGuide type="bottom" id="iDc-IJ-eYD"/>
@@ -466,13 +466,35 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi0-Z1-5CA">
-                                <rect key="frame" x="171" y="567" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="EXIT"/>
+                                <rect key="frame" x="158" y="567" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="CANCEL"/>
                                 <connections>
+                                    <action selector="cancel:" destination="vq8-Pk-IBw" eventType="touchUpInside" id="g2H-ku-ENh"/>
                                     <segue destination="1Uj-q2-Mg8" kind="show" id="p3R-rT-ZNT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready In:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szm-C3-3y0">
+                                <rect key="frame" x="37" y="543" width="121" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnv-wM-cuX">
+                                <rect key="frame" x="166" y="543" width="11" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ht-mM-uqd">
+                                <rect key="frame" x="201" y="543" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -490,6 +512,8 @@
                     <navigationItem key="navigationItem" title="Gyroscope" id="pOP-SC-pBE"/>
                     <connections>
                         <outlet property="graphView" destination="SMo-L3-xeH" id="Mn1-Ru-7ba"/>
+                        <outlet property="timeNotification" destination="Szm-C3-3y0" id="0Ew-np-Kda"/>
+                        <outlet property="timeRemaining" destination="cnv-wM-cuX" id="0e0-rL-XOG"/>
                         <outlet property="updateIntervalLabel" destination="M22-gW-aoQ" id="fn0-es-FaO"/>
                         <outlet property="updateIntervalSlider" destination="IZM-kR-ykJ" id="8ad-Ej-H4o"/>
                         <outletCollection property="valueLabels" destination="iVI-mz-u8Z" collectionClass="NSMutableArray" id="xsq-LK-40d"/>

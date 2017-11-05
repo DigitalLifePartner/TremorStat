@@ -11,7 +11,14 @@ import CoreMotion
 import simd
 
 class GyroscopeViewController: UIViewController, MotionGraphContainer {
+    
+    var timeLeft = 30.0
+    
     // MARK: Properties
+    @IBOutlet weak var timeNotification: UILabel!
+    // MARK: Interface Builder actions
+    
+    @IBOutlet weak var timeRemaining: UILabel!
     
     @IBOutlet weak var graphView: GraphView!
     
@@ -31,7 +38,9 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        timeNotification.text = "Time Remaining:"
+        timeRemaining.text = "30"
+
         startUpdates()
     }
     
@@ -41,7 +50,6 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
         stopUpdates()
     }
     
-    // MARK: Interface Builder actions
     
     @IBAction func intervalSliderChanged(_ sender: UISlider) {
         startUpdates()
@@ -60,7 +68,8 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
         
         motionManager.startGyroUpdates(to: .main) { gyroData, error in
             guard let gyroData = gyroData else { return }
-            
+            self.timeLeft = self.timeLeft - TimeInterval(self.updateIntervalSlider.value)
+            self.timeRemaining.text = String(self.timeLeft)
             let rotationRate: double3 = [gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z]
             self.graphView.add(rotationRate)
             self.setValueLabels(xyz: rotationRate)
@@ -72,4 +81,5 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
         
         motionManager.stopGyroUpdates()
     }
+    
 }
