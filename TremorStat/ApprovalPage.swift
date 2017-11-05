@@ -12,10 +12,13 @@ import simd
 class ApprovalPage: UIViewController {
 
     @IBOutlet weak var graphView: GraphView!
-    
+    var dataArray: Array<double3>!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        for i in 0...dataArray.count{
+            graphView.add(dataArray[i])
+        }
         // Do any additional setup after loading the view.
     }
     
