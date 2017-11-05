@@ -12,9 +12,9 @@ import simd
 class ApprovalPage: UIViewController {
 
     @IBOutlet weak var graphView: GraphView!
-    var gyroArrayX: Array<Double>!
-    var gyroArrayY: Array<Double>!
-    var gyroArrayZ: Array<Double>!
+    var gyroArrayX = Array(repeating: 0.0, count: 1200)
+    var gyroArrayY = Array(repeating: 0.0, count: 1200)
+    var gyroArrayZ = Array(repeating: 0.0, count: 1200)
     
     var gyroArrayAll: double3!
     
