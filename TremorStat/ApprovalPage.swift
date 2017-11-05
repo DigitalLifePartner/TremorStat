@@ -21,7 +21,7 @@ class ApprovalPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for i in 0...gyroArrayX.count{
+        for i in 0...gyroArrayX.count-1{
             gyroArrayAll = [ gyroArrayX[i], gyroArrayY[i], gyroArrayZ[i] ]
             graphView.add(gyroArrayAll)
         }

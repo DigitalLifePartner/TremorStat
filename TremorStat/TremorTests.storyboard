@@ -299,27 +299,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.0099999997764825821" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Bf-fM-a3b">
-                                <rect key="frame" x="14" y="354" width="347" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="intervalSliderChanged:" destination="sAN-Yt-SR5" eventType="valueChanged" id="OfS-6m-oQb"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" fixedFrame="YES" text="Update interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQq-Av-KWn">
-                                <rect key="frame" x="16" y="334" width="116.5" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="interval" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfk-RF-H1k">
-                                <rect key="frame" x="16" y="334" width="343" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSV-Hu-2ff">
                                 <rect key="frame" x="171" y="585" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -328,13 +307,6 @@
                                     <segue destination="1Uj-q2-Mg8" kind="show" identifier="MainPage" id="6AM-6c-EXN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test in Progress..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGB-AW-OXD">
-                                <rect key="frame" x="119" y="35" width="137" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8On-JD-G1e">
                                 <rect key="frame" x="121" y="410" width="132" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -356,6 +328,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test in Progress..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGB-AW-OXD">
+                                <rect key="frame" x="119" y="355" width="137" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -372,8 +351,6 @@
                         <outlet property="graphView" destination="Ysm-Xs-ny0" id="xxw-To-6ws"/>
                         <outlet property="timeNotification" destination="8On-JD-G1e" id="zCR-o8-rkm"/>
                         <outlet property="timeRemaining" destination="9ji-ma-Hvj" id="5ak-b2-vrS"/>
-                        <outlet property="updateIntervalLabel" destination="xfk-RF-H1k" id="jni-1z-b5H"/>
-                        <outlet property="updateIntervalSlider" destination="3Bf-fM-a3b" id="34a-F8-U4i"/>
                         <segue destination="2BO-H9-fOx" kind="show" identifier="ApprovePage" id="kiH-Ky-qfR"/>
                     </connections>
                 </viewController>
@@ -448,6 +425,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kiH-Ky-qfR"/>
-        <segue reference="5by-VC-t54"/>
+        <segue reference="6AM-6c-EXN"/>
     </inferredMetricsTieBreakers>
 </document>
