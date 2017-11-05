@@ -18,14 +18,15 @@ class ApprovalPage: UIViewController {
     
     var gyroArrayAll: double3!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.tabBarController?.tabBar.isHidden = true
 
         for i in 0...1199{
             gyroArrayAll = [ gyroArrayX[i], gyroArrayY[i], gyroArrayZ[i] ]
             self.graphView.add(gyroArrayAll)
         }
-        // Do any additional setup after loading the view.
     }
     
     

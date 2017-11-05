@@ -34,13 +34,18 @@ class CountdownPage: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
-        
-        
+        super.viewDidLoad()
+
         // reinit vars incase of segue during countdown
         timer = Timer()
         seconds = 5
-        super.viewDidLoad()
         
         // start countdown
         self.startCountdown()
@@ -69,10 +74,11 @@ class CountdownPage: UIViewController {
     
     // segue from this slide results in the resetting of the timer
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
         timer.invalidate()
         seconds = 5
         notRunning = true
-        super.viewDidDisappear(animated)
     }
     
     override func didReceiveMemoryWarning() {
