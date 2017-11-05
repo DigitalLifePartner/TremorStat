@@ -124,7 +124,17 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
             nextController.gyroArrayX = self.gyroArrayX
             nextController.gyroArrayY = self.gyroArrayY
             nextController.gyroArrayZ = self.gyroArrayZ
+        
+            for i in 0...100{
+                print(String(gyroArrayY[i]))
+                if gyroArrayY[i]==0.0{
+                    print()
+                    print()
+                    print(i," th's Position")
+                    break
+                }
         }
+    }
     }
     
     func stopUpdates() {
