@@ -67,9 +67,26 @@
                     <view key="view" contentMode="scaleToFill" id="lLR-gC-uoe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get Ready!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4d-IZ-Xjw">
+                                <rect key="frame" x="25" y="287" width="324" height="92"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="68"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Outstretch your arm and rest your elbow on a flat surface. Hold the device as steady as you can for 30 seconds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gn-oB-bTj">
+                                <rect key="frame" x="16" y="39" width="343" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="MyLabel" destination="i4d-IZ-Xjw" id="dMP-Th-dK1"/>
                         <segue destination="P0u-9c-j3K" kind="show" identifier="ActionTremor" id="JH3-nY-GFC"/>
                         <segue destination="sAN-Yt-SR5" kind="show" identifier="RestTremor" id="1S4-qH-Lkh"/>
                     </connections>
@@ -486,6 +503,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="JH3-nY-GFC"/>
         <segue reference="5ur-AG-nUn"/>
         <segue reference="kkN-vG-9mq"/>
         <segue reference="ewk-B8-NUk"/>
