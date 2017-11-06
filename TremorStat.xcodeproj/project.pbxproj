@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		408E5E491FAFE33F00C24543 /* UnimplementedFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */; };
 		99C4ACBE1FAEDC21003D036C /* CountdownPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBD1FAEDC21003D036C /* CountdownPage.swift */; };
 		99C4ACC01FAEDC3C003D036C /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBF1FAEDC3C003D036C /* MainPage.swift */; };
 		99E91AB21FAF9D3A007D8E92 /* ApprovalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E91AB11FAF9D3A007D8E92 /* ApprovalPage.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedFeature.swift; sourceTree = "<group>"; };
 		99C4ACBD1FAEDC21003D036C /* CountdownPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownPage.swift; sourceTree = "<group>"; };
 		99C4ACBF1FAEDC3C003D036C /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		99E91AB11FAF9D3A007D8E92 /* ApprovalPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalPage.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				B587D9E11DDE7F4B0087CE3D /* GraphSegment.swift */,
 				B587D9E31DDE7FA70087CE3D /* CGContext+GraphLines.swift */,
 				B579FE421DDD1D2700A8C0C7 /* AppDelegate.swift */,
+				408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */,
 				B579FE461DDD1D2700A8C0C7 /* Main.storyboard */,
 				BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */,
 				BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */,
@@ -199,6 +202,7 @@
 			files = (
 				B587D9E41DDE7FA70087CE3D /* CGContext+GraphLines.swift in Sources */,
 				B5DEC4AE1DECE09D00B8FC91 /* GyroscopeViewController.swift in Sources */,
+				408E5E491FAFE33F00C24543 /* UnimplementedFeature.swift in Sources */,
 				B50882BD1DDE4A4600B4C55D /* GraphView.swift in Sources */,
 				B579FE551DDD1DF700A8C0C7 /* DeviceMotionViewController.swift in Sources */,
 				B579FE571DDD1F6F00A8C0C7 /* UIViewController+Enumerate.swift in Sources */,
