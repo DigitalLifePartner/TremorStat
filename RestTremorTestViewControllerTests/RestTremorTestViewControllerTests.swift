@@ -8,7 +8,7 @@
 
 import XCTest
 
-class TremorStatTests: XCTestCase {
+class RestTremorTestViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -31,5 +31,6 @@ class TremorStatTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
     
 }

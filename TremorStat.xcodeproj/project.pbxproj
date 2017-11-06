@@ -28,7 +28,7 @@
 		BF0EFFF71FAEBAAA0076F4E2 /* TestResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */; };
 		BF0EFFF91FAEBABA0076F4E2 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */; };
 		BF0EFFFC1FAEBB1A0076F4E2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */; };
-		BF5E8B351FB1107600559754 /* TremorStatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B341FB1107600559754 /* TremorStatTests.swift */; };
+		BF5E8B351FB1107600559754 /* RestTremorTestViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B341FB1107600559754 /* RestTremorTestViewControllerTests.swift */; };
 		BF5E8B431FB1108900559754 /* TremorStatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B421FB1108900559754 /* TremorStatUITests.swift */; };
 		E84AB4C51FAFF41B009187ED /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84AB4C41FAFF41B009187ED /* UserProfileViewController.swift */; };
 		E860A0121FB0461400616603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860A0111FB0461300616603 /* Assets.xcassets */; };
@@ -77,7 +77,7 @@
 		BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		BF0EFFFB1FAEBB1A0076F4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TremorStat/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		BF5E8B321FB1107600559754 /* TremorStatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TremorStatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF5E8B341FB1107600559754 /* TremorStatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TremorStatTests.swift; sourceTree = "<group>"; };
+		BF5E8B341FB1107600559754 /* RestTremorTestViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorTestViewControllerTests.swift; sourceTree = "<group>"; };
 		BF5E8B361FB1107600559754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF5E8B401FB1108900559754 /* TremorStatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TremorStatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5E8B421FB1108900559754 /* TremorStatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TremorStatUITests.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */,
 				B5DEC4AF1DECEBE900B8FC91 /* README.md */,
 				B579FE411DDD1D2700A8C0C7 /* TremorStat */,
-				BF5E8B331FB1107600559754 /* TremorStatTests */,
+				BF5E8B331FB1107600559754 /* RestTremorTestViewControllerTests */,
 				BF5E8B411FB1108900559754 /* TremorStatUITests */,
 				B579FE401DDD1D2700A8C0C7 /* Products */,
 			);
@@ -163,13 +163,13 @@
 			path = TremorStat;
 			sourceTree = "<group>";
 		};
-		BF5E8B331FB1107600559754 /* TremorStatTests */ = {
+		BF5E8B331FB1107600559754 /* RestTremorTestViewControllerTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF5E8B341FB1107600559754 /* TremorStatTests.swift */,
+				BF5E8B341FB1107600559754 /* RestTremorTestViewControllerTests.swift */,
 				BF5E8B361FB1107600559754 /* Info.plist */,
 			);
-			path = TremorStatTests;
+			path = RestTremorTestViewControllerTests;
 			sourceTree = "<group>";
 		};
 		BF5E8B411FB1108900559754 /* TremorStatUITests */ = {
@@ -346,7 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5E8B351FB1107600559754 /* TremorStatTests.swift in Sources */,
+				BF5E8B351FB1107600559754 /* RestTremorTestViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
