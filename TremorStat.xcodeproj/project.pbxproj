@@ -151,7 +151,7 @@
 				99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */,
 				99E91AB11FAF9D3A007D8E92 /* ApprovalViewController.swift */,
 				408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */,
-				B579FE461DDD1D2700A8C0C7 /* Main.storyboard */,
+				BF5E8B521FB118B300559754 /* Main */,
 				BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */,
 				BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */,
 				BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */,
@@ -179,6 +179,14 @@
 				BF5E8B441FB1108900559754 /* Info.plist */,
 			);
 			path = TremorStatUITests;
+			sourceTree = "<group>";
+		};
+		BF5E8B521FB118B300559754 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B579FE461DDD1D2700A8C0C7 /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
