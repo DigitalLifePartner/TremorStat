@@ -6,6 +6,9 @@
  A view controller to display output from the accelerometer.
  */
 
+// open source software
+
+
 import UIKit
 import CoreMotion
 import simd

@@ -6,6 +6,8 @@
  A `UIView` subclass used to graph the values retreived from sensors. The graph is made up of segments represeneted by child views to avoid having to redraw the whole graph with every update.
  */
 
+//open source software
+
 import UIKit
 import simd
 

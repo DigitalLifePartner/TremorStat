@@ -6,6 +6,8 @@
  A `UIView` subclass that represents a segment of data in a `GraphView`.
  */
 
+// open source software
+
 import UIKit
 import simd
 

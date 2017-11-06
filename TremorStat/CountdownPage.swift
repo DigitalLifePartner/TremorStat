@@ -6,36 +6,41 @@
 //  Copyright © 2017 Best Software. All rights reserved.
 //
 
+/* VERSION 1
+ 
+ Done:
+     - implement clock countdown
+     - segue to correct slides
+     - hide navigation controls
+ 
+ To Do:
+     - add/remove tutorial
+     - improve look
+ */
 import UIKit
 
+// Purpose: Initiate a countdown to the rest tremor test and display said countdown
 class CountdownPage: UIViewController {
     
+    // MARK: variables
+    
+    // set up a timer
     var timer = Timer()
+    
+    // set the default countdown to 5 seconds
     var seconds=5
-    //let MyLabel: UILabel = UILabel(frame:CGRect(x: 50, y: 50, width: 320, height:50))
     
     // var used to track if the clock is running or not
     var notRunning = false
     
     @IBOutlet weak var MyLabel: UILabel!
     
-    func Clock(){
-        //MyLabel.backgroundColor=UIColor(red:0x00, green:0xff, blue:0x00, alpha:1)
-        if seconds>0 {
-            seconds=seconds-1
-        }
-        MyLabel.text=String(seconds)
-        if(seconds<=0 && notRunning == false){
-            //MyLabel.backgroundColor=UIColor(red:0xff, green:0x00, blue:0x00, alpha:1)
-            MyLabel.text="Test Begins"
-            timer.invalidate()
-            notRunning = true
-            performSegue(withIdentifier: "RestTremor", sender: self)
-        }
-    }
-    
+    // MARK: UIViewController properties
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // hide the navigation controls during the countdown so user cannot leave
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.tabBarController?.tabBar.isHidden = true
     }
@@ -62,16 +67,6 @@ class CountdownPage: UIViewController {
         }
     }
     
-    // countdown
-    func startCountdown(){
-        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CountdownPage.Clock), userInfo: nil, repeats: true)
-        //MyLabel.font=UIFont.init(name:"ariel",size: 200)
-        MyLabel.textAlignment = .center
-        //MyLabel.textColor=UIColor(red:0xff, green:0xff, blue:0xff, alpha:1)
-        //MyLabel.backgroundColor=UIColor(red:0x00, green:0xff, blue:0x00, alpha:1)
-        self.view.addSubview(MyLabel)
-    }
-    
     // segue from this slide results in the resetting of the timer
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -84,6 +79,34 @@ class CountdownPage: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: implementation
+    
+    func startCountdown(){
+        // start timer and countdown
+        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CountdownPage.Clock), userInfo: nil, repeats: true)
+        
+        // make sure text is centered
+        MyLabel.textAlignment = .center
+        self.view.addSubview(MyLabel)
+    }
+    
+    func Clock(){
+        // if the seconds remaining is above zero, decrement
+        if seconds>0 {
+            seconds=seconds-1
+        }
+        // display new time remaining
+        MyLabel.text=String(seconds)
+        
+        // once the countdown has finished stop the timer and segue onto the rest tremor test
+        if(seconds<=0 && notRunning == false){
+            MyLabel.text="Test Begins"
+            timer.invalidate()
+            notRunning = true
+            performSegue(withIdentifier: "RestTremor", sender: self)
+        }
     }
     
     

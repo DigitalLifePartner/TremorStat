@@ -6,6 +6,7 @@
  Defines a protocol that the view controllers conform to and provides helper methods for updating labels.
  */
 
+// open source software
 import CoreMotion
 import UIKit
 import simd

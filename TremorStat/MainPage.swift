@@ -6,10 +6,20 @@
 //  Copyright © 2017 Best Software. All rights reserved.
 //
 
+/* VERSION 1
+ 
+ Done:
+     - added page
+ 
+ To Do:
+     - ???
+ */
 import UIKit
 
+// Purpose: central page for the tests
 class MainPage: UIViewController {
 
+    // MARK: UIViewController properties
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +28,8 @@ class MainPage: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // hide navigation controls
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.tabBarController?.tabBar.isHidden = false
     }
@@ -27,7 +39,9 @@ class MainPage: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: implementation
     @IBAction func RestTest(_ sender: Any) {
+        // if the rest tremor test button was pressed, segue to the countdown page for the test
         performSegue(withIdentifier: "CountdownPage", sender: self)
     }
     

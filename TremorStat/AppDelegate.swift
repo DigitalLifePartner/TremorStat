@@ -6,6 +6,8 @@
  The application delegate.
  */
 
+// open source software
+
 import UIKit
 import CoreMotion
 

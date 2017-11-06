@@ -6,6 +6,8 @@
  An extension to `CGContext` to draw the horizontal lines in a `GraphView`.
  */
 
+//open source software
+
 import UIKit
 
 extension CGContext {
