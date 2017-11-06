@@ -23,10 +23,10 @@ import simd
 // Purpose: Determine whether or not the user wishes to keep the data from the previous test
 class ApprovalViewController: UIViewController {
 
+    // MARK: Properties
+
     @IBOutlet weak var YesButton: UIButton!
     @IBOutlet weak var NoButton: UIButton!
-    
-    // MARK: variables
     
     // the actual graph
     @IBOutlet weak var graphView: GraphView!
@@ -40,6 +40,8 @@ class ApprovalViewController: UIViewController {
     // essentially a variable containing 3 doubles -- for the X Y Z coordinates
     var gyroArrayAll: double3!
     
+    // MARK: Overrides
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +50,6 @@ class ApprovalViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    // MARK: UIViewController properties
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -64,7 +65,6 @@ class ApprovalViewController: UIViewController {
             self.graphView.add(gyroArrayAll)
         }
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

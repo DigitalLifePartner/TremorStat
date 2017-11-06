@@ -14,17 +14,20 @@
  To Do:
      - ???
  */
+
 import UIKit
 
 // Purpose: central page for the tests
 class TestSelectViewController: UIViewController {
 
-    @IBOutlet weak var ActiveTremorTestButton: UIButton!
+    // MARK: Properties
     
+    @IBOutlet weak var ActiveTremorTestButton: UIButton!
     
     @IBOutlet weak var RestTremorTestButton: UIButton!
     
-    // MARK: UIViewController properties
+    // MARK: Overrides
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,7 +45,6 @@ class TestSelectViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     /*
     // MARK: - Navigation

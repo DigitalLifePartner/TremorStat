@@ -8,7 +8,6 @@
 
 // open source software
 
-
 import UIKit
 import CoreMotion
 import simd
@@ -19,19 +18,17 @@ class AccelerometerViewController: UIViewController, MotionGraphContainer {
     
     @IBOutlet weak var graphView: GraphView!
     
-    // MARK: MotionGraphContainer properties
-    
-    var motionManager: CMMotionManager?
-    
     @IBOutlet weak var updateIntervalLabel: UILabel!
     
     @IBOutlet weak var updateIntervalSlider: UISlider!
     
+    @IBOutlet var valueLabels: [UILabel]!
+
+    var motionManager: CMMotionManager?
+    
     let updateIntervalFormatter = MeasurementFormatter()
     
-    @IBOutlet var valueLabels: [UILabel]!
-    
-    // MARK: UIViewController overrides
+    // MARK: Overrides
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,13 +42,13 @@ class AccelerometerViewController: UIViewController, MotionGraphContainer {
         stopUpdates()
     }
     
-    // MARK: Interface Builder actions
+    // MARK: IB actions
     
     @IBAction func intervalSliderChanged(_ sender: UISlider) {
         startUpdates()
     }
     
-    // MARK: MotionGraphContainer implementation
+    // MARK: Implementation
     
     func startUpdates() {
         guard let motionManager = motionManager, motionManager.isAccelerometerAvailable else { return }

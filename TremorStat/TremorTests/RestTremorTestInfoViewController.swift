@@ -10,23 +10,29 @@ import UIKit
 
 class RestTremorTestInfoViewController: UIViewController {
 
-    @IBOutlet weak var StartTestButton: UIButton!
+    // MARK: Properties
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        StartTestButton.layer.cornerRadius = 25
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var StartTestButton: UIButton!
+
+    // MARK: IB Actions
+    
+    @IBAction func RestTest(_ sender: Any) {
+        //if the rest tremor test button was pressed, segue to the countdown page for the test
+        performSegue(withIdentifier: "CountdownViewController", sender: self)
     }
+    
+    // MARK: Overrides
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func RestTest(_ sender: Any) {
-         //if the rest tremor test button was pressed, segue to the countdown page for the test
-        performSegue(withIdentifier: "CountdownViewController", sender: self)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        StartTestButton.layer.cornerRadius = 25
+        // Do any additional setup after loading the view.
     }
 
     /*

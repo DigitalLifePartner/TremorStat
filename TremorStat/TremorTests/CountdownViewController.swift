@@ -22,7 +22,7 @@ import UIKit
 // Purpose: Initiate a countdown to the rest tremor test and display said countdown
 class CountdownViewController: UIViewController {
     
-    // MARK: variables
+    // MARK: Properties
     
     // set up a timer
     var timer = Timer()
@@ -35,7 +35,7 @@ class CountdownViewController: UIViewController {
     
     @IBOutlet weak var MyLabel: UILabel!
     
-    // MARK: UIViewController properties
+    // MARK: Overrides
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -81,7 +81,7 @@ class CountdownViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: implementation
+    // MARK: Implementation
     
     func startCountdown(){
         // start timer and countdown

@@ -27,7 +27,7 @@ import simd
 // class to handle rest tremor test
 class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     
-    // MARK: variables
+    // MARK: Properties
     
     // test duration = 30 seconds
     var timeLeft = 30.0
@@ -39,10 +39,15 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     
     var finishedTest = false
     
+    var motionManager: CMMotionManager?
+    
     // component arrays for X Y Z coordinates ( size = 1200 because 30 s / 0.025 s sampling )
     var gyroArrayX = Array(repeating: 0.0, count: 1200)
     var gyroArrayY = Array(repeating: 0.0, count: 1200)
     var gyroArrayZ = Array(repeating: 0.0, count: 1200)
+    
+    // essentially a var that contains 3 doubles -- to store X Y Z coordinates
+    var rotationRate: double3!
     
     // standard labels ( updated during time countdowns for display )
     @IBOutlet weak var timeNotification: UILabel!
@@ -51,16 +56,43 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     // graphview is the actual graph
     @IBOutlet weak var graphView: GraphView!
     
-    var motionManager: CMMotionManager?
-    
     @IBOutlet weak var updateIntervalLabel: UILabel!
     @IBOutlet weak var updateIntervalSlider: UISlider!
 
+    @IBOutlet var valueLabels: [UILabel]!
+
     let updateIntervalFormatter = MeasurementFormatter()
     
-    @IBOutlet var valueLabels: [UILabel]!
+    // MARK: Overrides
     
-    // MARK: UIViewController overrides
+    // should any other segue happen during a test - stop the test
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // stop gyro updates
+        self.stopUpdates()
+        
+        // specific case for segue into the test approval view
+        if finishedTest == true {
+            finishedTest = false
+            
+            // pass the component arrays to the approval view
+            var nextController = segue.destination as! ApprovalViewController
+            nextController.gyroArrayX = self.gyroArrayX
+            nextController.gyroArrayY = self.gyroArrayY
+            nextController.gyroArrayZ = self.gyroArrayZ
+            
+            // for debugging
+            /*for i in 0...100{
+             print(String(gyroArrayY[i]))
+             if gyroArrayY[i]==0.0{
+             print()
+             print()
+             print(i," th's Position")
+             break
+             }
+             }*/
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -85,21 +117,13 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
         super.viewDidDisappear(animated)
     }
     
-    // MARK: is essentially a var that contains 3 doubles -- to store X Y Z coordinates
-    var rotationRate: double3!
-    
-    // MARK: implementation
+    // MARK: Implementation
     
     // only to be called when a test is complete ( no exits / cancels )
     func goToApprove() {
-        
         // segue back to the test approval page
         print("Going To Approve")
         performSegue(withIdentifier: "ApprovePage", sender: self)
-    }
-    
-    @IBAction func intervalSliderChanged(_ sender: UISlider) {
-        //startUpdates()
     }
     
     func startUpdates() {
@@ -144,35 +168,6 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
                     self.goToApprove()
                 }
             }
-        }
-    }
-    
-    // should any other segue happen during a test - stop the test
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // stop gyro updates
-        self.stopUpdates()
-        
-        // specific case for segue into the test approval view
-        if finishedTest == true {
-            finishedTest = false
-            
-            // pass the component arrays to the approval view
-            var nextController = segue.destination as! ApprovalViewController
-            nextController.gyroArrayX = self.gyroArrayX
-            nextController.gyroArrayY = self.gyroArrayY
-            nextController.gyroArrayZ = self.gyroArrayZ
-        
-            // for debugging
-            /*for i in 0...100{
-                print(String(gyroArrayY[i]))
-                if gyroArrayY[i]==0.0{
-                    print()
-                    print()
-                    print(i," th's Position")
-                    break
-                }
-            }*/
         }
     }
     
