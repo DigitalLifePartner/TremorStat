@@ -43,7 +43,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cKb-ph-lbP" kind="show" id="3qF-3c-TCY"/>
+                                    <segue destination="ZG0-Uf-h8y" kind="show" identifier="CountdownPage" id="ZGL-1k-q31"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,49 +58,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi7-5d-aL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1234.4000000000001" y="1835.5322338830586"/>
-        </scene>
-        <!--Rest Tremor Test Info View Controller-->
-        <scene sceneID="HCi-uX-PiV">
-            <objects>
-                <viewController id="cKb-ph-lbP" customClass="RestTremorTestInfoViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5UV-yT-Woa"/>
-                        <viewControllerLayoutGuide type="bottom" id="LRr-8M-Y46"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="y0P-BL-Cdo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rest Tremor Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyH-sB-hNJ">
-                                <rect key="frame" x="16" y="20" width="343" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJ4-Pg-bmg">
-                                <rect key="frame" x="108" y="490" width="159" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="START TEST">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="RestTest:" destination="cKb-ph-lbP" eventType="touchUpInside" id="88O-9O-22J"/>
-                                    <segue destination="ZG0-Uf-h8y" kind="showDetail" identifier="CountdownPage" id="7G9-X4-vSw"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="StartTestButton" destination="WJ4-Pg-bmg" id="Fb4-18-SBi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tC2-4u-m9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-120.8" y="1488.305847076462"/>
         </scene>
         <!--Countdown Page-->
         <scene sceneID="GHc-7e-gM4">
