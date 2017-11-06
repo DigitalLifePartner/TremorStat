@@ -55,7 +55,8 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.setHidesBackButton(true, animated:true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.tabBarController?.hidesBottomBarWhenPushed = true
         
         timeNotification.text = "Time Remaining:"
