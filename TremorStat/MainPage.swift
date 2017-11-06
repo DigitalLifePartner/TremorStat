@@ -19,10 +19,16 @@ import UIKit
 // Purpose: central page for the tests
 class MainPage: UIViewController {
 
+    @IBOutlet weak var ActiveTremorTestButton: UIButton!
+    
+    @IBOutlet weak var RestTremorTestButton: UIButton!
+    
     // MARK: UIViewController properties
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ActiveTremorTestButton.layer.cornerRadius = 25
+        RestTremorTestButton.layer.cornerRadius = 25
         // Do any additional setup after loading the view.
     }
 

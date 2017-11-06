@@ -22,26 +22,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sx-pf-u9B">
-                                <rect key="frame" x="90" y="110" width="200" height="125"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.68193522110000004" green="0.91379092579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Active Tremor Test">
-                                    <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="iZu-XT-ei2" kind="show" id="SMc-QI-Chf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzs-dE-JPW">
-                                <rect key="frame" x="90" y="380" width="200" height="125"/>
+                                <rect key="frame" x="16" y="345" width="343" height="212"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.68193522108764548" green="0.91379092575975307" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Rest Tremor Test">
-                                    <color key="titleShadowColor" red="0.18771935959879427" green="0.13061459067706316" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="dzh-Gm-nFK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sx-pf-u9B">
+                                <rect key="frame" x="16" y="73" width="343" height="212"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Active Tremor Test">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iZu-XT-ei2" kind="show" id="SMc-QI-Chf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -49,6 +51,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ECX-n4-fWD"/>
                     <connections>
+                        <outlet property="ActiveTremorTestButton" destination="7Sx-pf-u9B" id="AzQ-GN-0cb"/>
+                        <outlet property="RestTremorTestButton" destination="xzs-dE-JPW" id="bbj-Oy-Xg4"/>
                         <segue destination="ZG0-Uf-h8y" kind="show" identifier="CountdownPage" id="4Lz-JT-tIw"/>
                     </connections>
                 </viewController>
@@ -384,8 +388,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ3-pS-TSL">
                                 <rect key="frame" x="62" y="557" width="110" height="75"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.68193522110000004" green="0.91379092579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="YES">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -403,8 +408,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moF-mi-vcE">
                                 <rect key="frame" x="202" y="557" width="111" height="75"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.68193522110000004" green="0.91379092579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="NO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -443,6 +449,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="NoButton" destination="moF-mi-vcE" id="8F8-on-Utq"/>
+                        <outlet property="YesButton" destination="dQ3-pS-TSL" id="ZDl-Ma-r80"/>
                         <outlet property="graphView" destination="7bS-cF-tPW" id="4Kf-hV-d5P"/>
                     </connections>
                 </viewController>
@@ -456,6 +464,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kiH-Ky-qfR"/>
-        <segue reference="6AM-6c-EXN"/>
+        <segue reference="5by-VC-t54"/>
     </inferredMetricsTieBreakers>
 </document>

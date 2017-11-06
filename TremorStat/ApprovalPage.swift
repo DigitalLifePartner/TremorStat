@@ -23,6 +23,9 @@ import simd
 // Purpose: Determine whether or not the user wishes to keep the data from the previous test
 class ApprovalPage: UIViewController {
 
+    @IBOutlet weak var YesButton: UIButton!
+    @IBOutlet weak var NoButton: UIButton!
+    
     // MARK: variables
     
     // the actual graph
@@ -37,6 +40,13 @@ class ApprovalPage: UIViewController {
     // essentially a variable containing 3 doubles -- for the X Y Z coordinates
     var gyroArrayAll: double3!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        YesButton.layer.cornerRadius = 25
+        NoButton.layer.cornerRadius = 25
+        // Do any additional setup after loading the view.
+    }
     
     // MARK: UIViewController properties
     override func viewWillAppear(_ animated: Bool) {
