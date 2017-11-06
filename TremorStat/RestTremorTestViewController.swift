@@ -25,7 +25,7 @@ import CoreMotion
 import simd
 
 // class to handle rest tremor test
-class GyroscopeViewController: UIViewController, MotionGraphContainer {
+class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     
     // MARK: variables
     
@@ -157,7 +157,7 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
             finishedTest = false
             
             // pass the component arrays to the approval view
-            var nextController = segue.destination as! ApprovalPage
+            var nextController = segue.destination as! ApprovalViewController
             nextController.gyroArrayX = self.gyroArrayX
             nextController.gyroArrayY = self.gyroArrayY
             nextController.gyroArrayZ = self.gyroArrayZ

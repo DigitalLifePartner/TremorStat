@@ -1,5 +1,5 @@
 //
-//  UserProfilePage.swift
+//  UserProfileViewController.swift
 //  TremorStat
 //
 //  Created by ikukushk on 11/5/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserProfilePage: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class UserProfileViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var isDatePickerHidden = true
     var isGenderPickerHidden = true

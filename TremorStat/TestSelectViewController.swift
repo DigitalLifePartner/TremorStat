@@ -1,5 +1,5 @@
 //
-//  MainPage.swift
+//  TestSelectViewController.swift
 //  TremorStat
 //
 //  Created by Domenico Di Giovanni on 11/4/17.
@@ -17,7 +17,7 @@
 import UIKit
 
 // Purpose: central page for the tests
-class MainPage: UIViewController {
+class TestSelectViewController: UIViewController {
 
     @IBOutlet weak var ActiveTremorTestButton: UIButton!
     

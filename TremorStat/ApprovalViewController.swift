@@ -1,5 +1,5 @@
 //
-//  ApprovalPage.swift
+//  ApprovalViewController.swift
 //  TremorStat
 //
 //  Created by Domenico Di Giovanni on 11/5/17.
@@ -21,7 +21,7 @@ import UIKit
 import simd
 
 // Purpose: Determine whether or not the user wishes to keep the data from the previous test
-class ApprovalPage: UIViewController {
+class ApprovalViewController: UIViewController {
 
     @IBOutlet weak var YesButton: UIButton!
     @IBOutlet weak var NoButton: UIButton!

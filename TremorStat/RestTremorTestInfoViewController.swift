@@ -26,7 +26,7 @@ class RestTremorTestInfoViewController: UIViewController {
     
     @IBAction func RestTest(_ sender: Any) {
          //if the rest tremor test button was pressed, segue to the countdown page for the test
-        performSegue(withIdentifier: "CountdownPage", sender: self)
+        performSegue(withIdentifier: "CountdownViewController", sender: self)
     }
 
     /*

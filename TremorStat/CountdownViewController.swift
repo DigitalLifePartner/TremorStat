@@ -1,5 +1,5 @@
 //
-//  CountdownPage.swift
+//  CountdownViewController.swift
 //  TremorStat
 //
 //  Created by Domenico Di Giovanni on 11/4/17.
@@ -20,7 +20,7 @@
 import UIKit
 
 // Purpose: Initiate a countdown to the rest tremor test and display said countdown
-class CountdownPage: UIViewController {
+class CountdownViewController: UIViewController {
     
     // MARK: variables
     
@@ -85,7 +85,7 @@ class CountdownPage: UIViewController {
     
     func startCountdown(){
         // start timer and countdown
-        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CountdownPage.Clock), userInfo: nil, repeats: true)
+        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CountdownViewController.Clock), userInfo: nil, repeats: true)
         
         // make sure text is centered
         MyLabel.textAlignment = .center
