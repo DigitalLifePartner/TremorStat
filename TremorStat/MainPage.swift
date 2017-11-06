@@ -28,7 +28,7 @@ class MainPage: UIViewController {
         super.viewDidLoad()
 
         ActiveTremorTestButton.layer.cornerRadius = 25
-        RestTremorTestButton.layer.cornerRadius = 25
+        //RestTremorTestButton.layer.cornerRadius = 25
         // Do any additional setup after loading the view.
     }
 
@@ -45,11 +45,6 @@ class MainPage: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: implementation
-    @IBAction func RestTest(_ sender: Any) {
-        // if the rest tremor test button was pressed, segue to the countdown page for the test
-        performSegue(withIdentifier: "CountdownPage", sender: self)
-    }
     
     /*
     // MARK: - Navigation

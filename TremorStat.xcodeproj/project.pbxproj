@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		408E5E491FAFE33F00C24543 /* UnimplementedFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */; };
+		408E5E571FB0223F00C24543 /* RestTremorTestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */; };
 		99C4ACBE1FAEDC21003D036C /* CountdownPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBD1FAEDC21003D036C /* CountdownPage.swift */; };
 		99C4ACC01FAEDC3C003D036C /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBF1FAEDC3C003D036C /* MainPage.swift */; };
 		99E91AB21FAF9D3A007D8E92 /* ApprovalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E91AB11FAF9D3A007D8E92 /* ApprovalPage.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedFeature.swift; sourceTree = "<group>"; };
+		408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorTestInfoViewController.swift; sourceTree = "<group>"; };
 		99C4ACBD1FAEDC21003D036C /* CountdownPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownPage.swift; sourceTree = "<group>"; };
 		99C4ACBF1FAEDC3C003D036C /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		99E91AB11FAF9D3A007D8E92 /* ApprovalPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalPage.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */,
 				BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */,
 				BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */,
+				408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */,
 				B579FE4B1DDD1D2700A8C0C7 /* LaunchScreen.storyboard */,
 				B579FE4E1DDD1D2700A8C0C7 /* Info.plist */,
 				B579FE491DDD1D2700A8C0C7 /* Assets.xcassets */,
@@ -200,6 +203,7 @@
 				B587D9E41DDE7FA70087CE3D /* CGContext+GraphLines.swift in Sources */,
 				B5DEC4AE1DECE09D00B8FC91 /* GyroscopeViewController.swift in Sources */,
 				408E5E491FAFE33F00C24543 /* UnimplementedFeature.swift in Sources */,
+				408E5E571FB0223F00C24543 /* RestTremorTestInfoViewController.swift in Sources */,
 				B50882BD1DDE4A4600B4C55D /* GraphView.swift in Sources */,
 				B579FE571DDD1F6F00A8C0C7 /* UIViewController+Enumerate.swift in Sources */,
 				B587D9E21DDE7F4B0087CE3D /* GraphSegment.swift in Sources */,
