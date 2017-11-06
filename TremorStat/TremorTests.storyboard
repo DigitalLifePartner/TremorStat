@@ -52,6 +52,7 @@
                     <navigationItem key="navigationItem" id="ECX-n4-fWD"/>
                     <connections>
                         <outlet property="ActiveTremorTestButton" destination="7Sx-pf-u9B" id="AzQ-GN-0cb"/>
+                        <outlet property="RestTremorTestButton" destination="TvT-pi-Yyy" id="y92-vy-Zct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi7-5d-aL5" userLabel="First Responder" sceneMemberID="firstResponder"/>

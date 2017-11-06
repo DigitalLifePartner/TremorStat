@@ -21,6 +21,7 @@ class MainPage: UIViewController {
 
     @IBOutlet weak var ActiveTremorTestButton: UIButton!
     
+    
     @IBOutlet weak var RestTremorTestButton: UIButton!
     
     // MARK: UIViewController properties
@@ -28,7 +29,8 @@ class MainPage: UIViewController {
         super.viewDidLoad()
 
         ActiveTremorTestButton.layer.cornerRadius = 25
-        //RestTremorTestButton.layer.cornerRadius = 25
+        RestTremorTestButton.layer.cornerRadius = 25
+        
         // Do any additional setup after loading the view.
     }
 
