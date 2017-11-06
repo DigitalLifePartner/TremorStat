@@ -2,14 +2,18 @@
 //  TremorStatUITests.swift
 //  TremorStatUITests
 //
-//  Created by Dayton Pukanich on 11/6/17.
+//  Created by Best Software on 11/6/17.
 //  Copyright © 2017 Best Software. All rights reserved.
 //
 
 import XCTest
 
+// Purpose -- test the UI
 class TremorStatUITests: XCTestCase {
-        
+    
+    // MARK: overrides
+    
+    // set up the test
     override func setUp() {
         super.setUp()
         
@@ -23,11 +27,13 @@ class TremorStatUITests: XCTestCase {
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
+    // teardown test
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
+    // MARK: implmentation
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

@@ -7,7 +7,7 @@
 //
 
 
-// viewcontroller class added to hold temporary views
+// viewcontroller class added to hold temporary views -- everything is default
 
 import UIKit
 

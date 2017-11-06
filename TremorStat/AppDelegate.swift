@@ -6,7 +6,7 @@
  The application delegate.
  */
 
-// open source software
+// Purpose: delegate
 
 import UIKit
 import CoreMotion
@@ -14,9 +14,12 @@ import CoreMotion
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: properties
     var window: UIWindow?
     
     let motionManager = CMMotionManager()
+    
+    // MARK: implementation
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Enumerate through the view controller hierarchy, setting the `motionManager`

@@ -11,7 +11,7 @@ import UIKit
 // Purpose: allow user to change details of their profile
 class UserProfileViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    // MARK: Variables
+    // MARK: properties
     
     // used to determine if section should be hidden
     var isDatePickerHidden = true
@@ -40,11 +40,16 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
     @IBOutlet weak var stagePicker: UIPickerView!
 
     
-    // change picker value
+    // MARK: IB actions
+    
+    // change date picker
     @IBAction func datePickerValue(sender: UIDatePicker) {
         datePickerChanged()
     }
     
+    // MARK: overrides
+    
+    // run when view appears
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -62,6 +67,7 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         stageLabel.text = "N/A"
     }
     
+    // run when the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -73,6 +79,7 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    // change the state of pickers when called, and then update the table view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
        //print(String(indexPath.row), " ", String(indexPath.section), "\n")
@@ -103,6 +110,7 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // change the height of the picker rows
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         // manipulate height of picker row ( if height = 0 it is hidden )
@@ -129,11 +137,15 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: implementation
 
+    // return the number of components
     func numberOfComponents(in pickerView : UIPickerView) -> Int {
         return 1
     }
     
+    // get the row required based on the picker view
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         var rows = 0;
@@ -155,6 +167,7 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         return rows
     }
     
+    // once you have the row, use this to get the value from the row based on the picker view
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         var rowValue = "";
         
@@ -175,6 +188,7 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         return rowValue
     }
     
+    // change the text of the various labels based on the new data
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         // change text of view based on value in category
@@ -192,6 +206,7 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         }
     }
     
+    // change the date label to reflect new data
     func datePickerChanged () {
         // set the label text
         dateLabel.text = DateFormatter.localizedString(from: datePicker.date, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none)

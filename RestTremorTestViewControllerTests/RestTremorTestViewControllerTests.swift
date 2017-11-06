@@ -2,15 +2,21 @@
 //  TremorStatTests.swift
 //  TremorStatTests
 //
-//  Created by Dayton Pukanich on 11/6/17.
+//  Created by Best Software on 11/6/17.
 //  Copyright © 2017 Best Software. All rights reserved.
 //
 
 import XCTest
 
+
+// var used to store test result
 var dataStoringTestResult = true
 
+
+// Purpose - test the app out
 class RestTremorTestViewControllerTests: XCTestCase {
+    
+    // MARK: implementation
     
     override func setUp() {
         super.setUp()
@@ -35,7 +41,7 @@ class RestTremorTestViewControllerTests: XCTestCase {
     }
     
     
-    // MARK: Test to check proper data storage
+    // Test to check proper data storage
     func DataStoringTest(var1: Double,var2: Double){
         dataStoringTestResult=dataStoringTestResult && (var1==var2)
     }
