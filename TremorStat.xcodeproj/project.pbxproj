@@ -16,7 +16,6 @@
 		B50882BD1DDE4A4600B4C55D /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50882BC1DDE4A4600B4C55D /* GraphView.swift */; };
 		B579FE431DDD1D2700A8C0C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579FE421DDD1D2700A8C0C7 /* AppDelegate.swift */; };
 		B579FE481DDD1D2700A8C0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B579FE461DDD1D2700A8C0C7 /* Main.storyboard */; };
-		B579FE4A1DDD1D2700A8C0C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B579FE491DDD1D2700A8C0C7 /* Assets.xcassets */; };
 		B579FE4D1DDD1D2700A8C0C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B579FE4B1DDD1D2700A8C0C7 /* LaunchScreen.storyboard */; };
 		B579FE571DDD1F6F00A8C0C7 /* UIViewController+Enumerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579FE561DDD1F6F00A8C0C7 /* UIViewController+Enumerate.swift */; };
 		B579FE5B1DDD2D3A00A8C0C7 /* MotionGraphContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579FE5A1DDD2D3A00A8C0C7 /* MotionGraphContainer.swift */; };
@@ -30,6 +29,7 @@
 		BF0EFFF91FAEBABA0076F4E2 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */; };
 		BF0EFFFC1FAEBB1A0076F4E2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */; };
 		E84AB4C51FAFF41B009187ED /* UserProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84AB4C41FAFF41B009187ED /* UserProfilePage.swift */; };
+		E860A0121FB0461400616603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860A0111FB0461300616603 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,6 @@
 		B579FE3F1DDD1D2700A8C0C7 /* TremorStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TremorStat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B579FE421DDD1D2700A8C0C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B579FE471DDD1D2700A8C0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B579FE491DDD1D2700A8C0C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B579FE4C1DDD1D2700A8C0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B579FE4E1DDD1D2700A8C0C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B579FE561DDD1F6F00A8C0C7 /* UIViewController+Enumerate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Enumerate.swift"; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		BF0EFFFB1FAEBB1A0076F4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TremorStat/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		E84AB4C41FAFF41B009187ED /* UserProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePage.swift; sourceTree = "<group>"; };
+		E860A0111FB0461300616603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 				408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */,
 				B579FE4B1DDD1D2700A8C0C7 /* LaunchScreen.storyboard */,
 				B579FE4E1DDD1D2700A8C0C7 /* Info.plist */,
-				B579FE491DDD1D2700A8C0C7 /* Assets.xcassets */,
+				E860A0111FB0461300616603 /* Assets.xcassets */,
 			);
 			path = TremorStat;
 			sourceTree = "<group>";
@@ -185,10 +185,10 @@
 				BF0EFFF91FAEBABA0076F4E2 /* UserProfile.storyboard in Resources */,
 				BF0EFFF41FAEB2690076F4E2 /* TremorTests.storyboard in Resources */,
 				B579FE4D1DDD1D2700A8C0C7 /* LaunchScreen.storyboard in Resources */,
+				E860A0121FB0461400616603 /* Assets.xcassets in Resources */,
 				BF0EFFFC1FAEBB1A0076F4E2 /* Settings.storyboard in Resources */,
 				BF0EFFF21FAEA0C30076F4E2 /* Default-568h@2x.png in Resources */,
 				BF0EFFF71FAEBAAA0076F4E2 /* TestResults.storyboard in Resources */,
-				B579FE4A1DDD1D2700A8C0C7 /* Assets.xcassets in Resources */,
 				B579FE481DDD1D2700A8C0C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
