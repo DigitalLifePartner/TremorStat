@@ -1,12 +1,16 @@
-/*
- Copyright (C) 2016 Apple Inc. All Rights Reserved.
- See LICENSE.txt for this sample’s licensing information
- 
- Abstract:
- An extension to `CGContext` to draw the horizontal lines in a `GraphView`.
- */
-
-//open source software
+//  File Information:
+//  CGContext
+//
+//  Licensing:
+//  Copyright (C) 2016 Apple Inc. All Rights Reserved.
+//  See LICENSE.txt for this sample’s licensing information.
+//
+//  Modified by Best Software
+//  Copyright © 2017 Best Software. All rights reserved.
+//
+//  Abstract:
+//  Extention for CGContext that allows lines to be drawn
+//  on a graph
 
 import UIKit
 

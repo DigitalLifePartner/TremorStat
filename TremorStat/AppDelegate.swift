@@ -1,12 +1,14 @@
-/*
- Copyright (C) 2016 Apple Inc. All Rights Reserved.
- See LICENSE.txt for this sample’s licensing information
- 
- Abstract:
- The application delegate.
- */
-
-// Purpose: delegate
+//  AppDelegate
+//
+//  Licensing:
+//  Copyright (C) 2016 Apple Inc. All Rights Reserved.
+//  See LICENSE.txt for this sample’s licensing information.
+//
+//  Modified by Best Software
+//  Copyright © 2017 Best Software. All rights reserved.
+//
+//  Abstract:
+//  UIViewController delegate
 
 import UIKit
 import CoreMotion
@@ -14,12 +16,12 @@ import CoreMotion
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    // MARK: properties
+    // MARK: Properties
     var window: UIWindow?
     
     let motionManager = CMMotionManager()
     
-    // MARK: implementation
+    // MARK: Implementation
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Enumerate through the view controller hierarchy, setting the `motionManager`

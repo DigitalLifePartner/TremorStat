@@ -1,17 +1,18 @@
-//
-//  TremorStatUITests.swift
+//  File Information:
 //  TremorStatUITests
 //
-//  Created by Best Software on 11/6/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  UI tests for the respective file
 
 import XCTest
 
 // Purpose -- test the UI
 class TremorStatUITests: XCTestCase {
     
-    // MARK: overrides
+    // MARK: Overrides
     
     // set up the test
     override func setUp() {

@@ -1,10 +1,12 @@
+//  File Information:
+//  RestTremorTestInfoViewController
 //
-//  RestTremorTestInfoViewController.swift
-//  TremorStat
-//
-//  Created by Best Software on 11/5/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  Provides the user with information and instructions regarding
+//  the rest tremor test
 
 import UIKit
 

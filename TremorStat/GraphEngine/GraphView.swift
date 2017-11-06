@@ -1,12 +1,17 @@
-/*
- Copyright (C) 2016 Apple Inc. All Rights Reserved.
- See LICENSE.txt for this sample’s licensing information
- 
- Abstract:
- A `UIView` subclass used to graph the values retreived from sensors. The graph is made up of segments represeneted by child views to avoid having to redraw the whole graph with every update.
- */
-
-//open source software
+//  File Information:
+//  GraphView
+//
+//  Licensing:
+//  Copyright (C) 2016 Apple Inc. All Rights Reserved.
+//  See LICENSE.txt for this sample’s licensing information.
+//
+//  Modified by Best Software
+//  Copyright © 2017 Best Software. All rights reserved.
+//
+//  Abstract:
+//  A `UIView` subclass used to graph the values retreived from
+//  sensors. The graph is made up of segments represeneted by child
+//  views to avoid having to redraw the whole graph with every update
 
 import UIKit
 import simd

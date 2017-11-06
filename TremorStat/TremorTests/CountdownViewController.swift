@@ -1,25 +1,14 @@
+//  File Information:
+//  CountdownViewController
 //
-//  CountdownViewController.swift
-//  TremorStat
-//
-//  Created by Best Software on 11/4/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  Initiate a countdown to the rest tremor test and display said countdown
 
-/* VERSION 1
- 
- Done:
-     - implement clock countdown
-     - segue to correct slides
-     - hide navigation controls
- 
- To Do:
-     - add/remove tutorial
-     - improve look
- */
 import UIKit
 
-// Purpose: Initiate a countdown to the rest tremor test and display said countdown
 class CountdownViewController: UIViewController {
     
     // MARK: Properties
@@ -92,7 +81,7 @@ class CountdownViewController: UIViewController {
         self.view.addSubview(MyLabel)
     }
     
-    func Clock(){
+    @objc func Clock(){
         // if the seconds remaining is above zero, decrement
         if seconds>0 {
             seconds=seconds-1

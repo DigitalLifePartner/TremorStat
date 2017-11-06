@@ -1,12 +1,17 @@
-/*
- Copyright (C) 2016 Apple Inc. All Rights Reserved.
- See LICENSE.txt for this sample’s licensing information
- 
- Abstract:
- Defines a protocol that the view controllers conform to and provides helper methods for updating labels.
- */
+//  File Information:
+//  UIViewController
+//
+//  Licensing:
+//  Copyright (C) 2016 Apple Inc. All Rights Reserved.
+//  See LICENSE.txt for this sample’s licensing information.
+//
+//  Modified by Best Software
+//  Copyright © 2017 Best Software. All rights reserved.
+//
+//  Abstract:
+//  Defines a protocol that the view controllers conform to
+// and provides helper methods for updating labels
 
-// open source software
 import CoreMotion
 import UIKit
 import simd

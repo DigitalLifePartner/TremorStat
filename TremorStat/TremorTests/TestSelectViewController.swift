@@ -1,23 +1,14 @@
+//  File Information:
+//  TestSelectViewController
 //
-//  TestSelectViewController.swift
-//  TremorStat
-//
-//  Created by Best Software on 11/4/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
-
-/* VERSION 1
- 
- Done:
-     - added page
- 
- To Do:
-     - ???
- */
+//  Abstract:
+//  Lets the user select a tremor test
 
 import UIKit
 
-// Purpose: central page for the tests
 class TestSelectViewController: UIViewController {
 
     // MARK: Properties

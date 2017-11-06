@@ -1,24 +1,16 @@
-/*
- Copyright (C) 2016 Apple Inc. All Rights Reserved.
- See LICENSE.txt for this sample’s licensing information
- 
- Abstract:
- A view controller to display output from the gyroscope.
- */
-
-// modified open source software
-
-/* VERSION 1
- 
- Done:
-     - gyro readings
-     - passing data to approval page
-     - display data
- 
- To Do:
-     - data analysis readings
-     - ???
- */
+//  File Information:
+//  RestTremorTestViewController
+//
+//  Licensing:
+//  Copyright (C) 2016 Apple Inc. All Rights Reserved.
+//  See LICENSE.txt for this sample’s licensing information.
+//
+//  Modified by Best Software
+//  Copyright © 2017 Best Software. All rights reserved.
+//
+//  Abstract:
+//  Handling the rest tremor test view controller: graphing the gryoscope data;
+//  providing a countdown; UI interactivity
 
 import UIKit
 import CoreMotion
@@ -76,7 +68,7 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
             finishedTest = false
             
             // pass the component arrays to the approval view
-            var nextController = segue.destination as! ApprovalViewController
+            let nextController = segue.destination as! ApprovalViewController
             nextController.gyroArrayX = self.gyroArrayX
             nextController.gyroArrayY = self.gyroArrayY
             nextController.gyroArrayZ = self.gyroArrayZ

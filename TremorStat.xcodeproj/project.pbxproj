@@ -576,7 +576,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.MotionGraphs6";
+				PRODUCT_BUNDLE_IDENTIFIER = "Best-Software.TremorStat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -592,7 +592,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.MotionGraphs6";
+				PRODUCT_BUNDLE_IDENTIFIER = "Best-Software.TremorStat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

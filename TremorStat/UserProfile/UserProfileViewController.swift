@@ -1,10 +1,12 @@
+//  File Information:
+//  UserProfileViewController
 //
-//  UserProfileViewController.swift
-//  TremorStat
-//
-//  Created by Best Software on 11/5/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  Lets the user fill in their personal information and medical
+//  data that could affect the final recommendation of the app
 
 import UIKit
 

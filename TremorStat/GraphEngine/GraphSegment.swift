@@ -1,17 +1,22 @@
-/*
- Copyright (C) 2016 Apple Inc. All Rights Reserved.
- See LICENSE.txt for this sample’s licensing information
- 
- Abstract:
- A `UIView` subclass that represents a segment of data in a `GraphView`.
- */
-
-// open source software
+//  File Information:
+//  GraphSegment
+//
+//  Licensing:
+//  Copyright (C) 2016 Apple Inc. All Rights Reserved.
+//  See LICENSE.txt for this sample’s licensing information.
+//
+//  Modified by Best Software
+//  Copyright © 2017 Best Software. All rights reserved.
+//
+//  Abstract:
+//  Acts as a master control for the drawing of lines on the
+//  graph (scaling, location, colour)
 
 import UIKit
 import simd
 
 class GraphSegment: UIView {
+    
     // MARK: Properties
     
     static let capacity = 32
@@ -50,7 +55,7 @@ class GraphSegment: UIView {
         setNeedsDisplay()
     }
     
-    // MARK: UIView
+    // MARK: Override
     
     override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
@@ -87,6 +92,8 @@ class GraphSegment: UIView {
             context.strokePath()
         }
     }
+    
+    // MARK: Implementation
     
     private func scaledValue(for lineIndex: Int, value: Double) -> CGFloat {
         // For simplicity, this assumes the range is centered on zero.

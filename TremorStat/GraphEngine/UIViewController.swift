@@ -1,12 +1,16 @@
-/*
- Copyright (C) 2016 Apple Inc. All Rights Reserved.
- See LICENSE.txt for this sample’s licensing information
- 
- Abstract:
- Extends `UIViewController` to add a method to enumerate through a view controller heirarchy.
- */
-
-//open source software
+//  File Information:
+//  UIViewController
+//
+//  Licensing:
+//  Copyright (C) 2016 Apple Inc. All Rights Reserved.
+//  See LICENSE.txt for this sample’s licensing information.
+//
+//  Modified by Best Software
+//  Copyright © 2017 Best Software. All rights reserved.
+//
+//  Abstract:
+//  Extends `UIViewController` to add a method to enumerate
+//  through a view controller heirarchy
 
 import UIKit
 

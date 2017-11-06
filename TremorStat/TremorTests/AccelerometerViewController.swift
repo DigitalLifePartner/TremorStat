@@ -1,12 +1,15 @@
-/*
- Copyright (C) 2016 Apple Inc. All Rights Reserved.
- See LICENSE.txt for this sample’s licensing information
- 
- Abstract:
- A view controller to display output from the accelerometer.
- */
-
-// open source software
+//  File Information:
+//  AccelerometerViewController
+//
+//  Licensing:
+//  Copyright (C) 2016 Apple Inc. All Rights Reserved.
+//  See LICENSE.txt for this sample’s licensing information.
+//
+//  Modified by Best Software
+//  Copyright © 2017 Best Software. All rights reserved.
+//
+//  Abstract:
+//  A view controller to display output from the accelerometer.
 
 import UIKit
 import CoreMotion

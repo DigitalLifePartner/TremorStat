@@ -1,26 +1,16 @@
+//  File Information:
+//  TestSelectViewController
 //
-//  ApprovalViewController.swift
-//  TremorStat
-//
-//  Created by Best Software on 11/5/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  Determine whether or not the user wishes to keep the data
+//  from the recently completed test
 
-/* VERSION 1
- 
- Done:
-     - passed data from test page to this one
-     - graphed data correctly
-     - scaled graph
-     - have buttons
- 
- To Do:
-     - have buttons either store / discard data
- */
 import UIKit
 import simd
 
-// Purpose: Determine whether or not the user wishes to keep the data from the previous test
 class ApprovalViewController: UIViewController {
 
     // MARK: Properties

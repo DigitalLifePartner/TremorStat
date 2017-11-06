@@ -1,21 +1,23 @@
+//  UnimplementedFeature
 //
-//  UnimplementedFeature.swift
-//  TremorStat
+//  Licensing:
+//  Copyright (C) 2016 Apple Inc. All Rights Reserved.
+//  See LICENSE.txt for this sample’s licensing information.
 //
-//  Created by Best Software on 11/5/17.
+//  Modified by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
-
-
-// viewcontroller class added to hold temporary views -- everything is default
+//  Abstract:
+//  UIViewcontroller class to hold temporary views
 
 import UIKit
 
 class UnimplementedFeature: UIViewController {
 
+    // MARK: Override
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -24,7 +26,6 @@ class UnimplementedFeature: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

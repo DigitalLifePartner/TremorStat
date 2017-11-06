@@ -1,13 +1,13 @@
+//  File Information:
+//  RestTremorTestViewControllerTests
 //
-//  TremorStatTests.swift
-//  TremorStatTests
-//
-//  Created by Best Software on 11/6/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  Unit tests for the respective file
 
 import XCTest
-
 
 // var used to store test result
 var dataStoringTestResult = true
