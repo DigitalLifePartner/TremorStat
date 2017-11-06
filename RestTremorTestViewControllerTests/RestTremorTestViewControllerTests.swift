@@ -8,6 +8,8 @@
 
 import XCTest
 
+var dataStoringTestResult = true
+
 class RestTremorTestViewControllerTests: XCTestCase {
     
     override func setUp() {
@@ -32,5 +34,10 @@ class RestTremorTestViewControllerTests: XCTestCase {
         }
     }
     
+    
+    // MARK: Test to check proper data storage
+    func DataStoringTest(var1: Double,var2: Double){
+        dataStoringTestResult=dataStoringTestResult && (var1==var2)
+    }
     
 }
