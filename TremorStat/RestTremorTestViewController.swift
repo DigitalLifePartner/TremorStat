@@ -53,14 +53,6 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     
     var motionManager: CMMotionManager?
     
-    // only to be called when a test is complete ( no exits / cancels )
-    func goToApprove() {
-        
-        // segue back to the test approval page
-        print("Going To Approve")
-        performSegue(withIdentifier: "ApprovePage", sender: self)
-    }
-    
     @IBOutlet weak var updateIntervalLabel: UILabel!
     @IBOutlet weak var updateIntervalSlider: UISlider!
 
@@ -96,11 +88,20 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     // MARK: is essentially a var that contains 3 doubles -- to store X Y Z coordinates
     var rotationRate: double3!
     
+    // MARK: implementation
+    
+    // only to be called when a test is complete ( no exits / cancels )
+    func goToApprove() {
+        
+        // segue back to the test approval page
+        print("Going To Approve")
+        performSegue(withIdentifier: "ApprovePage", sender: self)
+    }
+    
     @IBAction func intervalSliderChanged(_ sender: UISlider) {
         //startUpdates()
     }
     
-    // MARK: implementation
     func startUpdates() {
         
         if stopTest == false {

@@ -2,25 +2,31 @@
 //  UserProfileViewController.swift
 //  TremorStat
 //
-//  Created by ikukushk on 11/5/17.
+//  Created by Best Software on 11/5/17.
 //  Copyright © 2017 Best Software. All rights reserved.
 //
 
 import UIKit
 
+// Purpose: allow user to change details of their profile
 class UserProfileViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    // MARK: Variables
+    
+    // used to determine if section should be hidden
     var isDatePickerHidden = true
     var isGenderPickerHidden = true
     var isGeneticsPickerHidden = true
     var isTraumaPickerHidden = true
     var isStagePickerHidden = true
     
+    // arrays containing small amounts of data to choose
     let genderArray = ["Male", "Female"]
     let geneticsArray = ["Yes", "No", "Unsure"]
     let traumaArray = ["Yes", "No", "Unsure"]
     let stageArray = ["Not Diagnosed", "Mild", "Moderate", "Severe"]
 
+    // labels and views
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var geneticsLabel: UILabel!
@@ -33,15 +39,22 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
     @IBOutlet weak var traumaPicker: UIPickerView!
     @IBOutlet weak var stagePicker: UIPickerView!
 
+    
+    // change picker value
     @IBAction func datePickerValue(sender: UIDatePicker) {
         datePickerChanged()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // hide navigation
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        // bring up tab controller
         self.tabBarController?.tabBar.isHidden = false
 
+        // set default values
         dateLabel.text = "N/A"
         genderLabel.text = "N/A"
         geneticsLabel.text = "N/A"
@@ -64,6 +77,8 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
        
        //print(String(indexPath.row), " ", String(indexPath.section), "\n")
         
+        
+        // change hidden states of pickers if selected
         if indexPath.section == 0 && indexPath.row == 0 {
             isDatePickerHidden = !isDatePickerHidden
         }
@@ -80,13 +95,17 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
             isStagePickerHidden = !isStagePickerHidden
         }
         
+        // run through updates
         tableView.beginUpdates()
         tableView.endUpdates()
+        
+        // deselect current row when done
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        // manipulate height of picker row ( if height = 0 it is hidden )
         if isDatePickerHidden && indexPath.section == 0 && indexPath.row == 1 {
             return 0
         }
@@ -116,8 +135,10 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
         var rows = 0;
         
+        // set the value of rows based on the amount of data in the given category
         if pickerView == genderPicker {
             rows = genderArray.count
         }
@@ -137,6 +158,7 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         var rowValue = "";
         
+        // get the row value based on value in category
         if pickerView == genderPicker {
             rowValue = genderArray[row]
         }
@@ -154,6 +176,8 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        // change text of view based on value in category
         if pickerView == genderPicker {
             genderLabel.text = genderArray[row]
         }
@@ -169,6 +193,7 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
     }
     
     func datePickerChanged () {
+        // set the label text
         dateLabel.text = DateFormatter.localizedString(from: datePicker.date, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none)
     }
     
