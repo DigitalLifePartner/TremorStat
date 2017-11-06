@@ -2,7 +2,7 @@
 //  ApprovalViewController.swift
 //  TremorStat
 //
-//  Created by Domenico Di Giovanni on 11/5/17.
+//  Created by Best Software on 11/5/17.
 //  Copyright © 2017 Best Software. All rights reserved.
 //
 

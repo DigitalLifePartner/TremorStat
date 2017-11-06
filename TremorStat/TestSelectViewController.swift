@@ -2,7 +2,7 @@
 //  TestSelectViewController.swift
 //  TremorStat
 //
-//  Created by Domenico Di Giovanni on 11/4/17.
+//  Created by Best Software on 11/4/17.
 //  Copyright © 2017 Best Software. All rights reserved.
 //
 
