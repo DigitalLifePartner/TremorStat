@@ -25,7 +25,7 @@
 import UIKit
 import simd
 
-class StatisticsCalculator: NSObject {
+class StatisticsCalculator {
     
     // MARK: Properties
     
@@ -42,15 +42,23 @@ class StatisticsCalculator: NSObject {
     // MARK: Implementation
     
     // overloaded function calcMean ( assuming do not want to take absolute val )
-    func calcMean ( theData: Array<Double>, theSize: Int ) -> Double {
+    /*func calcMean ( theData: Array<Double>, theSize: Int ) -> Double {
         
         let setToFalse = false
         return calcMean(theData: theData,theSize: theSize,absolute: setToFalse)
+    }*/
+    func fiveSigFigs( theData: Double ) -> Double {
+        var multData = 100000.0*theData
+        var intData = Int(multData)
+        multData = Double(intData)
+        multData = multData/100000.0
+        return multData
     }
 
     // find the average value within the set
     func calcMean( theData: Array<Double>, theSize: Int, absolute: Bool ) -> Double {
         
+        print( "Entered calcMean" )
         // total value to average
         var totalCount = 0.0
         
@@ -63,33 +71,38 @@ class StatisticsCalculator: NSObject {
         
         // loop thru all values of the array
         for i in 0...size {
-            
+            print( "Loop iter " , i )
             // set the data to count towards the total to be the data in the array at index i
             dataToCount = theData[i]
             
             // if you wish to have the absolute value, and the value at index i is negative, make it positive
             if ( ( dataToCount < 0 ) && ( absolute == true ) ) {
+                print( "data was negative" )
                 dataToCount = dataToCount*(-1)
+                print( "made it postive" )
             }
             
             // add value to total count
             totalCount = totalCount + dataToCount
         }
-        
+        print( "exited loop with ", totalCount )
         // once done the total count - take the average
+        
+        print( "calcing mean" )
         self.mean = totalCount/Double(theSize)
+        print( "got the mean" )
         return self.mean
     }
     
     // calculate standard deviation -- call if you already have called calcMean
-    func calcStdDev( theData: Array<Double>, theSize: Int ) -> Double {
+    /*func calcStdDev( theData: Array<Double>, theSize: Int ) -> Double {
         return calcStdDev( theData: theData, theSize: theSize, gotMean: true, absolute: false )
     }
     
     // another overloaded call -- call if there is discrepancy whether you called calcMean or not
     func calcStdDev( theData: Array<Double>, theSize: Int, gotMean: Bool ) -> Double {
         return calcStdDev( theData: theData, theSize: theSize, gotMean: gotMean, absolute: false )
-    }
+    }*/
     
     // call this full version
     func calcStdDev( theData: Array<Double>, theSize: Int, gotMean: Bool, absolute: Bool ) -> Double {

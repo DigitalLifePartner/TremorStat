@@ -12,6 +12,7 @@
 		99C4ACBE1FAEDC21003D036C /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBD1FAEDC21003D036C /* CountdownViewController.swift */; };
 		99C4ACC01FAEDC3C003D036C /* TestSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */; };
 		99D7B9A71FB6547D00049282 /* StatisticsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */; };
+		99D7B9A81FB66CCD00049282 /* StatisticsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */; };
 		99E91AB21FAF9D3A007D8E92 /* ApprovalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E91AB11FAF9D3A007D8E92 /* ApprovalViewController.swift */; };
 		99E91AB61FAFB360007D8E92 /* User_Holding_Device.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E91AB51FAFB360007D8E92 /* User_Holding_Device.png */; };
 		B50882BD1DDE4A4600B4C55D /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50882BC1DDE4A4600B4C55D /* GraphView.swift */; };
@@ -406,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D7B9A81FB66CCD00049282 /* StatisticsCalculator.swift in Sources */,
 				BF5E8B351FB1107600559754 /* RestTremorTestViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
