@@ -32,6 +32,7 @@
 		BF5E8B431FB1108900559754 /* TremorStatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B421FB1108900559754 /* TremorStatUITests.swift */; };
 		E84AB4C51FAFF41B009187ED /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84AB4C41FAFF41B009187ED /* UserProfileViewController.swift */; };
 		E860A0121FB0461400616603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860A0111FB0461300616603 /* Assets.xcassets */; };
+		E8B14FC71FB65DB50051690D /* ActionTremorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B14FC61FB65DB50051690D /* ActionTremorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		BF5E8B441FB1108900559754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E84AB4C41FAFF41B009187ED /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		E860A0111FB0461300616603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8B14FC61FB65DB50051690D /* ActionTremorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTremorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +145,6 @@
 				BF5E8B521FB118B300559754 /* Main */,
 				BF5E8B541FB1190900559754 /* Settings */,
 				BF5E8B571FB119BE00559754 /* TestResults */,
-				BF5E8B551FB1191700559754 /* LaunchScreen */,
 				B587D9E31DDE7FA70087CE3D /* CGContext.swift */,
 				B579FE421DDD1D2700A8C0C7 /* AppDelegate.swift */,
 				408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */,
@@ -207,9 +208,10 @@
 		BF5E8B561FB119B500559754 /* TremorTests */ = {
 			isa = PBXGroup;
 			children = (
-				B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerViewController.swift */,
 				B5DEC4AD1DECE09D00B8FC91 /* RestTremorTestViewController.swift */,
+				E8B14FC61FB65DB50051690D /* ActionTremorTest.swift */,
 				99C4ACBD1FAEDC21003D036C /* CountdownViewController.swift */,
+				B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerViewController.swift */,
 				99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */,
 				99E91AB11FAF9D3A007D8E92 /* ApprovalViewController.swift */,
 				408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */,
@@ -221,6 +223,7 @@
 		BF5E8B571FB119BE00559754 /* TestResults */ = {
 			isa = PBXGroup;
 			children = (
+				BF5E8B551FB1191700559754 /* LaunchScreen */,
 				BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */,
 			);
 			path = TestResults;
@@ -386,6 +389,7 @@
 				408E5E491FAFE33F00C24543 /* UnimplementedFeature.swift in Sources */,
 				408E5E571FB0223F00C24543 /* RestTremorTestInfoViewController.swift in Sources */,
 				B50882BD1DDE4A4600B4C55D /* GraphView.swift in Sources */,
+				E8B14FC71FB65DB50051690D /* ActionTremorTest.swift in Sources */,
 				B579FE571DDD1F6F00A8C0C7 /* UIViewController.swift in Sources */,
 				B587D9E21DDE7F4B0087CE3D /* GraphSegment.swift in Sources */,
 				99E91AB21FAF9D3A007D8E92 /* ApprovalViewController.swift in Sources */,
