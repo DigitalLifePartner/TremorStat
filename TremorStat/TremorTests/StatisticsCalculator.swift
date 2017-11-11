@@ -47,8 +47,13 @@ class StatisticsCalculator {
         let setToFalse = false
         return calcMean(theData: theData,theSize: theSize,absolute: setToFalse)
     }*/
-    func fiveSigFigs( theData: Double ) -> Double {
-        var multData = 100000.0*theData
+    func sigFigs( theData: Double, amountOfFigs: Int ) -> Double {
+        
+        var powerOfTen = 1.0
+        for _ in 1...amountOfFigs {
+            powerOfTen = powerOfTen*10.0
+        }
+        var multData = powerOfTen*theData
         var intData = Int(multData)
         multData = Double(intData)
         multData = multData/100000.0

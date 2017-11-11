@@ -16,13 +16,19 @@ import UIKit
 import CoreMotion
 import simd
 
+let TEST_DURATION = 30.0
+
+let PERIOD_FOR_READINGS = 0.025
+let READINGS_PER_TEST = Int(TEST_DURATION/PERIOD_FOR_READINGS)
+
 // class to handle rest tremor test
 class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     
     // MARK: Properties
     
     // test duration = 30 seconds
-    var timeLeft = 30.0
+    var timeLeft = TEST_DURATION
+
     
     var stopTest = false
 
@@ -34,9 +40,9 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     var motionManager: CMMotionManager?
     
     // component arrays for X Y Z coordinates ( size = 1200 because 30 s / 0.025 s sampling )
-    var gyroArrayX = Array(repeating: 0.0, count: 1200)
-    var gyroArrayY = Array(repeating: 0.0, count: 1200)
-    var gyroArrayZ = Array(repeating: 0.0, count: 1200)
+    var gyroArrayX = Array(repeating: 0.0, count: READINGS_PER_TEST)
+    var gyroArrayY = Array(repeating: 0.0, count: READINGS_PER_TEST)
+    var gyroArrayZ = Array(repeating: 0.0, count: READINGS_PER_TEST)
     
     // essentially a var that contains 3 doubles -- to store X Y Z coordinates
     var rotationRate: double3!
@@ -130,7 +136,7 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
             //updateIntervalLabel.text = formattedUpdateInterval
             
             // get the interval for gryo updates based on slider
-            motionManager.gyroUpdateInterval = TimeInterval(0.025) //updateIntervalSlider.value
+            motionManager.gyroUpdateInterval = TimeInterval(PERIOD_FOR_READINGS) //updateIntervalSlider.value
             motionManager.showsDeviceMovementDisplay = true
             
             // start reading from gyro
@@ -138,7 +144,7 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
                 guard let gyroData = gyroData else { return }
                 
                 // update time left in the test based on the interval from the slider
-                self.timeLeft = self.timeLeft - TimeInterval(0.025)
+                self.timeLeft = self.timeLeft - TimeInterval(PERIOD_FOR_READINGS)
                 self.timeRemaining.text = String(Int((self.timeLeft)))
                 
                 // get the rotation data
