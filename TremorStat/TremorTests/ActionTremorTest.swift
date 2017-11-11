@@ -16,7 +16,7 @@ class ActionTremorTest: UIViewController {
     var timer = Timer()
     
     // set the default countdown to 5 seconds
-    var seconds=5
+    var seconds=30.0
     
     // var used to track if the clock is running or not
     var notRunning = false
@@ -30,24 +30,29 @@ class ActionTremorTest: UIViewController {
     //Average Tap Number Label
     @IBOutlet weak var AvTapTime: UILabel!
     
-
     //Number of successful tap pairs
     var tapsNumber = 0
     
     //Sequence recognition variable
     var tapSide = true
     
+    //Array of paired taps timings
+    var PairedTiming = [Double]()
     
+    //Instantiating Statistics class for data representation
+    var statisticsCalculator = StatisticsCalculator()
+    
+    // MARK: ViewController overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // start 30s countdown
         timer = Timer()
         seconds = 30
-        
-        // start countdown
         self.startCountdown()
     }
     
+    // MARK: Button click actions
     //Detect left button click
     @IBAction func LeftClick(_ sender: Any) {
         var oldTapSide=self.tapSide
@@ -55,6 +60,7 @@ class ActionTremorTest: UIViewController {
         if (oldTapSide != self.tapSide){
             self.tapsNumber+=1
             self.TapsNumberLabel.text=String(self.tapsNumber)
+            PairedTiming.append(0)
         }
     }
     
@@ -68,9 +74,11 @@ class ActionTremorTest: UIViewController {
         }
     }
     
+    
+    // MARK: 30 sec timer Implementation
     func startCountdown(){
         // start timer and countdown
-        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CountdownViewController.Clock), userInfo: nil, repeats: true)
+        timer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(CountdownViewController.Clock), userInfo: nil, repeats: true)
         
         // make sure text is centered
         MyLabel.textAlignment = .center
@@ -80,10 +88,10 @@ class ActionTremorTest: UIViewController {
     @objc func Clock(){
         // if the seconds remaining is above zero, decrement
         if tapsNumber != 0{
-            AvTapTime.text=String(Double(30-seconds)/Double(tapsNumber))
+            AvTapTime.text=String(Double(10000*(30-Int(seconds))/(tapsNumber))/100000)
         }
         if seconds>0 {
-            seconds=seconds-1
+            seconds=seconds-0.1
         }
         // display new time remaining
         MyLabel.text=String(seconds)
