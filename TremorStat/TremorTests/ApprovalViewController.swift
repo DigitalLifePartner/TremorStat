@@ -34,9 +34,9 @@ class ApprovalViewController: UIViewController {
     
     // component arrays of the X Y Z values
     // each is of size 1200 elements as 30 seconds divided by 0.025 second intervals is 1200
-    var gyroArrayX = Array(repeating: 0.0, count: 1200)
-    var gyroArrayY = Array(repeating: 0.0, count: 1200)
-    var gyroArrayZ = Array(repeating: 0.0, count: 1200)
+    var gyroArrayX = Array(repeating: 0.0, count: READINGS_PER_TEST)
+    var gyroArrayY = Array(repeating: 0.0, count: READINGS_PER_TEST)
+    var gyroArrayZ = Array(repeating: 0.0, count: READINGS_PER_TEST)
     
     // essentially a variable containing 3 doubles -- for the X Y Z coordinates
     var gyroArrayAll: double3!
@@ -71,30 +71,30 @@ class ApprovalViewController: UIViewController {
         print ( "statCalc about to be called " )//, statCalc.mean)
 
         // X-values
-        var Stat = self.statCalc.calcMean( theData: self.gyroArrayX, theSize: 1200, absolute: true )
-        Stat = self.statCalc.fiveSigFigs( theData: Stat )
+        var Stat = self.statCalc.calcMean( theData: self.gyroArrayX, theSize: READINGS_PER_TEST, absolute: true )
+        Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.meanX?.text = String( Stat )
         
-        Stat = self.statCalc.calcStdDev( theData: self.gyroArrayX, theSize: 1200, gotMean: true, absolute: true )
-        Stat = self.statCalc.fiveSigFigs( theData: Stat )
+        Stat = self.statCalc.calcStdDev( theData: self.gyroArrayX, theSize: READINGS_PER_TEST, gotMean: true, absolute: true )
+        Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.stdDevX?.text = String( Stat )
         
         // Y-values
-        Stat = self.statCalc.calcMean( theData: self.gyroArrayY, theSize: 1200, absolute: true )
-        Stat = self.statCalc.fiveSigFigs( theData: Stat )
+        Stat = self.statCalc.calcMean( theData: self.gyroArrayY, theSize: READINGS_PER_TEST, absolute: true )
+        Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.meanY?.text = String( Stat )
         
-        Stat = self.statCalc.calcStdDev( theData: self.gyroArrayY, theSize: 1200, gotMean: true, absolute: true )
-        Stat = self.statCalc.fiveSigFigs( theData: Stat )
+        Stat = self.statCalc.calcStdDev( theData: self.gyroArrayY, theSize: READINGS_PER_TEST, gotMean: true, absolute: true )
+        Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.stdDevY?.text = String( Stat )
         
         // Z-values
-        Stat = self.statCalc.calcStdDev( theData: self.gyroArrayZ, theSize: 1200, gotMean: true, absolute: true )
-        Stat = self.statCalc.fiveSigFigs( theData: Stat )
+        Stat = self.statCalc.calcMean( theData: self.gyroArrayZ, theSize: READINGS_PER_TEST, absolute: true )
+        Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.meanZ?.text = String( Stat )
         
-        Stat = self.statCalc.calcStdDev( theData: self.gyroArrayZ, theSize: 1200, gotMean: true, absolute: true )
-        Stat = self.statCalc.fiveSigFigs( theData: Stat )
+        Stat = self.statCalc.calcStdDev( theData: self.gyroArrayZ, theSize: READINGS_PER_TEST, gotMean: true, absolute: true )
+        Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.stdDevZ?.text = String( Stat )
     }
     
