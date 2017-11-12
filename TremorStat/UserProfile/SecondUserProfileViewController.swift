@@ -42,6 +42,8 @@ class SecondUserProfileViewController: UITableViewController, UIPickerViewDataSo
     
     @IBAction func dateValueChanged(sender: UIDatePicker) {
         dateLabel.text = DateFormatter.localizedString(from: datePicker.date, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none)
+        
+        
     }
     
     // run when view appears

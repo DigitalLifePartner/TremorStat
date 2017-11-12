@@ -15,7 +15,7 @@ class ActionTremorTest: UIViewController {
     // set up a timer
     var timer = Timer()
     
-    // set the default countdown to 5 seconds
+    // set the default countdown to 30 seconds
     var seconds=30.0
     
     // variable that stors last pair tapped timing
@@ -54,7 +54,6 @@ class ActionTremorTest: UIViewController {
         
         // start 30s countdown
         timer = Timer()
-        seconds = 30
         self.startCountdown()
     }
     
@@ -85,13 +84,18 @@ class ActionTremorTest: UIViewController {
     }
     
     
+    @IBAction func ExitButtonAction(_ sender: Any) {
+        timer.invalidate()
+    }
+    
+    
     // MARK: 30 sec timer Implementation
     func startCountdown(){
         // start timer and countdown
         timer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ActionTremorTest.Clock), userInfo: nil, repeats: true)
         
         // make sure text is centered
-        MyLabel.textAlignment = .center
+        MyLabel?.textAlignment = .center
         //self.view.addSubview(MyLabel)
     }
     
@@ -104,12 +108,13 @@ class ActionTremorTest: UIViewController {
             seconds=seconds-0.1
         }
         // display new time remaining
-        MyLabel.text=String(Int(seconds))
+        MyLabel?.text=String(Int(seconds))
         
         // once the countdown has finished stop the timer and segue onto the rest tremor test
         if(seconds<=0 && notRunning == false){
             timer.invalidate()
             notRunning = true
+            performSegue(withIdentifier: "ActionApprovePage", sender: self)
         }
     }
 

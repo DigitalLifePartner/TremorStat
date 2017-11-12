@@ -112,19 +112,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To Be Implemented" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SN-2o-XoK">
-                                <rect key="frame" x="113" y="61" width="148" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ths-Rc-XQM">
                                 <rect key="frame" x="171" y="581" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="EXIT"/>
                                 <connections>
-                                    <segue destination="1Uj-q2-Mg8" kind="show" id="eUq-o3-Iaa"/>
+                                    <action selector="ExitButtonAction:" destination="iZu-XT-ei2" eventType="touchUpInside" id="SPi-2C-Fx2"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" id="Gox-rN-2Dz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJU-mH-c00">
@@ -179,15 +173,8 @@
                                     <action selector="RightClick:" destination="iZu-XT-ei2" eventType="touchUpInside" id="eo7-vp-Ovy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Av. Tap time (Dom):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uq-qn-Qxz">
-                                <rect key="frame" x="31" y="498" width="150" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap Pairs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZn-sd-rb5">
-                                <rect key="frame" x="209" y="498" width="70" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SN-2o-XoK">
+                                <rect key="frame" x="177" y="155" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -198,9 +185,9 @@
                     </view>
                     <connections>
                         <outlet property="AvTapTime" destination="yQt-Iz-2z3" id="6PU-cn-uwM"/>
-                        <outlet property="DomTapTime" destination="JZn-sd-rb5" id="1IL-qE-i0X"/>
                         <outlet property="MyLabel" destination="5SN-2o-XoK" id="0Xn-hX-zKo"/>
                         <outlet property="TapsNumberLabel" destination="HIw-Ga-T4U" id="a5f-XI-fYV"/>
+                        <segue destination="urE-KZ-RF8" kind="show" identifier="ActionApprovePage" id="Nll-a0-xvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CY-gI-DLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -430,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HK5-Bv-g41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-490" y="4411"/>
+            <point key="canvasLocation" x="-623" y="4563"/>
         </scene>
         <!--Action Tremor Countdown-->
         <scene sceneID="0bO-u7-Bhz">
@@ -474,11 +461,46 @@
             </objects>
             <point key="canvasLocation" x="-1897" y="2612"/>
         </scene>
+        <!--Unimplemented Feature-->
+        <scene sceneID="eiM-mS-8sU">
+            <objects>
+                <viewController id="urE-KZ-RF8" customClass="UnimplementedFeature" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vwN-HZ-QXG"/>
+                        <viewControllerLayoutGuide type="bottom" id="E3V-Z7-Ynx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7dM-Lc-GTa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="699-7N-gci">
+                                <rect key="frame" x="171" y="575" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="EXIT"/>
+                                <connections>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" id="xtZ-oC-Lif"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":D:D:D:D::D:D:D:D:D:D:&quot;D:D" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbx-8r-tD8">
+                                <rect key="frame" x="62" y="277" width="251" height="43"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aRf-og-nO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1898" y="4563"/>
+        </scene>
     </scenes>
     <resources>
         <image name="User_Holding_Device.png" width="928" height="1065"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6AM-6c-EXN"/>
+        <segue reference="Gox-rN-2Dz"/>
     </inferredMetricsTieBreakers>
 </document>

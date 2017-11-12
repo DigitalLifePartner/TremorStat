@@ -217,10 +217,10 @@
 			isa = PBXGroup;
 			children = (
 				99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */,
-				B5DEC4AD1DECE09D00B8FC91 /* RestTremorTestViewController.swift */,
 				99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */,
-				E8B14FC61FB65DB50051690D /* ActionTremorTest.swift */,
+				B5DEC4AD1DECE09D00B8FC91 /* RestTremorTestViewController.swift */,
 				E81EE7A11FB7BDEA00B82B44 /* ActionTremorCountdown.swift */,
+				E8B14FC61FB65DB50051690D /* ActionTremorTest.swift */,
 				B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerViewController.swift */,
 				99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */,
 				99E91AB11FAF9D3A007D8E92 /* ApprovalViewController.swift */,
