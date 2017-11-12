@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		408E5E491FAFE33F00C24543 /* UnimplementedFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */; };
 		408E5E571FB0223F00C24543 /* RestTremorTestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */; };
+		40CCEDC31FB8F9D000D5A4DE /* Active_Tremor_Test_InAction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40CCEDC21FB8F9D000D5A4DE /* Active_Tremor_Test_InAction.jpg */; };
 		99C4ACBE1FAEDC21003D036C /* RestTremorCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */; };
 		99C4ACC01FAEDC3C003D036C /* TestSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */; };
 		99D7B9A71FB6547D00049282 /* StatisticsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedFeature.swift; sourceTree = "<group>"; };
 		408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorTestInfoViewController.swift; sourceTree = "<group>"; };
+		40CCEDC21FB8F9D000D5A4DE /* Active_Tremor_Test_InAction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Active_Tremor_Test_InAction.jpg; path = ../../../Desktop/Active_Tremor_Test_InAction.jpg; sourceTree = "<group>"; };
 		99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorCountdown.swift; sourceTree = "<group>"; };
 		99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSelectViewController.swift; sourceTree = "<group>"; };
 		99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCalculator.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		B579FE411DDD1D2700A8C0C7 /* TremorStat */ = {
 			isa = PBXGroup;
 			children = (
+				40CCEDC21FB8F9D000D5A4DE /* Active_Tremor_Test_InAction.jpg */,
 				BF5E8B561FB119B500559754 /* TremorTests */,
 				BF5E8B581FB119CA00559754 /* GraphEngine */,
 				BF5E8B531FB118F400559754 /* UserProfile */,
@@ -370,6 +373,7 @@
 				99E91AB61FAFB360007D8E92 /* User_Holding_Device.png in Resources */,
 				BF0EFFF91FAEBABA0076F4E2 /* UserProfile.storyboard in Resources */,
 				BF0EFFF41FAEB2690076F4E2 /* TremorTests.storyboard in Resources */,
+				40CCEDC31FB8F9D000D5A4DE /* Active_Tremor_Test_InAction.jpg in Resources */,
 				B579FE4D1DDD1D2700A8C0C7 /* LaunchScreen.storyboard in Resources */,
 				E860A0121FB0461400616603 /* Assets.xcassets in Resources */,
 				BF0EFFFC1FAEBB1A0076F4E2 /* Settings.storyboard in Resources */,
