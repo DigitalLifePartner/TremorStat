@@ -10,6 +10,9 @@ import UIKit
 
 class ActionTremorTest: UIViewController {
     
+    @IBOutlet weak var LeftActionTremorButton: UIButton!
+    @IBOutlet weak var RightActionTremorButton: UIButton!
+    
     // MARK: Properties
     
     // set up a timer
@@ -51,6 +54,9 @@ class ActionTremorTest: UIViewController {
     // MARK: ViewController overrides
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        LeftActionTremorButton.layer.cornerRadius = 25
+        RightActionTremorButton.layer.cornerRadius = 25
         
         // start 30s countdown
         timer = Timer()

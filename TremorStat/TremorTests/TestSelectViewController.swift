@@ -26,6 +26,10 @@ class TestSelectViewController: UIViewController {
         super.viewDidLoad()
         // store data classes to hold memory
         // Do any additional setup after loading the view.
+        
+        ActiveTremorTestButton.layer.cornerRadius = 25
+        RestTremorTestButton.layer.cornerRadius = 25
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -112,15 +112,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ths-Rc-XQM">
-                                <rect key="frame" x="171" y="581" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="EXIT"/>
-                                <connections>
-                                    <action selector="ExitButtonAction:" destination="iZu-XT-ei2" eventType="touchUpInside" id="SPi-2C-Fx2"/>
-                                    <segue destination="1Uj-q2-Mg8" kind="show" id="Gox-rN-2Dz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJU-mH-c00">
                                 <rect key="frame" x="41" y="265" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -180,19 +171,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ths-Rc-XQM">
+                                <rect key="frame" x="133" y="579" width="108" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="STOP TEST">
+                                    <color key="titleColor" red="1" green="0.089926403129999999" blue="0.030124040250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ExitButtonAction:" destination="iZu-XT-ei2" eventType="touchUpInside" id="SPi-2C-Fx2"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" id="Gox-rN-2Dz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="AvTapTime" destination="yQt-Iz-2z3" id="6PU-cn-uwM"/>
+                        <outlet property="LeftActionTremorButton" destination="pJU-mH-c00" id="XmC-ct-4wY"/>
                         <outlet property="MyLabel" destination="5SN-2o-XoK" id="0Xn-hX-zKo"/>
+                        <outlet property="RightActionTremorButton" destination="HB9-2E-txo" id="CLx-MH-VTz"/>
                         <outlet property="TapsNumberLabel" destination="HIw-Ga-T4U" id="a5f-XI-fYV"/>
                         <segue destination="urE-KZ-RF8" kind="show" identifier="ActionApprovePage" id="Nll-a0-xvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CY-gI-DLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1898" y="3570"/>
+            <point key="canvasLocation" x="-1898.4000000000001" y="3569.8650674662672"/>
         </scene>
         <!--Rest Tremor Test-->
         <scene sceneID="7qW-3M-d1t">
