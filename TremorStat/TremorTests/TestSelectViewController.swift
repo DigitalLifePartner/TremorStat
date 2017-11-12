@@ -20,7 +20,11 @@ class TestSelectViewController: UIViewController {
     // MARK: Overrides
     
     override func viewDidLoad() {
+        //UserDefaults.standard.set( DataStorage(), forKey: "userData")
+        //UserDefaults.standard.set( ConfigDataStorage(), forKey: "userConfigData")
+        
         super.viewDidLoad()
+        // store data classes to hold memory
         // Do any additional setup after loading the view.
     }
     
