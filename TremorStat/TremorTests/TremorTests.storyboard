@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +30,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="iZu-XT-ei2" kind="show" id="SMc-QI-Chf"/>
+                                    <segue destination="QDf-BF-erH" kind="show" id="hhO-cA-zvi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvT-pi-Yyy">
@@ -43,7 +42,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZG0-Uf-h8y" kind="show" identifier="CountdownViewController" id="ZGL-1k-q31"/>
+                                    <segue destination="ZG0-Uf-h8y" kind="show" id="qF8-1u-6al"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="-1234.4000000000001" y="1835.5322338830586"/>
         </scene>
-        <!--Countdown View Controller-->
+        <!--Rest Tremor Countdown-->
         <scene sceneID="GHc-7e-gM4">
             <objects>
-                <viewController id="ZG0-Uf-h8y" customClass="CountdownViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZG0-Uf-h8y" customClass="RestTremorCountdown" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AgZ-a4-jYo"/>
                         <viewControllerLayoutGuide type="bottom" id="ECy-a1-9W0"/>
@@ -94,13 +93,12 @@
                     </view>
                     <connections>
                         <outlet property="MyLabel" destination="i4d-IZ-Xjw" id="dMP-Th-dK1"/>
-                        <segue destination="P0u-9c-j3K" kind="show" identifier="ActionTremor" id="JH3-nY-GFC"/>
                         <segue destination="sAN-Yt-SR5" kind="show" identifier="RestTremor" id="1S4-qH-Lkh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgi-YQ-y9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1234.4000000000001" y="2793.5532233883059"/>
+            <point key="canvasLocation" x="-622" y="2612"/>
         </scene>
         <!--Action Tremor Test-->
         <scene sceneID="5gG-d5-St8">
@@ -115,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To Be Implemented" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SN-2o-XoK">
-                                <rect key="frame" x="113" y="321" width="148" height="21"/>
+                                <rect key="frame" x="113" y="61" width="148" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -181,164 +179,33 @@
                                     <action selector="RightClick:" destination="iZu-XT-ei2" eventType="touchUpInside" id="eo7-vp-Ovy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Av. Tap time (Dom):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uq-qn-Qxz">
+                                <rect key="frame" x="31" y="498" width="150" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap Pairs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZn-sd-rb5">
+                                <rect key="frame" x="209" y="498" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="AvTapTime" destination="yQt-Iz-2z3" id="6PU-cn-uwM"/>
+                        <outlet property="DomTapTime" destination="JZn-sd-rb5" id="1IL-qE-i0X"/>
                         <outlet property="MyLabel" destination="5SN-2o-XoK" id="0Xn-hX-zKo"/>
                         <outlet property="TapsNumberLabel" destination="HIw-Ga-T4U" id="a5f-XI-fYV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CY-gI-DLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2887.1999999999998" y="3569.8650674662672"/>
-        </scene>
-        <!--Active Tremor Test-->
-        <scene sceneID="ON0-Su-pON">
-            <objects>
-                <viewController storyboardIdentifier="UIViewController-y3k-dY-4ch" id="P0u-9c-j3K" customClass="AccelerometerViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uMd-UL-BJD"/>
-                        <viewControllerLayoutGuide type="bottom" id="F6r-Ge-V4z"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rZB-Kz-YBS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hl2-gm-IRy" customClass="GraphView" customModule="TremorStat" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="256"/>
-                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="256" id="WPl-uv-bH5"/>
-                                </constraints>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oTh-IW-reF">
-                                <rect key="frame" x="16" y="304" width="343" height="54.5"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GNp-nk-BQZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Update interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bag-ap-qaw">
-                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interval" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Vx-hd-pl1">
-                                                <rect key="frame" x="126.5" y="0.0" width="216.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.0099999997764825821" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EsK-dp-Pqq">
-                                        <rect key="frame" x="-2" y="24.5" width="347" height="31"/>
-                                        <connections>
-                                            <action selector="intervalSliderChanged:" destination="P0u-9c-j3K" eventType="valueChanged" id="ysJ-Un-1P6"/>
-                                        </connections>
-                                    </slider>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0oP-QM-pnY">
-                                <rect key="frame" x="56" y="398" width="263" height="130"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4jT-jH-x8N">
-                                        <rect key="frame" x="0.0" y="0.0" width="263" height="30"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6y-xo-82e">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="Nke-Gk-eDl"/>
-                                                    <constraint firstAttribute="height" constant="30" id="XEe-Av-Bk6"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSL-Bq-o6T">
-                                                <rect key="frame" x="40" y="0.0" width="223" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9JI-oR-aRi">
-                                        <rect key="frame" x="0.0" y="50" width="263" height="30"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7V7-zM-Pav">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="gTV-c8-zNg"/>
-                                                    <constraint firstAttribute="width" constant="30" id="nAo-q1-N1D"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUQ-sW-u4e">
-                                                <rect key="frame" x="40" y="0.0" width="223" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="COK-tW-QL5">
-                                        <rect key="frame" x="0.0" y="100" width="263" height="30"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lsc-6C-cSj">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="g6j-St-9IA"/>
-                                                    <constraint firstAttribute="width" constant="30" id="gtE-1v-3W9"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRY-6V-6KX">
-                                                <rect key="frame" x="40" y="0.0" width="223" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiO-3K-ztQ">
-                                <rect key="frame" x="171" y="580" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="EXIT"/>
-                                <connections>
-                                    <segue destination="1Uj-q2-Mg8" kind="show" id="ewk-B8-NUk"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oTh-IW-reF" firstAttribute="leading" secondItem="rZB-Kz-YBS" secondAttribute="leadingMargin" id="8BN-4L-51I"/>
-                            <constraint firstItem="Hl2-gm-IRy" firstAttribute="top" secondItem="uMd-UL-BJD" secondAttribute="bottom" constant="8" id="Gze-AX-Ktl"/>
-                            <constraint firstItem="oTh-IW-reF" firstAttribute="top" secondItem="Hl2-gm-IRy" secondAttribute="bottom" constant="20" id="Pgd-d7-BRY"/>
-                            <constraint firstItem="0oP-QM-pnY" firstAttribute="top" secondItem="oTh-IW-reF" secondAttribute="bottom" constant="40" id="a52-Wd-DpW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0oP-QM-pnY" secondAttribute="trailing" constant="40" id="eDv-HO-uhb"/>
-                            <constraint firstItem="0oP-QM-pnY" firstAttribute="leading" secondItem="rZB-Kz-YBS" secondAttribute="leadingMargin" constant="40" id="k21-BM-eQs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oTh-IW-reF" secondAttribute="trailing" id="kPl-2O-q7C"/>
-                            <constraint firstItem="Hl2-gm-IRy" firstAttribute="leading" secondItem="rZB-Kz-YBS" secondAttribute="leading" id="ofa-xI-XNF"/>
-                            <constraint firstAttribute="trailing" secondItem="Hl2-gm-IRy" secondAttribute="trailing" id="qLq-dS-EB7"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Active Tremor Test" id="f1J-qm-flG"/>
-                    <connections>
-                        <outlet property="graphView" destination="Hl2-gm-IRy" id="r1R-rP-tS4"/>
-                        <outlet property="updateIntervalLabel" destination="8Vx-hd-pl1" id="4Oc-uP-JdH"/>
-                        <outlet property="updateIntervalSlider" destination="EsK-dp-Pqq" id="hSU-dH-5fh"/>
-                        <outletCollection property="valueLabels" destination="FSL-Bq-o6T" collectionClass="NSMutableArray" id="Jn1-7z-H5x"/>
-                        <outletCollection property="valueLabels" destination="NUQ-sW-u4e" collectionClass="NSMutableArray" id="1pZ-Rq-Mub"/>
-                        <outletCollection property="valueLabels" destination="lRY-6V-6KX" collectionClass="NSMutableArray" id="hpJ-V5-Js8"/>
-                        <segue destination="2BO-H9-fOx" kind="show" id="5ur-AG-nUn"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WOw-zr-uyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2178" y="3570"/>
+            <point key="canvasLocation" x="-1898" y="3570"/>
         </scene>
         <!--Rest Tremor Test-->
         <scene sceneID="7qW-3M-d1t">
@@ -416,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZh-dQ-eK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-231.19999999999999" y="3568.9655172413795"/>
+            <point key="canvasLocation" x="-623" y="3570"/>
         </scene>
         <!--Approval View Controller-->
         <scene sceneID="vph-oP-6XO">
@@ -563,14 +430,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HK5-Bv-g41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1234.4000000000001" y="4339.8800599700153"/>
+            <point key="canvasLocation" x="-490" y="4411"/>
+        </scene>
+        <!--Action Tremor Countdown-->
+        <scene sceneID="0bO-u7-Bhz">
+            <objects>
+                <viewController id="QDf-BF-erH" customClass="ActionTremorCountdown" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xE7-fr-pRA"/>
+                        <viewControllerLayoutGuide type="bottom" id="5HY-Fy-2mt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="leV-VL-J7t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get Ready!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1X-n0-pLj">
+                                <rect key="frame" x="25" y="431" width="324" height="93"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Outstretch your arm and rest your elbow on a flat surface. Hold the device as steady as you can for 30 seconds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Meu-C7-UMW">
+                                <rect key="frame" x="16" y="27" width="343" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User_Holding_Device.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yg5-UC-gZz">
+                                <rect key="frame" x="35" y="154" width="305" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="MyLabel" destination="e1X-n0-pLj" id="3yk-Zj-Iqr"/>
+                        <segue destination="iZu-XT-ei2" kind="show" identifier="ActionTremor" id="CiC-an-WdH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAT-3o-QQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1897" y="2612"/>
         </scene>
     </scenes>
     <resources>
         <image name="User_Holding_Device.png" width="928" height="1065"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5ur-AG-nUn"/>
-        <segue reference="Ivh-Sr-mdL"/>
+        <segue reference="6AM-6c-EXN"/>
     </inferredMetricsTieBreakers>
 </document>
