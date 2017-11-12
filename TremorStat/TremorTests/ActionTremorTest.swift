@@ -18,6 +18,9 @@ class ActionTremorTest: UIViewController {
     // set the default countdown to 5 seconds
     var seconds=30.0
     
+    // variable that stors last pair tapped timing
+    var lastTapTiming = 30.0
+    
     // var used to track if the clock is running or not
     var notRunning = false
     
@@ -30,6 +33,9 @@ class ActionTremorTest: UIViewController {
     //Average Tap Number Label
     @IBOutlet weak var AvTapTime: UILabel!
     
+    //Average Tap Number Label (Dom's olution)
+    @IBOutlet weak var DomTapTime: UILabel!
+    
     //Number of successful tap pairs
     var tapsNumber = 0
     
@@ -37,7 +43,7 @@ class ActionTremorTest: UIViewController {
     var tapSide = true
     
     //Array of paired taps timings
-    var PairedTiming = [Double]()
+    var pairedTiming = [Double]()
     
     //Instantiating Statistics class for data representation
     var statisticsCalculator = StatisticsCalculator()
@@ -58,9 +64,11 @@ class ActionTremorTest: UIViewController {
         var oldTapSide=self.tapSide
         tapSide=false
         if (oldTapSide != self.tapSide){
+            lastTapTiming=seconds
             self.tapsNumber+=1
             self.TapsNumberLabel.text=String(self.tapsNumber)
-            PairedTiming.append(0)
+            pairedTiming.append(lastTapTiming-seconds)
+            lastTapTiming=seconds
         }
     }
     
@@ -71,6 +79,8 @@ class ActionTremorTest: UIViewController {
         if (oldTapSide != self.tapSide){
             self.tapsNumber+=1
             self.TapsNumberLabel.text=String(self.tapsNumber)
+            pairedTiming.append(lastTapTiming-seconds)
+            lastTapTiming=seconds
         }
     }
     
@@ -78,7 +88,7 @@ class ActionTremorTest: UIViewController {
     // MARK: 30 sec timer Implementation
     func startCountdown(){
         // start timer and countdown
-        timer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(CountdownViewController.Clock), userInfo: nil, repeats: true)
+        timer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ActionTremorTest.Clock), userInfo: nil, repeats: true)
         
         // make sure text is centered
         MyLabel.textAlignment = .center
@@ -88,13 +98,13 @@ class ActionTremorTest: UIViewController {
     @objc func Clock(){
         // if the seconds remaining is above zero, decrement
         if tapsNumber != 0{
-            AvTapTime.text=String(Double(10000*(30-Int(seconds))/(tapsNumber))/100000)
+            AvTapTime.text=String(Double(100000*(30-Int(seconds))/(tapsNumber))/100000)
         }
         if seconds>0 {
             seconds=seconds-0.1
         }
         // display new time remaining
-        MyLabel.text=String(seconds)
+        MyLabel.text=String(Int(seconds))
         
         // once the countdown has finished stop the timer and segue onto the rest tremor test
         if(seconds<=0 && notRunning == false){

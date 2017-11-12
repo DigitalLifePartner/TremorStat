@@ -9,7 +9,7 @@
 
 import UIKit
 
-class CountdownViewController: UIViewController {
+class ActionTremorCountdown: UIViewController {
     
     // MARK: Properties
     
@@ -25,7 +25,7 @@ class CountdownViewController: UIViewController {
     @IBOutlet weak var MyLabel: UILabel!
     
     // MARK: Overrides
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -36,7 +36,7 @@ class CountdownViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // reinit vars incase of segue during countdown
         timer = Timer()
         seconds = 5
@@ -74,7 +74,7 @@ class CountdownViewController: UIViewController {
     
     func startCountdown(){
         // start timer and countdown
-        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CountdownViewController.Clock), userInfo: nil, repeats: true)
+        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ActionTremorCountdown.Clock), userInfo: nil, repeats: true)
         
         // make sure text is centered
         MyLabel.textAlignment = .center
@@ -94,7 +94,7 @@ class CountdownViewController: UIViewController {
             MyLabel.text="Test Begins"
             timer.invalidate()
             notRunning = true
-            performSegue(withIdentifier: "RestTremor", sender: self)
+            performSegue(withIdentifier: "ActionTremor", sender: self)
         }
     }
     
@@ -110,4 +110,5 @@ class CountdownViewController: UIViewController {
      */
     
 }
+
 
