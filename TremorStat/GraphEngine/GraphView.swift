@@ -43,7 +43,7 @@ class GraphView: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = .black
+        backgroundColor = UIColor.clear
     }
     
     // MARK: UIView overrides
