@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../TremorStat/Active_Tremor_Test_InAction.jpg">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
