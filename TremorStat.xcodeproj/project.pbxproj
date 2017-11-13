@@ -10,6 +10,7 @@
 		408E5E491FAFE33F00C24543 /* UnimplementedFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */; };
 		408E5E571FB0223F00C24543 /* RestTremorTestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */; };
 		40CCEDC51FB903BC00D5A4DE /* Active_Tremor_Test_InAction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40CCEDC41FB903BB00D5A4DE /* Active_Tremor_Test_InAction.jpg */; };
+		40CCEDC71FB9306900D5A4DE /* ActionTremorTestApprovalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CCEDC61FB9306900D5A4DE /* ActionTremorTestApprovalPageViewController.swift */; };
 		99C4ACBE1FAEDC21003D036C /* RestTremorCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */; };
 		99C4ACC01FAEDC3C003D036C /* TestSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */; };
 		99D7B9A71FB6547D00049282 /* StatisticsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */; };
@@ -62,6 +63,7 @@
 		408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedFeature.swift; sourceTree = "<group>"; };
 		408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorTestInfoViewController.swift; sourceTree = "<group>"; };
 		40CCEDC41FB903BB00D5A4DE /* Active_Tremor_Test_InAction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Active_Tremor_Test_InAction.jpg; path = TremorStat/Active_Tremor_Test_InAction.jpg; sourceTree = SOURCE_ROOT; };
+		40CCEDC61FB9306900D5A4DE /* ActionTremorTestApprovalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActionTremorTestApprovalPageViewController.swift; path = /Users/msavic/Documents/TremorStat/TremorStat/TremorTests/ActionTremorTestApprovalPageViewController.swift; sourceTree = "<absolute>"; };
 		99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorCountdown.swift; sourceTree = "<group>"; };
 		99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSelectViewController.swift; sourceTree = "<group>"; };
 		99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCalculator.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		BF5E8B561FB119B500559754 /* TremorTests */ = {
 			isa = PBXGroup;
 			children = (
+				40CCEDC61FB9306900D5A4DE /* ActionTremorTestApprovalPageViewController.swift */,
 				40CCEDC41FB903BB00D5A4DE /* Active_Tremor_Test_InAction.jpg */,
 				99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */,
 				99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */,
@@ -416,6 +419,7 @@
 				99E91AB21FAF9D3A007D8E92 /* ApprovalViewController.swift in Sources */,
 				99D7B9A71FB6547D00049282 /* StatisticsCalculator.swift in Sources */,
 				B5DEC4AC1DECB6DA00B8FC91 /* AccelerometerViewController.swift in Sources */,
+				40CCEDC71FB9306900D5A4DE /* ActionTremorTestApprovalPageViewController.swift in Sources */,
 				99C4ACBE1FAEDC21003D036C /* RestTremorCountdown.swift in Sources */,
 				B579FE5B1DDD2D3A00A8C0C7 /* MotionGraphContainer.swift in Sources */,
 				B579FE431DDD1D2700A8C0C7 /* AppDelegate.swift in Sources */,

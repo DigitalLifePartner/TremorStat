@@ -62,6 +62,27 @@ class ActionTremorTest: UIViewController {
         timer = Timer()
         self.startCountdown()
     }
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        
+        if let UserLastTestTaps = UserDefaults.standard.object(forKey: "ActionTremorHighScore") as? integer_t
+        {
+            if UserLastTestTaps > tapsNumber
+            {
+                // DO NOTHING
+                UserDefaults.standard.set(tapsNumber, forKey: "LastUserScore")
+            }
+            else
+            {
+                UserDefaults.standard.set(tapsNumber, forKey: "LastUserScore")
+                UserDefaults.standard.set(tapsNumber, forKey: "ActionTremorHighScore")
+            }
+        }
+        else
+        {   UserDefaults.standard.set(tapsNumber, forKey: "LastUserScore")
+            UserDefaults.standard.set(tapsNumber, forKey: "ActionTremorHighScore")
+        }
+    }
     
     // MARK: Button click actions
     //Detect left button click
@@ -105,7 +126,8 @@ class ActionTremorTest: UIViewController {
         //self.view.addSubview(MyLabel)
     }
     
-    @objc func Clock(){
+    @objc func Clock()
+    {
         // if the seconds remaining is above zero, decrement
         if tapsNumber != 0{
             AvTapTime.text=String(Double(100000*(30-Int(seconds))/(tapsNumber))/100000)
@@ -117,9 +139,11 @@ class ActionTremorTest: UIViewController {
         MyLabel?.text=String(Int(seconds))
         
         // once the countdown has finished stop the timer and segue onto the rest tremor test
-        if(seconds<=0 && notRunning == false){
+        if(seconds<=25 && notRunning == false)
+        {
             timer.invalidate()
             notRunning = true
+        
             performSegue(withIdentifier: "ActionApprovePage", sender: self)
         }
     }

@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: Properties
     var window: UIWindow?
-    
     let motionManager = CMMotionManager()
     
     // MARK: Implementation
