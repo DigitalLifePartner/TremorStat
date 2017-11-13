@@ -31,7 +31,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="j8X-wy-JZW">
             <objects>
-                <tableViewController id="qt3-cs-vZL" customClass="UserProfileViewController" sceneMemberID="viewController">
+                <tableViewController id="qt3-cs-vZL" customClass="UserProfileViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lRQ-fw-2Fk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -117,9 +117,6 @@
                                                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-T7-LcL">
                                                     <rect key="frame" x="0.0" y="-60" width="375" height="162"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="qt3-cs-vZL" id="WKc-Bd-t3o"/>
-                                                    </connections>
                                                 </pickerView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -248,7 +245,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="qno-Lb-bKa"/>
                     <connections>
-                        <outlet property="dateLabel" destination="rgS-2G-viZ" id="gmY-ql-N7a"/>
+                        <outlet property="dateLabel" destination="rgS-2G-viZ" id="nf3-YW-HJ7"/>
                         <outlet property="datePicker" destination="2fZ-u5-Z1z" id="dcf-bd-hE6"/>
                         <outlet property="genderLabel" destination="1Ag-lN-cH3" id="kvQ-pt-HeW"/>
                         <outlet property="genderPicker" destination="dAo-T7-LcL" id="12E-D4-Dqc"/>
@@ -276,7 +273,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y2K-XH-zEu" kind="relationship" relationship="rootViewController" id="hR8-sA-Kso"/>
+                        <segue destination="qt3-cs-vZL" kind="relationship" relationship="rootViewController" id="jwt-xd-k2Z"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgJ-P4-KdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
