@@ -28,7 +28,7 @@
 		B587D9E41DDE7FA70087CE3D /* CGContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587D9E31DDE7FA70087CE3D /* CGContext.swift */; };
 		B5DEC4AC1DECB6DA00B8FC91 /* AccelerometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerViewController.swift */; };
 		B5DEC4AE1DECE09D00B8FC91 /* RestTremorTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEC4AD1DECE09D00B8FC91 /* RestTremorTestViewController.swift */; };
-		BF0A0B281FB91ACB00357132 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0B271FB91ACB00357132 /* UserProfileViewController.swift */; };
+		BF0A0B2A1FB91CEC00357132 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0B291FB91CEC00357132 /* UserProfileViewController.swift */; };
 		BF0EFFF21FAEA0C30076F4E2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */; };
 		BF0EFFF41FAEB2690076F4E2 /* TremorTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */; };
 		BF0EFFF71FAEBAAA0076F4E2 /* TestResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */; };
@@ -82,7 +82,7 @@
 		B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerViewController.swift; sourceTree = "<group>"; };
 		B5DEC4AD1DECE09D00B8FC91 /* RestTremorTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestTremorTestViewController.swift; sourceTree = "<group>"; };
 		B5DEC4AF1DECEBE900B8FC91 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BF0A0B271FB91ACB00357132 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		BF0A0B291FB91CEC00357132 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TremorTests.storyboard; sourceTree = "<group>"; };
 		BF0EFFF61FAEBAAA0076F4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TremorStat/Base.lproj/TestResults.storyboard; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 		BF5E8B531FB118F400559754 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
-				BF0A0B271FB91ACB00357132 /* UserProfileViewController.swift */,
+				BF0A0B291FB91CEC00357132 /* UserProfileViewController.swift */,
 				BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */,
 			);
 			path = UserProfile;
@@ -403,7 +403,7 @@
 			files = (
 				B587D9E41DDE7FA70087CE3D /* CGContext.swift in Sources */,
 				99F924CE1FB7BCCF00E8436A /* ConfigDataStorage.swift in Sources */,
-				BF0A0B281FB91ACB00357132 /* UserProfileViewController.swift in Sources */,
+				BF0A0B2A1FB91CEC00357132 /* UserProfileViewController.swift in Sources */,
 				B5DEC4AE1DECE09D00B8FC91 /* RestTremorTestViewController.swift in Sources */,
 				E81EE7A21FB7BDEA00B82B44 /* ActionTremorCountdown.swift in Sources */,
 				408E5E491FAFE33F00C24543 /* UnimplementedFeature.swift in Sources */,

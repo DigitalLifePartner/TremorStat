@@ -9,6 +9,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="ZC1-kG-sUA">
+            <objects>
+                <viewController id="Y2K-XH-zEu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lWG-6s-E14"/>
+                        <viewControllerLayoutGuide type="bottom" id="2l8-4e-Xnb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pdV-Sv-1Ct">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dru-9Z-Nnh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klQ-EW-pMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1254" y="1121"/>
+        </scene>
         <!--User Profile View Controller-->
         <scene sceneID="j8X-wy-JZW">
             <objects>
@@ -51,12 +70,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2fZ-u5-Z1z">
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2fZ-u5-Z1z">
                                                     <rect key="frame" x="0.0" y="-87" width="375" height="217"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="375" id="YLX-pk-b4c"/>
-                                                        <constraint firstAttribute="height" constant="216" id="YmH-0u-se0"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="532039106.27699101">
                                                         <!--2017-11-10 20:38:26 +0000-->
                                                     </date>
@@ -98,12 +114,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-T7-LcL">
+                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-T7-LcL">
                                                     <rect key="frame" x="0.0" y="-60" width="375" height="162"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="163" id="YCi-tN-Ow6"/>
-                                                        <constraint firstAttribute="width" constant="375" id="ybh-dv-4Dh"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <outlet property="dataSource" destination="qt3-cs-vZL" id="WKc-Bd-t3o"/>
                                                     </connections>
@@ -142,12 +155,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-K8-Fev">
+                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-K8-Fev">
                                                     <rect key="frame" x="0.0" y="-60" width="375" height="162"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="375" id="GEM-4r-ugI"/>
-                                                        <constraint firstAttribute="height" constant="163" id="WQx-KJ-4EX"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -183,12 +193,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zh1-ae-7N1">
+                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zh1-ae-7N1">
                                                     <rect key="frame" x="0.0" y="-60" width="375" height="162"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="162" id="juL-bh-sAq"/>
-                                                        <constraint firstAttribute="width" constant="375" id="x36-7w-64P"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -224,12 +231,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jle-Li-Mgt">
+                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jle-Li-Mgt">
                                                     <rect key="frame" x="0.0" y="-60" width="375" height="162"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="375" id="3Cs-cy-m7j"/>
-                                                        <constraint firstAttribute="height" constant="162" id="6Pq-b0-ORt"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -250,6 +254,7 @@
                         <outlet property="genderPicker" destination="dAo-T7-LcL" id="12E-D4-Dqc"/>
                         <outlet property="geneticsLabel" destination="wkt-79-rNW" id="SPv-b5-iPo"/>
                         <outlet property="geneticsPicker" destination="lf7-K8-Fev" id="Hrd-8W-hZt"/>
+                        <outlet property="mainTable" destination="lRQ-fw-2Fk" id="czI-hK-7Ov"/>
                         <outlet property="stageLabel" destination="6E6-ij-wKF" id="NP7-cW-aIR"/>
                         <outlet property="stagePicker" destination="jle-Li-Mgt" id="wDI-DQ-LoG"/>
                         <outlet property="traumaLabel" destination="2z7-zO-tyM" id="jpc-1T-VzX"/>
@@ -271,7 +276,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="qt3-cs-vZL" kind="relationship" relationship="rootViewController" id="lNn-xM-9h6"/>
+                        <segue destination="Y2K-XH-zEu" kind="relationship" relationship="rootViewController" id="hR8-sA-Kso"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgJ-P4-KdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
