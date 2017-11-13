@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Test-->
+        <!--User Profile View Controller-->
         <scene sceneID="j8X-wy-JZW">
             <objects>
-                <tableViewController id="qt3-cs-vZL" customClass="SecondUserProfileViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="qt3-cs-vZL" customClass="UserProfileViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lRQ-fw-2Fk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -242,7 +242,7 @@
                             <outlet property="delegate" destination="qt3-cs-vZL" id="200-Io-QaK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Test" id="qno-Lb-bKa"/>
+                    <navigationItem key="navigationItem" id="qno-Lb-bKa"/>
                     <connections>
                         <outlet property="dateLabel" destination="rgS-2G-viZ" id="gmY-ql-N7a"/>
                         <outlet property="datePicker" destination="2fZ-u5-Z1z" id="dcf-bd-hE6"/>
