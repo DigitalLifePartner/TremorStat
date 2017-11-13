@@ -89,6 +89,32 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        UserDefaults.standard.set(genderLabel.text, forKey: "UserGender")
+        UserDefaults.standard.set(geneticsLabel.text, forKey: "UserGenetics")
+        UserDefaults.standard.set(stageLabel.text, forKey: "UserTrauma")
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        if let genderDefault = UserDefaults.standard.object(forKey: "UserGender") as? String
+        {
+            genderLabel.text = genderDefault
+        }
+        
+        if let geneticsDefault = UserDefaults.standard.object(forKey: "UserGenetics") as? String
+        {
+            geneticsLabel.text = geneticsDefault
+        }
+        
+        if let traumaDefault = UserDefaults.standard.object(forKey: "UserTrauma") as? String
+        {
+            stageLabel.text = traumaDefault
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
