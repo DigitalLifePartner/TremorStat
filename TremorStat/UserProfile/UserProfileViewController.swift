@@ -94,7 +94,9 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
     {
         UserDefaults.standard.set(genderLabel.text, forKey: "UserGender")
         UserDefaults.standard.set(geneticsLabel.text, forKey: "UserGenetics")
-        UserDefaults.standard.set(stageLabel.text, forKey: "UserTrauma")
+        UserDefaults.standard.set(stageLabel.text, forKey: "UserStage")
+        UserDefaults.standard.set(traumaLabel.text, forKey: "UserTrauma")
+        UserDefaults.standard.set(dateLabel.text, forKey: "UserDateOfBirth")
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -109,11 +111,20 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
             geneticsLabel.text = geneticsDefault
         }
         
-        if let traumaDefault = UserDefaults.standard.object(forKey: "UserTrauma") as? String
+        if let stageDefault = UserDefaults.standard.object(forKey: "UserStage") as? String
         {
-            stageLabel.text = traumaDefault
+            stageLabel.text = stageDefault
         }
         
+        if let traumaDefault = UserDefaults.standard.object(forKey: "UserTrauma") as? String
+        {
+            traumaLabel.text = traumaDefault
+        }
+        
+        if let dateOfBirthDefault = UserDefaults.standard.object(forKey: "UserDateOfBirth") as? String
+        {
+            dateLabel.text = dateOfBirthDefault
+        }
     }
 
     override func didReceiveMemoryWarning() {
