@@ -1,55 +1,53 @@
-//  File Information:
-//  UserProfileViewController
 //
-//  Created by Best Software
+//  SecondUserProfileViewController.swift
+//  TremorStat
+//
+//  Created by Dayton Pukanich on 11/10/17.
 //  Copyright © 2017 Best Software. All rights reserved.
 //
-//  Abstract:
-//  Lets the user fill in their personal information and medical
-//  data that could affect the final recommendation of the app
 
 import UIKit
 
-// Purpose: allow user to change details of their profile
 class UserProfileViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    
+
     // MARK: properties
-    
-    // used to determine if section should be hidden
-    var isDatePickerHidden = true
-    var isGenderPickerHidden = true
-    var isGeneticsPickerHidden = true
-    var isTraumaPickerHidden = true
-    var isStagePickerHidden = true
-    
+
     // arrays containing small amounts of data to choose
     let genderArray = ["Male", "Female"]
     let geneticsArray = ["Yes", "No", "Unsure"]
     let traumaArray = ["Yes", "No", "Unsure"]
     let stageArray = ["Not Diagnosed", "Mild", "Moderate", "Severe"]
-
-    // labels and views
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
-    @IBOutlet weak var geneticsLabel: UILabel!
-    @IBOutlet weak var traumaLabel: UILabel!
-    @IBOutlet weak var stageLabel: UILabel!
     
+    let dateIndexPath = IndexPath(row: 0, section: 0)
+    let genderIndexPath = IndexPath(row: 2, section: 0)
+    let geneticsIndexPath = IndexPath(row: 4, section: 0)
+    let traumaIndexPath = IndexPath(row: 6, section: 0)
+    let stageIndexPath = IndexPath(row: 8, section: 0)
+    
+    let datePickerIndexPath = IndexPath(row: 1, section: 0)
+    let genderPickerIndexPath = IndexPath(row: 3, section: 0)
+    let geneticsPickerIndexPath = IndexPath(row: 5, section: 0)
+    let traumaPickerIndexPath = IndexPath(row: 7, section: 0)
+    let stagePickerIndexPath = IndexPath(row: 9, section: 0)
+    
+    // labels and views
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var genderPicker: UIPickerView!
     @IBOutlet weak var geneticsPicker: UIPickerView!
     @IBOutlet weak var traumaPicker: UIPickerView!
     @IBOutlet weak var stagePicker: UIPickerView!
-
     
-    // MARK: IB actions
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var stageLabel: UILabel!
+    @IBOutlet weak var geneticsLabel: UILabel!
+    @IBOutlet weak var traumaLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
     
-    // change date picker
-    @IBAction func datePickerValue(sender: UIDatePicker) {
-        datePickerChanged()
+    @IBOutlet var mainTable: UITableView!
+    
+    @IBAction func dateValueChanged(sender: UIDatePicker) {
+        dateLabel.text = DateFormatter.localizedString(from: datePicker.date, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none)
     }
-    
-    // MARK: overrides
     
     // run when view appears
     override func viewWillAppear(_ animated: Bool) {
@@ -60,20 +58,31 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         
         // bring up tab controller
         self.tabBarController?.tabBar.isHidden = false
-
+        
         // set default values
-        dateLabel.text = "N/A"
-        genderLabel.text = "N/A"
+        //datePicker.date = Date()
+        dateValueChanged(sender: datePicker)
+        stageLabel.text = "N/A"
         geneticsLabel.text = "N/A"
         traumaLabel.text = "N/A"
-        stageLabel.text = "N/A"
+        genderLabel.text = "N/A"
     }
     
-    // run when the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
+        genderPicker.delegate = self
+        geneticsPicker.delegate = self
+        stagePicker.delegate = self
+        traumaPicker.delegate = self
+
+        genderPicker.dataSource = self
+        geneticsPicker.dataSource = self
+        stagePicker.dataSource = self
+        traumaPicker.dataSource = self
+        
+        setPickersIsHidden(hidden: true)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -81,92 +90,97 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // change the state of pickers when called, and then update the table view
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-       //print(String(indexPath.row), " ", String(indexPath.section), "\n")
-        
-        
-        // change hidden states of pickers if selected
-        if indexPath.section == 0 && indexPath.row == 0 {
-            isDatePickerHidden = !isDatePickerHidden
-        }
-        else if indexPath.section == 1 && indexPath.row == 0 {
-            isGenderPickerHidden = !isGenderPickerHidden
-        }
-        else if indexPath.section == 2 && indexPath.row == 0 {
-            isGeneticsPickerHidden = !isGeneticsPickerHidden
-        }
-        else if indexPath.section == 3 && indexPath.row == 0 {
-            isTraumaPickerHidden = !isTraumaPickerHidden
-        }
-        else if indexPath.section == 4 && indexPath.row == 0 {
-            isStagePickerHidden = !isStagePickerHidden
-        }
-        
-        // run through updates
-        tableView.beginUpdates()
-        tableView.endUpdates()
-        
-        // deselect current row when done
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    // change the height of the picker rows
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        // manipulate height of picker row ( if height = 0 it is hidden )
-        if isDatePickerHidden && indexPath.section == 0 && indexPath.row == 1 {
-            return 0
-        }
-        else if isGenderPickerHidden && indexPath.section == 1 && indexPath.row == 1 {
-            return 0
-        }
-        else if isGeneticsPickerHidden && indexPath.section == 2 && indexPath.row == 1 {
-            return 0
-        }
-        else if isTraumaPickerHidden && indexPath.section == 3 && indexPath.row == 1 {
-            return 0
-        }
-        else if isStagePickerHidden && indexPath.section == 4 && indexPath.row == 1 {
-            return 0
-        }
-        
-        return super.tableView(self.tableView, heightForRowAt: indexPath)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: implementation
 
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    // return the number of rows
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
     // return the number of components
     func numberOfComponents(in pickerView : UIPickerView) -> Int {
         return 1
     }
     
-    // get the row required based on the picker view
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    // change the height of the picker rows
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let minimizedHeight = CGFloat(0.0)
+        let extendedHeight = CGFloat(216.0)
+        var height = super.tableView(tableView, heightForRowAt: indexPath)
         
-        var rows = 0;
+        if datePickerIndexPath == indexPath {
+            height = datePicker.isHidden ? minimizedHeight : extendedHeight
+        }
+        else if genderPickerIndexPath == indexPath {
+            height = genderPicker.isHidden ? minimizedHeight : extendedHeight
+        }
+        else if geneticsPickerIndexPath == indexPath {
+            height = geneticsPicker.isHidden ? minimizedHeight : extendedHeight
+        }
+        else if traumaPickerIndexPath == indexPath {
+            height = traumaPicker.isHidden ? minimizedHeight : extendedHeight
+        }
+        else if stagePickerIndexPath == indexPath {
+            height = stagePicker.isHidden ? minimizedHeight : extendedHeight
+        }
+
+        return height
+    }
+    
+    // change the text of the various labels based on the new data
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var hidden = true
         
-        // set the value of rows based on the amount of data in the given category
-        if pickerView == genderPicker {
-            rows = genderArray.count
+        if dateIndexPath == indexPath {
+            hidden = datePicker.isHidden
         }
-        else if pickerView == geneticsPicker {
-            rows = geneticsArray.count
+        else if genderIndexPath == indexPath {
+            hidden = genderPicker.isHidden
         }
-        else if pickerView == traumaPicker {
-            rows = traumaArray.count
+        else if geneticsIndexPath == indexPath {
+            hidden = geneticsPicker.isHidden
         }
-        else if pickerView == stagePicker {
-            rows = stageArray.count
+        else if traumaIndexPath == indexPath {
+            hidden = traumaPicker.isHidden
+        }
+        else if stageIndexPath == indexPath {
+            hidden = stagePicker.isHidden
         }
         
-        return rows
+        setPickersIsHidden(hidden: true)
+        
+        if dateIndexPath == indexPath && hidden == true {
+            datePicker.isHidden = !datePicker.isHidden
+        }
+        else if genderIndexPath == indexPath && hidden == true {
+            genderPicker.isHidden = !genderPicker.isHidden
+        }
+        else if geneticsIndexPath == indexPath && hidden == true {
+            geneticsPicker.isHidden = !geneticsPicker.isHidden
+        }
+        else if traumaIndexPath == indexPath && hidden == true {
+            traumaPicker.isHidden = !traumaPicker.isHidden
+        }
+        else if stageIndexPath == indexPath && hidden == true {
+            stagePicker.isHidden = !stagePicker.isHidden
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.tableView.beginUpdates()
+            // apple bug fix - some TV lines hide after animation
+            self.tableView.deselectRow(at: indexPath, animated: true)
+            self.tableView.endUpdates()
+        })
     }
     
     // once you have the row, use this to get the value from the row based on the picker view
@@ -190,6 +204,27 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         return rowValue
     }
     
+    // get the row required based on the picker view
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        var rows = 0;
+        
+        // set the value of rows based on the amount of data in the given category
+        if pickerView == genderPicker {
+            rows = genderArray.count
+        }
+        else if pickerView == geneticsPicker {
+            rows = geneticsArray.count
+        }
+        else if pickerView == traumaPicker {
+            rows = traumaArray.count
+        }
+        else if pickerView == stagePicker {
+            rows = stageArray.count
+        }
+        
+        return rows
+    }
+    
     // change the text of the various labels based on the new data
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -208,34 +243,18 @@ class UserProfileViewController: UITableViewController, UIPickerViewDataSource, 
         }
     }
     
-    // change the date label to reflect new data
-    func datePickerChanged () {
-        // set the label text
-        dateLabel.text = DateFormatter.localizedString(from: datePicker.date, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none)
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return mainTable.contentSize.width
     }
     
-    // MARK: - Table view data source
-
-    /*override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    func setPickersIsHidden(hidden: Bool) {
+        datePicker.isHidden = hidden
+        genderPicker.isHidden = hidden
+        geneticsPicker.isHidden = hidden
+        traumaPicker.isHidden = hidden
+        stagePicker.isHidden = hidden
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }*/
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
