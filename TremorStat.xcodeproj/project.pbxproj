@@ -11,9 +11,7 @@
 		408E5E571FB0223F00C24543 /* RestTremorTestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */; };
 		40CCEDC51FB903BC00D5A4DE /* Active_Tremor_Test_InAction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40CCEDC41FB903BB00D5A4DE /* Active_Tremor_Test_InAction.jpg */; };
 		40CCEDC71FB9306900D5A4DE /* ActionTremorTestApprovalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CCEDC61FB9306900D5A4DE /* ActionTremorTestApprovalPageViewController.swift */; };
-		5BE994C48F10A6D488DA5AD2 /* Pods_TremorStatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F18339CE06465DD924DDC6 /* Pods_TremorStatUITests.framework */; };
-		856DDB591FBD413C00AADB15 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 856DDB581FBD413C00AADB15 /* Podfile */; };
-		8CB179898654F18B962DD93D /* Pods_TremorStat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3627BF6CE47314C9AACA5E3F /* Pods_TremorStat.framework */; };
+		85BDE5071FBD532D00631E92 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 85BDE5061FBD532D00631E92 /* Podfile */; };
 		99C4ACBE1FAEDC21003D036C /* RestTremorCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */; };
 		99C4ACC01FAEDC3C003D036C /* TestSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */; };
 		99D7B9A71FB6547D00049282 /* StatisticsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */; };
@@ -32,7 +30,6 @@
 		B587D9E41DDE7FA70087CE3D /* CGContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587D9E31DDE7FA70087CE3D /* CGContext.swift */; };
 		B5DEC4AC1DECB6DA00B8FC91 /* AccelerometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerViewController.swift */; };
 		B5DEC4AE1DECE09D00B8FC91 /* RestTremorTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEC4AD1DECE09D00B8FC91 /* RestTremorTestViewController.swift */; };
-		BE6A92D8BBC216F4CE98CF92 /* Pods_TremorStatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902AD4F64D24EF1000D08158 /* Pods_TremorStatTests.framework */; };
 		BF0A0B2A1FB91CEC00357132 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0B291FB91CEC00357132 /* UserProfileViewController.swift */; };
 		BF0EFFF21FAEA0C30076F4E2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */; };
 		BF0EFFF41FAEB2690076F4E2 /* TremorTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */; };
@@ -44,6 +41,7 @@
 		E81EE7A21FB7BDEA00B82B44 /* ActionTremorCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EE7A11FB7BDEA00B82B44 /* ActionTremorCountdown.swift */; };
 		E860A0121FB0461400616603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860A0111FB0461300616603 /* Assets.xcassets */; };
 		E8B14FC71FB65DB50051690D /* ActionTremorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B14FC61FB65DB50051690D /* ActionTremorTest.swift */; };
+		EBCF3E3B93A068A1AD48703A /* Pods_TremorStat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D62ABAAD188D5498C31CB29 /* Pods_TremorStat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,19 +62,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0110EEA7C449165018287CE0 /* Pods-TremorStat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TremorStat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TremorStat/Pods-TremorStat.debug.xcconfig"; sourceTree = "<group>"; };
-		0AC222525A7FAF275A47A546 /* Pods-TremorStat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TremorStat.release.xcconfig"; path = "Pods/Target Support Files/Pods-TremorStat/Pods-TremorStat.release.xcconfig"; sourceTree = "<group>"; };
-		3627BF6CE47314C9AACA5E3F /* Pods_TremorStat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TremorStat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		216404EC45CC3EA71EC66F63 /* Pods-TremorStat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TremorStat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TremorStat/Pods-TremorStat.debug.xcconfig"; sourceTree = "<group>"; };
 		408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedFeature.swift; sourceTree = "<group>"; };
 		408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorTestInfoViewController.swift; sourceTree = "<group>"; };
 		40CCEDC41FB903BB00D5A4DE /* Active_Tremor_Test_InAction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Active_Tremor_Test_InAction.jpg; path = TremorStat/Active_Tremor_Test_InAction.jpg; sourceTree = SOURCE_ROOT; };
 		40CCEDC61FB9306900D5A4DE /* ActionTremorTestApprovalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActionTremorTestApprovalPageViewController.swift; path = /Users/msavic/Documents/TremorStat/TremorStat/TremorTests/ActionTremorTestApprovalPageViewController.swift; sourceTree = "<absolute>"; };
-		5A593BB165D74B9BE6113FAE /* Pods-TremorStatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TremorStatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TremorStatUITests/Pods-TremorStatUITests.release.xcconfig"; sourceTree = "<group>"; };
-		74BA41F6FA1D18742063E7BE /* Pods-TremorStatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TremorStatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TremorStatTests/Pods-TremorStatTests.release.xcconfig"; sourceTree = "<group>"; };
-		77F2C43D777639A6C24052BE /* Pods-TremorStatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TremorStatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TremorStatTests/Pods-TremorStatTests.debug.xcconfig"; sourceTree = "<group>"; };
-		856DDB581FBD413C00AADB15 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		902AD4F64D24EF1000D08158 /* Pods_TremorStatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TremorStatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		91F18339CE06465DD924DDC6 /* Pods_TremorStatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TremorStatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D62ABAAD188D5498C31CB29 /* Pods_TremorStat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TremorStat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85BDE5061FBD532D00631E92 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorCountdown.swift; sourceTree = "<group>"; };
 		99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSelectViewController.swift; sourceTree = "<group>"; };
 		99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCalculator.swift; sourceTree = "<group>"; };
@@ -84,6 +76,7 @@
 		99E91AB51FAFB360007D8E92 /* User_Holding_Device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = User_Holding_Device.png; path = TremorStat/User_Holding_Device.png; sourceTree = "<group>"; };
 		99F924CB1FB7BA5400E8436A /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		99F924CD1FB7BCCF00E8436A /* ConfigDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigDataStorage.swift; sourceTree = "<group>"; };
+		9BF9A110667734EE248A4ECD /* Pods-TremorStat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TremorStat.release.xcconfig"; path = "Pods/Target Support Files/Pods-TremorStat/Pods-TremorStat.release.xcconfig"; sourceTree = "<group>"; };
 		B50882BC1DDE4A4600B4C55D /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		B579FE3F1DDD1D2700A8C0C7 /* TremorStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TremorStat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B579FE421DDD1D2700A8C0C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +105,6 @@
 		E81EE7A11FB7BDEA00B82B44 /* ActionTremorCountdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTremorCountdown.swift; sourceTree = "<group>"; };
 		E860A0111FB0461300616603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8B14FC61FB65DB50051690D /* ActionTremorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTremorTest.swift; sourceTree = "<group>"; };
-		F6E0E87F235964C44BD649CE /* Pods-TremorStatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TremorStatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TremorStatUITests/Pods-TremorStatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CB179898654F18B962DD93D /* Pods_TremorStat.framework in Frameworks */,
+				EBCF3E3B93A068A1AD48703A /* Pods_TremorStat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +120,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE6A92D8BBC216F4CE98CF92 /* Pods_TremorStatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,32 +127,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BE994C48F10A6D488DA5AD2 /* Pods_TremorStatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		070903DBB75D60A83D6F5B68 /* Pods */ = {
+		780A5C6206E26B968995183F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0110EEA7C449165018287CE0 /* Pods-TremorStat.debug.xcconfig */,
-				0AC222525A7FAF275A47A546 /* Pods-TremorStat.release.xcconfig */,
-				77F2C43D777639A6C24052BE /* Pods-TremorStatTests.debug.xcconfig */,
-				74BA41F6FA1D18742063E7BE /* Pods-TremorStatTests.release.xcconfig */,
-				F6E0E87F235964C44BD649CE /* Pods-TremorStatUITests.debug.xcconfig */,
-				5A593BB165D74B9BE6113FAE /* Pods-TremorStatUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		A32EB7B94C02A48A5B414C5C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3627BF6CE47314C9AACA5E3F /* Pods_TremorStat.framework */,
-				902AD4F64D24EF1000D08158 /* Pods_TremorStatTests.framework */,
-				91F18339CE06465DD924DDC6 /* Pods_TremorStatUITests.framework */,
+				7D62ABAAD188D5498C31CB29 /* Pods_TremorStat.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,6 +144,7 @@
 		B579FE361DDD1D2700A8C0C7 = {
 			isa = PBXGroup;
 			children = (
+				85BDE5061FBD532D00631E92 /* Podfile */,
 				99E91AB51FAFB360007D8E92 /* User_Holding_Device.png */,
 				BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */,
 				B5DEC4AF1DECEBE900B8FC91 /* README.md */,
@@ -176,9 +152,8 @@
 				BF5E8B331FB1107600559754 /* RestTremorTestViewControllerTests */,
 				BF5E8B411FB1108900559754 /* TremorStatUITests */,
 				B579FE401DDD1D2700A8C0C7 /* Products */,
-				856DDB581FBD413C00AADB15 /* Podfile */,
-				070903DBB75D60A83D6F5B68 /* Pods */,
-				A32EB7B94C02A48A5B414C5C /* Frameworks */,
+				BE8724D06C0F2EDADD6FBD6E /* Pods */,
+				780A5C6206E26B968995183F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +183,15 @@
 				E860A0111FB0461300616603 /* Assets.xcassets */,
 			);
 			path = TremorStat;
+			sourceTree = "<group>";
+		};
+		BE8724D06C0F2EDADD6FBD6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				216404EC45CC3EA71EC66F63 /* Pods-TremorStat.debug.xcconfig */,
+				9BF9A110667734EE248A4ECD /* Pods-TremorStat.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		BF5E8B331FB1107600559754 /* RestTremorTestViewControllerTests */ = {
@@ -309,12 +293,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B579FE511DDD1D2700A8C0C7 /* Build configuration list for PBXNativeTarget "TremorStat" */;
 			buildPhases = (
-				BC6F1E920BE42DDBF94D4E85 /* [CP] Check Pods Manifest.lock */,
+				60B581E5FE78286C84C7CA13 /* [CP] Check Pods Manifest.lock */,
 				B579FE3B1DDD1D2700A8C0C7 /* Sources */,
 				B579FE3C1DDD1D2700A8C0C7 /* Frameworks */,
 				B579FE3D1DDD1D2700A8C0C7 /* Resources */,
-				A6712AD3423C381E74F88588 /* [CP] Embed Pods Frameworks */,
-				11A30F74C055EB0D57AFA390 /* [CP] Copy Pods Resources */,
+				0AD6379785458DC6F7275433 /* [CP] Embed Pods Frameworks */,
+				7540D401C8EC57E58AB1C633 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,12 +313,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF5E8B391FB1107600559754 /* Build configuration list for PBXNativeTarget "TremorStatTests" */;
 			buildPhases = (
-				A339125A62BFB9B70083DDD1 /* [CP] Check Pods Manifest.lock */,
 				BF5E8B2E1FB1107600559754 /* Sources */,
 				BF5E8B2F1FB1107600559754 /* Frameworks */,
 				BF5E8B301FB1107600559754 /* Resources */,
-				2C8B4D3A05BCF1B0D1A01262 /* [CP] Embed Pods Frameworks */,
-				45EEA8691D6B9A4BF373015F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,12 +331,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF5E8B471FB1108900559754 /* Build configuration list for PBXNativeTarget "TremorStatUITests" */;
 			buildPhases = (
-				778D899884B6D7C74583E60B /* [CP] Check Pods Manifest.lock */,
 				BF5E8B3C1FB1108900559754 /* Sources */,
 				BF5E8B3D1FB1108900559754 /* Frameworks */,
 				BF5E8B3E1FB1108900559754 /* Resources */,
-				4C109C5D4CC617E1878405E3 /* [CP] Embed Pods Frameworks */,
-				FB1C8AD5EF9AF20F7509EB01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -432,7 +410,7 @@
 				BF0EFFF21FAEA0C30076F4E2 /* Default-568h@2x.png in Resources */,
 				BF0EFFF71FAEBAAA0076F4E2 /* TestResults.storyboard in Resources */,
 				B579FE481DDD1D2700A8C0C7 /* Main.storyboard in Resources */,
-				856DDB591FBD413C00AADB15 /* Podfile in Resources */,
+				85BDE5071FBD532D00631E92 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,115 +431,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		11A30F74C055EB0D57AFA390 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TremorStat/Pods-TremorStat-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2C8B4D3A05BCF1B0D1A01262 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TremorStatTests/Pods-TremorStatTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		45EEA8691D6B9A4BF373015F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TremorStatTests/Pods-TremorStatTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4C109C5D4CC617E1878405E3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TremorStatUITests/Pods-TremorStatUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		778D899884B6D7C74583E60B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TremorStatUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A339125A62BFB9B70083DDD1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TremorStatTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6712AD3423C381E74F88588 /* [CP] Embed Pods Frameworks */ = {
+		0AD6379785458DC6F7275433 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TremorStat/Pods-TremorStat-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,7 +449,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TremorStat/Pods-TremorStat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BC6F1E920BE42DDBF94D4E85 /* [CP] Check Pods Manifest.lock */ = {
+		60B581E5FE78286C84C7CA13 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -587,7 +467,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FB1C8AD5EF9AF20F7509EB01 /* [CP] Copy Pods Resources */ = {
+		7540D401C8EC57E58AB1C633 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -599,7 +479,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TremorStatUITests/Pods-TremorStatUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TremorStat/Pods-TremorStat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -805,7 +685,7 @@
 		};
 		B579FE521DDD1D2700A8C0C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0110EEA7C449165018287CE0 /* Pods-TremorStat.debug.xcconfig */;
+			baseConfigurationReference = 216404EC45CC3EA71EC66F63 /* Pods-TremorStat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E2E74B2ZSJ;
@@ -822,7 +702,7 @@
 		};
 		B579FE531DDD1D2700A8C0C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AC222525A7FAF275A47A546 /* Pods-TremorStat.release.xcconfig */;
+			baseConfigurationReference = 9BF9A110667734EE248A4ECD /* Pods-TremorStat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E2E74B2ZSJ;
@@ -839,7 +719,6 @@
 		};
 		BF5E8B3A1FB1107600559754 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77F2C43D777639A6C24052BE /* Pods-TremorStatTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -862,7 +741,6 @@
 		};
 		BF5E8B3B1FB1107600559754 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74BA41F6FA1D18742063E7BE /* Pods-TremorStatTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -885,7 +763,6 @@
 		};
 		BF5E8B481FB1108900559754 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6E0E87F235964C44BD649CE /* Pods-TremorStatUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -907,7 +784,6 @@
 		};
 		BF5E8B491FB1108900559754 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A593BB165D74B9BE6113FAE /* Pods-TremorStatUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

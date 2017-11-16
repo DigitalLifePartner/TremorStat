@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "49D81A2452C6EBA8B84371EDE8FC36AA"
+               BlueprintIdentifier = "746F3C45F12516242C9F31970E28AA57"
                BuildableName = "Pods_TremorStat.framework"
                BlueprintName = "Pods-TremorStat"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "49D81A2452C6EBA8B84371EDE8FC36AA"
+            BlueprintIdentifier = "746F3C45F12516242C9F31970E28AA57"
             BuildableName = "Pods_TremorStat.framework"
             BlueprintName = "Pods-TremorStat"
             ReferencedContainer = "container:Pods.xcodeproj">
