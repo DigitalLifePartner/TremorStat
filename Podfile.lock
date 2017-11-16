@@ -1,0 +1,17 @@
+PODS:
+  - Eureka (1.7.0)
+  - Material (2.4.6):
+    - Material/Core (= 2.4.6)
+  - Material/Core (2.4.6)
+
+DEPENDENCIES:
+  - Eureka
+  - Material (~> 2.0)
+
+SPEC CHECKSUMS:
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
+  Material: 43bd91d61e86ae2b6d6574e28fcb1ed48ff813cb
+
+PODFILE CHECKSUM: 6d9c90c464c412ddcb24f1d4382023728fb2699a
+
+COCOAPODS: 1.3.1
