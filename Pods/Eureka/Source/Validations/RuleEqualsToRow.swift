@@ -1,4 +1,4 @@
-//  PushRow.swift
+//  RuleRequire.swift
 //  Eureka ( https://github.com/xmartlabs/Eureka )
 //
 //  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
@@ -24,18 +24,30 @@
 
 import Foundation
 
-open class _PushRow<Cell: CellType> : SelectorRow<Cell, SelectorViewController<Cell.Value>> where Cell: BaseCell {
+public struct RuleEqualsToRow<T: Equatable>: RuleType {
 
-    public required init(tag: String?) {
-        super.init(tag: tag)
-        presentationMode = .show(controllerProvider: ControllerProvider.callback { return SelectorViewController<Cell.Value> { _ in } }, onDismiss: { vc in
-            let _ = vc.navigationController?.popViewController(animated: true) })
+    public init(form: Form, tag: String, msg: String = "Fields don't match!") {
+        self.validationError = ValidationError(msg: msg)
+        self.form = form
+        self.tag = tag
+        self.row = nil
     }
-}
 
-/// A selector row where the user can pick an option from a pushed view controller
-public final class PushRow<T: Equatable> : _PushRow<PushSelectorCell<T>>, RowType {
-    public required init(tag: String?) {
-        super.init(tag: tag)
+    public init(row: RowOf<T>, msg: String = "Fields don't match!") {
+        self.validationError = ValidationError(msg: msg)
+        self.form = nil
+        self.tag = nil
+        self.row = row
+    }
+
+    public var id: String?
+    public var validationError: ValidationError
+    public weak var form: Form?
+    public var tag: String?
+    public weak var row: RowOf<T>?
+
+    public func isValid(value: T?) -> ValidationError? {
+        let rowAux: RowOf<T> = row ?? form!.rowBy(tag: tag!)!
+        return rowAux.value == value ? nil : validationError
     }
 }

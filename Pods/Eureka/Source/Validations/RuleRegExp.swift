@@ -1,4 +1,4 @@
-//  PushRow.swift
+//  RegexRule.swift
 //  Eureka ( https://github.com/xmartlabs/Eureka )
 //
 //  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
@@ -24,18 +24,37 @@
 
 import Foundation
 
-open class _PushRow<Cell: CellType> : SelectorRow<Cell, SelectorViewController<Cell.Value>> where Cell: BaseCell {
-
-    public required init(tag: String?) {
-        super.init(tag: tag)
-        presentationMode = .show(controllerProvider: ControllerProvider.callback { return SelectorViewController<Cell.Value> { _ in } }, onDismiss: { vc in
-            let _ = vc.navigationController?.popViewController(animated: true) })
-    }
+public enum RegExprPattern: String {
+    case EmailAddress = "^[_A-Za-z0-9-+]+(\\.[_A-Za-z0-9-+]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z‌​]{2,})$"
+    case URL = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
+    case ContainsNumber = ".*\\d.*"
+    case ContainsCapital = "^.*?[A-Z].*?$"
+    case ContainsLowercase = "^.*?[a-z].*?$"
 }
 
-/// A selector row where the user can pick an option from a pushed view controller
-public final class PushRow<T: Equatable> : _PushRow<PushSelectorCell<T>>, RowType {
-    public required init(tag: String?) {
-        super.init(tag: tag)
+open class RuleRegExp: RuleType {
+
+    public var regExpr: String = ""
+    public var id: String?
+    public var validationError: ValidationError
+    public var allowsEmpty = true
+
+    public init(regExpr: String, allowsEmpty: Bool = true, msg: String = "Invalid field value!") {
+        self.validationError = ValidationError(msg: msg)
+        self.regExpr = regExpr
+        self.allowsEmpty = allowsEmpty
+    }
+
+    public func isValid(value: String?) -> ValidationError? {
+        if let value = value, !value.isEmpty {
+            let predicate = NSPredicate(format: "SELF MATCHES %@", regExpr)
+            guard predicate.evaluate(with: value) else {
+                return validationError
+            }
+            return nil
+        } else if !allowsEmpty {
+            return validationError
+        }
+        return nil
     }
 }

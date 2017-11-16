@@ -1,4 +1,4 @@
-//  PushRow.swift
+//  RuleLength.swift
 //  Eureka ( https://github.com/xmartlabs/Eureka )
 //
 //  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
@@ -24,18 +24,40 @@
 
 import Foundation
 
-open class _PushRow<Cell: CellType> : SelectorRow<Cell, SelectorViewController<Cell.Value>> where Cell: BaseCell {
+public struct RuleMinLength: RuleType {
 
-    public required init(tag: String?) {
-        super.init(tag: tag)
-        presentationMode = .show(controllerProvider: ControllerProvider.callback { return SelectorViewController<Cell.Value> { _ in } }, onDismiss: { vc in
-            let _ = vc.navigationController?.popViewController(animated: true) })
+    let min: UInt
+
+    public var id: String?
+    public var validationError: ValidationError
+
+    public init(minLength: UInt, msg: String? = nil) {
+        let ruleMsg = msg ?? "Field value must have at least \(minLength) characters"
+        min = minLength
+        validationError = ValidationError(msg: ruleMsg)
+    }
+
+    public func isValid(value: String?) -> ValidationError? {
+        guard let value = value else { return nil }
+        return value.characters.count < Int(min) ? validationError : nil
     }
 }
 
-/// A selector row where the user can pick an option from a pushed view controller
-public final class PushRow<T: Equatable> : _PushRow<PushSelectorCell<T>>, RowType {
-    public required init(tag: String?) {
-        super.init(tag: tag)
+public struct RuleMaxLength: RuleType {
+
+    let max: UInt
+
+    public var id: String?
+    public var validationError: ValidationError
+
+    public init(maxLength: UInt, msg: String? = nil) {
+        let ruleMsg = msg ?? "Field value must have less than \(maxLength) characters"
+        max = maxLength
+        validationError = ValidationError(msg: ruleMsg)
+    }
+
+    public func isValid(value: String?) -> ValidationError? {
+        guard let value = value else { return nil }
+        return value.characters.count > Int(max) ? validationError : nil
     }
 }

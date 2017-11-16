@@ -1,4 +1,4 @@
-//  PushRow.swift
+//  RuleURL.swift
 //  Eureka ( https://github.com/xmartlabs/Eureka )
 //
 //  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
@@ -23,19 +23,29 @@
 // THE SOFTWARE.
 
 import Foundation
+import UIKit
 
-open class _PushRow<Cell: CellType> : SelectorRow<Cell, SelectorViewController<Cell.Value>> where Cell: BaseCell {
+public struct RuleURL: RuleType {
 
-    public required init(tag: String?) {
-        super.init(tag: tag)
-        presentationMode = .show(controllerProvider: ControllerProvider.callback { return SelectorViewController<Cell.Value> { _ in } }, onDismiss: { vc in
-            let _ = vc.navigationController?.popViewController(animated: true) })
+    public init(allowsEmpty: Bool = true, requiresProtocol: Bool = false, msg: String = "Field value must be an URL!") {
+        validationError = ValidationError(msg: msg)
     }
-}
 
-/// A selector row where the user can pick an option from a pushed view controller
-public final class PushRow<T: Equatable> : _PushRow<PushSelectorCell<T>>, RowType {
-    public required init(tag: String?) {
-        super.init(tag: tag)
+    public var id: String?
+    public var allowsEmpty = true
+    public var requiresProtocol = false
+    public var validationError: ValidationError
+
+    public func isValid(value: URL?) -> ValidationError? {
+        if let value = value, value.absoluteString.isEmpty == false {
+            let predicate = NSPredicate(format:"SELF MATCHES %@", RegExprPattern.URL.rawValue)
+            guard predicate.evaluate(with: value.absoluteString) else {
+                return validationError
+            }
+            return nil
+        } else if !allowsEmpty {
+            return validationError
+        }
+        return nil
     }
 }

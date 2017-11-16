@@ -1,4 +1,4 @@
-//  PushRow.swift
+//  RuleEmail.swift
 //  Eureka ( https://github.com/xmartlabs/Eureka )
 //
 //  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
@@ -24,18 +24,10 @@
 
 import Foundation
 
-open class _PushRow<Cell: CellType> : SelectorRow<Cell, SelectorViewController<Cell.Value>> where Cell: BaseCell {
+public class RuleEmail: RuleRegExp {
 
-    public required init(tag: String?) {
-        super.init(tag: tag)
-        presentationMode = .show(controllerProvider: ControllerProvider.callback { return SelectorViewController<Cell.Value> { _ in } }, onDismiss: { vc in
-            let _ = vc.navigationController?.popViewController(animated: true) })
+    public init(msg: String = "Field value should be a valid email!") {
+        super.init(regExpr: RegExprPattern.EmailAddress.rawValue, allowsEmpty: true, msg: msg)
     }
-}
 
-/// A selector row where the user can pick an option from a pushed view controller
-public final class PushRow<T: Equatable> : _PushRow<PushSelectorCell<T>>, RowType {
-    public required init(tag: String?) {
-        super.init(tag: tag)
-    }
 }

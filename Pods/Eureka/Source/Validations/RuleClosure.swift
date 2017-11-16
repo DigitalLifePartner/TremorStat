@@ -1,4 +1,4 @@
-//  PushRow.swift
+//  RuleClosure.swift
 //  Eureka ( https://github.com/xmartlabs/Eureka )
 //
 //  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
@@ -24,18 +24,19 @@
 
 import Foundation
 
-open class _PushRow<Cell: CellType> : SelectorRow<Cell, SelectorViewController<Cell.Value>> where Cell: BaseCell {
+public struct RuleClosure<T: Equatable>: RuleType {
 
-    public required init(tag: String?) {
-        super.init(tag: tag)
-        presentationMode = .show(controllerProvider: ControllerProvider.callback { return SelectorViewController<Cell.Value> { _ in } }, onDismiss: { vc in
-            let _ = vc.navigationController?.popViewController(animated: true) })
+    public var id: String?
+    public var validationError: ValidationError
+
+    public var closure: (T?) -> ValidationError?
+
+    public func isValid(value: T?) -> ValidationError? {
+        return closure(value)
     }
-}
 
-/// A selector row where the user can pick an option from a pushed view controller
-public final class PushRow<T: Equatable> : _PushRow<PushSelectorCell<T>>, RowType {
-    public required init(tag: String?) {
-        super.init(tag: tag)
+    public init(validationError: ValidationError = ValidationError(msg: "Field validation fails.."), closure: @escaping ((T?) -> ValidationError?)) {
+        self.validationError = validationError
+        self.closure = closure
     }
 }
