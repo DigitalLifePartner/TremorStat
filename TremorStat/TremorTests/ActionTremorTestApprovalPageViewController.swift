@@ -26,7 +26,7 @@ class ActionTremorTestApprovalPageViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool)
     {
-        if let highScoreValue = UserDefaults.standard.object(forKey: "LastTestTaps") as? integer_t
+        if let highScoreValue = UserDefaults.standard.object(forKey: "ActionTremorHighScore") as? integer_t
         {
            HighScoreLabel.text = String(highScoreValue)
         }
