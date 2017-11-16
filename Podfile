@@ -7,7 +7,6 @@ target 'TremorStat' do
 
   # Pods for CentreCare
     pod 'Material', '~> 2.0'
-    pod 'Eureka'
 
 
   target 'TremorStatTests' do
