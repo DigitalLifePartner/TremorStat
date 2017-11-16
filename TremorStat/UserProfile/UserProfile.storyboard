@@ -28,11 +28,11 @@
             </objects>
             <point key="canvasLocation" x="1254" y="1121"/>
         </scene>
-        <!--User Profile-->
+        <!--User Profile View Controller-->
         <scene sceneID="j8X-wy-JZW">
             <objects>
                 <tableViewController id="qt3-cs-vZL" customClass="UserProfileViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lRQ-fw-2Fk">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lRQ-fw-2Fk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -243,7 +243,7 @@
                             <outlet property="delegate" destination="qt3-cs-vZL" id="200-Io-QaK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="User Profile" id="qno-Lb-bKa"/>
+                    <navigationItem key="navigationItem" id="qno-Lb-bKa"/>
                     <connections>
                         <outlet property="dateLabel" destination="rgS-2G-viZ" id="nf3-YW-HJ7"/>
                         <outlet property="datePicker" destination="2fZ-u5-Z1z" id="dcf-bd-hE6"/>
