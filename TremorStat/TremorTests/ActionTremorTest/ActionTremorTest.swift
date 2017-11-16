@@ -144,7 +144,7 @@ class ActionTremorTest: UIViewController {
             timer.invalidate()
             notRunning = true
         
-            performSegue(withIdentifier: "ActionApprovePage", sender: self)
+            performSegue(withIdentifier: "ApprovePage", sender: self)
         }
     }
 

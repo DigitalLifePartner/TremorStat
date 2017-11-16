@@ -22,14 +22,13 @@ let PERIOD_FOR_READINGS = 0.025
 let READINGS_PER_TEST = Int(TEST_DURATION/PERIOD_FOR_READINGS)
 
 // class to handle rest tremor test
-class RestTremorTestViewController: UIViewController, MotionGraphContainer {
+class RestTremorTest: UIViewController, MotionGraphContainer {
     
     // MARK: Properties
     
     // test duration = 30 seconds
     var timeLeft = TEST_DURATION
 
-    
     var stopTest = false
 
     // index of arrays
@@ -38,6 +37,9 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     var finishedTest = false
     
     var motionManager: CMMotionManager?
+    
+    // Create an instance of RestTremorResult to store results
+    var results = RestTremorResults()
     
     // component arrays for X Y Z coordinates ( size = 1200 because 30 s / 0.025 s sampling )
     var gyroArrayX = Array(repeating: 0.0, count: READINGS_PER_TEST)
@@ -56,7 +58,6 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     
     @IBOutlet weak var updateIntervalLabel: UILabel!
     @IBOutlet weak var updateIntervalSlider: UISlider!
-
     @IBOutlet var valueLabels: [UILabel]!
 
     let updateIntervalFormatter = MeasurementFormatter()
@@ -74,21 +75,11 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
             finishedTest = false
             
             // pass the component arrays to the approval view
-            let nextController = segue.destination as! ApprovalViewController
+            let nextController = segue.destination as! RestTremorApproval
+            nextController.results=self.results
             nextController.gyroArrayX = self.gyroArrayX
             nextController.gyroArrayY = self.gyroArrayY
             nextController.gyroArrayZ = self.gyroArrayZ
-            
-            // for debugging
-            /*for i in 0...100{
-             print(String(gyroArrayY[i]))
-             if gyroArrayY[i]==0.0{
-             print()
-             print()
-             print(i," th's Position")
-             break
-             }
-             }*/
         }
     }
     
@@ -126,6 +117,8 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
     
     func startUpdates() {
         
+        print ("Test date is: ",results.testDate)
+        
         if stopTest == false {
             // set the motionmanager equal to this to prevent gryo availability issue
             motionManager = CMMotionManager()
@@ -157,6 +150,11 @@ class RestTremorTestViewController: UIViewController, MotionGraphContainer {
                 self.gyroArrayX.insert(gyroData.rotationRate.x, at: self.testCount)
                 self.gyroArrayY.insert(gyroData.rotationRate.y, at: self.testCount)
                 self.gyroArrayZ.insert(gyroData.rotationRate.z, at: self.testCount)
+                
+                // store results in the instance of RestTremorResults
+                self.results.gyroArrayX.insert(gyroData.rotationRate.x, at: self.testCount)
+                self.results.gyroArrayY.insert(gyroData.rotationRate.y, at: self.testCount)
+                self.results.gyroArrayZ.insert(gyroData.rotationRate.z, at: self.testCount)
                 
                 // stop condition
                 if self.timeLeft <= 0 {

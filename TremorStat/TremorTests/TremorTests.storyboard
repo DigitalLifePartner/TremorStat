@@ -71,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get Ready!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4d-IZ-Xjw">
-                                <rect key="frame" x="25" y="431" width="324" height="93"/>
+                                <rect key="frame" x="25" y="430" width="324" height="94"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                 <nil key="textColor"/>
@@ -213,7 +213,7 @@
                         <outlet property="MyLabel" destination="5SN-2o-XoK" id="0Xn-hX-zKo"/>
                         <outlet property="RightActionTremorButton" destination="HB9-2E-txo" id="CLx-MH-VTz"/>
                         <outlet property="TapsNumberLabel" destination="HIw-Ga-T4U" id="a5f-XI-fYV"/>
-                        <segue destination="urE-KZ-RF8" kind="show" identifier="ActionApprovePage" id="Nll-a0-xvQ"/>
+                        <segue destination="urE-KZ-RF8" kind="show" identifier="ApprovePage" id="Nll-a0-xvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CY-gI-DLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -223,7 +223,7 @@
         <!--Rest Tremor Test-->
         <scene sceneID="7qW-3M-d1t">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-vq8-Pk-IBw" id="sAN-Yt-SR5" customClass="RestTremorTestViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-vq8-Pk-IBw" id="sAN-Yt-SR5" customClass="RestTremorTest" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="if0-I7-Kcj"/>
                         <viewControllerLayoutGuide type="bottom" id="TTv-0Z-2Ky"/>
@@ -298,10 +298,10 @@
             </objects>
             <point key="canvasLocation" x="-623" y="3570"/>
         </scene>
-        <!--Approval View Controller-->
+        <!--Rest Tremor Approval-->
         <scene sceneID="vph-oP-6XO">
             <objects>
-                <viewController id="2BO-H9-fOx" customClass="ApprovalViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2BO-H9-fOx" customClass="RestTremorApproval" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5CH-nR-CSw"/>
                         <viewControllerLayoutGuide type="bottom" id="aEQ-mi-yjC"/>
@@ -344,7 +344,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QBK-UJ-1oV">
-                                <rect key="frame" x="0.0" y="74" width="375" height="256"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bS-cF-tPW" customClass="GraphView" customModule="TremorStat" customModuleProvider="target">
@@ -488,10 +488,10 @@
             </objects>
             <point key="canvasLocation" x="-1898.4000000000001" y="2611.8440779610196"/>
         </scene>
-        <!--Action Tremor Test Approval Page View Controller-->
+        <!--Action Tremor Test Approval-->
         <scene sceneID="eiM-mS-8sU">
             <objects>
-                <viewController id="urE-KZ-RF8" customClass="ActionTremorTestApprovalPageViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="urE-KZ-RF8" customClass="ActionTremorTestApproval" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vwN-HZ-QXG"/>
                         <viewControllerLayoutGuide type="bottom" id="E3V-Z7-Ynx"/>
@@ -561,6 +561,6 @@
         <image name="User_Holding_Device.png" width="928" height="1065"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xtZ-oC-Lif"/>
+        <segue reference="Ivh-Sr-mdL"/>
     </inferredMetricsTieBreakers>
 </document>

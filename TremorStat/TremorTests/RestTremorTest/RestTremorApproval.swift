@@ -11,7 +11,7 @@
 import UIKit
 import simd
 
-class ApprovalViewController: UIViewController {
+class RestTremorApproval: UIViewController {
 
     // MARK: Properties
 
@@ -31,6 +31,8 @@ class ApprovalViewController: UIViewController {
     @IBOutlet weak var graphView: GraphView!
     
     var statCalc = StatisticsCalculator()
+    
+    var results = RestTremorResults()
     
     // component arrays of the X Y Z values
     // each is of size 1200 elements as 30 seconds divided by 0.025 second intervals is 1200
@@ -103,15 +105,4 @@ class ApprovalViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
