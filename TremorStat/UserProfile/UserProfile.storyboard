@@ -9,30 +9,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ZC1-kG-sUA">
+        <!--Test View Controller-->
+        <scene sceneID="Z9o-4X-16E">
             <objects>
-                <viewController id="Y2K-XH-zEu" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lWG-6s-E14"/>
-                        <viewControllerLayoutGuide type="bottom" id="2l8-4e-Xnb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pdV-Sv-1Ct">
+                <tableViewController id="dS8-d6-1y2" customClass="TestViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Xtj-O7-Vp3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Dru-9Z-Nnh"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="klQ-EW-pMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="dS8-d6-1y2" id="AUH-T8-AHr"/>
+                            <outlet property="delegate" destination="dS8-d6-1y2" id="mON-PM-fOQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="h3H-vS-Q2k"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgj-RX-pdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254" y="1121"/>
+            <point key="canvasLocation" x="1350" y="1137"/>
         </scene>
-        <!--User Profile-->
+        <!--Table View Controller-->
         <scene sceneID="j8X-wy-JZW">
             <objects>
-                <tableViewController id="qt3-cs-vZL" customClass="UserProfileViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lRQ-fw-2Fk">
+                <tableViewController id="qt3-cs-vZL" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lRQ-fw-2Fk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -243,7 +243,7 @@
                             <outlet property="delegate" destination="qt3-cs-vZL" id="200-Io-QaK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="User Profile" id="qno-Lb-bKa"/>
+                    <navigationItem key="navigationItem" id="qno-Lb-bKa"/>
                     <connections>
                         <outlet property="dateLabel" destination="rgS-2G-viZ" id="nf3-YW-HJ7"/>
                         <outlet property="datePicker" destination="2fZ-u5-Z1z" id="dcf-bd-hE6"/>
@@ -273,7 +273,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="qt3-cs-vZL" kind="relationship" relationship="rootViewController" id="jwt-xd-k2Z"/>
+                        <segue destination="dS8-d6-1y2" kind="relationship" relationship="rootViewController" id="vgo-Sl-9k0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgJ-P4-KdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
