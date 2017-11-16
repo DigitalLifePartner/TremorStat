@@ -139,7 +139,7 @@ class ActionTremorTest: UIViewController {
         MyLabel?.text=String(Int(seconds))
         
         // once the countdown has finished stop the timer and segue onto the rest tremor test
-        if(seconds<=0 && notRunning == false)
+        if(seconds<=25 && notRunning == false)
         {
             timer.invalidate()
             notRunning = true
