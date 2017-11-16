@@ -26,9 +26,9 @@ import Foundation
 import UIKit
 
 extension UIView {
-
+    
     public func findFirstResponder() -> UIView? {
-        if isFirstResponder { return self }
+        if isFirstResponder() { return self }
         for subView in subviews {
             if let firstResponder = subView.findFirstResponder() {
                 return firstResponder
@@ -37,7 +37,6 @@ extension UIView {
         return nil
     }
     
-
     public func formCell() -> BaseCell? {
         if self is UITableViewCell {
             return self as? BaseCell
@@ -47,46 +46,36 @@ extension UIView {
 }
 
 extension NSPredicate {
-
+    
     var predicateVars: [String] {
         var ret = [String]()
-        if let compoundPredicate = self as? NSCompoundPredicate {
-            for subPredicate in compoundPredicate.subpredicates where subPredicate is NSPredicate {
-                ret.append(contentsOf: (subPredicate as! NSPredicate).predicateVars)
+        if let compoundPredicate = self as? NSCompoundPredicate{
+            for subPredicate in compoundPredicate.subpredicates{
+                ret.appendContentsOf(subPredicate.predicateVars)
             }
-        } else if let comparisonPredicate = self as? NSComparisonPredicate {
-            ret.append(contentsOf: comparisonPredicate.leftExpression.expressionVars)
-            ret.append(contentsOf: comparisonPredicate.rightExpression.expressionVars)
+        }
+        else if let comparisonPredicate = self as? NSComparisonPredicate{
+            ret.appendContentsOf(comparisonPredicate.leftExpression.expressionVars)
+            ret.appendContentsOf(comparisonPredicate.rightExpression.expressionVars)
         }
         return ret
     }
 }
 
 extension NSExpression {
-
+    
     var expressionVars: [String] {
-        switch expressionType {
-            case .function, .variable:
+        switch expressionType{
+            case .FunctionExpressionType, .VariableExpressionType:
                 let str = "\(self)"
-                if let range = str.range(of: ".") {
-                    return [str.substring(with: str.characters.index(str.startIndex, offsetBy: 1)..<range.lowerBound)]
-                } else {
-                    return [str.substring(from: str.characters.index(str.startIndex, offsetBy: 1))]
+                if let range = str.rangeOfString("."){
+                    return [str.substringWithRange(str.startIndex.advancedBy(1)..<range.startIndex)]
+                }
+                else{
+                    return [str.substringFromIndex(str.startIndex.advancedBy(1))]
                 }
             default:
                 return []
         }
     }
 }
-
-// This is a workaround for warnings in the Swift 3.2 compiler that are triggered when a generic type
-// is explicitly constrained while already implicitly constrained.
-// For instance `T: Hashable where Cell.Value == Set<T>` triggers a warning on Swift 3.2 because Set already
-// has the constraint `T: Hashable`.
-// However Swift 3.1 doesn't infer this constraint, so we need to constraint explicitly. To do this,
-// we define a `_ImplicitlyHashable` type which is Any on 3.2+ and Hashable for earlier versions.
-#if swift(>=3.2)
-public typealias _ImplicitlyHashable = Any
-#else
-public typealias _ImplicitlyHashable = Hashable
-#endif

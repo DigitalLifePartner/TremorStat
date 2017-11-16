@@ -22,13 +22,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+
 import Foundation
+
 
 /**
  *  Base protocol for view controllers presented by Eureka rows.
  */
-public protocol RowControllerType: NSObjectProtocol {
-
+public protocol RowControllerType : NSObjectProtocol {
+    
     /// A closure to be called when the controller disappears.
-    var onDismissCallback: ((UIViewController) -> Void)? { get set }
+    var completionCallback : ((UIViewController) -> ())? { get set }
 }

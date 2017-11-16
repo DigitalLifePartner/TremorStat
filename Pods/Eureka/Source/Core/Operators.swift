@@ -26,17 +26,7 @@ import Foundation
 
 // MARK: Operators
 
-precedencegroup FormPrecedence {
-    associativity: left
-    higherThan: LogicalConjunctionPrecedence
-}
-
-precedencegroup SectionPrecedence {
-    associativity: left
-    higherThan: FormPrecedence
-}
-
-infix operator +++ : FormPrecedence
+infix operator +++{ associativity left precedence 95 }
 
 /**
  Appends a section to a form
@@ -46,10 +36,22 @@ infix operator +++ : FormPrecedence
  
  - returns: the updated form
  */
-@discardableResult
-public func +++ (left: Form, right: Section) -> Form {
+public func +++(left: Form, right: Section) -> Form {
     left.append(right)
     return left
+}
+
+infix operator +++= { associativity left precedence 95 }
+
+/**
+ Appends a section to a form without return statement
+ 
+ - parameter left:  the form
+ - parameter right: the section to be appended
+ */
+@available(*, unavailable, message="Use +++ instead")
+public func +++=(inout left: Form, right: Section){
+    left = left +++ right
 }
 
 /**
@@ -58,10 +60,9 @@ public func +++ (left: Form, right: Section) -> Form {
  - parameter left:  the form
  - parameter right: the row
  */
-@discardableResult
-public func +++ (left: Form, right: BaseRow) -> Form {
+public func +++(left: Form, right: BaseRow) -> Form {
     let section = Section()
-    let _ =  left +++ section <<< right
+    left +++ section <<< right
     return left
 }
 
@@ -73,10 +74,9 @@ public func +++ (left: Form, right: BaseRow) -> Form {
  
  - returns: the created form
  */
-@discardableResult
-public func +++ (left: Section, right: Section) -> Form {
+public func +++(left: Section, right: Section) -> Form {
     let form = Form()
-    let _ =  form +++ left +++ right
+    form +++ left +++ right
     return form
 }
 
@@ -88,8 +88,7 @@ public func +++ (left: Section, right: Section) -> Form {
  
  - returns: the form
  */
-@discardableResult
-public func +++ (left: Section, right: BaseRow) -> Form {
+public func +++(left: Section, right: BaseRow) -> Form {
     let section = Section()
     section <<< right
     return left +++ section
@@ -103,13 +102,12 @@ public func +++ (left: Section, right: BaseRow) -> Form {
  
  - returns: the created form
  */
-@discardableResult
-public func +++ (left: BaseRow, right: BaseRow) -> Form {
+public func +++(left: BaseRow, right: BaseRow) -> Form {
     let form = Section() <<< left +++ Section() <<< right
     return form
 }
 
-infix operator <<< : SectionPrecedence
+infix operator <<<{ associativity left precedence 100 }
 
 /**
  Appends a row to a section.
@@ -119,8 +117,7 @@ infix operator <<< : SectionPrecedence
  
  - returns: the section
  */
-@discardableResult
-public func <<< (left: Section, right: BaseRow) -> Section {
+public func <<<(left: Section, right: BaseRow) -> Section {
     left.append(right)
     return left
 }
@@ -133,8 +130,7 @@ public func <<< (left: Section, right: BaseRow) -> Section {
  
  - returns: the created section
  */
-@discardableResult
-public func <<< (left: BaseRow, right: BaseRow) -> Section {
+public func <<<(left: BaseRow, right: BaseRow) -> Section {
     let section = Section()
     section <<< left <<< right
     return section
@@ -146,8 +142,8 @@ public func <<< (left: BaseRow, right: BaseRow) -> Section {
  - parameter lhs: the section
  - parameter rhs: the rows to be appended
  */
-public func += <C: Collection>(lhs: inout Section, rhs: C) where C.Iterator.Element == BaseRow {
-    lhs.append(contentsOf: rhs)
+public func += <C : CollectionType where C.Generator.Element == BaseRow>(inout lhs: Section, rhs: C){
+    lhs.appendContentsOf(rhs)
 }
 
 /**
@@ -156,6 +152,6 @@ public func += <C: Collection>(lhs: inout Section, rhs: C) where C.Iterator.Elem
  - parameter lhs: the form
  - parameter rhs: the sections to be appended
  */
-public func += <C: Collection>(lhs: inout Form, rhs: C) where C.Iterator.Element == Section {
-    lhs.append(contentsOf: rhs)
+public func += <C : CollectionType where C.Generator.Element == Section>(inout lhs: Form, rhs: C){
+    lhs.appendContentsOf(rhs)
 }

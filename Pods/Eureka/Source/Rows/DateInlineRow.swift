@@ -1,109 +1,95 @@
+//
 //  DateInliuneRow.swift
-//  Eureka ( https://github.com/xmartlabs/Eureka )
+//  Eureka
 //
-//  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
+//  Created by Martin Barreto on 2/24/16.
+//  Copyright © 2016 Xmartlabs. All rights reserved.
 //
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
 import Foundation
 
-extension DatePickerRowProtocol {
 
-    func configureInlineRow(_ inlineRow: DatePickerRowProtocol) {
+extension DatePickerRowProtocol {
+    
+    func configureInlineRow(inlineRow: DatePickerRowProtocol){
         inlineRow.minimumDate = minimumDate
         inlineRow.maximumDate = maximumDate
         inlineRow.minuteInterval = minuteInterval
     }
-
+    
 }
 
-open class _DateInlineRow: _DateInlineFieldRow {
 
+public class _DateInlineRow: _DateInlineFieldRow {
+    
     public typealias InlineRow = DatePickerRow
-
+    
     public required init(tag: String?) {
         super.init(tag: tag)
-        dateFormatter?.timeStyle = .none
-        dateFormatter?.dateStyle = .medium
+        dateFormatter?.timeStyle = .NoStyle
+        dateFormatter?.dateStyle = .MediumStyle
     }
-
-    open func setupInlineRow(_ inlineRow: DatePickerRow) {
+    
+    public func setupInlineRow(inlineRow: DatePickerRow) {
         configureInlineRow(inlineRow)
     }
 }
 
-open class _TimeInlineRow: _DateInlineFieldRow {
-
+public class _TimeInlineRow: _DateInlineFieldRow {
+    
     public typealias InlineRow = TimePickerRow
-
+    
     public required init(tag: String?) {
         super.init(tag: tag)
-        dateFormatter?.timeStyle = .short
-        dateFormatter?.dateStyle = .none
+        dateFormatter?.timeStyle = .ShortStyle
+        dateFormatter?.dateStyle = .NoStyle
     }
-
-    open func setupInlineRow(_ inlineRow: TimePickerRow) {
+    
+    public func setupInlineRow(inlineRow: TimePickerRow) {
         configureInlineRow(inlineRow)
     }
 }
 
-open class _DateTimeInlineRow: _DateInlineFieldRow {
-
+public class _DateTimeInlineRow: _DateInlineFieldRow {
+    
     public typealias InlineRow = DateTimePickerRow
-
+    
     public required init(tag: String?) {
         super.init(tag: tag)
-        dateFormatter?.timeStyle = .short
-        dateFormatter?.dateStyle = .short
+        dateFormatter?.timeStyle = .ShortStyle
+        dateFormatter?.dateStyle = .ShortStyle
     }
-
-    open func setupInlineRow(_ inlineRow: DateTimePickerRow) {
+    
+    public func setupInlineRow(inlineRow: DateTimePickerRow) {
         configureInlineRow(inlineRow)
     }
 }
 
-open class _CountDownInlineRow: _DateInlineFieldRow {
-
+public class _CountDownInlineRow: _DateInlineFieldRow {
+    
     public typealias InlineRow = CountDownPickerRow
-
+    
     public required init(tag: String?) {
         super.init(tag: tag)
-        displayValueFor = {
+        displayValueFor =  {
             guard let date = $0 else {
                 return nil
             }
-            let hour = Calendar.current.component(.hour, from: date)
-            let min = Calendar.current.component(.minute, from: date)
-            if hour == 1 {
+            let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: date)
+            let min = NSCalendar.currentCalendar().component(.Minute, fromDate: date)
+            if hour == 1{
                 return "\(hour) hour \(min) min"
             }
             return "\(hour) hours \(min) min"
         }
     }
-
-    public func setupInlineRow(_ inlineRow: CountDownPickerRow) {
+    
+    public func setupInlineRow(inlineRow: CountDownPickerRow) {
         configureInlineRow(inlineRow)
     }
 }
 
-/// A row with an Date as value where the user can select a date from an inline picker view.
+/// A row with an NSDate as value where the user can select a date from an inline picker view.
 public final class DateInlineRow_<T>: _DateInlineRow, RowType, InlineRowType {
     required public init(tag: String?) {
         super.init(tag: tag)
@@ -115,7 +101,7 @@ public final class DateInlineRow_<T>: _DateInlineRow, RowType, InlineRowType {
             cell.detailTextLabel?.textColor = cell.tintColor
         }
     }
-
+    
     public override func customDidSelect() {
         super.customDidSelect()
         if !isDisabled {
@@ -124,9 +110,10 @@ public final class DateInlineRow_<T>: _DateInlineRow, RowType, InlineRowType {
     }
 }
 
-public typealias DateInlineRow = DateInlineRow_<Date>
+public typealias DateInlineRow = DateInlineRow_<NSDate>
 
-/// A row with an Date as value where the user can select date and time from an inline picker view.
+
+/// A row with an NSDate as value where the user can select date and time from an inline picker view.
 public final class DateTimeInlineRow_<T>: _DateTimeInlineRow, RowType, InlineRowType {
     required public init(tag: String?) {
         super.init(tag: tag)
@@ -138,7 +125,7 @@ public final class DateTimeInlineRow_<T>: _DateTimeInlineRow, RowType, InlineRow
             cell.detailTextLabel?.textColor = cell.tintColor
         }
     }
-
+    
     public override func customDidSelect() {
         super.customDidSelect()
         if !isDisabled {
@@ -147,9 +134,11 @@ public final class DateTimeInlineRow_<T>: _DateTimeInlineRow, RowType, InlineRow
     }
 }
 
-public typealias DateTimeInlineRow = DateTimeInlineRow_<Date>
 
-/// A row with an Date as value where the user can select a time from an inline picker view.
+public typealias DateTimeInlineRow = DateTimeInlineRow_<NSDate>
+
+
+/// A row with an NSDate as value where the user can select a time from an inline picker view.
 public final class TimeInlineRow_<T>: _TimeInlineRow, RowType, InlineRowType {
     required public init(tag: String?) {
         super.init(tag: tag)
@@ -161,7 +150,7 @@ public final class TimeInlineRow_<T>: _TimeInlineRow, RowType, InlineRowType {
             cell.detailTextLabel?.textColor = cell.tintColor
         }
     }
-
+    
     public override func customDidSelect() {
         super.customDidSelect()
         if !isDisabled {
@@ -170,9 +159,9 @@ public final class TimeInlineRow_<T>: _TimeInlineRow, RowType, InlineRowType {
     }
 }
 
-public typealias TimeInlineRow = TimeInlineRow_<Date>
+public typealias TimeInlineRow = TimeInlineRow_<NSDate>
 
-///// A row with an Date as value where the user can select hour and minute as a countdown timer in an inline picker view.
+///// A row with an NSDate as value where the user can select hour and minute as a countdown timer in an inline picker view.
 public final class CountDownInlineRow_<T>: _CountDownInlineRow, RowType, InlineRowType {
     required public init(tag: String?) {
         super.init(tag: tag)
@@ -184,7 +173,7 @@ public final class CountDownInlineRow_<T>: _CountDownInlineRow, RowType, InlineR
             cell.detailTextLabel?.textColor = cell.tintColor
         }
     }
-
+    
     public override func customDidSelect() {
         super.customDidSelect()
         if !isDisabled {
@@ -193,4 +182,6 @@ public final class CountDownInlineRow_<T>: _CountDownInlineRow, RowType, InlineR
     }
 }
 
-public typealias CountDownInlineRow = CountDownInlineRow_<Date>
+public typealias CountDownInlineRow = CountDownInlineRow_<NSDate>
+
+
