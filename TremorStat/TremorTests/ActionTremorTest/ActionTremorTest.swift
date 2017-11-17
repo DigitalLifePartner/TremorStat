@@ -146,7 +146,11 @@ class ActionTremorTest: UIViewController {
             timer.invalidate()
             notRunning = true
         
-            //actionTremorResultArray.append( self.results )
+            var results = ActionTremorResultsClass()
+            results.pairedTiming = self.pairedTiming
+            
+            results.stdDev = statisticsCalculator.calcStdDev(theData: pairedTiming, theSize: pairedTiming.count, gotMean: false, absolute: false)
+            actionTremorResultArray.append( results )
             performSegue(withIdentifier: "ApprovePage", sender: self)
         }
     }

@@ -8,6 +8,12 @@ import UIKit
 
 class ActionTremorTestApproval: UIViewController {
     
+    @IBAction func noMainPageAction(_ sender: Any) {
+        
+        let lastElement = actionTremorResultArray.count - 1
+        actionTremorResultArray.remove(at: lastElement)
+        performSegue(withIdentifier: "noMainPageAction", sender: self)
+    }
     
     @IBOutlet weak var HighScoreLabel: UILabel!
     @IBOutlet weak var UserScore: UILabel!
