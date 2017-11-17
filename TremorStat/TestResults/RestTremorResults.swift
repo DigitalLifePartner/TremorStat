@@ -9,7 +9,7 @@
 import UIKit
 import simd
 
-class RestTremorResults {
+class RestTremorResultsClass {
     var gyroArrayX = Array(repeating: 0.0, count: READINGS_PER_TEST)
     var gyroArrayY = Array(repeating: 0.0, count: READINGS_PER_TEST)
     var gyroArrayZ = Array(repeating: 0.0, count: READINGS_PER_TEST)

@@ -9,6 +9,6 @@
 import UIKit
 import simd
 
-class ActionTremorResults {
+class ActionTremorResultsClass {
     
 }

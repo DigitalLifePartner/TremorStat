@@ -32,7 +32,7 @@ class RestTremorApproval: UIViewController {
     
     var statCalc = StatisticsCalculator()
     
-    var results = RestTremorResults()
+    var results = RestTremorResultsClass()
     
     // component arrays of the X Y Z values
     // each is of size 1200 elements as 30 seconds divided by 0.025 second intervals is 1200
