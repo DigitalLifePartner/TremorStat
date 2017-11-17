@@ -140,8 +140,8 @@
 		BF5E8B441FB1108900559754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Eureka/Eureka.xcodeproj; sourceTree = "<group>"; };
 		BFBEFE891FBE8A800038ACB2 /* TremorStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TremorStat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFBEFE8A1FBE8A800038ACB2 /* TremorStatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TremorStatTests.xctest; path = "/Users/dpukanic/Documents/TremorStat/build/Debug-iphoneos/TremorStatTests.xctest"; sourceTree = "<absolute>"; };
-		BFBEFE8B1FBE8A800038ACB2 /* TremorStatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TremorStatUITests.xctest; path = "/Users/dpukanic/Documents/TremorStat/build/Debug-iphoneos/TremorStatUITests.xctest"; sourceTree = "<absolute>"; };
+		BFBEFE951FBE8E270038ACB2 /* TremorStatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TremorStatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFBEFE961FBE8E270038ACB2 /* TremorStatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TremorStatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81EE7A11FB7BDEA00B82B44 /* ActionTremorCountdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTremorCountdown.swift; sourceTree = "<group>"; };
 		E853BABE1FBBC512009876D7 /* ActionTremorTestApproval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTremorTestApproval.swift; sourceTree = "<group>"; };
 		E853BAC01FBBC652009876D7 /* RestTremorResultsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorResultsClass.swift; sourceTree = "<group>"; };
@@ -188,6 +188,8 @@
 				BF5E8B331FB1107600559754 /* RestTremorTestViewControllerTests */,
 				BF5E8B411FB1108900559754 /* TremorStatUITests */,
 				BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */,
+				BFBEFE951FBE8E270038ACB2 /* TremorStatTests.xctest */,
+				BFBEFE961FBE8E270038ACB2 /* TremorStatUITests.xctest */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -366,7 +368,7 @@
 			);
 			name = TremorStatTests;
 			productName = TremorStatTests;
-			productReference = BFBEFE8A1FBE8A800038ACB2 /* TremorStatTests.xctest */;
+			productReference = BFBEFE951FBE8E270038ACB2 /* TremorStatTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		BF5E8B3F1FB1108900559754 /* TremorStatUITests */ = {
@@ -384,7 +386,7 @@
 			);
 			name = TremorStatUITests;
 			productName = TremorStatUITests;
-			productReference = BFBEFE8B1FBE8A800038ACB2 /* TremorStatUITests.xctest */;
+			productReference = BFBEFE961FBE8E270038ACB2 /* TremorStatUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */

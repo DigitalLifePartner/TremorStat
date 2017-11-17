@@ -387,31 +387,27 @@ class UserProfileViewController: FormViewController {
                 .onPresent { from, to in
                     to.popoverPresentationController?.permittedArrowDirections = .up
             }
-            
             +++ Section("Additional Questions")
-            <<< ActionSheetRow<String>() {
+            <<< MultipleSelectorRow<String>() {
                 $0.title = "Environmental Triggers"
-                $0.selectorTitle = "Have you been exposed to pesicies or herbicides for a prolonged period of time?"
-                $0.options = ["Yes", "No", "Unsure"]
-                $0.value = "I must"
+                $0.options = ["Herbicides", "Pesicies"]
+                $0.value = ["I must"]
                 }
                 .onPresent { from, to in
                     to.popoverPresentationController?.permittedArrowDirections = .up
             }
-            <<< ActionSheetRow<String>() {
+            <<< MultipleSelectorRow<String>() {
                 $0.title = "Prescription Drugs"
-                $0.selectorTitle = "Are you taking a prescription drug that effects the symptoms related to Parkinson's disease?"
-                $0.options = ["No", "Levodopa"]
-                $0.value = "have called"
+                $0.options = ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"]
+                $0.value = ["have called"]
                 }
                 .onPresent { from, to in
                     to.popoverPresentationController?.permittedArrowDirections = .up
             }
-            <<< ActionSheetRow<String>() {
+            <<< MultipleSelectorRow<String>() {
                 $0.title = "Supplements"
-                $0.selectorTitle = "Are you taking the following vitamins and minerals?"
-                $0.options = ["Diego Forlán", "Edinson Cavani", "Diego Lugano", "Luis Suarez"]
-                $0.value = "a thousand"
+                $0.options = ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"]
+                $0.value = ["a thousand"]
                 }
                 .onPresent { from, to in
                     to.popoverPresentationController?.permittedArrowDirections = .up
