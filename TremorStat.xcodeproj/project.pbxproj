@@ -36,10 +36,8 @@
 		BF0EFFFC1FAEBB1A0076F4E2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */; };
 		BF5E8B351FB1107600559754 /* RestTremorTestViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B341FB1107600559754 /* RestTremorTestViewControllerTests.swift */; };
 		BF5E8B431FB1108900559754 /* TremorStatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B421FB1108900559754 /* TremorStatUITests.swift */; };
-		BF9E0F691FBE14AB00BBD00C /* ActionTremorTestApprovalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E0F681FBE14AB00BBD00C /* ActionTremorTestApprovalPageViewController.swift */; };
 		BF9E0F741FBE196E00BBD00C /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9E0F711FBE18C400BBD00C /* Eureka.framework */; };
 		BF9E0F751FBE196E00BBD00C /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF9E0F711FBE18C400BBD00C /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF9E0F7A1FBE1B8000BBD00C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E0F791FBE1B8000BBD00C /* TestViewController.swift */; };
 		E81EE7A21FB7BDEA00B82B44 /* ActionTremorCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EE7A11FB7BDEA00B82B44 /* ActionTremorCountdown.swift */; };
 		E853BABF1FBBC512009876D7 /* ActionTremorTestApproval.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853BABE1FBBC512009876D7 /* ActionTremorTestApproval.swift */; };
 		E853BAC11FBBC652009876D7 /* RestTremorResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853BAC01FBBC652009876D7 /* RestTremorResults.swift */; };
@@ -70,19 +68,26 @@
 			remoteGlobalIDString = 51729DEB1B9A4F5E004A00EB;
 			remoteInfo = Eureka;
 		};
-		BF9E0F721FBE18C400BBD00C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 51729DF51B9A4F5E004A00EB;
-			remoteInfo = EurekaTests;
-		};
 		BF9E0F761FBE196E00BBD00C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 51729DEA1B9A4F5E004A00EB;
 			remoteInfo = Eureka;
+		};
+		E8CF0DB51FBE5DD500A803A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51729DEB1B9A4F5E004A00EB;
+			remoteInfo = Eureka;
+		};
+		E8CF0DB71FBE5DD500A803A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51729DF51B9A4F5E004A00EB;
+			remoteInfo = EurekaTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -112,7 +117,7 @@
 		99F924CB1FB7BA5400E8436A /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		99F924CD1FB7BCCF00E8436A /* ConfigDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigDataStorage.swift; sourceTree = "<group>"; };
 		B50882BC1DDE4A4600B4C55D /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
-		B579FE3F1DDD1D2700A8C0C7 /* TremorStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TremorStat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B579FE3F1DDD1D2700A8C0C7 /* TremorStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = TremorStat.app; path = "/Users/ikukushk/Documents/TremorStat/build/Debug-iphoneos/TremorStat.app"; sourceTree = "<absolute>"; };
 		B579FE421DDD1D2700A8C0C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B579FE471DDD1D2700A8C0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B579FE4C1DDD1D2700A8C0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,13 +135,12 @@
 		BF0EFFF61FAEBAAA0076F4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TremorStat/Base.lproj/TestResults.storyboard; sourceTree = "<group>"; };
 		BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		BF0EFFFB1FAEBB1A0076F4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TremorStat/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
-		BF5E8B321FB1107600559754 /* TremorStatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TremorStatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5E8B321FB1107600559754 /* TremorStatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TremorStatTests.xctest; path = "/Users/ikukushk/Documents/TremorStat/build/Debug-iphoneos/TremorStatTests.xctest"; sourceTree = "<absolute>"; };
 		BF5E8B341FB1107600559754 /* RestTremorTestViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorTestViewControllerTests.swift; sourceTree = "<group>"; };
 		BF5E8B361FB1107600559754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF5E8B401FB1108900559754 /* TremorStatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TremorStatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5E8B401FB1108900559754 /* TremorStatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TremorStatUITests.xctest; path = "/Users/ikukushk/Documents/TremorStat/build/Debug-iphoneos/TremorStatUITests.xctest"; sourceTree = "<absolute>"; };
 		BF5E8B421FB1108900559754 /* TremorStatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TremorStatUITests.swift; sourceTree = "<group>"; };
 		BF5E8B441FB1108900559754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF9E0F681FBE14AB00BBD00C /* ActionTremorTestApprovalPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTremorTestApprovalPageViewController.swift; sourceTree = "<group>"; };
 		BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Eureka/Eureka.xcodeproj; sourceTree = "<group>"; };
 		BF9E0F791FBE1B8000BBD00C /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		E81EE7A11FB7BDEA00B82B44 /* ActionTremorCountdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTremorCountdown.swift; sourceTree = "<group>"; };
@@ -183,20 +187,10 @@
 				B579FE411DDD1D2700A8C0C7 /* TremorStat */,
 				BF5E8B331FB1107600559754 /* RestTremorTestViewControllerTests */,
 				BF5E8B411FB1108900559754 /* TremorStatUITests */,
-				B579FE401DDD1D2700A8C0C7 /* Products */,
 				BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */,
+				E8CF0DB31FBE5CA700A803A2 /* Recovered References */,
 			);
 			indentWidth = 4;
-			sourceTree = "<group>";
-		};
-		B579FE401DDD1D2700A8C0C7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B579FE3F1DDD1D2700A8C0C7 /* TremorStat.app */,
-				BF5E8B321FB1107600559754 /* TremorStatTests.xctest */,
-				BF5E8B401FB1108900559754 /* TremorStatUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B579FE411DDD1D2700A8C0C7 /* TremorStat */ = {
@@ -305,6 +299,23 @@
 				B587D9E11DDE7F4B0087CE3D /* GraphSegment.swift */,
 			);
 			path = GraphEngine;
+			sourceTree = "<group>";
+		};
+		E8CF0DB11FBE5CA700A803A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8CF0DB61FBE5DD500A803A2 /* Eureka.framework */,
+				E8CF0DB81FBE5DD500A803A2 /* EurekaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8CF0DB31FBE5CA700A803A2 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				BF9E0F711FBE18C400BBD00C /* Eureka.framework */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		E8DAE95B1FBE52CB00EBE1F7 /* RestTremorTest */ = {
@@ -424,11 +435,11 @@
 				Base,
 			);
 			mainGroup = B579FE361DDD1D2700A8C0C7;
-			productRefGroup = B579FE401DDD1D2700A8C0C7 /* Products */;
+			productRefGroup = B579FE361DDD1D2700A8C0C7;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = BF9E0F6C1FBE18C400BBD00C /* Products */;
+					ProductGroup = E8CF0DB11FBE5CA700A803A2 /* Products */;
 					ProjectRef = BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */;
 				},
 			);
@@ -449,11 +460,18 @@
 			remoteRef = BF9E0F701FBE18C400BBD00C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BF9E0F731FBE18C400BBD00C /* EurekaTests.xctest */ = {
+		E8CF0DB61FBE5DD500A803A2 /* Eureka.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Eureka.framework;
+			remoteRef = E8CF0DB51FBE5DD500A803A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8CF0DB81FBE5DD500A803A2 /* EurekaTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = EurekaTests.xctest;
-			remoteRef = BF9E0F721FBE18C400BBD00C /* PBXContainerItemProxy */;
+			remoteRef = E8CF0DB71FBE5DD500A803A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -517,7 +535,6 @@
 				E853BAC31FBBC6AA009876D7 /* ActionTremorResults.swift in Sources */,
 				B579FE5B1DDD2D3A00A8C0C7 /* MotionGraphContainer.swift in Sources */,
 				B579FE431DDD1D2700A8C0C7 /* AppDelegate.swift in Sources */,
-				BF9E0F691FBE14AB00BBD00C /* ActionTremorTestApprovalPageViewController.swift in Sources */,
 				99C4ACC01FAEDC3C003D036C /* TestSelectViewController.swift in Sources */,
 				E853BAC11FBBC652009876D7 /* RestTremorResults.swift in Sources */,
 			);
