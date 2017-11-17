@@ -86,13 +86,14 @@ class RestTremorConclusion: UIViewController {
         if ( restTremorResultArray.count < ACCEPTABLE_AMOUNT_OF_TESTS ) {
             
             // change label text
-            insufficientDataString = "Not enough tests completed, requires more tests. Try again later. "
+            insufficientDataString = "Not enough tests completed, requires more tests. Try again later. You have completed " + String( restTremorResultArray.count ) + " tests out of " + String( ACCEPTABLE_AMOUNT_OF_TESTS ) + "."
             self.InsufficientDataLabel.text = insufficientDataString
         }
         else {
             
             // conclusion
-            
+            insufficientDataString = "You have completed " + String( restTremorResultArray.count ) + " tests."
+            self.InsufficientDataLabel.text = insufficientDataString
             //var statCalc = StatisticsCalculator()
             var avgStat = 0.0
             var stdDevStat = 0.0
@@ -108,24 +109,20 @@ class RestTremorConclusion: UIViewController {
                         
                         avgStat += restTremorResultArray[i].testAverageX + restTremorResultArray[i].testAverageY + restTremorResultArray[i].testAverageZ
                         print ( " avgstat is ", avgStat )
-                        stdDevStat += restTremorResultArray[i].testStdDevX + restTremorResultArray[i].testStdDevY + restTremorResultArray[i].testStdDevZ
-                        print ( " stddevstat is ", stdDevStat )
+                        //stdDevStat += restTremorResultArray[i].testStdDevX + restTremorResultArray[i].testStdDevY + restTremorResultArray[i].testStdDevZ
+                        //print ( " stddevstat is ", stdDevStat )
                     }
                     
                 }
                 
                 avgStat = avgStat/Double( restTremorResultArray.count )
                 print( "final avgStat is " , avgStat )
-                stdDevStat = stdDevStat/Double( restTremorResultArray.count )
-                print ( " final stddevstat is ", stdDevStat )
+                //stdDevStat = stdDevStat/Double( restTremorResultArray.count )
+               // print ( " final stddevstat is ", stdDevStat )
                 
                 var conclusionString: String!
                 
-                let userPlusTwoStdDev = avgStat + 2*stdDevStat
-                print ( "user2dev = ", userPlusTwoStdDev )
-                let userPlusStdDev = avgStat + stdDevStat
-                print ( "userdev =  ", userPlusStdDev )
-                if ( userPlusTwoStdDev > AVG_PERSON_PLUS_TWO_STDDEV ) {
+                if ( avgStat > AVG_PERSON_PLUS_TWO_STDDEV ) {
                     
                     conclusionString = "You shake statistically higher than the average person. You do not have many contributing factors, but you should still consult a doctor for proper diagnosis. "
                     if ( stringCount > 1 ) {
@@ -133,7 +130,7 @@ class RestTremorConclusion: UIViewController {
                     }
                     
                 }
-                else if ( userPlusStdDev > AVG_PERSON_PLUS_STDDEV ) {
+                else if ( avgStat > AVG_PERSON_PLUS_STDDEV ) {
                     
                     conclusionString = "You do shake more than the average person. You do not have many contributing factors though. The results are inconclusive."
                     if ( stringCount > 1 ) {
