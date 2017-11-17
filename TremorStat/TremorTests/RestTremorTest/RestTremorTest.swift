@@ -16,6 +16,8 @@ import UIKit
 import CoreMotion
 import simd
 
+var restTremorResultArray = [RestTremorResultsClass]()
+
 let TEST_DURATION = 30.0
 
 let PERIOD_FOR_READINGS = 0.025
@@ -111,6 +113,7 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
     // only to be called when a test is complete ( no exits / cancels )
     func goToApprove() {
         // segue back to the test approval page
+        restTremorResultArray.append( self.results )
         performSegue(withIdentifier: "ApprovePage", sender: self)
     }
     

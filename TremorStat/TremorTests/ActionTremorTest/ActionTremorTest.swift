@@ -8,6 +8,8 @@
 
 import UIKit
 
+var actionTremorResultArray = [ActionTremorResultsClass]()
+
 class ActionTremorTest: UIViewController {
     
     @IBOutlet weak var LeftActionTremorButton: UIButton!
@@ -144,6 +146,7 @@ class ActionTremorTest: UIViewController {
             timer.invalidate()
             notRunning = true
         
+            //actionTremorResultArray.append( self.results )
             performSegue(withIdentifier: "ApprovePage", sender: self)
         }
     }

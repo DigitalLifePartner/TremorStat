@@ -15,6 +15,8 @@ class RestTremorApproval: UIViewController {
 
     // MARK: Properties
 
+    let lastElement = restTremorResultArray.count - 1
+    
     @IBOutlet weak var YesButton: UIButton!
     @IBOutlet weak var NoButton: UIButton!
     
@@ -43,6 +45,11 @@ class RestTremorApproval: UIViewController {
     // essentially a variable containing 3 doubles -- for the X Y Z coordinates
     var gyroArrayAll: double3!
     
+    @IBAction func deleteThisTest(_ sender: Any) {
+        
+        restTremorResultArray.remove(at: self.lastElement)
+    }
+    
     // MARK: Overrides
     
     override func viewDidLoad() {
@@ -60,7 +67,7 @@ class RestTremorApproval: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.tabBarController?.tabBar.isHidden = true
 
-        for i in 0...1199{
+        for i in 0...(READINGS_PER_TEST-1){
             // add all data from components into a single data set
             gyroArrayAll = [ gyroArrayX[i], gyroArrayY[i], gyroArrayZ[i] ]
             
@@ -68,36 +75,42 @@ class RestTremorApproval: UIViewController {
             self.graphView.add(gyroArrayAll)
         }
         
-        print( "about to declare class" )
+        //print( "about to declare class" )
         //var statCalc: StatisticsCalculator!
-        print ( "statCalc about to be called " )//, statCalc.mean)
+       // print ( "statCalc about to be called " )//, statCalc.mean)
 
         // X-values
         var Stat = self.statCalc.calcMean( theData: self.gyroArrayX, theSize: READINGS_PER_TEST, absolute: true )
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.meanX?.text = String( Stat )
+        restTremorResultArray[self.lastElement].testAverageX = Stat
         
         Stat = self.statCalc.calcStdDev( theData: self.gyroArrayX, theSize: READINGS_PER_TEST, gotMean: true, absolute: true )
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.stdDevX?.text = String( Stat )
+        restTremorResultArray[self.lastElement].testStdDevX = Stat
         
         // Y-values
         Stat = self.statCalc.calcMean( theData: self.gyroArrayY, theSize: READINGS_PER_TEST, absolute: true )
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.meanY?.text = String( Stat )
+        restTremorResultArray[self.lastElement].testAverageY = Stat
         
         Stat = self.statCalc.calcStdDev( theData: self.gyroArrayY, theSize: READINGS_PER_TEST, gotMean: true, absolute: true )
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.stdDevY?.text = String( Stat )
+        restTremorResultArray[self.lastElement].testStdDevY = Stat
         
         // Z-values
         Stat = self.statCalc.calcMean( theData: self.gyroArrayZ, theSize: READINGS_PER_TEST, absolute: true )
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.meanZ?.text = String( Stat )
+        restTremorResultArray[self.lastElement].testAverageZ = Stat
         
         Stat = self.statCalc.calcStdDev( theData: self.gyroArrayZ, theSize: READINGS_PER_TEST, gotMean: true, absolute: true )
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.stdDevZ?.text = String( Stat )
+        restTremorResultArray[self.lastElement].testStdDevZ = Stat
     }
     
     override func didReceiveMemoryWarning() {
