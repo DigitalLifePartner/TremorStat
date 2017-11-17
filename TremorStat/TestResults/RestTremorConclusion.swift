@@ -36,6 +36,9 @@ class RestTremorConclusion: UIViewController {
     @IBOutlet weak var ConclusionLabel: UILabel!
     
     
+    @IBAction func recentTestsOnly(_ sender: Any) {
+        displayInfo( displayRecentInfoOnly: true )
+    }
     
     // MARK: overrides
     override func viewDidLoad() {
@@ -44,6 +47,19 @@ class RestTremorConclusion: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+
+    
+        displayInfo( displayRecentInfoOnly: false )
+        // Do any additional setup after loading the view.
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Implementation
+    
+    func displayInfo( displayRecentInfoOnly: Bool) {
         // SET UP SUMMARY PAGE
         var summaryString = " "
         var stringCount = 0
@@ -96,7 +112,6 @@ class RestTremorConclusion: UIViewController {
             self.InsufficientDataLabel.text = insufficientDataString
             //var statCalc = StatisticsCalculator()
             var avgStat = 0.0
-            var stdDevStat = 0.0
             
             print( " array size is ", restTremorResultArray.count )
             if restTremorResultArray.count != 0 {
@@ -104,8 +119,14 @@ class RestTremorConclusion: UIViewController {
                     avgStat = restTremorResultArray[0].testAverageX + restTremorResultArray[0].testAverageY + restTremorResultArray[0].testAverageZ
                 }
                 else {
-                    
-                    for i in 0...(restTremorResultArray.count - 1) {
+                    var startIndex = 0
+                    if ( displayRecentInfoOnly == true ) {
+                        startIndex = restTremorResultArray.count - 1 - ACCEPTABLE_AMOUNT_OF_TESTS
+                        if( startIndex < 0 ) {
+                            startIndex = 0
+                        }
+                    }
+                    for i in startIndex...(restTremorResultArray.count - 1) {
                         
                         avgStat += restTremorResultArray[i].testAverageX + restTremorResultArray[i].testAverageY + restTremorResultArray[i].testAverageZ
                         print ( " avgstat is ", avgStat )
@@ -118,7 +139,7 @@ class RestTremorConclusion: UIViewController {
                 avgStat = avgStat/Double( restTremorResultArray.count )
                 print( "final avgStat is " , avgStat )
                 //stdDevStat = stdDevStat/Double( restTremorResultArray.count )
-               // print ( " final stddevstat is ", stdDevStat )
+                // print ( " final stddevstat is ", stdDevStat )
                 
                 var conclusionString: String!
                 
@@ -151,16 +172,7 @@ class RestTremorConclusion: UIViewController {
             
             
         }
-    
-        
-        // Do any additional setup after loading the view.
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: Implementation
 
     /*
     // MARK: - Navigation
