@@ -22,31 +22,13 @@
                             <outlet property="delegate" destination="dS8-d6-1y2" id="mON-PM-fOQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="h3H-vS-Q2k"/>
+                    <navigationItem key="navigationItem" id="Ns0-kY-9M4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgj-RX-pdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1350" y="1137"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="9M2-jG-DNI">
-            <objects>
-                <tableViewController id="YTm-my-48G" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="GFU-Ou-4DG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="YTm-my-48G" id="VRN-Of-kmN"/>
-                            <outlet property="delegate" destination="YTm-my-48G" id="qsb-Qi-fKI"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GGB-vk-2PQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2151" y="1137"/>
-        </scene>
-        <!--Table View Controller-->
+        <!--Title-->
         <scene sceneID="j8X-wy-JZW">
             <objects>
                 <tableViewController id="qt3-cs-vZL" sceneMemberID="viewController">
@@ -261,7 +243,7 @@
                             <outlet property="delegate" destination="qt3-cs-vZL" id="200-Io-QaK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qno-Lb-bKa"/>
+                    <navigationItem key="navigationItem" title="Title" id="bIU-ci-w1a"/>
                     <connections>
                         <outlet property="dateLabel" destination="rgS-2G-viZ" id="nf3-YW-HJ7"/>
                         <outlet property="datePicker" destination="2fZ-u5-Z1z" id="dcf-bd-hE6"/>

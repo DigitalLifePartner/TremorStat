@@ -350,7 +350,6 @@ class UserProfileViewController: FormViewController {
                 $0.value = Date()
                 $0.title = "Date of Birth"
             }
-            
             <<< ActionSheetRow<String>() {
                 $0.title = "Gender"
                 $0.selectorTitle = "What is your gender?"
@@ -394,7 +393,7 @@ class UserProfileViewController: FormViewController {
                 $0.value = ["I must"]
                 }
                 .onPresent { from, to in
-                    to.popoverPresentationController?.permittedArrowDirections = .up
+                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileViewController.multipleSelectorDone(_:)))
             }
             <<< MultipleSelectorRow<String>() {
                 $0.title = "Prescription Drugs"
@@ -402,7 +401,7 @@ class UserProfileViewController: FormViewController {
                 $0.value = ["have called"]
                 }
                 .onPresent { from, to in
-                    to.popoverPresentationController?.permittedArrowDirections = .up
+                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileViewController.multipleSelectorDone(_:)))
             }
             <<< MultipleSelectorRow<String>() {
                 $0.title = "Supplements"
@@ -410,7 +409,7 @@ class UserProfileViewController: FormViewController {
                 $0.value = ["a thousand"]
                 }
                 .onPresent { from, to in
-                    to.popoverPresentationController?.permittedArrowDirections = .up
+                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileViewController.multipleSelectorDone(_:)))
             }
             <<< ActionSheetRow<String>() {
                 $0.title = "Hand"
@@ -421,6 +420,10 @@ class UserProfileViewController: FormViewController {
                 .onPresent { from, to in
                     to.popoverPresentationController?.permittedArrowDirections = .up
         }
+    }
+    
+    @objc func multipleSelectorDone(_ item:UIBarButtonItem) {
+        _ = navigationController?.popViewController(animated: true)
     }
 }
 
