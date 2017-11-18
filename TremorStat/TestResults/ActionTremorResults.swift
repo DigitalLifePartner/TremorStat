@@ -69,7 +69,7 @@ extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let Title = String(actionTremorResultArray[indexPath.row].stdDev)
+        let Title = actionTremorResultArray[indexPath.row].testDate.description
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! ActionTestCell
         cell.testTitle.text = Title

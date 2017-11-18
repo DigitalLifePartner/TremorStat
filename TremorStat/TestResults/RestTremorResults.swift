@@ -69,7 +69,7 @@ extension RestTremorResults: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let Title = String(restTremorResultArray[indexPath.row].testAverageZ)
+        let Title = restTremorResultArray[indexPath.row].testDate.description
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! RestTestCell
         cell.testTitle.text = Title
