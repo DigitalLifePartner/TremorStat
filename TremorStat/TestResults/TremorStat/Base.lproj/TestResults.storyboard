@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="AWl-OC-Ag9">
@@ -36,11 +41,11 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Em0-wO-LM7">
-                                <rect key="frame" x="131" y="525" width="113" height="30"/>
+                                <rect key="frame" x="112" y="440" width="151" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go To RTResults"/>
+                                <state key="normal" title="Action Tremor Results"/>
                                 <connections>
-                                    <segue destination="OmA-eO-qx3" kind="show" id="Pt5-aW-VvZ"/>
+                                    <segue destination="inP-9a-US1" kind="show" id="XMV-aF-EZE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8P-ZZ-SVK">
@@ -51,6 +56,14 @@
                                     <segue destination="Rgz-04-yEl" kind="show" id="PtL-Ge-lIq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re6-cl-zbK">
+                                <rect key="frame" x="120" y="502" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Rest Tremor Results"/>
+                                <connections>
+                                    <segue destination="XJj-pe-t8W" kind="show" id="PTi-DO-TJ4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -59,34 +72,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u15-rO-wLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-143.19999999999999" y="1835.5322338830586"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="NKJ-yi-OT3">
-            <objects>
-                <tableViewController id="OmA-eO-qx3" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dto-90-brJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lXx-jg-Xoh">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lXx-jg-Xoh" id="GtT-WA-1vT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="OmA-eO-qx3" id="bJ0-sK-qNF"/>
-                            <outlet property="delegate" destination="OmA-eO-qx3" id="jnf-qG-wwm"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fTC-EY-gbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="666" y="1836"/>
         </scene>
         <!--Rest Tremor Conclusion-->
         <scene sceneID="xWz-lm-tMj">
@@ -140,35 +125,165 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGz-7E-j6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664.79999999999995" y="2533.5832083958021"/>
+            <point key="canvasLocation" x="665" y="2606"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="M1x-pY-3I9">
+        <!--Action Tremor Results-->
+        <scene sceneID="qn4-oo-M5A">
             <objects>
-                <tableViewController id="WtG-8s-6ht" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kzY-6a-Oax">
+                <viewController title="Action Tremor Test" id="inP-9a-US1" userLabel="Action Tremor Results" customClass="ActionTremorResults" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tUl-2Q-Q6N"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ito-YU-IUZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Hq-yY-MX5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QbC-A4-LLb">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QbC-A4-LLb" id="0Ka-hT-Ycd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="WtG-8s-6ht" id="UVC-3K-fPj"/>
-                            <outlet property="delegate" destination="WtG-8s-6ht" id="KI2-zk-MdH"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hiU-vw-9aN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SVF-oU-hR5">
+                                <rect key="frame" x="0.0" y="21" width="375" height="646"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoCell" id="baM-ew-grH" userLabel="TestCell" customClass="ActionTestCell" customModule="TremorStat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="baM-ew-grH" id="Gqq-gC-mVi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5t-4Z-qVS">
+                                                    <rect key="frame" x="20" y="20" width="335" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="wDn-z5-dwv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69096610920000001" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="E5t-4Z-qVS" firstAttribute="centerY" secondItem="Gqq-gC-mVi" secondAttribute="centerY" id="7L1-Oh-WKL"/>
+                                                <constraint firstItem="E5t-4Z-qVS" firstAttribute="leading" secondItem="Gqq-gC-mVi" secondAttribute="leading" constant="20" id="Hxe-Fc-0FP"/>
+                                                <constraint firstAttribute="trailing" secondItem="E5t-4Z-qVS" secondAttribute="trailing" constant="20" id="pZq-MJ-aSj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="testTitle" destination="E5t-4Z-qVS" id="cb4-oX-pyW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="inP-9a-US1" id="Oxx-LN-hQG"/>
+                                    <outlet property="delegate" destination="inP-9a-US1" id="jBo-ni-D1Y"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Video Name" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="j7e-Mw-J5q">
+                                <rect key="frame" x="0.0" y="0.0" width="103" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="9xl-he-EmE"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j7e-Mw-J5q" firstAttribute="leading" secondItem="5Hq-yY-MX5" secondAttribute="leading" id="2HX-3L-uTe"/>
+                            <constraint firstItem="j7e-Mw-J5q" firstAttribute="top" secondItem="tUl-2Q-Q6N" secondAttribute="bottom" id="6tc-L5-npG"/>
+                            <constraint firstAttribute="trailing" secondItem="SVF-oU-hR5" secondAttribute="trailing" id="Nze-QL-ucg"/>
+                            <constraint firstItem="SVF-oU-hR5" firstAttribute="leading" secondItem="5Hq-yY-MX5" secondAttribute="leading" id="ciE-X0-eeq"/>
+                            <constraint firstAttribute="bottom" secondItem="SVF-oU-hR5" secondAttribute="bottom" id="dXY-Mf-Lm7"/>
+                            <constraint firstItem="SVF-oU-hR5" firstAttribute="top" secondItem="j7e-Mw-J5q" secondAttribute="bottom" constant="1" id="jLx-41-Qs1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Action Tremor Test Results" id="asB-C8-uus"/>
+                    <connections>
+                        <outlet property="addVideoTextField" destination="j7e-Mw-J5q" id="3Am-8Z-wKJ"/>
+                        <outlet property="tableView" destination="SVF-oU-hR5" id="12R-bL-qrg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WxB-Hz-jJI" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1471" y="1850"/>
+            <point key="canvasLocation" x="665" y="1836"/>
+        </scene>
+        <!--Rest Tremor Results-->
+        <scene sceneID="7Gq-ds-m6j">
+            <objects>
+                <viewController title="Action Tremor Test" id="XJj-pe-t8W" userLabel="Rest Tremor Results" customClass="RestTremorResults" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rc3-KK-PFm"/>
+                        <viewControllerLayoutGuide type="bottom" id="sA3-Mv-JqM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DVv-zX-AWy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tgt-jQ-ioL">
+                                <rect key="frame" x="0.0" y="21" width="375" height="646"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoCell" id="gcc-Ee-l9K" userLabel="TestCell" customClass="RestTestCell" customModule="TremorStat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gcc-Ee-l9K" id="BuR-0l-QV2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTR-FK-ulz">
+                                                    <rect key="frame" x="20" y="20" width="335" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="QlY-UB-G7Y"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69096610920000001" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nTR-FK-ulz" firstAttribute="centerY" secondItem="BuR-0l-QV2" secondAttribute="centerY" id="EVx-qV-VSa"/>
+                                                <constraint firstAttribute="trailing" secondItem="nTR-FK-ulz" secondAttribute="trailing" constant="20" id="TYT-o8-s3p"/>
+                                                <constraint firstItem="nTR-FK-ulz" firstAttribute="leading" secondItem="BuR-0l-QV2" secondAttribute="leading" constant="20" id="hnD-Dq-vti"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="testTitle" destination="nTR-FK-ulz" id="QYB-6O-Wrn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XJj-pe-t8W" id="c7O-OG-Sc3"/>
+                                    <outlet property="delegate" destination="XJj-pe-t8W" id="V8h-4j-XRc"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Video Name" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="a76-jZ-jZl">
+                                <rect key="frame" x="0.0" y="0.0" width="103" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="HMd-7e-TK6"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="a76-jZ-jZl" firstAttribute="top" secondItem="rc3-KK-PFm" secondAttribute="bottom" id="Bnc-T4-Pwj"/>
+                            <constraint firstItem="tgt-jQ-ioL" firstAttribute="leading" secondItem="DVv-zX-AWy" secondAttribute="leading" id="Bu4-Yr-AvZ"/>
+                            <constraint firstItem="tgt-jQ-ioL" firstAttribute="top" secondItem="a76-jZ-jZl" secondAttribute="bottom" constant="1" id="Olu-Ms-7GI"/>
+                            <constraint firstAttribute="trailing" secondItem="tgt-jQ-ioL" secondAttribute="trailing" id="Yzr-Sh-LYz"/>
+                            <constraint firstAttribute="bottom" secondItem="tgt-jQ-ioL" secondAttribute="bottom" id="e8a-nv-siy"/>
+                            <constraint firstItem="a76-jZ-jZl" firstAttribute="leading" secondItem="DVv-zX-AWy" secondAttribute="leading" id="zz2-Wz-pIC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rest Tremor Test Results" id="toh-3g-lAo"/>
+                    <connections>
+                        <outlet property="addVideoTextField" destination="a76-jZ-jZl" id="fRo-Xi-4ey"/>
+                        <outlet property="tableView" destination="tgt-jQ-ioL" id="aLp-9U-zEF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7N-vA-MEY" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1460" y="1836"/>
         </scene>
     </scenes>
 </document>
