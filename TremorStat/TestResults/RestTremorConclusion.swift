@@ -30,10 +30,10 @@ let AVG_PERSON_PLUS_TWO_STDDEV = 0.3
 class RestTremorConclusion: UIViewController {
 
     // MARK: properties
-    let withinAgeRange = true
-    let isMale = true
-    let genetics = true
-    let headTrauma = true
+    //let withinAgeRange = true
+    //let isMale = true
+    //let genetics = true
+    //let headTrauma = true
     
     @IBOutlet weak var SummaryLabel: UILabel!
     @IBOutlet weak var InsufficientDataLabel: UILabel!
@@ -75,25 +75,39 @@ class RestTremorConclusion: UIViewController {
         var stringCount = 0
         
         // construct string based on user profile
-        if withinAgeRange {
+        
+        // get age range
+        
+        // user birthyear
+        var yearString = userProfileResults.dateOfBirth.description
+        var yearIndex = yearString.index( yearString.startIndex, offsetBy: 4 )
+        let birthYear = Int( yearString.substring( to: yearIndex ) )
+        
+        // current year
+        yearString = Date().description
+        yearIndex = yearString.index( yearString.startIndex, offsetBy: 4 )
+        let currentYear = Int( yearString.substring( to: yearIndex ) )
+        
+        
+        if ( currentYear! - birthYear! >= 45 ) {
             summaryString = summaryString + "You are above 45 years of age. "
             stringCount = stringCount + 1
         }
-        if isMale {
+        if ( userProfileResults.gender == "Male" ) {
             summaryString = summaryString + "You are male. "
             stringCount = stringCount + 1
         }
-        if genetics {
+        if ( userProfileResults.genetics == "Yes" ) {
             summaryString = summaryString + "Your family has a history of getting the disease. "
             stringCount = stringCount + 1
         }
-        if headTrauma {
+        if ( userProfileResults.trauma == "Yes" ) {
             summaryString = summaryString + "You have have head trauma in the past. "
             stringCount = stringCount + 1
         }
         
         // print appropriate response as to why the previous data was displayed -- have gramatically correct case for singular factor
-        if stringCount > 2 {
+        if stringCount > 1 {
             summaryString = summaryString + " Each of these factors increase your chance of getting Parkinson's. "
         }
         else if stringCount == 1 {

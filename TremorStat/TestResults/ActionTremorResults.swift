@@ -69,7 +69,10 @@ extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let Title = actionTremorResultArray[indexPath.row].testDate.description
+        var dateString = actionTremorResultArray[indexPath.row].testDate.description
+        var dateIndex = dateString.index( dateString.startIndex, offsetBy: 19 ) // to have time included go to 19, to not have time go to 10
+        
+        let Title = dateString.substring( to: dateIndex )
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! ActionTestCell
         cell.testTitle.text = Title
