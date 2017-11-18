@@ -20,8 +20,7 @@ var numTaps = 0
 
 class ActionTremorTest: UIViewController {
     
-    @IBOutlet weak var ActionTremorButton: UIView!
-    
+    @IBOutlet weak var ActionTremorButton: UIButton!
     
     // MARK: Properties
     //VERONICA: Who's Mark?

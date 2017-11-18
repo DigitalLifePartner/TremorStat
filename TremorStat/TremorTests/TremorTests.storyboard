@@ -155,11 +155,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Job-K4-DaY">
                                 <rect key="frame" x="130" y="365" width="115" height="103"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.016380813829223628" green="0.34371497246448834" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.97053721745056054" green="0.97790291308792043" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.41923777633667081" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="ButtonTap:" destination="iZu-XT-ei2" eventType="touchUpInside" id="fzc-cE-hoO"/>
@@ -169,7 +168,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="ActionTremorButton" destination="ksH-eh-VZd" id="IGp-t0-hAZ"/>
+                        <outlet property="ActionTremorButton" destination="Job-K4-DaY" id="a3M-WS-cFg"/>
                         <outlet property="MyLabel" destination="5SN-2o-XoK" id="0Xn-hX-zKo"/>
                         <segue destination="urE-KZ-RF8" kind="show" identifier="ApprovePage" id="Nll-a0-xvQ"/>
                     </connections>
@@ -551,6 +550,6 @@
         <image name="User_Holding_Device.png" width="928" height="1065"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QId-D7-XI0"/>
+        <segue reference="Gox-rN-2Dz"/>
     </inferredMetricsTieBreakers>
 </document>
