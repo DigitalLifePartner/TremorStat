@@ -4,3 +4,6 @@
 [submodule "eureka"]
 	path = eureka
 	url = https://github.com/xmartlabs/eureka.git
+[submodule "force"]
+	path = force
+	url = https://github.com/xmartlabs/eureka.git

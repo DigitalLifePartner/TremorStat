@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Active Tremor Test">
+                                <state key="normal" title="Action Tremor Test">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -278,7 +278,7 @@
                                 </state>
                                 <connections>
                                     <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="qyd-Ac-0zB"/>
-                                    <segue destination="1Uj-q2-Mg8" kind="show" id="5by-VC-t54"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" identifier="yesMainPage" id="5by-VC-t54"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Would you like to keep this data?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdQ-3J-raS">
@@ -297,8 +297,8 @@
                                     <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="Gwy-E1-UZF"/>
-                                    <segue destination="1Uj-q2-Mg8" kind="show" id="Ivh-Sr-mdL"/>
+                                    <action selector="deleteThisTest:" destination="2BO-H9-fOx" eventType="touchUpInside" id="pYD-iZ-giq"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" identifier="noMainPage" id="Ivh-Sr-mdL"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QBK-UJ-1oV">
@@ -458,14 +458,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="699-7N-gci">
-                                <rect key="frame" x="171" y="575" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="EXIT"/>
-                                <connections>
-                                    <segue destination="1Uj-q2-Mg8" kind="show" id="xtZ-oC-Lif"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbN-bm-lrD">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -515,6 +507,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhA-7R-IeU">
+                                <rect key="frame" x="60" y="476" width="110" height="74"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="YES">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="F5o-PE-eLE"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" identifier="yesMainPageAction" id="rMS-64-O11"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZx-ao-fcA">
+                                <rect key="frame" x="200" y="476" width="111" height="74"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="NO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="noMainPageAction:" destination="urE-KZ-RF8" eventType="touchUpInside" id="dNg-cP-DnJ"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" identifier="noMainPageAction" id="QId-D7-XI0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

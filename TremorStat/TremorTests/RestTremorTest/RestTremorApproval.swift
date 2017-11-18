@@ -46,8 +46,11 @@ class RestTremorApproval: UIViewController {
     var gyroArrayAll: double3!
     
     @IBAction func deleteThisTest(_ sender: Any) {
-        
+        //print ( "count before removal = " , restTremorResultArray.count )
+        //print ( "trying to remove element " , self.lastElement )
         restTremorResultArray.remove(at: self.lastElement)
+        //print ( "removed last element, count is now " , restTremorResultArray.count )
+        performSegue(withIdentifier: "noMainPage", sender: self)
     }
     
     // MARK: Overrides
