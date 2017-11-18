@@ -18,7 +18,7 @@ import simd
 
 var restTremorResultArray = [RestTremorResultsClass]()
 
-let TEST_DURATION = 10.0
+let TEST_DURATION = 30.0
 
 let PERIOD_FOR_READINGS = 0.025
 let READINGS_PER_TEST = Int(TEST_DURATION/PERIOD_FOR_READINGS)
