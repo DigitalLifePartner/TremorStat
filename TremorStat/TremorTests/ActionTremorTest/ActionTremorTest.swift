@@ -9,22 +9,35 @@
 import UIKit
 
 var actionTremorResultArray = [ActionTremorResultsClass]()
+//Array of taps timings
+var tapTimes = [Double]()
+var deviances = [Double]()
+var avgTime = 0.0
+var avgDeviance = 0.0
+
+//Unsigned int to track number of taps
+var numTaps = 0
 
 class ActionTremorTest: UIViewController {
     
-    @IBOutlet weak var LeftActionTremorButton: UIButton!
-    @IBOutlet weak var RightActionTremorButton: UIButton!
+    @IBOutlet weak var ActionTremorButton: UIView!
+    
     
     // MARK: Properties
+    //VERONICA: Who's Mark?
+    
+    //Constants and Variables//////////////////////
     
     // set up a timer
     var timer = Timer()
     
-    // set the default countdown to 30 seconds
-    var seconds=30.0
+    //Note that if you change test length you have to change both variables, due to Swift being a piece of shit. It wont let me just set the variable equal to the constant
+    //Double to keep track of previous tap
+    var lastTapTime = 15.0
     
-    // variable that stors last pair tapped timing
-    var lastTapTiming = 30.0
+    //Double to track current time
+    //If you change testLength make sure to change this as well
+    var currentTime = 15.0
     
     // var used to track if the clock is running or not
     var notRunning = false
@@ -38,18 +51,6 @@ class ActionTremorTest: UIViewController {
     //Average Tap Number Label
     @IBOutlet weak var AvTapTime: UILabel!
     
-    //Average Tap Number Label (Dom's olution)
-    @IBOutlet weak var DomTapTime: UILabel!
-    
-    //Number of successful tap pairs
-    var tapsNumber = 0
-    
-    //Sequence recognition variable
-    var tapSide = true
-    
-    //Array of paired taps timings
-    var pairedTiming = [Double]()
-    
     //Instantiating Statistics class for data representation
     var statisticsCalculator = StatisticsCalculator()
     
@@ -57,61 +58,34 @@ class ActionTremorTest: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LeftActionTremorButton.layer.cornerRadius = 25
-        RightActionTremorButton.layer.cornerRadius = 25
+        //Make button slightly less crappy looking
+        ActionTremorButton.layer.cornerRadius = 25
         
         // start 30s countdown
         timer = Timer()
         self.startCountdown()
     }
-    override func viewDidDisappear(_ animated: Bool)
-    {
-        
-        if let UserLastTestTaps = UserDefaults.standard.object(forKey: "ActionTremorHighScore") as? integer_t
-        {
-            if UserLastTestTaps > tapsNumber
-            {
-                // DO NOTHING
-                UserDefaults.standard.set(tapsNumber, forKey: "LastUserScore")
-            }
-            else
-            {
-                UserDefaults.standard.set(tapsNumber, forKey: "LastUserScore")
-                UserDefaults.standard.set(tapsNumber, forKey: "ActionTremorHighScore")
-            }
-        }
-        else
-        {   UserDefaults.standard.set(tapsNumber, forKey: "LastUserScore")
-            UserDefaults.standard.set(tapsNumber, forKey: "ActionTremorHighScore")
-        }
+    
+    override func viewDidDisappear(_ animated: Bool){
     }
     
     // MARK: Button click actions
-    //Detect left button click
-    @IBAction func LeftClick(_ sender: Any) {
-        var oldTapSide=self.tapSide
-        tapSide=false
-        if (oldTapSide != self.tapSide){
-            lastTapTiming=seconds
-            self.tapsNumber+=1
-            self.TapsNumberLabel.text=String(self.tapsNumber)
-            pairedTiming.append(lastTapTiming-seconds)
-            lastTapTiming=seconds
-        }
-    }
     
-    //Detect right button click
-    @IBAction func RightClick(_ sender: Any) {
-        var oldTapSide=self.tapSide
-        tapSide=true
-        if (oldTapSide != self.tapSide){
-            self.tapsNumber+=1
-            self.TapsNumberLabel.text=String(self.tapsNumber)
-            pairedTiming.append(lastTapTiming-seconds)
-            lastTapTiming=seconds
+    @IBAction func ButtonTap(_ sender: Any) {
+        
+        numTaps += 1
+        
+        if (numTaps > 1){
+        
+            //Push the time elapsed since last tap
+            tapTimes.append(lastTapTime - currentTime)
+            
         }
+        
+        //Set time of last tap to current time
+        lastTapTime = currentTime
+        
     }
-    
     
     @IBAction func ExitButtonAction(_ sender: Any) {
         timer.invalidate()
@@ -131,20 +105,45 @@ class ActionTremorTest: UIViewController {
     @objc func Clock()
     {
         // if the seconds remaining is above zero, decrement
-        if tapsNumber != 0{
-            AvTapTime.text=String(Double(100000*(30-Int(seconds))/(tapsNumber))/100000)
-        }
-        if seconds>0 {
-            seconds=seconds-0.1
+        if currentTime>0 {
+            currentTime -= 0.1
         }
         // display new time remaining
-        MyLabel?.text=String(Int(seconds))
+        MyLabel?.text=String(Int(currentTime))
         
         // once the countdown has finished stop the timer and segue onto the rest tremor test
-        if(seconds<=25 && notRunning == false)
+        if(currentTime <= 0 && notRunning == false)
         {
             timer.invalidate()
             notRunning = true
+            
+            for time in tapTimes{
+                
+                //Summing tapTimes
+                avgTime += (time)
+                
+            }
+            
+            //Calculate average tap time
+            avgTime /= Double(numTaps - 1)
+            
+            for time in tapTimes{
+                
+                //Summing tapTimes
+                deviances.append(abs(avgTime - (time)))
+                
+            }
+            
+            for deviance in deviances{
+                
+                avgDeviance += (deviance)
+                
+            }
+            
+            avgDeviance /= Double(numTaps - 1)
+            
+            //Convert to Frequency (Hz)
+            avgTime = 1.0/avgTime
         
             //actionTremorResultArray.append( self.results )
             performSegue(withIdentifier: "ApprovePage", sender: self)

@@ -8,9 +8,9 @@ import UIKit
 
 class ActionTremorTestApproval: UIViewController {
     
-    
-    @IBOutlet weak var HighScoreLabel: UILabel!
-    @IBOutlet weak var UserScore: UILabel!
+    @IBOutlet weak var avgFrequencyLabel: UILabel!
+    @IBOutlet weak var avgDevianceLabel: UILabel!
+    @IBOutlet weak var numTapsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +25,13 @@ class ActionTremorTestApproval: UIViewController {
     
     override func viewDidAppear(_ animated: Bool)
     {
-        if let highScoreValue = UserDefaults.standard.object(forKey: "LastTestTaps") as? integer_t
-        {
-            HighScoreLabel.text = String(highScoreValue)
-        }
         
-        if let userScore = UserDefaults.standard.object(forKey: "LastUserScore") as? integer_t
-        {
-            UserScore.text = String(userScore)
-        }
+        avgFrequencyLabel.text = String(avgTime)
+        
+        avgDevianceLabel.text = String(avgDeviance)
+        
+        numTapsLabel.text = String(numTaps)
+        
         
     }
     
