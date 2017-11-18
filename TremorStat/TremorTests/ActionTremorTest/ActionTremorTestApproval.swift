@@ -12,6 +12,8 @@ class ActionTremorTestApproval: UIViewController {
     @IBOutlet weak var avgDevianceLabel: UILabel!
     @IBOutlet weak var numTapsLabel: UILabel!
     
+    @IBOutlet weak var YesButton: UIButton!
+    @IBOutlet weak var NoButton: UIButton!
     
     @IBAction func noMainPageAction(_ sender: Any) {
         
@@ -22,6 +24,9 @@ class ActionTremorTestApproval: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        YesButton.layer.cornerRadius = 25;
+        NoButton.layer.cornerRadius = 25;
         
         // Do any additional setup after loading the view.
     }
