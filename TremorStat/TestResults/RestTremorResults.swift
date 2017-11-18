@@ -69,7 +69,7 @@ extension RestTremorResults: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var dateString = actionTremorResultArray[indexPath.row].testDate.description
+        var dateString = restTremorResultArray[indexPath.row].testDate.description
         var dateIndex = dateString.index( dateString.startIndex, offsetBy: 19 ) // to have time included go to 19, to not have time go to 10
         
         let Title = dateString.substring( to: dateIndex )
