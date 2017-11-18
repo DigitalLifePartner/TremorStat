@@ -146,9 +146,11 @@ class ActionTremorTest: UIViewController {
             avgTime = 1.0/avgTime
         
             var results = ActionTremorResultsClass()
-            results.pairedTiming = self.pairedTiming
+            //results.pairedTiming = self.pairedTiming
+            results.frequency = avgTime
+            results.deviance = avgDeviance
             
-            results.stdDev = statisticsCalculator.calcStdDev(theData: pairedTiming, theSize: pairedTiming.count, gotMean: false, absolute: false)
+            //results.stdDev = statisticsCalculator.calcStdDev(theData: pairedTiming, theSize: pairedTiming.count, gotMean: false, absolute: false)
             actionTremorResultArray.append( results )
             performSegue(withIdentifier: "ApprovePage", sender: self)
         }

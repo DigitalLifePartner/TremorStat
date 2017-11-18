@@ -516,8 +516,7 @@
                                     <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="RestTest:" destination="1Uj-q2-Mg8" eventType="touchUpInside" id="F5o-PE-eLE"/>
-                                    <segue destination="1Uj-q2-Mg8" kind="show" identifier="yesMainPageAction" id="rMS-64-O11"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" id="4dT-xx-buw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZx-ao-fcA">
@@ -529,7 +528,7 @@
                                     <color key="titleShadowColor" red="0.1877193596" green="0.13061459070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="noMainPageAction:" destination="urE-KZ-RF8" eventType="touchUpInside" id="dNg-cP-DnJ"/>
+                                    <action selector="noMainPageAction:" destination="urE-KZ-RF8" eventType="touchUpInside" id="gWI-bD-n1s"/>
                                     <segue destination="1Uj-q2-Mg8" kind="show" identifier="noMainPageAction" id="QId-D7-XI0"/>
                                 </connections>
                             </button>
@@ -552,6 +551,6 @@
         <image name="User_Holding_Device.png" width="928" height="1065"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gox-rN-2Dz"/>
+        <segue reference="QId-D7-XI0"/>
     </inferredMetricsTieBreakers>
 </document>

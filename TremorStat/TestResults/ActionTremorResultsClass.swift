@@ -10,7 +10,7 @@ import UIKit
 import simd
 
 class ActionTremorResultsClass {
-    var stdDev = 0.0
-    var pairedTiming = [Double]()
+    var frequency: Double!
+    var deviance: Double!
     var testDate = Date()
 }
