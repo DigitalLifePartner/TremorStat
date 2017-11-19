@@ -54,9 +54,17 @@ extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var dateString = NSDate(timeIntervalSince1970:(actionTremorResultArray[indexPath.row])[0])
+        var dateString = Date(timeIntervalSince1970:(actionTremorResultArray[indexPath.row])[0])
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = " yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        let mystring = dateFormatter.string(from: dateString);
+        let yourDate: Date? = dateFormatter.date(from: mystring)
+        dateFormatter.dateFormat = "MMM-dd-yyyy - h:mm:ss a"
+        dateFormatter.timeZone = TimeZone(abbreviation: "PST")
+        let updatedDateString = dateFormatter.string(from: yourDate!)
         
-        let Title = String(describing: dateString)
+        let Title = "Test Execution Time:      " + updatedDateString //String(describing: dateString)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! ActionTestCell
         cell.testTitle.text = Title

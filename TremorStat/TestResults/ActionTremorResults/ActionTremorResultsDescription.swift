@@ -27,8 +27,22 @@ class ActionTremorResultsDescription: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        var dateString = NSDate(timeIntervalSince1970:(results[0]))
-        dateLabel.text = String(describing: dateString)
+        
+        var dateString = Date(timeIntervalSince1970:(results[0]))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = " yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        let mystring = dateFormatter.string(from: dateString);
+        let yourDate: Date? = dateFormatter.date(from: mystring)
+        dateFormatter.dateFormat = "MMM-dd-yyyy - h:mm:ss a"
+        dateFormatter.timeZone = TimeZone(abbreviation: "PST")
+        let updatedDateString = dateFormatter.string(from: yourDate!)
+        
+        dateLabel.text = updatedDateString;
+        
+        
+        //var dateString = NSDate(timeIntervalSince1970:(results[0]))
+        //dateLabel.text = String(describing: dateString)
         frequencyLabel.text = String(Double(round(10000*results[1])/10000))
         devianceLabel.text = String(Double(round(10000*results[2])/10000))
         tapsNumLabel.text = String(Int(results[3]))
