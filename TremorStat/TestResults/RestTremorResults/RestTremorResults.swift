@@ -1,9 +1,10 @@
 //
-//  ViewController.swift
-//  YouTube Example
+//  RestTremorResults
+//  TremorStat
 //
-//  Created by Sean Allen on 4/28/17.
-//  Copyright © 2017 Sean Allen. All rights reserved.
+//  Created by Best Software on 11/10/17.
+//  Copyright © 2017 Best Software. All rights reserved.
+//
 //
 
 import UIKit

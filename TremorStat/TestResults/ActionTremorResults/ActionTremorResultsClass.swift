@@ -1,5 +1,5 @@
 //
-//  ActionTremorResults.swift
+//  ActionTremorResultsClass.swift
 //  TremorStat
 //
 //  Created by ikukushk on 11/14/17.

@@ -1,9 +1,10 @@
 //
-//  RestTremorClass.swift
+//  RestTremorResultsClass
 //  TremorStat
 //
-//  Created by ikukushk on 11/14/17.
+//  Created by Best Software on 11/10/17.
 //  Copyright © 2017 Best Software. All rights reserved.
+//
 //
 
 import UIKit
