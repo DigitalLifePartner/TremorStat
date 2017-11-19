@@ -47,10 +47,8 @@ class ActionTremorTestApproval: UIViewController {
     override func viewDidAppear(_ animated: Bool)
     {
         
-        avgFrequencyLabel.text = String(avgTime)
-        
-        avgDevianceLabel.text = String(avgDeviance)
-        
+        avgFrequencyLabel.text = String((Double(round(avgTime*1000)/1000)))
+        avgDevianceLabel.text = String((Double(round(avgDeviance*1000)/1000)))
         numTapsLabel.text = String(numTaps)
         
         
