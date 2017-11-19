@@ -142,42 +142,6 @@
             </objects>
             <point key="canvasLocation" x="665" y="2606"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Db7-Dq-9pw">
-            <objects>
-                <viewController id="wN5-91-z2B" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lQY-qT-gcb"/>
-                        <viewControllerLayoutGuide type="bottom" id="ANs-Gu-KMr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0Uy-nl-9or">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gig-fN-L23" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="665" y="1159"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="dVe-hG-TyN">
-            <objects>
-                <viewController id="Pdr-Bc-VNW" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jwM-OP-S7U"/>
-                        <viewControllerLayoutGuide type="bottom" id="grq-Kf-K3l"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DPp-CO-Wga">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MOc-W6-HkE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1460" y="1158"/>
-        </scene>
         <!--Action Tremor Results-->
         <scene sceneID="qn4-oo-M5A">
             <objects>
@@ -251,6 +215,7 @@
                     <connections>
                         <outlet property="addVideoTextField" destination="j7e-Mw-J5q" id="3Am-8Z-wKJ"/>
                         <outlet property="tableView" destination="SVF-oU-hR5" id="12R-bL-qrg"/>
+                        <segue destination="uBT-C4-jan" kind="show" id="qpd-1g-z52"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WxB-Hz-jJI" sceneMemberID="firstResponder"/>
@@ -330,11 +295,50 @@
                     <connections>
                         <outlet property="addVideoTextField" destination="a76-jZ-jZl" id="fRo-Xi-4ey"/>
                         <outlet property="tableView" destination="tgt-jQ-ioL" id="aLp-9U-zEF"/>
+                        <segue destination="Ys6-3C-itg" kind="show" id="GK7-lw-xWz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7N-vA-MEY" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1460" y="1836"/>
+        </scene>
+        <!--Action Tremor Results-->
+        <scene sceneID="6ZE-pU-egY">
+            <objects>
+                <viewController title="Action Tremor Test" id="uBT-C4-jan" userLabel="Action Tremor Results" customClass="ActionTremorResultsDescription" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Fi-34-0dV"/>
+                        <viewControllerLayoutGuide type="bottom" id="jga-NK-ZQL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7FP-9K-iMA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Action Tremor Test Results" id="N4y-5O-Nf7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBI-Zn-dQH" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="665" y="1068"/>
+        </scene>
+        <!--Action Tremor Results-->
+        <scene sceneID="hWL-oG-f02">
+            <objects>
+                <viewController title="Action Tremor Test" id="Ys6-3C-itg" userLabel="Action Tremor Results" customClass="RestTremorResultsDescription" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WId-qN-uN2"/>
+                        <viewControllerLayoutGuide type="bottom" id="5sd-05-55o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MQT-H2-YvF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Action Tremor Test Results" id="NGs-Ru-dl8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvN-a4-xhS" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1460" y="1067"/>
         </scene>
     </scenes>
 </document>

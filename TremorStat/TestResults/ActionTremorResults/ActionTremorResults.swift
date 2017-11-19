@@ -29,6 +29,26 @@ class ActionTremorResults: UIViewController, UITextFieldDelegate {
         tableView.reloadData()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // stop gyro updates
+        self.stopUpdates()
+        
+        // specific case for segue into the test approval view
+        if finishedTest == true {
+            finishedTest = false
+            
+            // pass the component arrays to the approval view
+            let nextController = segue.destination as! RestTremorApproval
+            nextController.results=self.results
+            nextController.gyroArrayX = self.gyroArrayX
+            nextController.gyroArrayY = self.gyroArrayY
+            nextController.gyroArrayZ = self.gyroArrayZ
+            
+            let nextController = segue.destination as! ActionTremorResultsDescription
+        }
+
+}
 }
 
 extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
@@ -54,6 +74,11 @@ extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "Description", sender: self)
     }
     
     
