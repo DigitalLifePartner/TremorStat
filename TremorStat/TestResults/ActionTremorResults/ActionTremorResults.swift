@@ -64,7 +64,7 @@ extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
         dateFormatter.timeZone = TimeZone(abbreviation: "PST")
         let updatedDateString = dateFormatter.string(from: yourDate!)
         
-        let Title = "Test Execution Time:      " + updatedDateString //String(describing: dateString)
+        let Title = "Test Execution Time:    " + updatedDateString //String(describing: dateString)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! ActionTestCell
         cell.testTitle.text = Title
