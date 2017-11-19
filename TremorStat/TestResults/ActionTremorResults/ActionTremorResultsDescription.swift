@@ -26,7 +26,8 @@ class ActionTremorResultsDescription: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        dateLabel.text = String(results[0])
+        var dateString = NSDate(timeIntervalSince1970:(results[0]))
+        dateLabel.text = String(describing: dateString)
         averageLabel.text = String(results[1])
         devianceLabel.text = String(results[2])
     }
