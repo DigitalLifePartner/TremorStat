@@ -99,6 +99,7 @@ class ActionTremorTest: UIViewController {
     
     // MARK: 30 sec timer Implementation
     func startCountdown(){
+        numTaps = 0
         // start timer and countdown
         timer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ActionTremorTest.Clock), userInfo: nil, repeats: true)
         
@@ -149,6 +150,12 @@ class ActionTremorTest: UIViewController {
             
             //Convert to Frequency (Hz)
             avgTime = 1.0/avgTime
+            
+            if numTaps == 0
+            {
+                avgTime = 0.0;
+                avgDeviance = 0.0
+            }
         
             var results = [Double]()
             results.append(Double(Date().timeIntervalSince1970))
