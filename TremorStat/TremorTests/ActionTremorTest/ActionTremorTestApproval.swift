@@ -34,6 +34,9 @@ class ActionTremorTestApproval: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        YesButton.layer.cornerRadius = 25
+        NoButton.layer.cornerRadius = 25
     }
     
     override func didReceiveMemoryWarning() {

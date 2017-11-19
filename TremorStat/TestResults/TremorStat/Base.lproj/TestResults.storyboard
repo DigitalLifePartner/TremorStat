@@ -26,13 +26,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2D-6H-RCW">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Test Results" id="03x-5J-TIy"/>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Em0-wO-LM7">
                                 <rect key="frame" x="72" y="119" width="230" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -85,6 +78,13 @@
                     <navigationItem key="navigationItem" id="Jch-5O-u0D"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u15-rO-wLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationBar clipsSubviews="YES" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="x2D-6H-RCW">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="Test Results" id="03x-5J-TIy"/>
+                    </items>
+                </navigationBar>
             </objects>
             <point key="canvasLocation" x="-143.19999999999999" y="1835.5322338830586"/>
         </scene>
