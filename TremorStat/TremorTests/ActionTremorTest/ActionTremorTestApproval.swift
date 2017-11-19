@@ -8,6 +8,8 @@ import UIKit
 
 class ActionTremorTestApproval: UIViewController {
     
+    var actionTremorResultArray = [[Double]]()
+    
     @IBOutlet weak var avgFrequencyLabel: UILabel!
     @IBOutlet weak var avgDevianceLabel: UILabel!
     @IBOutlet weak var numTapsLabel: UILabel!
@@ -15,15 +17,21 @@ class ActionTremorTestApproval: UIViewController {
     
     @IBAction func noMainPageAction(_ sender: Any) {
         
+        //Store previous Action Tremor Test results in the array
+        self.actionTremorResultArray = getDataFromKey(key: "actionTremorResultArray")
+        
+
+        //Remove the last saved element from the array
         let lastElement = actionTremorResultArray.count - 1
         actionTremorResultArray.remove(at: lastElement)
+        
+        //Store test results under associated key
+        UserDefaults.standard.set(actionTremorResultArray, forKey: "actionTremorResultArray")
         performSegue(withIdentifier: "noMainPageAction", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,15 +51,5 @@ class ActionTremorTestApproval: UIViewController {
         
     }
     
-    /*
-     // MARK: - Navigation
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
-
-//wow much push

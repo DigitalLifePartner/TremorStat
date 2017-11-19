@@ -8,7 +8,6 @@
 
 import UIKit
 
-var actionTremorResultArray = [ActionTremorResultsClass]()
 //Array of taps timings
 var tapTimes = [Double]()
 var deviances = [Double]()
@@ -19,6 +18,8 @@ var avgDeviance = 0.0
 var numTaps = 0
 
 class ActionTremorTest: UIViewController {
+    
+    var actionTremorResultArray = [[Double]]()
     
     @IBOutlet weak var ActionTremorButton: UIView!
     
@@ -56,6 +57,10 @@ class ActionTremorTest: UIViewController {
     
     // MARK: ViewController overrides
     override func viewDidLoad() {
+        
+        //Store previous Action Tremor Test results in the array
+        self.actionTremorResultArray = getDataFromKey(key: "actionTremorResultArray")
+        
         super.viewDidLoad()
         
         //Make button slightly less crappy looking
@@ -145,13 +150,14 @@ class ActionTremorTest: UIViewController {
             //Convert to Frequency (Hz)
             avgTime = 1.0/avgTime
         
-            var results = ActionTremorResultsClass()
-            //results.pairedTiming = self.pairedTiming
-            results.frequency = avgTime
-            results.deviance = avgDeviance
+            var results = [Double]()
+            results.append(Double(Date().timeIntervalSince1970))
+            results.append(avgTime)
+            results.append(avgDeviance)
             
-            //results.stdDev = statisticsCalculator.calcStdDev(theData: pairedTiming, theSize: pairedTiming.count, gotMean: false, absolute: false)
             actionTremorResultArray.append( results )
+            //Store test results under associated key
+            UserDefaults.standard.set(actionTremorResultArray, forKey: "actionTremorResultArray")
             performSegue(withIdentifier: "ApprovePage", sender: self)
         }
     }

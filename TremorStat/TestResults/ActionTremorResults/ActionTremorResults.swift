@@ -11,68 +11,39 @@ import SafariServices
 
 class ActionTremorResults: UIViewController, UITextFieldDelegate {
     
+    var actionTremorResultArray = [[Double]]()
+    
     @IBOutlet weak var addVideoTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    var data: [String] = ["Test1",
-                          "Tes2",
-                          "Test3"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
-        //        for i in 0...actionTremorResultArray{
-        //            data.append(String(i))
-        //            let indexPath = IndexPath(row: data.count - 1, section: 0)
-        //
-        //            tableView.beginUpdates()
-        //            tableView.insertRows(at: [indexPath], with: .automatic)
-        //            tableView.endUpdates()
-        //
-        //            view.endEditing(true)
-        //        }
     }
-    
-    
-    /*@IBAction func addButtonTapped(_ sender: Any) {
-     insertNewTest()
-     }*/
-    
-    
-    /*func insertNewTest() {
-     
-     if addVideoTextField.text!.isEmpty {
-     print("Add Video Text Field is empty")
-     }
-     
-     data.append(addVideoTextField.text!)
-     
-     let indexPath = IndexPath(row: data.count - 1, section: 0)
-     
-     tableView.beginUpdates()
-     tableView.insertRows(at: [indexPath], with: .automatic)
-     tableView.endUpdates()
-     
-     addVideoTextField.text = ""
-     view.endEditing(true)
-     }*/
-}
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //Store previous Action Tremor Test results in the array
+        self.actionTremorResultArray = getDataFromKey(key: "actionTremorResultArray")
+        
+        //Update table
+        tableView.reloadData()
+    }
+
+}
 
 extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //Store previous Action Tremor Test results in the array
         return actionTremorResultArray.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var dateString = actionTremorResultArray[indexPath.row].testDate.description
-        var dateIndex = dateString.index( dateString.startIndex, offsetBy: 19 ) // to have time included go to 19, to not have time go to 10
+        var dateString = NSDate(timeIntervalSince1970:(actionTremorResultArray[indexPath.row])[0])
         
-        let Title = dateString.substring( to: dateIndex )
+        let Title = String(describing: dateString)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! ActionTestCell
         cell.testTitle.text = Title
