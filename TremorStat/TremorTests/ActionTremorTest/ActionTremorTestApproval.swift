@@ -14,6 +14,8 @@ class ActionTremorTestApproval: UIViewController {
     @IBOutlet weak var avgDevianceLabel: UILabel!
     @IBOutlet weak var numTapsLabel: UILabel!
     
+    @IBOutlet weak var YesButton: UIButton!
+    @IBOutlet weak var NoButton: UIButton!
     
     @IBAction func noMainPageAction(_ sender: Any) {
         
