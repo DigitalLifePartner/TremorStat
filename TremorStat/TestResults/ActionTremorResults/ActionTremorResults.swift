@@ -13,6 +13,8 @@ class ActionTremorResults: UIViewController, UITextFieldDelegate {
     
     var actionTremorResultArray = [[Double]]()
     
+    var numOfRow = 0
+    
     @IBOutlet weak var addVideoTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,6 +31,15 @@ class ActionTremorResults: UIViewController, UITextFieldDelegate {
         tableView.reloadData()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+
+        // pass the array to the Description page view
+        let nextController = segue.destination as! ActionTremorResultsDescription
+        nextController.results = actionTremorResultArray[numOfRow]
+
+
+    }
 }
 
 extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
@@ -54,6 +65,12 @@ extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        numOfRow = indexPath.row
+        performSegue(withIdentifier: "Description", sender: self)
     }
     
     
