@@ -11,7 +11,7 @@ import Eureka
 
 var userProfileResults = UserProfileClass()
 
-class UserProfileViewController: FormViewController {
+class UserProfileViewController: Eureka.FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
