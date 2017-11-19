@@ -424,7 +424,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Meu-C7-UMW">
                                 <rect key="frame" x="25" y="27" width="334" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <string key="text">Rest your device on a flat surface and place your hand palm down directly above. Place your fingers in such a way that you are able to comfortably hit the targets on screen. </string>
+                                <string key="text">Rest your device on a flat surface and place your hand palm down directly above. Place your finger in such a way that you are able to comfortably hit the target on screen. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
