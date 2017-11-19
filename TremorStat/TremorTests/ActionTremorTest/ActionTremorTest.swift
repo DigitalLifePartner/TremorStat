@@ -161,6 +161,7 @@ class ActionTremorTest: UIViewController {
             results.append(Double(Date().timeIntervalSince1970))
             results.append(avgTime)
             results.append(avgDeviance)
+            results.append(Double(numTaps))
             
             actionTremorResultArray.append( results )
             //Store test results under associated key

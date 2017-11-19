@@ -27,6 +27,7 @@ class ActionTremorResults: UIViewController, UITextFieldDelegate {
         
         //Store previous Action Tremor Test results in the array
         self.actionTremorResultArray = getDataFromKey(key: "actionTremorResultArray")
+        actionTremorResultArray=actionTremorResultArray.reversed()
         
         //Update table
         tableView.reloadData()

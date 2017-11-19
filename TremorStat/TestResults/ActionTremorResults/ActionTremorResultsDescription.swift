@@ -31,7 +31,7 @@ class ActionTremorResultsDescription: UIViewController {
         dateLabel.text = String(describing: dateString)
         frequencyLabel.text = String(Double(round(10000*results[1])/10000))
         devianceLabel.text = String(Double(round(10000*results[2])/10000))
-        tapsNumLabel.text = String(0)
+        tapsNumLabel.text = String(Int(results[3]))
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
