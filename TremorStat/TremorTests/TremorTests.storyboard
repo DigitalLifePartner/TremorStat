@@ -119,18 +119,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ths-Rc-XQM">
-                                <rect key="frame" x="133" y="579" width="108" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="STOP TEST">
-                                    <color key="titleColor" red="1" green="0.089926403129999999" blue="0.030124040250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="ExitButtonAction:" destination="iZu-XT-ei2" eventType="touchUpInside" id="SPi-2C-Fx2"/>
-                                    <segue destination="1Uj-q2-Mg8" kind="show" id="Gox-rN-2Dz"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wK-Zg-PvI">
                                 <rect key="frame" x="121" y="111" width="132" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -153,7 +141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Job-K4-DaY">
-                                <rect key="frame" x="130" y="365" width="115" height="103"/>
+                                <rect key="frame" x="133" y="325" width="115" height="103"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -162,6 +150,18 @@
                                 </state>
                                 <connections>
                                     <action selector="ButtonTap:" destination="iZu-XT-ei2" eventType="touchUpInside" id="fzc-cE-hoO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ths-Rc-XQM">
+                                <rect key="frame" x="136" y="537" width="108" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="STOP TEST">
+                                    <color key="titleColor" red="1" green="0.089926403129999999" blue="0.030124040250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ExitButtonAction:" destination="iZu-XT-ei2" eventType="touchUpInside" id="SPi-2C-Fx2"/>
+                                    <segue destination="1Uj-q2-Mg8" kind="show" id="Gox-rN-2Dz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -559,6 +559,6 @@
         <image name="User_Holding_Device.png" width="928" height="1065"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QId-D7-XI0"/>
+        <segue reference="Gox-rN-2Dz"/>
     </inferredMetricsTieBreakers>
 </document>

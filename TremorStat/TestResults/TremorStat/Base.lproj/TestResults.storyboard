@@ -27,20 +27,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Em0-wO-LM7">
-                                <rect key="frame" x="72" y="119" width="230" height="80"/>
+                                <rect key="frame" x="16" y="94" width="343" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Action Tremor Test Results">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Action Tremor Test Results">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <font key="NSFont" size="18" name=".AppleSystemUIFont"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -48,10 +39,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8P-ZZ-SVK">
-                                <rect key="frame" x="72" y="417" width="230" height="80"/>
+                                <rect key="frame" x="16" y="420" width="343" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Test Results Analysis">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,10 +52,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re6-cl-zbK">
-                                <rect key="frame" x="72" y="265" width="230" height="80"/>
+                                <rect key="frame" x="16" y="257" width="343" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Rest Tremor Test Results">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -76,6 +67,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jch-5O-u0D"/>
+                    <connections>
+                        <outlet property="ActiveTremorTestResultsButton" destination="Em0-wO-LM7" id="bh0-Gq-s59"/>
+                        <outlet property="RestTremorTestResultsButton" destination="re6-cl-zbK" id="RLh-Op-5pS"/>
+                        <outlet property="TestResultsAnalysisButton" destination="I8P-ZZ-SVK" id="XoJ-8I-iF7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u15-rO-wLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationBar clipsSubviews="YES" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="x2D-6H-RCW">
