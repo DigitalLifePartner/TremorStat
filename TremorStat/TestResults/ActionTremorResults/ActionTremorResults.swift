@@ -13,6 +13,8 @@ class ActionTremorResults: UIViewController, UITextFieldDelegate {
     
     var actionTremorResultArray = [[Double]]()
     
+    var numOfRow = 0
+    
     @IBOutlet weak var addVideoTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,25 +32,14 @@ class ActionTremorResults: UIViewController, UITextFieldDelegate {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // stop gyro updates
-        self.stopUpdates()
-        
-        // specific case for segue into the test approval view
-        if finishedTest == true {
-            finishedTest = false
-            
-            // pass the component arrays to the approval view
-            let nextController = segue.destination as! RestTremorApproval
-            nextController.results=self.results
-            nextController.gyroArrayX = self.gyroArrayX
-            nextController.gyroArrayY = self.gyroArrayY
-            nextController.gyroArrayZ = self.gyroArrayZ
-            
-            let nextController = segue.destination as! ActionTremorResultsDescription
-        }
 
-}
+
+        // pass the array to the Description page view
+        let nextController = segue.destination as! ActionTremorResultsDescription
+        nextController.results = actionTremorResultArray[numOfRow]
+
+
+    }
 }
 
 extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
@@ -78,6 +69,7 @@ extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        numOfRow = indexPath.row
         performSegue(withIdentifier: "Description", sender: self)
     }
     
