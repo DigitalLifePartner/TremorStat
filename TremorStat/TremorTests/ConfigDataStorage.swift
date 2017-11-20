@@ -1,10 +1,11 @@
+//  File Information:
+//  ConfigDataStorage
 //
-//  ConfigDataStorage.swift
-//  TremorStat
-//
-//  Created by Domenico Di Giovanni on 11/11/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  Legacy class for user profile
 
 import UIKit
 

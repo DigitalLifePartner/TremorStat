@@ -1,10 +1,11 @@
+//  File Information:
+//  ActionTremorResultsDescription
 //
-//  ActionTremorResultsDescription.swift
-//  TremorStat
-//
-//  Created by Milos Savic on 11/18/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  The visulization of a particular action tremor test
 
 import UIKit
 

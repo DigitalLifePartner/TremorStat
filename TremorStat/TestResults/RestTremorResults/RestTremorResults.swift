@@ -1,11 +1,11 @@
-//
+//  File Information:
 //  RestTremorResults
-//  TremorStat
 //
-//  Created by Best Software on 11/10/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
-//
+//  Abstract:
+//  The visulization of a rest tremor test results
 
 import UIKit
 import SafariServices

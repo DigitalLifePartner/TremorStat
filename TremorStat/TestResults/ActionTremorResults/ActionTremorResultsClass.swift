@@ -1,10 +1,12 @@
+//  File Information:
+//  ActionTremorResultsClass
 //
-//  ActionTremorResultsClass.swift
-//  TremorStat
-//
-//  Created by ikukushk on 11/14/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  The class for the action tremor test result
+
 
 import UIKit
 import simd

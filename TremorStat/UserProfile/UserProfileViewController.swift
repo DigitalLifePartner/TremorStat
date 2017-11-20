@@ -1,10 +1,11 @@
+//  File Information:
+//  UserProfileViewController
 //
-//  SecondUserProfileViewController.swift
-//  TremorStat
-//
-//  Created by Dayton Pukanich on 11/10/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  The visulization of the user profile through the Eureka library
 
 import UIKit
 import Eureka

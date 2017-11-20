@@ -1,27 +1,12 @@
+//  File Information:
+//  StatisticsCalculator
 //
-//  StatisticsCalculator.swift
-//  TremorStat
-//
-//  Created by Best Software on 11/10/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  Used to perform any statistic calculations for data analysis and visulization
 
-
-/*
- Purpose:   To aid with data analysis
- 
- Version 1 of File:
- 
- Complete:
- 
- - added calcMean and calcStdDev
- 
- To Do:
- 
- - test functions
- - add other statistical stuff
- 
- */
 import UIKit
 import simd
 

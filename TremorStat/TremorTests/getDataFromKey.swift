@@ -1,10 +1,12 @@
+//  File Information:
+//  getDataFromKey
 //
-//  getDataFromKey.swift
-//  TremorStat
-//
-//  Created by Milos Savic on 11/18/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  Get the value of the string based on a key. Used for storing
+//  data between instances
 
 import Foundation
 

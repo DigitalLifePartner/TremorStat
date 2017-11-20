@@ -1,10 +1,11 @@
+//  File Information:
+//  UserProfileClass
 //
-//  UserProfileClass.swift
-//  TremorStat
-//
-//  Created by Dayton Pukanich on 11/17/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  The class for user profile
 
 import Foundation
 

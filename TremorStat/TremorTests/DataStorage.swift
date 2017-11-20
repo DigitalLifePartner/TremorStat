@@ -1,10 +1,11 @@
+//  File Information:
+//  DataStorage
 //
-//  DataStorage.swift
-//  TremorStat
-//
-//  Created by Best Software on 11/11/17.
+//  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
 //
+//  Abstract:
+//  The class for the rest tremor test
 
 import UIKit
 import simd
