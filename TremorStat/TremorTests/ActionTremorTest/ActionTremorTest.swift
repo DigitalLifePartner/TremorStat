@@ -19,20 +19,18 @@ var numTaps = 0
 
 class ActionTremorTest: UIViewController {
     
+    // Array containing all Action Tremor Test results
     var actionTremorResultArray = [[Double]]()
     
     @IBOutlet weak var ActionTremorButton: UIView!
     
-    
     // MARK: Properties
-    //VERONICA: Who's Mark?
     
-    //Constants and Variables//////////////////////
+    //Constants and Variables
     
     // set up a timer
     var timer = Timer()
     
-    //Note that if you change test length you have to change both variables, due to Swift being a piece of shit. It wont let me just set the variable equal to the constant
     //Double to keep track of previous tap
     var lastTapTime = 15.0
     
@@ -81,10 +79,8 @@ class ActionTremorTest: UIViewController {
         numTaps += 1
         
         if (numTaps > 1){
-        
             //Push the time elapsed since last tap
             tapTimes.append(lastTapTime - currentTime)
-            
         }
         
         //Set time of last tap to current time
@@ -124,26 +120,20 @@ class ActionTremorTest: UIViewController {
             notRunning = true
             
             for time in tapTimes{
-                
                 //Summing tapTimes
                 avgTime += (time)
-                
             }
             
             //Calculate average tap time
             avgTime /= Double(numTaps - 1)
             
             for time in tapTimes{
-                
                 //Summing tapTimes
                 deviances.append(abs(avgTime - (time)))
-                
             }
             
             for deviance in deviances{
-                
                 avgDeviance += (deviance)
-                
             }
             
             avgDeviance /= Double(numTaps - 1)

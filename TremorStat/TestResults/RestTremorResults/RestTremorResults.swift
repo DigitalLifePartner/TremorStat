@@ -31,6 +31,7 @@ extension RestTremorResults: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    // Function showing all Action Tremor Tests in a table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var dateString = restTremorResultArray[indexPath.row].testDate.description

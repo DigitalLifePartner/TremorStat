@@ -12,6 +12,7 @@ import SafariServices
 
 class ActionTremorResults: UIViewController, UITextFieldDelegate {
     
+    // Array that stores all Action Tremor Test results
     var actionTremorResultArray = [[Double]]()
     
     var numOfRow = 0
@@ -25,22 +26,21 @@ class ActionTremorResults: UIViewController, UITextFieldDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         
-        //Store previous Action Tremor Test results in the array
+        // Store previous Action Tremor Test results in the array
         self.actionTremorResultArray = getDataFromKey(key: "actionTremorResultArray")
+        
+        // Reverse the array so that latest test results are processed first
         actionTremorResultArray=actionTremorResultArray.reversed()
         
-        //Update table
+        //Update table view
         tableView.reloadData()
     }
 
+    // Segue for passing particular test results to ActionTremorResultsDescription view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-
-        // pass the array to the Description page view
+        // pass the results for picked tast to the Description page view to show information about it
         let nextController = segue.destination as! ActionTremorResultsDescription
         nextController.results = actionTremorResultArray[numOfRow]
-
-
     }
 }
 
@@ -52,8 +52,10 @@ extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    // Function printing all Action Tremor Results in a table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        // Code below transforms a Date type in a readable format
         var dateString = Date(timeIntervalSince1970:(actionTremorResultArray[indexPath.row])[0])
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = " yyyy-MM-dd HH:mm:ss"
@@ -64,26 +66,25 @@ extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
         dateFormatter.timeZone = TimeZone(abbreviation: "PST")
         let updatedDateString = dateFormatter.string(from: yourDate!)
         
+        // Print an Action Tremor Result in a cell of table view
         let Title = "Test Execution Time:    " + updatedDateString //String(describing: dateString)
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! ActionTestCell
         cell.testTitle.text = Title
-        
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    
+    // Function processing click on a particular test result: when clicked it shows particular test information
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         numOfRow = indexPath.row
         performSegue(withIdentifier: "Description", sender: self)
     }
     
     
+    // Function for deleting entries: redundant for this version of TremorStat
     //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     //
     //        if editingStyle == .delete {

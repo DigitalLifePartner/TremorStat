@@ -26,6 +26,9 @@ let READINGS_PER_TEST = Int(TEST_DURATION/PERIOD_FOR_READINGS)
 // class to handle rest tremor test
 class RestTremorTest: UIViewController, MotionGraphContainer {
     
+    // Array containing all Action Tremor Test results
+    //var restTremorResultArray = [[Double]]()
+    
     // MARK: Properties
     
     // test duration = 30 seconds
@@ -42,6 +45,9 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
     
     // Create an instance of RestTremorResult to store results
     var results = RestTremorResultsClass()
+    
+    //Instantiating Statistics class for data representation
+    var statisticsCalculator = StatisticsCalculator()
     
     // component arrays for X Y Z coordinates ( size = 1200 because 30 s / 0.025 s sampling )
     var gyroArrayX = Array(repeating: 0.0, count: READINGS_PER_TEST)
@@ -108,10 +114,34 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
         super.viewDidDisappear(animated)
     }
     
+    override func viewDidLoad() {
+        
+        //Store previous Action Tremor Test results in the array
+        //self.restTremorResultArray = getDataFromKey(key: "restTremorResultArray")
+        
+        super.viewDidLoad()
+        
+    }
+    
     // MARK: Implementation
     
     // only to be called when a test is complete ( no exits / cancels )
     func goToApprove() {
+        
+        // Data processing using different algorithm: redundant for this version of TremorStat
+        //var results = [Double]()
+        //results.append(Double(Date().timeIntervalSince1970))
+        
+        //Store average offset values
+        //results.append(statisticsCalculator.calcMean(theData: gyroArrayX, theSize: gyroArrayX.count, absolute: false))
+        //results.append(statisticsCalculator.calcMean(theData: gyroArrayY, theSize: gyroArrayY.count, absolute: false))
+        //results.append(statisticsCalculator.calcMean(theData: gyroArrayZ, theSize: gyroArrayZ.count, absolute: false))
+        
+        //Store stdandart deviation of the offset
+        //results.append()
+        //results.append()
+        //results.append()
+        
         // segue back to the test approval page
         restTremorResultArray.append( self.results )
         performSegue(withIdentifier: "ApprovePage", sender: self)
