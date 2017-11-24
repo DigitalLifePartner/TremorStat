@@ -3,7 +3,7 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "Icon-Notification.png",
+      "filename" : "Icon-Small-40.png",
       "scale" : "2x"
     },
     {
@@ -51,7 +51,7 @@
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "UpdatedIcon.png",
+      "filename" : "UpdatedIcon.jpg",
       "scale" : "1x"
     }
   ],
