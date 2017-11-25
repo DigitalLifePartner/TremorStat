@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="1921" y="1836"/>
         </scene>
-        <!--View Controller-->
+        <!--Action Tremor User Profile-->
         <scene sceneID="Fj4-IJ-a5g">
             <objects>
-                <viewController id="xdX-dL-4LA" sceneMemberID="viewController">
+                <viewController id="xdX-dL-4LA" customClass="ActionTremorUserProfile" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O6L-Q8-NF9"/>
                         <viewControllerLayoutGuide type="bottom" id="z5c-dZ-Ter"/>
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btl-oM-3Fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1286" y="2605"/>
+            <point key="canvasLocation" x="1240.8" y="2604.6476761619192"/>
         </scene>
         <!--Rest Tremor User Profile-->
         <scene sceneID="bKb-df-3Oo">

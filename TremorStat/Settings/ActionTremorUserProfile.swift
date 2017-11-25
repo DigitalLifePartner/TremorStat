@@ -9,15 +9,14 @@
 /*
  ABSTRACT:
  
- Purpose: Display average amplitude of users rest tremor test from the past 30 days of testing
+ Purpose: Display averages for user from their previous tests
  
  */
 
 import UIKit
 
-let THIRTY_DAYS = 30
-class RestTremorUserProfile: UIViewController {
-
+class ActionTremorUserProfile: UIViewController {
+    
     // MARK: properties
     
     // indices indicating date
@@ -38,11 +37,11 @@ class RestTremorUserProfile: UIViewController {
     var XValues = [Double]()
     
     // value to plot against the date
-    var yValues = [Double]()
+    var yValuesFrequency = [Double]()
+    var yValuesDeviance = [Double]()
     
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var yearLabel: UILabel!
+     var actionTremorResultArray = getDataFromKey(key: "actionTremorResultArray")
+    
     
     // MARK: overrides
     
@@ -60,7 +59,7 @@ class RestTremorUserProfile: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         // display last thirty tests
-        constructXValueStrings( )
+        constructValues( )
         
     }
     
@@ -87,30 +86,29 @@ class RestTremorUserProfile: UIViewController {
         range = start..<end
         calendarDate[YEAR] = enteredDate.substring( with: range )
     }
-    func constructXValueStrings( ) {
+    func constructValues( ) {
         
-        var currentDate = Date()
-        setCalendarDate(enteredDate: currentDate.description )
-        dayLabel.text = String(calendarDate[DAY])
-        monthLabel.text = String(calendarDate[MONTH])
-        yearLabel.text = String(calendarDate[YEAR])
+        //var currentDate = Date()
+        //setCalendarDate(enteredDate: currentDate.description )
         
         // will display last 30 days of tests ( or all tests if less than 30 days have passed )
         // note that days without tests will be omitted
         
+        var currentDate = ""
         var amountOfTestedDays = 0
-        var totalAverage = 0.0
+        var frequency = 0.0
+        var deviance = 0.0
         var multipleTestsAccountedFor = 0
         var sameDay = false
-                        // day month
+        // day month
         var prevTest = [ "0", "0" ]
-        while ( ( amountOfTestedDays < DAYS_TESTED ) && ( amountOfTestedDays + multipleTestsAccountedFor < restTremorResultArray.count ) ) {
+        while ( ( amountOfTestedDays < DAYS_TESTED ) && ( amountOfTestedDays + multipleTestsAccountedFor < self.actionTremorResultArray.count ) ) {
             
             // get date from stored array
-            currentDate = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ].testDate
+            currentDate = String(self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][0])
             
             // split up into day / month / year
-            setCalendarDate(enteredDate: currentDate.description)
+            setCalendarDate(enteredDate: currentDate)
             
             // check if this test occurred on the same day
             if ( calendarDate[DAY] == prevTest[0] && calendarDate[MONTH] == prevTest[1]) {
@@ -123,9 +121,12 @@ class RestTremorUserProfile: UIViewController {
                 
                 // force the sameDay bool to true
                 sameDay = true
+                
+                print( "was the same day")
             }
             else { // different day
                 sameDay = false
+                print( "was a different day")
             }
             
             // add string array to larger array of dates
@@ -139,16 +140,23 @@ class RestTremorUserProfile: UIViewController {
             }
             
             // to avoid complications of the 3D array, take sum of the averages of the XYZ and display that instead
-            totalAverage = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ].testAverageX + restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ].testAverageY + restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ].testAverageZ
+            frequency = self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][1]
+            print( "new freq = ", frequency)
+            deviance = self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][2]
+            print( "new deviance = ", deviance)
             
             // add to the yValues
             if ( sameDay ) {
                 // if it is the same day take average of two
-                yValues[0] =  ( yValues[0] + totalAverage ) / 2.0
+                yValuesFrequency[0] =  ( yValuesFrequency[0] + frequency ) / 2.0
+                print( "averaged value freq is = ", yValuesFrequency[0])
+                
+                yValuesDeviance[0] = ( yValuesDeviance[0] + deviance ) / 2.0
+                print( "averaged value deviance is = ", yValuesDeviance[0])
             }
             else {
                 // add new entry to array
-                yValues.insert( totalAverage, at: 0 )
+                yValuesFrequency.insert( frequency, at: 0 )
             }
             
             // increment tested days
@@ -161,19 +169,19 @@ class RestTremorUserProfile: UIViewController {
         //var dateString = String(calendarDate[DAY] + "/" + calendarDate[MONTH] + "/" + calendarDate[YEAR] + "/")
         //xValuesString.insert( dateString, at: 0  )
         // if there were multiple tests in a day, average out their amplitude averages for the graph ( one data point per day )
-       
+        
     }
     
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
