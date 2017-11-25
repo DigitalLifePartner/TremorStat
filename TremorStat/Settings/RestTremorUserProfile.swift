@@ -135,7 +135,7 @@ class RestTremorUserProfile: UIViewController {
                 xValuesString.insert(calendarDate, at: 0)
                 
                 // looks confusing, what I did was I took the day, and added it to the month divided by 100 so that November 15 ---> 15.11
-                XValues.insert( Double( calendarDate[DAY] )! + Double( calendarDate[MONTH] )!/100.0, at: 0 )
+                XValues.insert( Double( calendarDate[MONTH] )! + Double( calendarDate[DAY] )!/100.0, at: 0 )
             }
             
             // to avoid complications of the 3D array, take sum of the averages of the XYZ and display that instead

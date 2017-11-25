@@ -94,7 +94,7 @@ class ActionTremorUserProfile: UIViewController {
         // will display last 30 days of tests ( or all tests if less than 30 days have passed )
         // note that days without tests will be omitted
         
-        var currentDate = ""
+        var currentDate = Date()
         var amountOfTestedDays = 0
         var frequency = 0.0
         var deviance = 0.0
@@ -102,14 +102,22 @@ class ActionTremorUserProfile: UIViewController {
         var sameDay = false
         // day month
         var prevTest = [ "0", "0" ]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = " yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        var currentRepeatedTests = 1
+        
         while ( ( amountOfTestedDays < DAYS_TESTED ) && ( amountOfTestedDays + multipleTestsAccountedFor < self.actionTremorResultArray.count ) ) {
             
             // get date from stored array
-            currentDate = String(self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][0])
-            
+            currentDate = Date(timeIntervalSince1970:((self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][0])))
+            //currentDate = dateFormatter.string(from: )
             // split up into day / month / year
-            setCalendarDate(enteredDate: currentDate)
-            
+            setCalendarDate(enteredDate: currentDate.description)
+            print( "Full date was " + currentDate.description )
+            print ( "Date was found to be " + calendarDate[DAY] + "/" + calendarDate[MONTH])
             // check if this test occurred on the same day
             if ( calendarDate[DAY] == prevTest[0] && calendarDate[MONTH] == prevTest[1]) {
                 
@@ -122,10 +130,13 @@ class ActionTremorUserProfile: UIViewController {
                 // force the sameDay bool to true
                 sameDay = true
                 
+                currentRepeatedTests += 1
+                
                 print( "was the same day")
             }
             else { // different day
                 sameDay = false
+                currentRepeatedTests = 1
                 print( "was a different day")
             }
             
@@ -135,8 +146,8 @@ class ActionTremorUserProfile: UIViewController {
             if ( sameDay == false ) {
                 xValuesString.insert(calendarDate, at: 0)
                 
-                // looks confusing, what I did was I took the day, and added it to the month divided by 100 so that November 15 ---> 15.11
-                XValues.insert( Double( calendarDate[DAY] )! + Double( calendarDate[MONTH] )!/100.0, at: 0 )
+                // looks confusing, what I did was I took the day, and added it to the month divided by 100 so that November 15 ---> 11.15
+                XValues.insert( Double( calendarDate[MONTH] )! + Double( calendarDate[DAY] )!/100.0, at: 0 )
             }
             
             // to avoid complications of the 3D array, take sum of the averages of the XYZ and display that instead
@@ -148,15 +159,16 @@ class ActionTremorUserProfile: UIViewController {
             // add to the yValues
             if ( sameDay ) {
                 // if it is the same day take average of two
-                yValuesFrequency[0] =  ( yValuesFrequency[0] + frequency ) / 2.0
+                yValuesFrequency[0] =  ( yValuesFrequency[0]*Double(currentRepeatedTests - 1) + frequency ) / Double(currentRepeatedTests)
                 print( "averaged value freq is = ", yValuesFrequency[0])
                 
-                yValuesDeviance[0] = ( yValuesDeviance[0] + deviance ) / 2.0
+                yValuesDeviance[0] = ( yValuesDeviance[0]*Double(currentRepeatedTests - 1) + deviance ) / Double(currentRepeatedTests)
                 print( "averaged value deviance is = ", yValuesDeviance[0])
             }
             else {
                 // add new entry to array
                 yValuesFrequency.insert( frequency, at: 0 )
+                yValuesDeviance.insert( deviance, at: 0 )
             }
             
             // increment tested days

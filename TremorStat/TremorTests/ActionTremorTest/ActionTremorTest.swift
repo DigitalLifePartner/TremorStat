@@ -32,11 +32,11 @@ class ActionTremorTest: UIViewController {
     var timer = Timer()
     
     //Double to keep track of previous tap
-    var lastTapTime = 5.0
+    var lastTapTime = 15.0
     
     //Double to track current time
     //If you change testLength make sure to change this as well
-    var currentTime = 5.0
+    var currentTime = 15.0
     
     // var used to track if the clock is running or not
     var notRunning = false
