@@ -57,6 +57,7 @@ class RestTremorResultsClass {
     var gyroArrayX: Array<Double> = Array(repeating: 0.0, count: READINGS_PER_TEST)
     var gyroArrayY: Array<Double> = Array(repeating: 0.0, count: READINGS_PER_TEST)
     var gyroArrayZ: Array<Double> = Array(repeating: 0.0, count: READINGS_PER_TEST)
+    
     var testDate = Date()
     
     var testAverageX: Double!

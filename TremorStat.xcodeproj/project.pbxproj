@@ -782,7 +782,7 @@
 				CODE_SIGN_ENTITLEMENTS = TremorStat/TremorStat.entitlements;
 				DEVELOPMENT_TEAM = E597XJXJZ9;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -800,7 +800,7 @@
 				CODE_SIGN_ENTITLEMENTS = TremorStat/TremorStat.entitlements;
 				DEVELOPMENT_TEAM = E597XJXJZ9;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

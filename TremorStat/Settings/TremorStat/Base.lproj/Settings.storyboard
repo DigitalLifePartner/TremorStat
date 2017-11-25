@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="1286" y="2605"/>
         </scene>
-        <!--View Controller-->
+        <!--Rest Tremor User Profile-->
         <scene sceneID="bKb-df-3Oo">
             <objects>
-                <viewController id="g6o-Ol-FuK" sceneMemberID="viewController">
+                <viewController id="g6o-Ol-FuK" customClass="RestTremorUserProfile" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LxC-Vk-hAE"/>
                         <viewControllerLayoutGuide type="bottom" id="6kM-6c-XZd"/>
@@ -90,12 +90,40 @@
                     <view key="view" contentMode="scaleToFill" id="VHz-mx-qDi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q7-f4-uS4">
+                                <rect key="frame" x="72" y="118" width="231" height="77"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLI-nZ-Obl">
+                                <rect key="frame" x="72" y="251" width="231" height="77"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EL4-2I-SCC">
+                                <rect key="frame" x="72" y="370" width="231" height="77"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="dayLabel" destination="3Q7-f4-uS4" id="lhL-jb-RwG"/>
+                        <outlet property="monthLabel" destination="SLI-nZ-Obl" id="29t-fR-l60"/>
+                        <outlet property="yearLabel" destination="EL4-2I-SCC" id="2mX-nR-BIn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zh1-ta-voJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2642" y="2605"/>
+            <point key="canvasLocation" x="2640.8000000000002" y="2604.6476761619192"/>
         </scene>
     </scenes>
 </document>
