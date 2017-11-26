@@ -130,4 +130,58 @@ class StatisticsCalculator {
         self.standardDeviation = (totalCount/Double(theSize)).squareRoot()
         return self.standardDeviation
     }
+    
+    // check if the two inputs are within the same range
+    func isWithinRange( first: Double, second: Double, range: Double ) -> Bool {
+        
+        var retVal = false
+        
+        // if they are within a plus minus range of each other return true else false
+        if ( ( first >= second - range ) || ( first <= second - range ) ) {
+            retVal = true
+        }
+        return retVal
+    }
+    
+    // take in an array and return an array with values close to the search key's value
+    func searchAndMakeWithinRange( theArray: [Double], searchKey: Double, range: Double ) -> [Double] {
+        var retArray = [Double]()
+        
+        // go thru array
+        for i in 0...( theArray.count - 1 ) {
+            
+            // if the value is similar to the key, add it to the returned array
+            if ( isWithinRange( first: theArray[i], second: searchKey, range: range ) ) {
+                retArray.append( theArray[i] )
+            }
+        }
+        return retArray
+    }
+    
+    // similar to isWithinRange, but now is not a plus minus range but a variable interval
+    func isWithinInterval( first: Double, leftMostVal: Double, rightMostVal: Double ) -> Bool {
+        
+        var retVal = false
+        
+        // if the value is within the given interval return true else false
+        if ( ( first >= leftMostVal ) || ( first <= rightMostVal ) ) {
+            retVal = true
+        }
+        return retVal
+    }
+    
+    // similar to the one with the range, but not with an interval instead
+    func searchAndMakeWithinInterval( theArray: [Double], leftMostVal: Double, rightMostVal: Double ) -> [Double] {
+        var retArray = [Double]()
+        
+        // go thru array
+        for i in 0...( theArray.count - 1 ) {
+            
+            // if the value is within the interval add it to the returned array
+            if ( isWithinInterval( first: theArray[i], leftMostVal: leftMostVal, rightMostVal: rightMostVal ) ) {
+                retArray.append( theArray[i] )
+            }
+        }
+        return retArray
+    }
 }

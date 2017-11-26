@@ -33,9 +33,9 @@ func getDeviance(array: Array<Double>)->Double{
     return 0.0
 }
 
-
 class ActionTremorResultsClass {
     var frequency: Double!
     var deviance: Double!
     var testDate = Date()
 }
+
