@@ -43,6 +43,8 @@
 		BF0EFFFC1FAEBB1A0076F4E2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */; };
 		BF5E8B351FB1107600559754 /* RestTremorTestViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B341FB1107600559754 /* RestTremorTestViewControllerTests.swift */; };
 		BF5E8B431FB1108900559754 /* TremorStatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B421FB1108900559754 /* TremorStatUITests.swift */; };
+		BF7CC9D51FCA565F001B9ECD /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7CC9D21FCA5609001B9ECD /* Charts.framework */; };
+		BF7CC9D61FCA565F001B9ECD /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF7CC9D21FCA5609001B9ECD /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFB1E6811FBFBCDC000B6ED8 /* UserProfileClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1E6801FBFBCDC000B6ED8 /* UserProfileClass.swift */; };
 		BFBEFE8D1FBE8A910038ACB2 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CF0DB61FBE5DD500A803A2 /* Eureka.framework */; };
 		BFBEFE8E1FBE8A910038ACB2 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8CF0DB61FBE5DD500A803A2 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -72,6 +74,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = B579FE3E1DDD1D2700A8C0C7;
 			remoteInfo = TremorStat;
+		};
+		BF7CC9D11FCA5609001B9ECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF7CC9CC1FCA5608001B9ECD /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		BF7CC9D31FCA5609001B9ECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF7CC9CC1FCA5608001B9ECD /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+		BF7CC9D71FCA565F001B9ECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF7CC9CC1FCA5608001B9ECD /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A58A4ED274A941CA248EA921;
+			remoteInfo = Charts;
 		};
 		BF9E0F761FBE196E00BBD00C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -111,6 +134,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BFBEFE8E1FBE8A910038ACB2 /* Eureka.framework in Embed Frameworks */,
+				BF7CC9D61FCA565F001B9ECD /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +181,7 @@
 		BF5E8B361FB1107600559754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF5E8B421FB1108900559754 /* TremorStatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TremorStatUITests.swift; sourceTree = "<group>"; };
 		BF5E8B441FB1108900559754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF7CC9CC1FCA5608001B9ECD /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Eureka/Eureka.xcodeproj; sourceTree = "<group>"; };
 		BFB1E6801FBFBCDC000B6ED8 /* UserProfileClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileClass.swift; sourceTree = "<group>"; };
 		BFBEFE891FBE8A800038ACB2 /* TremorStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TremorStat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBEFE8D1FBE8A910038ACB2 /* Eureka.framework in Frameworks */,
+				BF7CC9D51FCA565F001B9ECD /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +261,7 @@
 				BF5E8B331FB1107600559754 /* RestTremorTestViewControllerTests */,
 				BF5E8B411FB1108900559754 /* TremorStatUITests */,
 				BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */,
+				BF7CC9CC1FCA5608001B9ECD /* Charts.xcodeproj */,
 				BFBEFE951FBE8E270038ACB2 /* TremorStatTests.xctest */,
 				BFBEFE961FBE8E270038ACB2 /* TremorStatUITests.xctest */,
 			);
@@ -355,6 +382,15 @@
 			path = GraphEngine;
 			sourceTree = "<group>";
 		};
+		BF7CC9CD1FCA5608001B9ECD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF7CC9D21FCA5609001B9ECD /* Charts.framework */,
+				BF7CC9D41FCA5609001B9ECD /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E8CF0DB11FBE5CA700A803A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +437,7 @@
 			dependencies = (
 				BF9E0F771FBE196E00BBD00C /* PBXTargetDependency */,
 				BFBEFE901FBE8A910038ACB2 /* PBXTargetDependency */,
+				BF7CC9D81FCA565F001B9ECD /* PBXTargetDependency */,
 			);
 			name = TremorStat;
 			productName = MotionGraphs;
@@ -455,7 +492,7 @@
 				TargetAttributes = {
 					B579FE3E1DDD1D2700A8C0C7 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = E597XJXJZ9;
+						DevelopmentTeam = DUV5LZ574A;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -491,6 +528,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = BF7CC9CD1FCA5608001B9ECD /* Products */;
+					ProjectRef = BF7CC9CC1FCA5608001B9ECD /* Charts.xcodeproj */;
+				},
+				{
 					ProductGroup = E8CF0DB11FBE5CA700A803A2 /* Products */;
 					ProjectRef = BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */;
 				},
@@ -505,6 +546,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		BF7CC9D21FCA5609001B9ECD /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = BF7CC9D11FCA5609001B9ECD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF7CC9D41FCA5609001B9ECD /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = BF7CC9D31FCA5609001B9ECD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		E8CF0DB61FBE5DD500A803A2 /* Eureka.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -626,6 +681,11 @@
 			isa = PBXTargetDependency;
 			target = B579FE3E1DDD1D2700A8C0C7 /* TremorStat */;
 			targetProxy = BF5E8B451FB1108900559754 /* PBXContainerItemProxy */;
+		};
+		BF7CC9D81FCA565F001B9ECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = BF7CC9D71FCA565F001B9ECD /* PBXContainerItemProxy */;
 		};
 		BF9E0F771FBE196E00BBD00C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -784,11 +844,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TremorStat/TremorStat.entitlements;
-				DEVELOPMENT_TEAM = E597XJXJZ9;
+				DEVELOPMENT_TEAM = DUV5LZ574A;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -802,11 +862,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TremorStat/TremorStat.entitlements;
-				DEVELOPMENT_TEAM = E597XJXJZ9;
+				DEVELOPMENT_TEAM = DUV5LZ574A;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

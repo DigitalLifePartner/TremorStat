@@ -7,3 +7,6 @@
 [submodule "force"]
 	path = force
 	url = https://github.com/xmartlabs/eureka.git
+[submodule "charts"]
+	path = charts
+	url = https://github.com/danielgindi/charts.git
