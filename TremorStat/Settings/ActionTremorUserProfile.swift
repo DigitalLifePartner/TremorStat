@@ -112,7 +112,7 @@ class ActionTremorUserProfile: UIViewController {
         while ( ( amountOfTestedDays < DAYS_TESTED ) && ( amountOfTestedDays + multipleTestsAccountedFor < self.actionTremorResultArray.count ) ) {
             
             // get date from stored array
-            currentDate = Date(timeIntervalSince1970:((self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][0])))
+            currentDate = Date(timeIntervalSince1970:((self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][AT_TIME])))
             //currentDate = dateFormatter.string(from: )
             // split up into day / month / year
             setCalendarDate(enteredDate: currentDate.description)
@@ -151,9 +151,9 @@ class ActionTremorUserProfile: UIViewController {
             }
             
             // to avoid complications of the 3D array, take sum of the averages of the XYZ and display that instead
-            frequency = self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][1]
+            frequency = self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][AT_FREQUENCY]
             print( "new freq = ", frequency)
-            deviance = self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][2]
+            deviance = self.actionTremorResultArray[ self.actionTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][AT_DEVIANCE]
             print( "new deviance = ", deviance)
             
             // add to the yValues

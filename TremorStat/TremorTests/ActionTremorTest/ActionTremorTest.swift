@@ -14,6 +14,12 @@ var deviances = [Double]()
 var avgTime = 0.0
 var avgDeviance = 0.0
 
+
+// for use when accessing stored action tremor data
+let AT_TIME = 0
+let AT_FREQUENCY = 1
+let AT_DEVIANCE = 2
+let AT_NUMTAPS = 3
 //Unsigned int to track number of taps
 var numTaps = 0
 

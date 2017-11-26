@@ -134,7 +134,7 @@ class RestTremorUserProfile: UIViewController {
             if ( sameDay == false ) {
                 xValuesString.insert(calendarDate, at: 0)
                 
-                // looks confusing, what I did was I took the day, and added it to the month divided by 100 so that November 15 ---> 15.11
+                // looks confusing, what I did was I took the day, and added it to the month divided by 100 so that November 15 ---> 11.15
                 XValues.insert( Double( calendarDate[MONTH] )! + Double( calendarDate[DAY] )!/100.0, at: 0 )
             }
             
