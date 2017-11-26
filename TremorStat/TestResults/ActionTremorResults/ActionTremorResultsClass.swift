@@ -13,22 +13,22 @@ import simd
 
 //MARK: Getter Methods
 func getDate(array: Array<Double>)->Double{
-    if array.count>0{
-    return array[0]
+    if array.count>AT_TIME{
+    return array[AT_TIME]
     }
     return 0.0
 }
 
 func getFrequency(array: Array<Double>)->Double{
-    if array.count>1{
-        return array[1]
+    if array.count>AT_FREQUENCY{
+        return array[AT_FREQUENCY]
     }
     return 0.0
 }
 
 func getDeviance(array: Array<Double>)->Double{
-    if array.count>2{
-        return array[2]
+    if array.count>AT_DEVIANCE{
+        return array[AT_DEVIANCE]
     }
     return 0.0
 }
