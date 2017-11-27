@@ -14,10 +14,14 @@
  */
 
 import UIKit
+import Charts
 
 class ActionTremorUserProfile: UIViewController {
     
     // MARK: properties
+    
+    
+    @IBOutlet var displayedChart: LineChartView!
     
     // indices indicating date
     let YEAR = 2
@@ -60,10 +64,14 @@ class ActionTremorUserProfile: UIViewController {
         
         // display last thirty tests
         constructValues( )
-        
+        //setChart()
     }
     
     // MARK: implementation
+    
+   // func setChart( xVals: Double, yVals: Double ) {
+    //    displayedChart.noDataText = "NO DATA"
+   // }
     
     func setCalendarDate( enteredDate: String )
     {
@@ -109,6 +117,7 @@ class ActionTremorUserProfile: UIViewController {
         
         var currentRepeatedTests = 1
         
+        
         while ( ( amountOfTestedDays < DAYS_TESTED ) && ( amountOfTestedDays + multipleTestsAccountedFor < self.actionTremorResultArray.count ) ) {
             
             // get date from stored array
@@ -119,6 +128,7 @@ class ActionTremorUserProfile: UIViewController {
             print( "Full date was " + currentDate.description )
             print ( "Date was found to be " + calendarDate[DAY] + "/" + calendarDate[MONTH])
             // check if this test occurred on the same day
+            
             if ( calendarDate[DAY] == prevTest[0] && calendarDate[MONTH] == prevTest[1]) {
                 
                 // if it did the amount of days tested needs to be decremented as it is the same day
@@ -144,10 +154,14 @@ class ActionTremorUserProfile: UIViewController {
             
             // if it is a different day, add completely new entries to the xValue arrays
             if ( sameDay == false ) {
+                
+                calendarDate[DAY] = String( Double(calendarDate[DAY])! + Double( multipleTestsAccountedFor + amountOfTestedDays) )
                 xValuesString.insert(calendarDate, at: 0)
                 
                 // looks confusing, what I did was I took the day, and added it to the month divided by 100 so that November 15 ---> 11.15
                 XValues.insert( Double( calendarDate[MONTH] )! + Double( calendarDate[DAY] )!/100.0, at: 0 )
+                
+                //XValues.insert( Double(amountOfTestedDays + multipleTestsAccountedFor), at: 0 )
             }
             
             // to avoid complications of the 3D array, take sum of the averages of the XYZ and display that instead
@@ -178,10 +192,38 @@ class ActionTremorUserProfile: UIViewController {
             prevTest = [ calendarDate[DAY], calendarDate[MONTH] ]
             
         }
-        //var dateString = String(calendarDate[DAY] + "/" + calendarDate[MONTH] + "/" + calendarDate[YEAR] + "/")
-        //xValuesString.insert( dateString, at: 0  )
-        // if there were multiple tests in a day, average out their amplitude averages for the graph ( one data point per day )
         
+        
+        // prep the displayed charts
+        var displayChartEntries = [ChartDataEntry]()
+        
+        // go thru all y values
+        if ( yValuesFrequency.count > 0 ) {
+            
+            for i in 0...(yValuesFrequency.count - 1 ) {
+                
+                // set up the x and y axis values
+                let value = ChartDataEntry( x: XValues[yValuesFrequency.count - 1 - i], y: yValuesFrequency[i] )
+                print( "adding to x coord " , XValues[yValuesFrequency.count - 1 - i], " and y coord " , yValuesFrequency[i] )
+                
+                // add to the chartdataentry object
+                displayChartEntries.append( value )//insert( value, at: 0 )
+                
+            }
+            
+            // make data set based on values and give it a name
+            let lineY = LineChartDataSet( values: displayChartEntries, label: "Frequency" )
+            
+            // set up a data object
+            let frequencyData = LineChartData()
+            
+            // add the data set to the data
+            frequencyData.addDataSet(lineY )
+
+            // give chart name and display data
+            displayedChart.chartDescription?.text = "Frequency Over the Past Thirty Days"
+            displayedChart.data = frequencyData
+        }
     }
     
     
