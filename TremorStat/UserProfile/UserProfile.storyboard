@@ -12,17 +12,8 @@
         <scene sceneID="Z9o-4X-16E">
             <objects>
                 <tableViewController id="dS8-d6-1y2" customClass="UserProfileViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Xtj-O7-Vp3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="dS8-d6-1y2" id="AUH-T8-AHr"/>
-                            <outlet property="delegate" destination="dS8-d6-1y2" id="mON-PM-fOQ"/>
-                        </connections>
-                    </tableView>
                     <navigationItem key="navigationItem" title="User Profile" id="Ns0-kY-9M4">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="3Bh-Td-Xso">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" image="services.png" id="3Bh-Td-Xso">
                             <connections>
                                 <segue destination="vCf-Ny-rSf" kind="show" id="pln-pl-ZVb"/>
                             </connections>
@@ -147,4 +138,7 @@
             <point key="canvasLocation" x="3975" y="1906"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="services.png" width="30" height="30"/>
+    </resources>
 </document>
