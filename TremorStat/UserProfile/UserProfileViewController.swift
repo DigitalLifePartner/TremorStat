@@ -93,10 +93,29 @@ class UserProfileViewController: Eureka.FormViewController {
                 }
                 .onPresent { from, to in
                     to.popoverPresentationController?.permittedArrowDirections = .up
-            }
+                }
+                    
+            <<< ActionSheetRow<String>() {
+                $0.title = "Hand"
+                $0.selectorTitle = "What hand will you be using to perform the tests?"
+                $0.options = ["Left", "Right"]
+                if let UserHand = UserDefaults.standard.object(forKey: "UserHand") as? String
+                {
+                    $0.value = UserHand
+                }
+                }
+                .onChange { row in
+                    userProfileResults.hand = row.value!
+                    UserDefaults.standard.set(userProfileResults.hand, forKey: "UserHand")
+                }
+                .onPresent { from, to in
+                    to.popoverPresentationController?.permittedArrowDirections = .up
+                }
+                        
             +++ Section("Additional Questions")
             <<< MultipleSelectorRow<String>() {
                 $0.title = "Environmental Triggers"
+                $0.selectorTitle = "Environmental Triggers"
                 $0.options = ["Herbicides", "Pesticides"]
                 if let UserEnv = UserDefaults.standard.object(forKey: "UserEnv") as? Array<Any>
                     {
@@ -131,6 +150,7 @@ class UserProfileViewController: Eureka.FormViewController {
                 }
             <<< MultipleSelectorRow<String>() {
                 $0.title = "Supplements"
+                $0.selectorTitle = "Supplements"
                 $0.options = ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"]
                     if let UserSupp = UserDefaults.standard.object(forKey: "UserSupp") as? Array<Any>
                     {
@@ -145,23 +165,32 @@ class UserProfileViewController: Eureka.FormViewController {
                 }
                 .onPresent { from, to in
                     to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileViewController.multipleSelectorDone(_:)))
-            }
-            <<< ActionSheetRow<String>() {
-                $0.title = "Hand"
-                $0.selectorTitle = "What hand will you be using to perform the tests?"
-                $0.options = ["Left", "Right"]
-                    if let UserHand = UserDefaults.standard.object(forKey: "UserHand") as? String
-                    {
-                       $0.value = UserHand
-                    }
+                }
+        
+            <<< MultipleSelectorRow<String>() {
+                $0.title = "Parkinson's Medication"
+                $0.selectorTitle = "Medication"
+                $0.options = ["Medication A", "Medication B", "Medication C", "Medication D", "None"]
+                if let UserMed = UserDefaults.standard.object(forKey: "UserMed") as? Array<Any>
+                {
+                    let temp_UserMed = Set(UserMed as! [String])
+                    $0.value = temp_UserMed
+                }
                 }
                 .onChange { row in
-                    userProfileResults.hand = row.value!
-                    UserDefaults.standard.set(userProfileResults.hand, forKey: "UserHand")
+                    userProfileResults.supplements = row.value!
+                    let dataToStore = Array(userProfileResults.supplements)
+                    UserDefaults.standard.set(dataToStore, forKey: "UserMed")
                 }
                 .onPresent { from, to in
-                    to.popoverPresentationController?.permittedArrowDirections = .up
-                }
+                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileViewController.multipleSelectorDone(_:)))
+        }
+        
+        
+        
+        
+        
+        
             }
     
     @objc func multipleSelectorDone(_ item:UIBarButtonItem) {

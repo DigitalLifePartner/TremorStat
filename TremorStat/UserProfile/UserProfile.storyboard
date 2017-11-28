@@ -24,7 +24,7 @@
                     <navigationItem key="navigationItem" title="User Profile" id="Ns0-kY-9M4">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="3Bh-Td-Xso">
                             <connections>
-                                <segue destination="Sks-XN-xYE" kind="show" id="xZk-Se-tWc"/>
+                                <segue destination="vCf-Ny-rSf" kind="show" id="pln-pl-ZVb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -34,27 +34,117 @@
             </objects>
             <point key="canvasLocation" x="1350" y="1137"/>
         </scene>
-        <!--Application Settings-->
-        <scene sceneID="vIu-Fp-CwP">
+        <!--Settings-->
+        <scene sceneID="Yql-ue-FQA">
             <objects>
-                <viewController id="Sks-XN-xYE" sceneMemberID="viewController">
+                <viewController id="vCf-Ny-rSf" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="A50-gA-Ie3"/>
-                        <viewControllerLayoutGuide type="bottom" id="fA5-6E-NTo"/>
+                        <viewControllerLayoutGuide type="top" id="jGY-tv-S89"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eco-0d-yHu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="R36-vS-DTw">
+                    <view key="view" contentMode="scaleToFill" id="tDe-ax-K8n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6xa-A6-AyI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Application Settings" id="fPp-4E-dYo"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ny-re-Aic">
+                                <rect key="frame" x="103" y="152" width="158" height="102"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Action">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="a63-ZX-Umu" kind="show" id="Rvc-56-3Oe">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgs-ji-BZT">
+                                <rect key="frame" x="103" y="391" width="158" height="102"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Rest">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bgn-IU-HjU" kind="show" id="deK-uu-Nta">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Application Settings" id="nbk-q1-XtN">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="rbr-OF-smQ"/>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem key="navigationItem" title="Settings" id="Taf-di-Lgx"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vsj-bF-BGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ivb-c2-Nko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425" y="1137"/>
+            <point key="canvasLocation" x="3255" y="1137"/>
+        </scene>
+        <!--Action Tremor User Profile-->
+        <scene sceneID="sly-Ss-Ta7">
+            <objects>
+                <viewController id="a63-ZX-Umu" customClass="ActionTremorUserProfile" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="545-N7-tiB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y5A-PX-Fsr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lMX-cM-Bbv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nML-BZ-Qer" customClass="LineChartView" customModule="Charts" colorLabel="IBBuiltInLabel-Orange">
+                                <rect key="frame" x="0.0" y="109" width="375" height="449"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayedChart" destination="nML-BZ-Qer" id="EVV-jS-8Ol"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXF-0k-MQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2575" y="1906"/>
+        </scene>
+        <!--Rest Tremor User Profile-->
+        <scene sceneID="YbT-wg-bCa">
+            <objects>
+                <viewController id="bgn-IU-HjU" customClass="RestTremorUserProfile" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gN7-96-Tsu"/>
+                        <viewControllerLayoutGuide type="bottom" id="WW1-ne-gGD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oAV-Hx-OPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ND3-jV-y7Y" customClass="LineChartView" customModule="Charts" colorLabel="IBBuiltInLabel-Orange">
+                                <rect key="frame" x="0.0" y="82" width="375" height="449"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="restTremorChart" destination="ND3-jV-y7Y" id="fFQ-MO-iRm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NNB-zy-BSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3975" y="1906"/>
         </scene>
     </scenes>
 </document>
