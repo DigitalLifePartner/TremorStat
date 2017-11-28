@@ -49,7 +49,7 @@
         <scene sceneID="VHl-QD-7RL">
             <objects>
                 <navigationController id="BT7-Az-CYH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Test Results" id="Uj2-Cb-jMB"/>
+                    <tabBarItem key="tabBarItem" title="Test Results" image="combo_chart.png" id="Uj2-Cb-jMB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BXP-AL-OPT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -66,7 +66,7 @@
         <scene sceneID="SiD-js-D0S">
             <objects>
                 <navigationController id="Bzd-Zi-asM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User Profile" id="kh0-ZV-9VG"/>
+                    <tabBarItem key="tabBarItem" title="User Profile" image="user_male.png" id="kh0-ZV-9VG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IAY-c6-V58">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -121,6 +121,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="combo_chart.png" width="30" height="30"/>
         <image name="device_motion" width="25" height="25"/>
+        <image name="user_male.png" width="30" height="30"/>
     </resources>
 </document>
