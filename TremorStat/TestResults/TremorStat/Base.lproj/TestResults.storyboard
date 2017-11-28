@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Test Results View Controller-->
+        <!--Test Results-->
         <scene sceneID="atc-ab-awl">
             <objects>
                 <viewController id="h6k-Dg-I9U" customClass="TestResultsViewController" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,7 +72,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vv0-V4-imX"/>
+                    <navigationItem key="navigationItem" title="Test Results" leftItemsSupplementBackButton="YES" id="vv0-V4-imX"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="ActiveTremorTestResultsButton" destination="zn9-xk-g9a" id="MwD-Kg-acd"/>
                         <outlet property="RestTremorTestResultsButton" destination="ihs-WH-3Fc" id="Y45-MB-rEP"/>
@@ -157,7 +158,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Whz-61-PM4">
-                                <rect key="frame" x="0.0" y="21" width="375" height="646"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoCell" id="UMz-HS-hDh" userLabel="TestCell" customClass="ActionTestCell" customModule="TremorStat" customModuleProvider="target">
@@ -239,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-YB-14g">
-                                <rect key="frame" x="0.0" y="21" width="375" height="646"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoCell" id="8m0-MK-UFQ" userLabel="TestCell" customClass="RestTestCell" customModule="TremorStat" customModuleProvider="target">
