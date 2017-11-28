@@ -8,6 +8,8 @@
 //  Initiate a countdown to the rest tremor test and display said countdown
 
 import UIKit
+import CoreMotion
+
 
 class RestTremorCountdown: UIViewController {
     
@@ -25,7 +27,7 @@ class RestTremorCountdown: UIViewController {
     @IBOutlet weak var MyLabel: UILabel!
     
     // MARK: Overrides
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -36,7 +38,7 @@ class RestTremorCountdown: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // reinit vars incase of segue during countdown
         timer = Timer()
         seconds = 5

@@ -102,15 +102,16 @@ class RestTremorUserProfile: UIViewController {
         var totalAverage = 0.0
         var multipleTestsAccountedFor = 0
         var sameDay = false
+        var restTremorResultArray = getDataFromKey(key: "restTremorResultArray")
                         // day month
         var prevTest = [ "0", "0" ]
         while ( ( amountOfTestedDays < DAYS_TESTED ) && ( amountOfTestedDays + multipleTestsAccountedFor < restTremorResultArray.count ) ) {
             
             // get date from stored array
-            currentDate = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ].testDate
+            var testDate = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_TIME]
             
             // split up into day / month / year
-            setCalendarDate(enteredDate: currentDate.description)
+            setCalendarDate(enteredDate: String(testDate))
             
             // check if this test occurred on the same day
             if ( calendarDate[DAY] == prevTest[0] && calendarDate[MONTH] == prevTest[1]) {
@@ -139,7 +140,7 @@ class RestTremorUserProfile: UIViewController {
             }
             
             // to avoid complications of the 3D array, take sum of the averages of the XYZ and display that instead
-            totalAverage = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ].testAverageX + restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ].testAverageY + restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ].testAverageZ
+            totalAverage = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_XAVERAGE] + restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_YAVERAGE]  + restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_ZAVERAGE]
             
             // add to the yValues
             if ( sameDay ) {

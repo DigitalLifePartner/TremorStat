@@ -16,26 +16,33 @@ import UIKit
 import CoreMotion
 import simd
 
-var restTremorResultArray = [RestTremorResultsClass]()
-
 let TEST_DURATION = 30.0
-
 let PERIOD_FOR_READINGS = 0.025
 let READINGS_PER_TEST = Int(TEST_DURATION/PERIOD_FOR_READINGS)
+// Indeces constants to access particular elements of the test
+let RT_TIME = 0
+let RT_XAVERAGE = 1
+let RT_YAVERAGE = 2
+let RT_ZAVERAGE = 3
+let RT_XSTDEV = 4
+let RT_YSTDEV = 5
+let RT_ZSTDEV = 6
 
 // class to handle rest tremor test
 class RestTremorTest: UIViewController, MotionGraphContainer {
     
     // Array containing all Action Tremor Test results
-    //var restTremorResultArray = [[Double]]()
+    var restTremorResultArray = [[Double]]()
     
     // MARK: Properties
     
     // test duration = 30 seconds
     var timeLeft = TEST_DURATION
-
+    
+    // stop conditions
     var stopTest = false
-
+    var gyroAvailable = true
+    
     // index of arrays
     var testCount = 0
     
@@ -43,8 +50,8 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
     
     var motionManager: CMMotionManager?
     
-    // Create an instance of RestTremorResult to store results
-    var results = RestTremorResultsClass()
+    // Create an array for the result data
+    var results = Array(repeating: 0.0, count: 7)
     
     //Instantiating Statistics class for data representation
     var statisticsCalculator = StatisticsCalculator()
@@ -67,7 +74,7 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
     @IBOutlet weak var updateIntervalLabel: UILabel!
     @IBOutlet weak var updateIntervalSlider: UISlider!
     @IBOutlet var valueLabels: [UILabel]!
-
+    
     let updateIntervalFormatter = MeasurementFormatter()
     
     // MARK: Overrides
@@ -78,10 +85,21 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
         // stop gyro updates
         self.stopUpdates()
         
-        // specific case for segue into the test approval view
-        if finishedTest == true {
+        // specific case for segue into the NoGyro view
+        if  (gyroAvailable == false && finishedTest == true) {
             finishedTest = false
+            gyroAvailable = true
+            // pass the component arrays to the approval view
+            let nextController = segue.destination as! NoGyro
+            nextController.results=self.results
+            nextController.gyroArrayX = self.gyroArrayX
+            nextController.gyroArrayY = self.gyroArrayY
+            nextController.gyroArrayZ = self.gyroArrayZ
+        }
             
+            // specific case for segue into the test approval view
+        else if finishedTest == true {
+            finishedTest = false
             // pass the component arrays to the approval view
             let nextController = segue.destination as! RestTremorApproval
             nextController.results=self.results
@@ -106,6 +124,9 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
         
         // start getting the gryoscope readings
         startUpdates()
+        if gyroAvailable == false {
+            goToNoGyro()}
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -128,23 +149,29 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
     // only to be called when a test is complete ( no exits / cancels )
     func goToApprove() {
         
-        // Data processing using different algorithm: redundant for this version of TremorStat
-        //var results = [Double]()
-        //results.append(Double(Date().timeIntervalSince1970))
+        //Store date of the test
+        results[RT_TIME]=(Double(Date().timeIntervalSince1970))
         
         //Store average offset values
-        //results.append(statisticsCalculator.calcMean(theData: gyroArrayX, theSize: gyroArrayX.count, absolute: false))
-        //results.append(statisticsCalculator.calcMean(theData: gyroArrayY, theSize: gyroArrayY.count, absolute: false))
-        //results.append(statisticsCalculator.calcMean(theData: gyroArrayZ, theSize: gyroArrayZ.count, absolute: false))
+        results[RT_XAVERAGE]=(statisticsCalculator.calcMean(theData: gyroArrayX, theSize: gyroArrayX.count, absolute: true))
+        results[RT_YAVERAGE]=(statisticsCalculator.calcMean(theData: gyroArrayY, theSize: gyroArrayY.count, absolute: true))
+        results[RT_ZAVERAGE]=(statisticsCalculator.calcMean(theData: gyroArrayZ, theSize: gyroArrayZ.count, absolute: true))
         
         //Store stdandart deviation of the offset
-        //results.append()
-        //results.append()
-        //results.append()
+        results[RT_XSTDEV]=(statisticsCalculator.calcStdDev(theData: gyroArrayX, theSize: gyroArrayX.count, gotMean: false, absolute: true))
+        results[RT_YSTDEV]=(statisticsCalculator.calcStdDev(theData: gyroArrayY, theSize: gyroArrayX.count, gotMean: false, absolute: true))
+        results[RT_ZSTDEV]=(statisticsCalculator.calcStdDev(theData: gyroArrayZ, theSize: gyroArrayZ.count, gotMean: false, absolute: true))
         
         // segue back to the test approval page
         restTremorResultArray.append( self.results )
+        UserDefaults.standard.set(restTremorResultArray, forKey: "restTremorResultArray")
         performSegue(withIdentifier: "ApprovePage", sender: self)
+    }
+    
+    // only to be called when no gyroscope available
+    func goToNoGyro() {
+        finishedTest = true
+        performSegue(withIdentifier: "NoGyro", sender: self)
     }
     
     func startUpdates() {
@@ -153,7 +180,12 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
             motionManager = CMMotionManager()
             
             // check for gyro availability
-            guard let motionManager = motionManager, motionManager.isGyroAvailable else { return }
+            guard let motionManager = motionManager, motionManager.isGyroAvailable else{
+                self.finishedTest = true
+                self.stopTest = true
+                gyroAvailable = false
+                return
+            }
             
             //updateIntervalLabel.text = formattedUpdateInterval
             
@@ -180,10 +212,6 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
                 self.gyroArrayY.insert(gyroData.rotationRate.y, at: self.testCount)
                 self.gyroArrayZ.insert(gyroData.rotationRate.z, at: self.testCount)
                 
-                // store results in the instance of RestTremorResultsClass
-                self.results.gyroArrayX.insert(gyroData.rotationRate.x, at: self.testCount)
-                self.results.gyroArrayY.insert(gyroData.rotationRate.y, at: self.testCount)
-                self.results.gyroArrayZ.insert(gyroData.rotationRate.z, at: self.testCount)
                 
                 // stop condition
                 if self.timeLeft <= 0 {

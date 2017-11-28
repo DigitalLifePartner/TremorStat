@@ -66,6 +66,10 @@ class RestTremorConclusion: UIViewController {
     
     // display info for user ( Summary of user profile ( bools ) -- Indication of completed amount of tests -- Conclusion )
     func displayInfo( displayRecentInfoOnly: Bool) {
+        
+        // Get the data from the key
+        var restTremorResultArray = getDataFromKey(key: "restTremorResultArray")
+        
         // SET UP SUMMARY PAGE
         
         // string that will be modular for the user profile summary
@@ -148,7 +152,7 @@ class RestTremorConclusion: UIViewController {
                 
                 // for singular test completed
                 if restTremorResultArray.count == 1 {
-                    avgStat = restTremorResultArray[0].testAverageX + restTremorResultArray[0].testAverageY + restTremorResultArray[0].testAverageZ
+                    avgStat = restTremorResultArray[0][RT_XAVERAGE] + restTremorResultArray[0][RT_YAVERAGE]  + restTremorResultArray[0][RT_ZAVERAGE]
                 }
                 else {
                     
@@ -169,7 +173,7 @@ class RestTremorConclusion: UIViewController {
                     for i in startIndex...(restTremorResultArray.count - 1) {
                         
                         // increment average based on averages of each test
-                        avgStat += restTremorResultArray[i].testAverageX + restTremorResultArray[i].testAverageY + restTremorResultArray[i].testAverageZ
+                        avgStat += restTremorResultArray[i][RT_XAVERAGE] + restTremorResultArray[i][RT_YAVERAGE] + restTremorResultArray[i][RT_ZAVERAGE]
                         print ( " avgstat is ", avgStat )
                     }
                     
