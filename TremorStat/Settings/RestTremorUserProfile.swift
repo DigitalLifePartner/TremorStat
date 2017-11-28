@@ -14,12 +14,14 @@
  */
 
 import UIKit
+import Charts
 
 let THIRTY_DAYS = 30
 class RestTremorUserProfile: UIViewController {
 
     // MARK: properties
     
+    @IBOutlet weak var restTremorChart: LineChartView!
     // indices indicating date
     let YEAR = 2
     let MONTH = 1
@@ -40,15 +42,11 @@ class RestTremorUserProfile: UIViewController {
     // value to plot against the date
     var yValues = [Double]()
     
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var yearLabel: UILabel!
-    
     // MARK: overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        restTremorChart.noDataText = "No Chart Data Available"
         // Do any additional setup after loading the view.
     }
     
@@ -88,12 +86,6 @@ class RestTremorUserProfile: UIViewController {
         calendarDate[YEAR] = enteredDate.substring( with: range )
     }
     func constructXValueStrings( ) {
-        
-        var currentDate = Date()
-        setCalendarDate(enteredDate: currentDate.description )
-        dayLabel.text = String(calendarDate[DAY])
-        monthLabel.text = String(calendarDate[MONTH])
-        yearLabel.text = String(calendarDate[YEAR])
         
         // will display last 30 days of tests ( or all tests if less than 30 days have passed )
         // note that days without tests will be omitted
@@ -165,6 +157,36 @@ class RestTremorUserProfile: UIViewController {
             
         }
        
+        // prep the displayed chart
+        var displayChartEntries = [ChartDataEntry]()
+        
+        // go thru all y values
+        if ( yValues.count > 0 ) {
+            
+            for i in 0...(yValues.count - 1 ) {
+                
+                // set up the x and y axis values
+                let value = ChartDataEntry( x: XValues[yValues.count - 1 - i], y: yValues[i] )
+                print( "adding to x coord " , XValues[yValues.count - 1 - i], " and y coord " , yValues[i] )
+                
+                // add to the chartdataentry object
+                displayChartEntries.append( value )//insert( value, at: 0 )
+                
+            }
+            
+            // make data set based on values and give it a name
+            let lineY = LineChartDataSet( values: displayChartEntries, label: "Total Average Absolute Distance from Baseline" )
+            
+            // set up a data object
+            let restTremorData = LineChartData()
+            
+            // add the data set to the data
+            restTremorData.addDataSet(lineY )
+            
+            // give chart name and display data
+            restTremorChart.chartDescription?.text = "Total Average Over the Past Thirty Days"
+            restTremorChart.data = restTremorData
+        }
     }
     
     
