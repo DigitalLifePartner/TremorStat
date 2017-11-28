@@ -103,12 +103,14 @@ class RestTremorUserProfile: UIViewController {
         var multipleTestsAccountedFor = 0
         var sameDay = false
         var restTremorResultArray = getDataFromKey(key: "restTremorResultArray")
+        var currentRepeatedTests = 1
                         // day month
         var prevTest = [ "0", "0" ]
+        var testDate = 0.0
         while ( ( amountOfTestedDays < DAYS_TESTED ) && ( amountOfTestedDays + multipleTestsAccountedFor < restTremorResultArray.count ) ) {
             
             // get date from stored array
-            var testDate = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_TIME]
+            testDate = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_TIME]
             
             // split up into day / month / year
             setCalendarDate(enteredDate: String(testDate))
@@ -122,11 +124,14 @@ class RestTremorUserProfile: UIViewController {
                 // instead we increment the multiple tests var to account for this
                 multipleTestsAccountedFor += 1
                 
+                currentRepeatedTests += 1
+                
                 // force the sameDay bool to true
                 sameDay = true
             }
             else { // different day
                 sameDay = false
+                currentRepeatedTests = 1
             }
             
             // add string array to larger array of dates
@@ -145,7 +150,7 @@ class RestTremorUserProfile: UIViewController {
             // add to the yValues
             if ( sameDay ) {
                 // if it is the same day take average of two
-                yValues[0] =  ( yValues[0] + totalAverage ) / 2.0
+                yValues[0] =  ( yValues[0]*Double(currentRepeatedTests - 1) + totalAverage ) / Double(currentRepeatedTests)
             }
             else {
                 // add new entry to array
@@ -159,9 +164,6 @@ class RestTremorUserProfile: UIViewController {
             prevTest = [ calendarDate[DAY], calendarDate[MONTH] ]
             
         }
-        //var dateString = String(calendarDate[DAY] + "/" + calendarDate[MONTH] + "/" + calendarDate[YEAR] + "/")
-        //xValuesString.insert( dateString, at: 0  )
-        // if there were multiple tests in a day, average out their amplitude averages for the graph ( one data point per day )
        
     }
     
