@@ -215,7 +215,6 @@
 		E8A3648E1FBFBFBE0069D303 /* RestTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTestCell.swift; sourceTree = "<group>"; };
 		E8A364901FBFBFCD0069D303 /* ActionTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTestCell.swift; sourceTree = "<group>"; };
 		E8B14FC61FB65DB50051690D /* ActionTremorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTremorTest.swift; sourceTree = "<group>"; };
-		EBF1ED4D1FC7D6A800286717 /* TremorStat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TremorStat.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				40AA81811FCD0B2A001AC9E2 /* user_male.svg */,
-				EBF1ED4D1FC7D6A800286717 /* TremorStat.entitlements */,
 				BF5E8B561FB119B500559754 /* TremorTests */,
 				BF5E8B531FB118F400559754 /* UserProfile */,
 				BF5E8B521FB118B300559754 /* Main */,
@@ -879,12 +877,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TremorStat/TremorStat.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				DEVELOPMENT_TEAM = DUV5LZ574A;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -897,12 +895,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TremorStat/TremorStat.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				DEVELOPMENT_TEAM = DUV5LZ574A;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
