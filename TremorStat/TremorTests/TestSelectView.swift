@@ -1,5 +1,5 @@
 //  File Information:
-//  TestSelectViewController
+//  TestSelectView
 //
 //  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
@@ -9,7 +9,7 @@
 
 import UIKit
 
-class TestSelectViewController: UIViewController {
+class TestSelectView: UIViewController {
 
     // MARK: Properties
     

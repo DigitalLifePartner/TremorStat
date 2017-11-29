@@ -85,12 +85,12 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
         // stop gyro updates
         self.stopUpdates()
         
-        // specific case for segue into the NoGyro view
+        // specific case for segue into the NoGyroscope view
         if  (gyroAvailable == false && finishedTest == true) {
             finishedTest = false
             gyroAvailable = true
             // pass the component arrays to the approval view
-            let nextController = segue.destination as! NoGyro
+            let nextController = segue.destination as! NoGyroscope
             nextController.results=self.results
             nextController.gyroArrayX = self.gyroArrayX
             nextController.gyroArrayY = self.gyroArrayY
@@ -125,7 +125,7 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
         // start getting the gryoscope readings
         startUpdates()
         if gyroAvailable == false {
-            goToNoGyro()}
+            goToNoGyroscope()}
         
     }
     
@@ -169,9 +169,9 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
     }
     
     // only to be called when no gyroscope available
-    func goToNoGyro() {
+    func goToNoGyroscope() {
         finishedTest = true
-        performSegue(withIdentifier: "NoGyro", sender: self)
+        performSegue(withIdentifier: "NoGyroscope", sender: self)
     }
     
     func startUpdates() {

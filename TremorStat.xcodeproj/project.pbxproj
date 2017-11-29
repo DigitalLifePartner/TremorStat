@@ -14,19 +14,18 @@
 		406225431FCD20FE00D483B9 /* AppIcon60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 406225421FCD20FE00D483B9 /* AppIcon60x60@3x.png */; };
 		407343B01FC12437004E75E4 /* TestResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407343AF1FC12437004E75E4 /* TestResultsViewController.swift */; };
 		407DE79F1FC11386003EBE39 /* getDataFromKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407DE79E1FC11386003EBE39 /* getDataFromKey.swift */; };
-		408E5E491FAFE33F00C24543 /* UnimplementedFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */; };
-		408E5E571FB0223F00C24543 /* RestTremorTestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */; };
+		408E5E571FB0223F00C24543 /* RestTremorTestInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5E561FB0223F00C24543 /* RestTremorTestInfoView.swift */; };
 		40AA81821FCD0B2A001AC9E2 /* user_male.svg in Resources */ = {isa = PBXBuildFile; fileRef = 40AA81811FCD0B2A001AC9E2 /* user_male.svg */; };
 		40AA81881FCD0C43001AC9E2 /* user_male@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40AA81871FCD0C43001AC9E2 /* user_male@3x.png */; };
 		40AA818A1FCD0CAA001AC9E2 /* combo_chart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40AA81891FCD0CAA001AC9E2 /* combo_chart@3x.png */; };
 		40AA818C1FCD0F48001AC9E2 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40AA818B1FCD0F48001AC9E2 /* settings@3x.png */; };
 		40AA818E1FCD0F66001AC9E2 /* services@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40AA818D1FCD0F66001AC9E2 /* services@3x.png */; };
 		40CCEDC51FB903BC00D5A4DE /* Active_Tremor_Test_InAction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40CCEDC41FB903BB00D5A4DE /* Active_Tremor_Test_InAction.jpg */; };
-		99064D121FCCF25800A38C55 /* NoGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99064D111FCCF25800A38C55 /* NoGyro.swift */; };
+		99064D121FCCF25800A38C55 /* NoGyroscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99064D111FCCF25800A38C55 /* NoGyroscope.swift */; };
 		993843221FCA1FFD005EB5E1 /* ActionTremorUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993843211FCA1FFD005EB5E1 /* ActionTremorUserProfile.swift */; };
 		995B465C1FC8D9F0001D5381 /* RestTremorUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B465B1FC8D9F0001D5381 /* RestTremorUserProfile.swift */; };
 		99C4ACBE1FAEDC21003D036C /* RestTremorCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */; };
-		99C4ACC01FAEDC3C003D036C /* TestSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */; };
+		99C4ACC01FAEDC3C003D036C /* TestSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C4ACBF1FAEDC3C003D036C /* TestSelectView.swift */; };
 		99D2F1CC1FBE71C900E12F51 /* RestTremorConclusion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D2F1CB1FBE71C900E12F51 /* RestTremorConclusion.swift */; };
 		99D7B9A71FB6547D00049282 /* StatisticsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */; };
 		99D7B9A81FB66CCD00049282 /* StatisticsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */; };
@@ -42,9 +41,9 @@
 		B579FE5B1DDD2D3A00A8C0C7 /* MotionGraphContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579FE5A1DDD2D3A00A8C0C7 /* MotionGraphContainer.swift */; };
 		B587D9E21DDE7F4B0087CE3D /* GraphSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587D9E11DDE7F4B0087CE3D /* GraphSegment.swift */; };
 		B587D9E41DDE7FA70087CE3D /* CGContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587D9E31DDE7FA70087CE3D /* CGContext.swift */; };
-		B5DEC4AC1DECB6DA00B8FC91 /* AccelerometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerViewController.swift */; };
+		B5DEC4AC1DECB6DA00B8FC91 /* AccelerometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerView.swift */; };
 		B5DEC4AE1DECE09D00B8FC91 /* RestTremorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEC4AD1DECE09D00B8FC91 /* RestTremorTest.swift */; };
-		BF0A0B2A1FB91CEC00357132 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0B291FB91CEC00357132 /* UserProfileViewController.swift */; };
+		BF0A0B2A1FB91CEC00357132 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0B291FB91CEC00357132 /* UserProfileView.swift */; };
 		BF0EFFF21FAEA0C30076F4E2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */; };
 		BF0EFFF41FAEB2690076F4E2 /* TremorTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */; };
 		BF0EFFF71FAEBAAA0076F4E2 /* TestResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */; };
@@ -158,19 +157,18 @@
 		406225421FCD20FE00D483B9 /* AppIcon60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon60x60@3x.png"; path = "TremorStat/Assets.xcassets/AppIcon.appiconset/AppIcon60x60@3x.png"; sourceTree = "<group>"; };
 		407343AF1FC12437004E75E4 /* TestResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultsViewController.swift; sourceTree = "<group>"; };
 		407DE79E1FC11386003EBE39 /* getDataFromKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDataFromKey.swift; sourceTree = "<group>"; };
-		408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedFeature.swift; sourceTree = "<group>"; };
-		408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorTestInfoViewController.swift; sourceTree = "<group>"; };
+		408E5E561FB0223F00C24543 /* RestTremorTestInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorTestInfoView.swift; sourceTree = "<group>"; };
 		40AA81811FCD0B2A001AC9E2 /* user_male.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = user_male.svg; sourceTree = "<group>"; };
 		40AA81871FCD0C43001AC9E2 /* user_male@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_male@3x.png"; sourceTree = "<group>"; };
 		40AA81891FCD0CAA001AC9E2 /* combo_chart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combo_chart@3x.png"; sourceTree = "<group>"; };
 		40AA818B1FCD0F48001AC9E2 /* settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@3x.png"; sourceTree = "<group>"; };
 		40AA818D1FCD0F66001AC9E2 /* services@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "services@3x.png"; sourceTree = "<group>"; };
 		40CCEDC41FB903BB00D5A4DE /* Active_Tremor_Test_InAction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Active_Tremor_Test_InAction.jpg; sourceTree = SOURCE_ROOT; };
-		99064D111FCCF25800A38C55 /* NoGyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoGyro.swift; sourceTree = "<group>"; };
+		99064D111FCCF25800A38C55 /* NoGyroscope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoGyroscope.swift; sourceTree = "<group>"; };
 		993843211FCA1FFD005EB5E1 /* ActionTremorUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTremorUserProfile.swift; sourceTree = "<group>"; };
 		995B465B1FC8D9F0001D5381 /* RestTremorUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorUserProfile.swift; sourceTree = "<group>"; };
 		99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorCountdown.swift; sourceTree = "<group>"; };
-		99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSelectViewController.swift; sourceTree = "<group>"; };
+		99C4ACBF1FAEDC3C003D036C /* TestSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSelectView.swift; sourceTree = "<group>"; };
 		99D2F1CB1FBE71C900E12F51 /* RestTremorConclusion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorConclusion.swift; sourceTree = "<group>"; };
 		99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCalculator.swift; sourceTree = "<group>"; };
 		99E91AB11FAF9D3A007D8E92 /* RestTremorApproval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorApproval.swift; sourceTree = "<group>"; };
@@ -186,10 +184,10 @@
 		B579FE5A1DDD2D3A00A8C0C7 /* MotionGraphContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionGraphContainer.swift; sourceTree = "<group>"; };
 		B587D9E11DDE7F4B0087CE3D /* GraphSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSegment.swift; sourceTree = "<group>"; };
 		B587D9E31DDE7FA70087CE3D /* CGContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGContext.swift; sourceTree = "<group>"; };
-		B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerViewController.swift; sourceTree = "<group>"; };
+		B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerView.swift; sourceTree = "<group>"; };
 		B5DEC4AD1DECE09D00B8FC91 /* RestTremorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestTremorTest.swift; sourceTree = "<group>"; };
 		B5DEC4AF1DECEBE900B8FC91 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BF0A0B291FB91CEC00357132 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		BF0A0B291FB91CEC00357132 /* UserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TremorTests.storyboard; sourceTree = "<group>"; };
 		BF0EFFF61FAEBAAA0076F4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TremorStat/Base.lproj/TestResults.storyboard; sourceTree = "<group>"; };
@@ -259,6 +257,7 @@
 		407DE79C1FC10E21003EBE39 /* RestTremorResults */ = {
 			isa = PBXGroup;
 			children = (
+				99D2F1CB1FBE71C900E12F51 /* RestTremorConclusion.swift */,
 				E8A3648A1FBFBF750069D303 /* RestTremorResults.swift */,
 				404B32081FC138E700BB3146 /* RestTremorResultsDescription.swift */,
 				E8A3648E1FBFBFBE0069D303 /* RestTestCell.swift */,
@@ -279,6 +278,7 @@
 				99E91AB51FAFB360007D8E92 /* User_Holding_Device.png */,
 				40CCEDC41FB903BB00D5A4DE /* Active_Tremor_Test_InAction.jpg */,
 				BF0EFFF11FAEA0C30076F4E2 /* Default-568h@2x.png */,
+				40AA81811FCD0B2A001AC9E2 /* user_male.svg */,
 				B5DEC4AF1DECEBE900B8FC91 /* README.md */,
 				BFBEFE891FBE8A800038ACB2 /* TremorStat.app */,
 				B579FE411DDD1D2700A8C0C7 /* TremorStat */,
@@ -295,7 +295,7 @@
 		B579FE411DDD1D2700A8C0C7 /* TremorStat */ = {
 			isa = PBXGroup;
 			children = (
-				40AA81811FCD0B2A001AC9E2 /* user_male.svg */,
+				BF5E8B551FB1191700559754 /* LaunchScreen */,
 				BF5E8B561FB119B500559754 /* TremorTests */,
 				BF5E8B531FB118F400559754 /* UserProfile */,
 				BF5E8B521FB118B300559754 /* Main */,
@@ -303,7 +303,6 @@
 				BF5E8B571FB119BE00559754 /* TestResults */,
 				B587D9E31DDE7FA70087CE3D /* CGContext.swift */,
 				B579FE421DDD1D2700A8C0C7 /* AppDelegate.swift */,
-				408E5E481FAFE33F00C24543 /* UnimplementedFeature.swift */,
 				B579FE4E1DDD1D2700A8C0C7 /* Info.plist */,
 				E860A0111FB0461300616603 /* Assets.xcassets */,
 			);
@@ -339,7 +338,7 @@
 		BF5E8B531FB118F400559754 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
-				BF0A0B291FB91CEC00357132 /* UserProfileViewController.swift */,
+				BF0A0B291FB91CEC00357132 /* UserProfileView.swift */,
 				BFB1E6801FBFBCDC000B6ED8 /* UserProfileClass.swift */,
 				BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */,
 			);
@@ -350,8 +349,8 @@
 			isa = PBXGroup;
 			children = (
 				995B465B1FC8D9F0001D5381 /* RestTremorUserProfile.swift */,
-				BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */,
 				993843211FCA1FFD005EB5E1 /* ActionTremorUserProfile.swift */,
+				BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -372,9 +371,9 @@
 				BF5E8B581FB119CA00559754 /* GraphEngine */,
 				407DE79E1FC11386003EBE39 /* getDataFromKey.swift */,
 				99D7B9A61FB6547D00049282 /* StatisticsCalculator.swift */,
-				B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerViewController.swift */,
-				99C4ACBF1FAEDC3C003D036C /* TestSelectViewController.swift */,
-				408E5E561FB0223F00C24543 /* RestTremorTestInfoViewController.swift */,
+				B5DEC4AB1DECB6DA00B8FC91 /* AccelerometerView.swift */,
+				99C4ACBF1FAEDC3C003D036C /* TestSelectView.swift */,
+				408E5E561FB0223F00C24543 /* RestTremorTestInfoView.swift */,
 				99F924CB1FB7BA5400E8436A /* DataStorage.swift */,
 				99F924CD1FB7BCCF00E8436A /* ConfigDataStorage.swift */,
 				BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */,
@@ -387,10 +386,8 @@
 			children = (
 				407DE79A1FC10E10003EBE39 /* ActionTremorResults */,
 				407DE79C1FC10E21003EBE39 /* RestTremorResults */,
-				BF5E8B551FB1191700559754 /* LaunchScreen */,
 				BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */,
 				407343AF1FC12437004E75E4 /* TestResultsViewController.swift */,
-				99D2F1CB1FBE71C900E12F51 /* RestTremorConclusion.swift */,
 			);
 			path = TestResults;
 			sourceTree = "<group>";
@@ -430,7 +427,7 @@
 				99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */,
 				B5DEC4AD1DECE09D00B8FC91 /* RestTremorTest.swift */,
 				99E91AB11FAF9D3A007D8E92 /* RestTremorApproval.swift */,
-				99064D111FCCF25800A38C55 /* NoGyro.swift */,
+				99064D111FCCF25800A38C55 /* NoGyroscope.swift */,
 			);
 			path = RestTremorTest;
 			sourceTree = "<group>";
@@ -651,15 +648,14 @@
 				E8A3648D1FBFBF900069D303 /* ActionTremorResults.swift in Sources */,
 				99F924CE1FB7BCCF00E8436A /* ConfigDataStorage.swift in Sources */,
 				4062253F1FCD1D1500D483B9 /* ActionTremorResultsView.swift in Sources */,
-				99064D121FCCF25800A38C55 /* NoGyro.swift in Sources */,
-				BF0A0B2A1FB91CEC00357132 /* UserProfileViewController.swift in Sources */,
+				99064D121FCCF25800A38C55 /* NoGyroscope.swift in Sources */,
+				BF0A0B2A1FB91CEC00357132 /* UserProfileView.swift in Sources */,
 				B5DEC4AE1DECE09D00B8FC91 /* RestTremorTest.swift in Sources */,
 				E81EE7A21FB7BDEA00B82B44 /* ActionTremorCountdown.swift in Sources */,
 				407343B01FC12437004E75E4 /* TestResultsViewController.swift in Sources */,
-				408E5E491FAFE33F00C24543 /* UnimplementedFeature.swift in Sources */,
 				407DE79F1FC11386003EBE39 /* getDataFromKey.swift in Sources */,
 				99F924CC1FB7BA5400E8436A /* DataStorage.swift in Sources */,
-				408E5E571FB0223F00C24543 /* RestTremorTestInfoViewController.swift in Sources */,
+				408E5E571FB0223F00C24543 /* RestTremorTestInfoView.swift in Sources */,
 				B50882BD1DDE4A4600B4C55D /* GraphView.swift in Sources */,
 				E8B14FC71FB65DB50051690D /* ActionTremorTest.swift in Sources */,
 				B579FE571DDD1F6F00A8C0C7 /* UIViewController.swift in Sources */,
@@ -669,7 +665,7 @@
 				404B32091FC138E700BB3146 /* RestTremorResultsDescription.swift in Sources */,
 				E8A364911FBFBFCD0069D303 /* ActionTestCell.swift in Sources */,
 				404B32071FC12AC600BB3146 /* ActionTremorResultsDescription.swift in Sources */,
-				B5DEC4AC1DECB6DA00B8FC91 /* AccelerometerViewController.swift in Sources */,
+				B5DEC4AC1DECB6DA00B8FC91 /* AccelerometerView.swift in Sources */,
 				E853BABF1FBBC512009876D7 /* ActionTremorTestApproval.swift in Sources */,
 				99C4ACBE1FAEDC21003D036C /* RestTremorCountdown.swift in Sources */,
 				99D2F1CC1FBE71C900E12F51 /* RestTremorConclusion.swift in Sources */,
@@ -680,7 +676,7 @@
 				E8A3648B1FBFBF750069D303 /* RestTremorResults.swift in Sources */,
 				B579FE5B1DDD2D3A00A8C0C7 /* MotionGraphContainer.swift in Sources */,
 				B579FE431DDD1D2700A8C0C7 /* AppDelegate.swift in Sources */,
-				99C4ACC01FAEDC3C003D036C /* TestSelectViewController.swift in Sources */,
+				99C4ACC01FAEDC3C003D036C /* TestSelectView.swift in Sources */,
 				E853BAC11FBBC652009876D7 /* RestTremorResultsClass.swift in Sources */,
 				BFB1E6811FBFBCDC000B6ED8 /* UserProfileClass.swift in Sources */,
 			);

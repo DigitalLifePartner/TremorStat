@@ -1,5 +1,5 @@
 //  File Information:
-//  UserProfileViewController
+//  UserProfileView
 //
 //  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
@@ -12,7 +12,7 @@ import Eureka
 
 var userProfileResults = UserProfileClass()
 
-class UserProfileViewController: Eureka.FormViewController {
+class UserProfileView: Eureka.FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +129,7 @@ class UserProfileViewController: Eureka.FormViewController {
                     UserDefaults.standard.set(dataToStore, forKey: "UserEnv")
                 }
                 .onPresent { from, to in
-                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileViewController.multipleSelectorDone(_:)))
+                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileView.multipleSelectorDone(_:)))
                 }
             <<< MultipleSelectorRow<String>() {
                 $0.title = "Prescription Drugs"
@@ -146,7 +146,7 @@ class UserProfileViewController: Eureka.FormViewController {
                     UserDefaults.standard.set(dataToStore, forKey: "UserDrugs")
                 }
                 .onPresent { from, to in
-                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileViewController.multipleSelectorDone(_:)))
+                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileView.multipleSelectorDone(_:)))
                 }
             <<< MultipleSelectorRow<String>() {
                 $0.title = "Supplements"
@@ -164,7 +164,7 @@ class UserProfileViewController: Eureka.FormViewController {
                     UserDefaults.standard.set(dataToStore, forKey: "UserSupp")
                 }
                 .onPresent { from, to in
-                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileViewController.multipleSelectorDone(_:)))
+                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileView.multipleSelectorDone(_:)))
                 }
         
             <<< MultipleSelectorRow<String>() {
@@ -183,7 +183,7 @@ class UserProfileViewController: Eureka.FormViewController {
                     UserDefaults.standard.set(dataToStore, forKey: "UserMed")
                 }
                 .onPresent { from, to in
-                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileViewController.multipleSelectorDone(_:)))
+                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileView.multipleSelectorDone(_:)))
         }
         
         

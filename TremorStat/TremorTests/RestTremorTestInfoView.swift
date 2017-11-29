@@ -1,5 +1,5 @@
 //  File Information:
-//  RestTremorTestInfoViewController
+//  RestTremorTestInfoView
 //
 //  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
@@ -10,7 +10,7 @@
 
 import UIKit
 
-class RestTremorTestInfoViewController: UIViewController {
+class RestTremorTestInfoView: UIViewController {
 
     // MARK: Properties
     

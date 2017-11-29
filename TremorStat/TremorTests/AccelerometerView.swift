@@ -1,5 +1,5 @@
 //  File Information:
-//  AccelerometerViewController
+//  AccelerometerView
 //
 //  Licensing:
 //  Copyright (C) 2016 Apple Inc. All Rights Reserved.
@@ -15,7 +15,7 @@ import UIKit
 import CoreMotion
 import simd
 
-class AccelerometerViewController: UIViewController, MotionGraphContainer {
+class AccelerometerView: UIViewController, MotionGraphContainer {
     
     // MARK: Properties
     
