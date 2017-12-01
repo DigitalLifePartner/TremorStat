@@ -226,7 +226,15 @@ class ActionTremorUserProfile: UIViewController {
         }
     }
     
-    
+    // save chart
+    @IBAction func saveChart(_ sender: UIButton) {
+        let theDate = Date()
+        
+        setCalendarDate(enteredDate: theDate.description)
+        let theName = "/Action Tremor Chart - " + String( calendarDate[DAY] ) + " - " + String( calendarDate[ MONTH ] ) + " - " + String( calendarDate[YEAR] ) + ".png/"
+        
+        displayedChart.save(to: theName, format: ChartViewBase.ImageFormat.png, compressionQuality: 1.0)
+    }
     
     /*
      // MARK: - Navigation

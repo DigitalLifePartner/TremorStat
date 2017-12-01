@@ -22,6 +22,7 @@ class RestTremorUserProfile: UIViewController {
     // MARK: properties
     
     @IBOutlet weak var restTremorChart: LineChartView!
+
     // indices indicating date
     let YEAR = 2
     let MONTH = 1
@@ -193,7 +194,17 @@ class RestTremorUserProfile: UIViewController {
         }
     }
     
-    
+    // save chart to camera roll
+    @IBAction func saveChart(_ sender: Any) {
+        
+        let theDate = Date()
+        
+        setCalendarDate(enteredDate: theDate.description)
+        let theName = "Rest Tremor Chart - " + String( calendarDate[DAY] ) + " - " + String( calendarDate[ MONTH ] ) + " - " + String( calendarDate[YEAR] ) + ".png"
+        
+        restTremorChart.save(to: theName, format: ChartViewBase.ImageFormat.png, compressionQuality: 1.0)
+
+    }
     
     /*
     // MARK: - Navigation

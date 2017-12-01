@@ -11,13 +11,11 @@ import UIKit
 class RestTremorResultsView: UIViewController {
 
     @IBOutlet weak var PlotAllData: UIButton!
-    @IBOutlet weak var Plot30Days: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         PlotAllData.layer.cornerRadius = 25
-        Plot30Days.layer.cornerRadius = 25
         // Do any additional setup after loading the view.
     }
 
