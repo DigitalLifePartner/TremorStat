@@ -27,6 +27,9 @@ let RT_ZAVERAGE = 3
 let RT_XSTDEV = 4
 let RT_YSTDEV = 5
 let RT_ZSTDEV = 6
+let RT_XOFFSET = 7
+let RT_YOFFSET = 8
+let RT_ZOFFSET = 9
 
 // class to handle rest tremor test
 class RestTremorTest: UIViewController, MotionGraphContainer {
@@ -51,7 +54,7 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
     var motionManager: CMMotionManager?
     
     // Create an array for the result data
-    var results = Array(repeating: [0.0], count: 7)
+    var results = Array(repeating: [0.0], count: 10)
     
     //Instantiating Statistics class for data representation
     var statisticsCalculator = StatisticsCalculator()
@@ -156,6 +159,11 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
         results[RT_XSTDEV][0]=(statisticsCalculator.calcStdDev(theData: gyroArrayX, theSize: gyroArrayX.count, gotMean: false, absolute: true))
         results[RT_YSTDEV][0]=(statisticsCalculator.calcStdDev(theData: gyroArrayY, theSize: gyroArrayX.count, gotMean: false, absolute: true))
         results[RT_ZSTDEV][0]=(statisticsCalculator.calcStdDev(theData: gyroArrayZ, theSize: gyroArrayZ.count, gotMean: false, absolute: true))
+        
+        //Store offset data
+        results[RT_XOFFSET]=gyroArrayX
+        results[RT_YOFFSET]=gyroArrayY
+        results[RT_ZOFFSET]=gyroArrayZ
         
         // get the data from associated key
         restTremorResultArray = getDataFromKey(key: "restTremorResultArray")
