@@ -5,6 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,10 +22,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMA-Y7-PYI">
-                                <rect key="frame" x="16" y="92" width="343" height="212"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMA-Y7-PYI">
+                                <rect key="frame" x="16" y="69" width="343" height="212"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eMA-Y7-PYI" secondAttribute="height" multiplier="343:212" id="zLD-PI-drg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Action Tremor Test">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,10 +38,12 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWk-97-WAi">
-                                <rect key="frame" x="16" y="356" width="343" height="211"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWk-97-WAi">
+                                <rect key="frame" x="16" y="406" width="343" height="212"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zWk-97-WAi" secondAttribute="height" multiplier="343:212" id="cwd-xO-Sc2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Rest Tremor Test">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,6 +56,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eMA-Y7-PYI" firstAttribute="leading" secondItem="V7g-YZ-5qP" secondAttribute="leadingMargin" id="AVO-i7-HTG"/>
+                            <constraint firstItem="eMA-Y7-PYI" firstAttribute="top" secondItem="U3Z-6Z-xeQ" secondAttribute="bottom" constant="49" id="KR9-i6-a4u"/>
+                            <constraint firstItem="eMA-Y7-PYI" firstAttribute="trailing" secondItem="V7g-YZ-5qP" secondAttribute="trailingMargin" id="M3r-eA-3gO"/>
+                            <constraint firstItem="eMA-Y7-PYI" firstAttribute="top" secondItem="U3Z-6Z-xeQ" secondAttribute="bottom" constant="49" id="XSm-cN-rmy"/>
+                            <constraint firstItem="R6c-rE-QCg" firstAttribute="top" secondItem="zWk-97-WAi" secondAttribute="bottom" constant="49" id="tF3-p9-UG0"/>
+                            <constraint firstItem="zWk-97-WAi" firstAttribute="trailing" secondItem="V7g-YZ-5qP" secondAttribute="trailingMargin" id="weh-Mx-TsV"/>
+                            <constraint firstItem="zWk-97-WAi" firstAttribute="leading" secondItem="V7g-YZ-5qP" secondAttribute="leadingMargin" id="zSO-uu-cRz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tremor Tests" id="HVZ-0h-ECg"/>
                     <connections>
@@ -398,7 +413,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PwU-ON-UYq">
-                                <rect key="frame" x="0.0" y="143" width="375" height="256"/>
+                                <rect key="frame" x="0.0" y="138" width="375" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mv7-U3-FBA" customClass="GraphView" customModule="TremorStat" customModuleProvider="target">
