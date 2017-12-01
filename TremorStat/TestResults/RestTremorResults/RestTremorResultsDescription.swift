@@ -22,6 +22,7 @@ class RestTremorResultsDescription: UIViewController {
     @IBOutlet weak var yDeviationLabel: UILabel!
     @IBOutlet weak var zDeviationLabel: UILabel!
     
+    @IBOutlet weak var amountWithinAverageLabel: UILabel!
     // Array storing result of the test
     var results = [[Double]]()
     
@@ -32,6 +33,7 @@ class RestTremorResultsDescription: UIViewController {
     // Print test results when view appears
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
+        
         
         // Code below transforms a Date type in a readable format
         var dateString = Date(timeIntervalSince1970:(results[RT_TIME][0]))
@@ -56,6 +58,17 @@ class RestTremorResultsDescription: UIViewController {
         xDeviationLabel.text = String(Double(round(10000*results[RT_XSTDEV][0])/10000))
         yDeviationLabel.text = String(Double(round(10000*results[RT_YSTDEV][0])/10000))
         zDeviationLabel.text = String(Double(round(10000*results[RT_ZSTDEV][0])/10000))
+        
+        // find out how many of the users results are within the average range
+        var statCalc = StatisticsCalculator()
+        
+        var inAverageRange = [Double]()
+        // construct total average array
+        /*for i in 0...( READINGS_PER_TEST - 1 ) {
+            inAverageRange[i] = (results[RT_TIME][i])
+        }*/
+        //let inAverageRange = statCalc.searchAndMakeWithinInterval( theArray: results[RT_XAVERAGE], leftMostVal: 0.0, rightMostVal: AVG_PERSON_PLUS_STDDEV )
+        
         
         
     }

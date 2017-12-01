@@ -16,7 +16,6 @@ class ActionTremorResultsDescription: UIViewController {
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var devianceLabel: UILabel!
     @IBOutlet weak var tapsNumLabel: UILabel!
-    
     // Array storing result of the test
     var results = [[Double]]()
     
