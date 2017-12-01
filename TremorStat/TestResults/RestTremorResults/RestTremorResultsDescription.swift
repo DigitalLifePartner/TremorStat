@@ -64,14 +64,20 @@ class RestTremorResultsDescription: UIViewController {
         // find out how many of the users results are within the average range
         var statCalc = StatisticsCalculator()
         
-        var inAverageRange = [Double]()
+        var totalAverage = Array(repeating: 0.0, count: READINGS_PER_TEST)
         // construct total average array
-        /*for i in 0...( READINGS_PER_TEST - 1 ) {
-            inAverageRange[i] = (results[RT_TIME][i])
-        }*/
-        //let inAverageRange = statCalc.searchAndMakeWithinInterval( theArray: results[RT_XAVERAGE], leftMostVal: 0.0, rightMostVal: AVG_PERSON_PLUS_STDDEV )
         
+        for i in 0...( READINGS_PER_TEST - 1 ) {
+            print( "i = " , i )
+         totalAverage[i] = results[ RT_XOFFSET ][ i ] + results[ RT_YOFFSET ][ i ] + results[ RT_ZOFFSET ][ i ]
+         }
+        let inAverageRange = statCalc.searchAndMakeWithinInterval( theArray: totalAverage, leftMostVal: 0.0, rightMostVal: AVG_PERSON_PLUS_STDDEV )
         
+        var percentage = ( Double( inAverageRange.count - 1 )/Double( READINGS_PER_TEST ) )*100.0
+        percentage = Double ( round( 100*percentage ) )
+        percentage = percentage/100.0
+        
+        amountWithinAverageLabel.text = String( percentage ) + "% of your results are within average ranges."
         
     }
     override func didReceiveMemoryWarning() {
