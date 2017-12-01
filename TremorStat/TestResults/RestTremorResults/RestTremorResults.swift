@@ -40,7 +40,7 @@ class RestTremorResults: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // pass the results for picked tast to the Description page view to show information about it
         let nextController = segue.destination as! RestTremorResultsDescription
-        nextController.results = restTremorResultArray[numOfRow][0]
+        nextController.results = restTremorResultArray[numOfRow]
     }
 }
 
