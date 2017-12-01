@@ -8,6 +8,7 @@
 //  The visulization of a particular action tremor test
 
 import UIKit
+import Charts
 
 class ActionTremorResultsDescription: UIViewController {
     
@@ -19,6 +20,7 @@ class ActionTremorResultsDescription: UIViewController {
     // Array storing result of the test
     var results = [[Double]]()
     
+    @IBOutlet weak var displayedChart: LineChartView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }

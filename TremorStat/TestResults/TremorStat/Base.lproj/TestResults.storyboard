@@ -479,6 +479,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="5Ut-Qb-ZcW" id="WNJ-Rj-MYH"/>
                         <outlet property="devianceLabel" destination="V7h-BS-UnI" id="zXI-Ep-eDx"/>
+                        <outlet property="displayedChart" destination="c90-jV-rt0" id="wWT-Ws-G41"/>
                         <outlet property="frequencyLabel" destination="YBl-1Z-AR5" id="Fbt-1H-f4b"/>
                         <outlet property="tapsNumLabel" destination="M4M-fW-RiD" id="NPj-hG-nd7"/>
                     </connections>
@@ -616,6 +617,7 @@
                     <connections>
                         <outlet property="amountWithinAverageLabel" destination="hcq-II-PaC" id="z4L-hf-DJw"/>
                         <outlet property="dateLabel" destination="ZaI-a3-GKe" id="hp6-Sx-boq"/>
+                        <outlet property="displayedChart" destination="5qJ-bc-C3s" id="KwQ-j9-Jkr"/>
                         <outlet property="xDeviationLabel" destination="n5i-rk-vdn" id="lCE-ds-2qL"/>
                         <outlet property="xOffsetLabel" destination="O1s-pp-ioh" id="sLG-Vy-Gv1"/>
                         <outlet property="yDeviationLabel" destination="l0A-NM-6vj" id="xis-z8-uQI"/>

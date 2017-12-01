@@ -8,6 +8,7 @@
 //  The visulization of a particular rest tremor test
 
 import UIKit
+import Charts
 
 class RestTremorResultsDescription: UIViewController {
     
@@ -22,6 +23,7 @@ class RestTremorResultsDescription: UIViewController {
     @IBOutlet weak var yDeviationLabel: UILabel!
     @IBOutlet weak var zDeviationLabel: UILabel!
     
+    @IBOutlet var displayedChart: LineChartView!
     @IBOutlet weak var amountWithinAverageLabel: UILabel!
     // Array storing result of the test
     var results = [[Double]]()
