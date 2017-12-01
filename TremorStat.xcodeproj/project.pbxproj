@@ -48,8 +48,6 @@
 		BF0EFFF41FAEB2690076F4E2 /* TremorTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */; };
 		BF0EFFF71FAEBAAA0076F4E2 /* TestResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */; };
 		BF0EFFF91FAEBABA0076F4E2 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */; };
-		BF0EFFFC1FAEBB1A0076F4E2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */; };
-		BF5E8B351FB1107600559754 /* RestTremorTestViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B341FB1107600559754 /* RestTremorTestViewControllerTests.swift */; };
 		BF5E8B431FB1108900559754 /* TremorStatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B421FB1108900559754 /* TremorStatUITests.swift */; };
 		BF7CC9D51FCA565F001B9ECD /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7CC9D21FCA5609001B9ECD /* Charts.framework */; };
 		BF7CC9D61FCA565F001B9ECD /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF7CC9D21FCA5609001B9ECD /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -192,9 +190,6 @@
 		BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TremorTests.storyboard; sourceTree = "<group>"; };
 		BF0EFFF61FAEBAAA0076F4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TremorStat/Base.lproj/TestResults.storyboard; sourceTree = "<group>"; };
 		BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
-		BF0EFFFB1FAEBB1A0076F4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TremorStat/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
-		BF5E8B341FB1107600559754 /* RestTremorTestViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorTestViewControllerTests.swift; sourceTree = "<group>"; };
-		BF5E8B361FB1107600559754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF5E8B421FB1108900559754 /* TremorStatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TremorStatUITests.swift; sourceTree = "<group>"; };
 		BF5E8B441FB1108900559754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF7CC9CC1FCA5608001B9ECD /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = charts/Charts.xcodeproj; sourceTree = "<group>"; };
@@ -282,7 +277,6 @@
 				B5DEC4AF1DECEBE900B8FC91 /* README.md */,
 				BFBEFE891FBE8A800038ACB2 /* TremorStat.app */,
 				B579FE411DDD1D2700A8C0C7 /* TremorStat */,
-				BF5E8B331FB1107600559754 /* RestTremorTestViewControllerTests */,
 				BF5E8B411FB1108900559754 /* TremorStatUITests */,
 				BF9E0F6B1FBE18C400BBD00C /* Eureka.xcodeproj */,
 				BF7CC9CC1FCA5608001B9ECD /* Charts.xcodeproj */,
@@ -307,15 +301,6 @@
 				E860A0111FB0461300616603 /* Assets.xcassets */,
 			);
 			path = TremorStat;
-			sourceTree = "<group>";
-		};
-		BF5E8B331FB1107600559754 /* RestTremorTestViewControllerTests */ = {
-			isa = PBXGroup;
-			children = (
-				BF5E8B341FB1107600559754 /* RestTremorTestViewControllerTests.swift */,
-				BF5E8B361FB1107600559754 /* Info.plist */,
-			);
-			path = RestTremorTestViewControllerTests;
 			sourceTree = "<group>";
 		};
 		BF5E8B411FB1108900559754 /* TremorStatUITests */ = {
@@ -350,7 +335,6 @@
 			children = (
 				995B465B1FC8D9F0001D5381 /* RestTremorUserProfile.swift */,
 				993843211FCA1FFD005EB5E1 /* ActionTremorUserProfile.swift */,
-				BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -609,7 +593,6 @@
 				40CCEDC51FB903BC00D5A4DE /* Active_Tremor_Test_InAction.jpg in Resources */,
 				B579FE4D1DDD1D2700A8C0C7 /* LaunchScreen.storyboard in Resources */,
 				E860A0121FB0461400616603 /* Assets.xcassets in Resources */,
-				BF0EFFFC1FAEBB1A0076F4E2 /* Settings.storyboard in Resources */,
 				40AA81881FCD0C43001AC9E2 /* user_male@3x.png in Resources */,
 				40AA818E1FCD0F66001AC9E2 /* services@3x.png in Resources */,
 				40AA818C1FCD0F48001AC9E2 /* settings@3x.png in Resources */,
@@ -687,7 +670,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				99D7B9A81FB66CCD00049282 /* StatisticsCalculator.swift in Sources */,
-				BF5E8B351FB1107600559754 /* RestTremorTestViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,14 +734,6 @@
 				BF0EFFF61FAEBAAA0076F4E2 /* Base */,
 			);
 			name = TestResults.storyboard;
-			sourceTree = "<group>";
-		};
-		BF0EFFFA1FAEBB1A0076F4E2 /* Settings.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF0EFFFB1FAEBB1A0076F4E2 /* Base */,
-			);
-			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -876,7 +850,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				DEVELOPMENT_TEAM = DUV5LZ574A;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -894,7 +868,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				DEVELOPMENT_TEAM = DUV5LZ574A;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat13;
 				PRODUCT_NAME = "$(TARGET_NAME)";

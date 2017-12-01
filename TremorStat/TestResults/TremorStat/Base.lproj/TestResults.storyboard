@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -169,7 +168,7 @@
                                 <rect key="frame" x="90" y="456" width="195" height="45"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Plot All Test Data Collected">
+                                <state key="normal" title="Plot Last 30 Tests">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -177,23 +176,11 @@
                                     <segue destination="B8y-mm-2Yg" kind="show" id="G0r-Ll-Kew"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gIb-8H-NuM">
-                                <rect key="frame" x="90" y="523" width="195" height="45"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Plot Last 30 Days of Data">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="ActionTremorPlotAllData:" destination="MIu-73-PVe" eventType="touchUpInside" id="dTe-9b-o8q"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="Plot30Days" destination="gIb-8H-NuM" id="Ebt-zM-2zD"/>
                         <outlet property="PlotAllData" destination="qR2-M0-gnc" id="GZo-Xi-zVv"/>
                     </connections>
                 </viewController>
@@ -312,26 +299,17 @@
                                 <rect key="frame" x="90" y="453" width="195" height="45"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Plot All Test Data Collected">
+                                <state key="normal" title="Plot Last 30 Tests">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="bxw-pj-Ozk" kind="show" id="aiM-eG-NUo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SQJ-ce-0QB">
-                                <rect key="frame" x="90" y="525" width="195" height="45"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Plot Last 30 Days of Data">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="Plot30Days" destination="SQJ-ce-0QB" id="zWn-mv-3e0"/>
                         <outlet property="PlotAllData" destination="53h-br-hVb" id="cfE-pJ-JVs"/>
                     </connections>
                 </viewController>
@@ -689,6 +667,7 @@
                     </view>
                     <connections>
                         <outlet property="restTremorChart" destination="JWq-91-3Ht" id="o0M-zd-9TU"/>
+                        <segue destination="h6k-Dg-I9U" kind="show" id="XCU-ft-qdf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yys-ZX-WZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>

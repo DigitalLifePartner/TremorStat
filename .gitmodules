@@ -10,3 +10,6 @@
 [submodule "charts"]
 	path = charts
 	url = https://github.com/danielgindi/charts.git
+[submodule "Charts"]
+	path = Charts
+	url = https://github.com/danielgindi/Charts.git

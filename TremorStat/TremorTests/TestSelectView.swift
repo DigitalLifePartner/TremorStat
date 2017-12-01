@@ -36,7 +36,8 @@ class TestSelectView: UIViewController {
         super.viewWillAppear(animated)
 
         // hide navigation controls
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationItem.hidesBackButton = true;
         self.tabBarController?.tabBar.isHidden = false
     }
 

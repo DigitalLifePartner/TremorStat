@@ -56,7 +56,7 @@ extension ActionTremorResults: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Code below transforms a Date type in a readable format
-        var dateString = Date(timeIntervalSince1970:(actionTremorResultArray[indexPath.row])[0])
+        let dateString = Date(timeIntervalSince1970:(actionTremorResultArray[indexPath.row])[0])
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = " yyyy-MM-dd HH:mm:ss"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")

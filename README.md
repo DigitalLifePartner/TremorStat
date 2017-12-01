@@ -15,7 +15,7 @@ The application allows users to detect the level of tremor in their hand. The ap
 3. Update the Xcode project files
     a. Modify the Deployment Target under the General tab of TremorStat.xcodeproj to the one desired
     b. Modify the Deployment Target under the General tab of Eureka.xcodeproj to the one desired
-    c. NEEDS TO BE UPDATED TO REFLECT iOS Deployment Target
+    c. Modify the Base SDK for the under the Build Settings tab of Charts.xcodeproj to iOS
     d. Modify the Deployment Target under the General tab of Charts.xcodeproj to the one desired
 4. Profit
 

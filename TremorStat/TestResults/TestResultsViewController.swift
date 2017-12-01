@@ -15,10 +15,10 @@ class TestResultsViewController: UIViewController {
     @IBOutlet weak var ActiveTremorTestResultsButton: UIButton!
     @IBOutlet weak var RestTremorTestResultsButton: UIButton!
     @IBOutlet weak var TestResultsAnalysisButton: UIButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         ActiveTremorTestResultsButton.layer.cornerRadius = 25
         RestTremorTestResultsButton.layer.cornerRadius = 25
         TestResultsAnalysisButton.layer.cornerRadius = 25
