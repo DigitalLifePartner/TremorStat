@@ -64,25 +64,77 @@ class RestTremorResultsDescription: UIViewController {
         // find out how many of the users results are within the average range
         var statCalc = StatisticsCalculator()
         
-        var totalAverage = Array(repeating: 0.0, count: READINGS_PER_TEST)
-        // construct total average array
+        // get total offset for the test
+        var totalOffset = Array(repeating: 0.0, count: READINGS_PER_TEST)
+        var xValues = Array( repeating: 0.0, count: READINGS_PER_TEST )
         
+        var xOff = 0.0
+        var yOff = 0.0
+        var zOff = 0.0
+        
+        // go thru all elements
         for i in 0...( READINGS_PER_TEST - 1 ) {
-            print( "i = " , i )
-         totalAverage[i] = results[ RT_XOFFSET ][ i ] + results[ RT_YOFFSET ][ i ] + results[ RT_ZOFFSET ][ i ]
+            
+            // add all offsets ( absolute value )
+            xOff = results[ RT_XOFFSET ][ i ]
+            if ( xOff < 0 ) {
+                xOff = (-1)*xOff
+            }
+            yOff = results[ RT_YOFFSET ][ i ]
+            if ( yOff < 0 ) {
+                yOff = (-1)*yOff
+            }
+            zOff = results[ RT_ZOFFSET ][ i ]
+            if ( zOff < 0 ) {
+                zOff = (-1)*zOff
+            }
+            
+            totalOffset[i] = xOff + yOff + zOff
+            xValues[i] = Double(i)
          }
-        let inAverageRange = statCalc.searchAndMakeWithinInterval( theArray: totalAverage, leftMostVal: 0.0, rightMostVal: AVG_PERSON_PLUS_STDDEV )
         
+        // get an array of doubles that are within the average tremor ranges
+        let inAverageRange = statCalc.searchAndMakeWithinInterval( theArray: totalOffset, leftMostVal: 0.0, rightMostVal: AVG_PERSON_PLUS_STDDEV )
+        
+        // compare sizes of the returned array with the original and get the percentage
         var percentage = ( Double( inAverageRange.count - 1 )/Double( READINGS_PER_TEST ) )*100.0
         percentage = Double ( round( 100*percentage ) )
         percentage = percentage/100.0
         
+        // display the percentage
         amountWithinAverageLabel.text = String( percentage ) + "% of your results are within average ranges."
         
+        // prep the displayed chart
+        var displayChartEntries = [ChartDataEntry]()
+        
+        // go thru all y values
+        if ( totalOffset.count > 0 ) {
+            
+            for i in 0...(totalOffset.count/4 - 1 ) {
+                
+                // set up the x and y axis values
+                let value = ChartDataEntry( x: xValues[4*i], y: totalOffset[4*i] )
+                print( "adding to x coord " , xValues[i], " and y coord " , totalOffset[i] )
+                
+                // add to the chartdataentry object
+                displayChartEntries.append( value )//insert( value, at: 0 )
+                
+            }
+            
+            // make data set based on values and give it a name
+            let lineY = LineChartDataSet( values: displayChartEntries, label: "Total Absolute Offset Per Reading" )
+            
+            // set up a data object
+            let restTremorData = LineChartData()
+            
+            // add the data set to the data
+            restTremorData.addDataSet(lineY )
+            
+            // give chart name and display data
+            displayedChart.chartDescription?.text = "Every Secondary Reading"
+            displayedChart.data = restTremorData
+        
+        }
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }
 

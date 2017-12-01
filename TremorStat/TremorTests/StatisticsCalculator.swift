@@ -164,7 +164,7 @@ class StatisticsCalculator {
         var retVal = false
         
         // if the value is within the given interval return true else false
-        if ( ( first >= leftMostVal ) || ( first <= rightMostVal ) ) {
+        if ( ( first >= leftMostVal ) && ( first <= rightMostVal ) ) {
             retVal = true
         }
         return retVal
