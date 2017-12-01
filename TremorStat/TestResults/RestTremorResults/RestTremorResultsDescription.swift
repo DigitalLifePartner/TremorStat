@@ -23,7 +23,7 @@ class RestTremorResultsDescription: UIViewController {
     @IBOutlet weak var zDeviationLabel: UILabel!
     
     // Array storing result of the test
-    var results = [Double]()
+    var results = [[Double]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class RestTremorResultsDescription: UIViewController {
         super.viewDidAppear(false)
         
         // Code below transforms a Date type in a readable format
-        var dateString = Date(timeIntervalSince1970:(results[0]))
+        var dateString = Date(timeIntervalSince1970:(results[RT_TIME][0]))
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = " yyyy-MM-dd HH:mm:ss"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
@@ -48,14 +48,14 @@ class RestTremorResultsDescription: UIViewController {
         dateLabel.text = updatedDateString;
         
         // Print x,y,z offsets in appropriate labels
-        xOffsetLabel.text = String(Double(round(10000*results[RT_XAVERAGE])/10000))
-        yOffsetLabel.text = String(Double(round(10000*results[RT_YAVERAGE])/10000))
-        zOffsetLabel.text = String(Double(round(10000*results[RT_ZAVERAGE])/10000))
+        xOffsetLabel.text = String(Double(round(10000*results[RT_XAVERAGE][0])/10000))
+        yOffsetLabel.text = String(Double(round(10000*results[RT_YAVERAGE][0])/10000))
+        zOffsetLabel.text = String(Double(round(10000*results[RT_ZAVERAGE][0])/10000))
         
         // Print x,y,z deviations in appropriate labels
-        xDeviationLabel.text = String(Double(round(10000*results[RT_XSTDEV])/10000))
-        yDeviationLabel.text = String(Double(round(10000*results[RT_YSTDEV])/10000))
-        zDeviationLabel.text = String(Double(round(10000*results[RT_ZSTDEV])/10000))
+        xDeviationLabel.text = String(Double(round(10000*results[RT_XSTDEV][0])/10000))
+        yDeviationLabel.text = String(Double(round(10000*results[RT_YSTDEV][0])/10000))
+        zDeviationLabel.text = String(Double(round(10000*results[RT_ZSTDEV][0])/10000))
         
         
     }
