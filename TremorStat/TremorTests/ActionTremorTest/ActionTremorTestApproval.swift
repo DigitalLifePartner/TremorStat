@@ -8,7 +8,7 @@ import UIKit
 
 class ActionTremorTestApproval: UIViewController {
     
-    var actionTremorResultArray = [[Double]]()
+    var actionTremorResultArray = [[[Double]]]()
     
     @IBOutlet weak var avgFrequencyLabel: UILabel!
     @IBOutlet weak var avgDevianceLabel: UILabel!

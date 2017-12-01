@@ -13,7 +13,7 @@ import SafariServices
 class RestTremorResults: UIViewController, UITextFieldDelegate {
     
     // Array that stores all Action Tremor Test results
-    var restTremorResultArray = [[Double]]()
+    var restTremorResultArray = [[[Double]]]()
     
     var numOfRow = 0
     
@@ -56,7 +56,7 @@ extension RestTremorResults: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Code below transforms a Date type in a readable format
-        var dateString = Date(timeIntervalSince1970:(restTremorResultArray[indexPath.row])[0])
+        var dateString = Date(timeIntervalSince1970:(restTremorResultArray[indexPath.row][RT_TIME][0]))
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = " yyyy-MM-dd HH:mm:ss"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")

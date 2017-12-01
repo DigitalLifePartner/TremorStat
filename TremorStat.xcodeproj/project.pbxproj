@@ -410,8 +410,8 @@
 			children = (
 				99C4ACBD1FAEDC21003D036C /* RestTremorCountdown.swift */,
 				B5DEC4AD1DECE09D00B8FC91 /* RestTremorTest.swift */,
-				99E91AB11FAF9D3A007D8E92 /* RestTremorApproval.swift */,
 				99064D111FCCF25800A38C55 /* NoGyroscope.swift */,
+				99E91AB11FAF9D3A007D8E92 /* RestTremorApproval.swift */,
 			);
 			path = RestTremorTest;
 			sourceTree = "<group>";
@@ -850,7 +850,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				DEVELOPMENT_TEAM = DUV5LZ574A;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -868,7 +868,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				DEVELOPMENT_TEAM = DUV5LZ574A;
 				INFOPLIST_FILE = "$(SRCROOT)/TremorStat/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bestsoftware.tremorstat13;
 				PRODUCT_NAME = "$(TARGET_NAME)";

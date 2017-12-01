@@ -10,9 +10,9 @@
 
 import Foundation
 
-func getDataFromKey(key: String)->Array<[Double]>{
-    var arrayCopy = [[Double]]()
-    if let resultsArray = UserDefaults.standard.object(forKey: key) as? Array<[Double]>
+func getDataFromKey(key: String)->Array<[[Double]]>{
+    var arrayCopy = [[[Double]]]()
+    if let resultsArray = UserDefaults.standard.object(forKey: key) as? Array<[[Double]]>
     {
         arrayCopy = resultsArray
     }
