@@ -15,7 +15,7 @@ class RestTremorApproval: UIViewController {
     
     // MARK: Properties
     
-    var results = [Double]()
+    var results = [[Double]]()
     
     @IBOutlet weak var YesButton: UIButton!
     @IBOutlet weak var NoButton: UIButton!
@@ -85,29 +85,29 @@ class RestTremorApproval: UIViewController {
         // print ( "statCalc about to be called " )//, statCalc.mean)
         
         // X-values
-        var Stat = results[RT_XAVERAGE]
+        var Stat = results[RT_XAVERAGE][0]
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.meanX?.text = String( Stat )
         
-        Stat = results[RT_XSTDEV]
+        Stat = results[RT_XSTDEV][0]
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.stdDevX?.text = String( Stat )
         
         // Y-values
-        Stat = results[RT_YAVERAGE]
+        Stat = results[RT_YAVERAGE][0]
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.meanY?.text = String( Stat )
         
-        Stat = results[RT_YSTDEV]
+        Stat = results[RT_YSTDEV][0]
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.stdDevY?.text = String( Stat )
         
         // Z-values
-        Stat = results[RT_ZAVERAGE]
+        Stat = results[RT_ZAVERAGE][0]
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.meanZ?.text = String( Stat )
         
-        Stat = results[RT_ZSTDEV]
+        Stat = results[RT_ZSTDEV][0]
         Stat = self.statCalc.sigFigs( theData: Stat, amountOfFigs: 5 )
         self.stdDevZ?.text = String( Stat )
         

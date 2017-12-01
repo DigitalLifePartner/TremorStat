@@ -26,7 +26,7 @@ var numTaps = 0
 class ActionTremorTest: UIViewController {
     
     // Array containing all Action Tremor Test results
-    var actionTremorResultArray = [[Double]]()
+    var actionTremorResultArray = [[[Double]]]()
     
     @IBOutlet weak var ActionTremorButton: UIView!
     
@@ -159,7 +159,7 @@ class ActionTremorTest: UIViewController {
             results.append(avgDeviance)
             results.append(Double(numTaps))
             
-            actionTremorResultArray.append( results )
+            actionTremorResultArray.append( [results] )
             //Store test results under associated key
             UserDefaults.standard.set(actionTremorResultArray, forKey: "actionTremorResultArray")
             performSegue(withIdentifier: "ApprovePage", sender: self)

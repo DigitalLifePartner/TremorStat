@@ -32,7 +32,7 @@ let RT_ZSTDEV = 6
 class RestTremorTest: UIViewController, MotionGraphContainer {
     
     // Array containing all Action Tremor Test results
-    var restTremorResultArray = [[Double]]()
+    var restTremorResultArray = [[[Double]]]()
     
     // MARK: Properties
     
@@ -51,7 +51,7 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
     var motionManager: CMMotionManager?
     
     // Create an array for the result data
-    var results = Array(repeating: 0.0, count: 7)
+    var results = Array(repeating: [0.0], count: 7)
     
     //Instantiating Statistics class for data representation
     var statisticsCalculator = StatisticsCalculator()
@@ -135,13 +135,8 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
         super.viewDidDisappear(animated)
     }
     
-    override func viewDidLoad() {
-        
-        //Store previous Action Tremor Test results in the array
-        //self.restTremorResultArray = getDataFromKey(key: "restTremorResultArray")
-        
+    override func viewDidLoad(){
         super.viewDidLoad()
-        
     }
     
     // MARK: Implementation
@@ -150,17 +145,20 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
     func goToApprove() {
         
         //Store date of the test
-        results[RT_TIME]=(Double(Date().timeIntervalSince1970))
+        results[RT_TIME][0]=(Double(Date().timeIntervalSince1970))
         
         //Store average offset values
-        results[RT_XAVERAGE]=(statisticsCalculator.calcMean(theData: gyroArrayX, theSize: gyroArrayX.count, absolute: true))
-        results[RT_YAVERAGE]=(statisticsCalculator.calcMean(theData: gyroArrayY, theSize: gyroArrayY.count, absolute: true))
-        results[RT_ZAVERAGE]=(statisticsCalculator.calcMean(theData: gyroArrayZ, theSize: gyroArrayZ.count, absolute: true))
+        results[RT_XAVERAGE][0]=(statisticsCalculator.calcMean(theData: gyroArrayX, theSize: gyroArrayX.count, absolute: true))
+        results[RT_YAVERAGE][0]=(statisticsCalculator.calcMean(theData: gyroArrayY, theSize: gyroArrayY.count, absolute: true))
+        results[RT_ZAVERAGE][0]=(statisticsCalculator.calcMean(theData: gyroArrayZ, theSize: gyroArrayZ.count, absolute: true))
         
         //Store stdandart deviation of the offset
-        results[RT_XSTDEV]=(statisticsCalculator.calcStdDev(theData: gyroArrayX, theSize: gyroArrayX.count, gotMean: false, absolute: true))
-        results[RT_YSTDEV]=(statisticsCalculator.calcStdDev(theData: gyroArrayY, theSize: gyroArrayX.count, gotMean: false, absolute: true))
-        results[RT_ZSTDEV]=(statisticsCalculator.calcStdDev(theData: gyroArrayZ, theSize: gyroArrayZ.count, gotMean: false, absolute: true))
+        results[RT_XSTDEV][0]=(statisticsCalculator.calcStdDev(theData: gyroArrayX, theSize: gyroArrayX.count, gotMean: false, absolute: true))
+        results[RT_YSTDEV][0]=(statisticsCalculator.calcStdDev(theData: gyroArrayY, theSize: gyroArrayX.count, gotMean: false, absolute: true))
+        results[RT_ZSTDEV][0]=(statisticsCalculator.calcStdDev(theData: gyroArrayZ, theSize: gyroArrayZ.count, gotMean: false, absolute: true))
+        
+        // get the data from associated key
+        restTremorResultArray = getDataFromKey(key: "restTremorResultArray")
         
         // segue back to the test approval page
         restTremorResultArray.append( self.results )

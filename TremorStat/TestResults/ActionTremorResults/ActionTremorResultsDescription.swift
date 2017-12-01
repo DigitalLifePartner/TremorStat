@@ -18,7 +18,7 @@ class ActionTremorResultsDescription: UIViewController {
     @IBOutlet weak var tapsNumLabel: UILabel!
     
     // Array storing result of the test
-    var results = [Double]()
+    var results = [[Double]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class ActionTremorResultsDescription: UIViewController {
         super.viewDidAppear(false)
         
         // Code below transforms a Date type in a readable format
-        var dateString = Date(timeIntervalSince1970:(results[AT_TIME]))
+        var dateString = Date(timeIntervalSince1970:(results[AT_TIME][0]))
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = " yyyy-MM-dd HH:mm:ss"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
@@ -43,9 +43,9 @@ class ActionTremorResultsDescription: UIViewController {
         dateLabel.text = updatedDateString;
         
         // Print frequency, deviance and number of taps in appropriate labels
-        frequencyLabel.text = String(Double(round(10000*results[AT_FREQUENCY])/10000))
-        devianceLabel.text = String(Double(round(10000*results[AT_DEVIANCE])/10000))
-        tapsNumLabel.text = String(Int(results[AT_NUMTAPS]))
+        frequencyLabel.text = String(Double(round(10000*results[AT_FREQUENCY][0])/10000))
+        devianceLabel.text = String(Double(round(10000*results[AT_DEVIANCE][0])/10000))
+        tapsNumLabel.text = String(Int(results[AT_NUMTAPS][0]))
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

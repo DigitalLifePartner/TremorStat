@@ -102,7 +102,7 @@ class RestTremorUserProfile: UIViewController {
         while ( ( amountOfTestedDays < DAYS_TESTED ) && ( amountOfTestedDays + multipleTestsAccountedFor < restTremorResultArray.count ) ) {
             
             // get date from stored array
-            testDate = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_TIME]
+            testDate = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_TIME][0]
             
             // split up into day / month / year
             setCalendarDate(enteredDate: String(testDate))
@@ -137,7 +137,11 @@ class RestTremorUserProfile: UIViewController {
             }
             
             // to avoid complications of the 3D array, take sum of the averages of the XYZ and display that instead
-            totalAverage = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_XAVERAGE] + restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_YAVERAGE]  + restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_ZAVERAGE]
+            let xAverage = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_XAVERAGE][0]
+            let yAverage = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_YAVERAGE][0]
+            let zAverage = restTremorResultArray[ restTremorResultArray.count - 1 - amountOfTestedDays - multipleTestsAccountedFor ][RT_ZAVERAGE][0]
+            
+            totalAverage = xAverage + yAverage + zAverage
             
             // add to the yValues
             if ( sameDay ) {

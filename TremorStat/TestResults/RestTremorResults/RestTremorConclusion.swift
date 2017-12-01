@@ -151,8 +151,12 @@ class RestTremorConclusion: UIViewController {
             if restTremorResultArray.count != 0 {
                 
                 // for singular test completed
+                //calculate average offset
                 if restTremorResultArray.count == 1 {
-                    avgStat = restTremorResultArray[0][RT_XAVERAGE] + restTremorResultArray[0][RT_YAVERAGE]  + restTremorResultArray[0][RT_ZAVERAGE]
+                    let xAverage = restTremorResultArray[0][RT_XAVERAGE][0]
+                    let yAverage = restTremorResultArray[0][RT_YAVERAGE][0]
+                    let zAverage = restTremorResultArray[0][RT_ZAVERAGE][0]
+                    avgStat = xAverage + yAverage + zAverage
                 }
                 else {
                     
@@ -171,9 +175,11 @@ class RestTremorConclusion: UIViewController {
                     
                     // either go thru all tests or recent tests
                     for i in startIndex...(restTremorResultArray.count - 1) {
-                        
                         // increment average based on averages of each test
-                        avgStat += restTremorResultArray[i][RT_XAVERAGE] + restTremorResultArray[i][RT_YAVERAGE] + restTremorResultArray[i][RT_ZAVERAGE]
+                        let xAverage = restTremorResultArray[i][RT_XAVERAGE][0]
+                        let yAverage = restTremorResultArray[i][RT_YAVERAGE][0]
+                        let zAverage = restTremorResultArray[i][RT_ZAVERAGE][0]
+                        avgStat += xAverage + yAverage + zAverage
                         print ( " avgstat is ", avgStat )
                     }
                     
