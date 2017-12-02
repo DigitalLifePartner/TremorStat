@@ -124,6 +124,7 @@ class RestTremorResultsDescription: UIViewController {
             // make data set based on values and give it a name
             let lineY = LineChartDataSet( values: displayChartEntries, label: "Total Absolute Offset Per Reading" )
             lineY.colors = ChartColorTemplates.colorful()
+            lineY.circleColors = ChartColorTemplates.colorful()
             lineY.circleRadius = 1.0
             
             let averageLimit = ChartLimitLine(limit: AVG_PERSON_PLUS_STDDEV, label: "Average")
