@@ -76,6 +76,38 @@ class ActionTremorResultsDescription: UIViewController {
             print(timeArray[i+1]," : ",dataArray[i+1])
         
         }
+        
+        var displayChartEntries = [ChartDataEntry]()
+        
+        // go thru all y values
+        for i in stride(from: 0, to: dataArray.count - 1, by: 1) {
+                
+            // set up the x and y axis values
+            let value = ChartDataEntry( x: timeArray[i], y: Double( dataArray[i] ) )
+            print( "adding to x coord " , timeArray[i], " and y coord " , dataArray[i] )
+                
+            // add to the chartdataentry object
+            displayChartEntries.append( value )//insert( value, at: 0 )
+                
+        }
+            
+        // make data set based on values and give it a name
+        let lineY = LineChartDataSet( values: displayChartEntries, label: "Taps Recorded in Test" )
+        lineY.colors = [UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)]
+        lineY.circleColors = [UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)]
+        lineY.circleRadius = 3.0
+            
+        // set up a data object
+        let actionTremorData = LineChartData()
+            
+        // add the data set to the data
+        actionTremorData.addDataSet(lineY )
+            
+        // give chart name and display data
+        displayedChart.chartDescription?.text = "Taps Recorded in Test"
+        displayedChart.data = actionTremorData
+            
+        displayedChart.xAxis.labelPosition = .top
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
