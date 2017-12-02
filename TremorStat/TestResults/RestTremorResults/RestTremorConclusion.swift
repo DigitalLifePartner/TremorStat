@@ -26,6 +26,9 @@ let AVG_PERSON_PLUS_STDDEV = 0.15
 // double above value to catch large shakes
 let AVG_PERSON_PLUS_TWO_STDDEV = 0.3
 
+// our average difference between tap time
+let AVG_DEVIANCE = 0.05
+
 
 class RestTremorConclusion: UIViewController {
 
@@ -133,15 +136,28 @@ class RestTremorConclusion: UIViewController {
         if ( restTremorResultArray.count < ACCEPTABLE_AMOUNT_OF_TESTS ) {
             
             // change label text
-            insufficientDataString = "Not enough tests completed, requires more tests. Try again later. You have completed " + String( restTremorResultArray.count ) + " tests out of " + String( ACCEPTABLE_AMOUNT_OF_TESTS ) + "."
+            insufficientDataString = "Not enough tests completed, requires more tests. Try again later. You have completed " + String( restTremorResultArray.count ) + " rest tremor tests out of " + String( ACCEPTABLE_AMOUNT_OF_TESTS ) + "."
             self.InsufficientDataLabel.text = insufficientDataString
         }
         else {
             
             // conclusion
+            // declare conclusionString to display results to the user
+            var conclusionString: String!
+            
+            conclusionString = ""
+            let userActionTremorDeviance = 0.6
+            if ( userActionTremorDeviance > AVG_DEVIANCE ) {
+                conclusionString = conclusionString + "Based on the action tremor tests you have completed, it appears you have trouble maintaining a rythmic pattern of taps. "
+            }
+            else {
+                conclusionString = conclusionString + "Based on the action tremor tests you have completed, you appear to be able to maintain a rythmic pattern of taps. "
+            }
             
             // display amount of completed tests
-            insufficientDataString = "You have completed " + String( restTremorResultArray.count ) + " tests."
+            let sizeOfActionTremorArray = 2
+            insufficientDataString = "You have completed " + String ( sizeOfActionTremorArray ) + " action tremor tests."
+            insufficientDataString = "You have completed " + String( restTremorResultArray.count ) + " rest tremor tests."
             self.InsufficientDataLabel.text = insufficientDataString
             
             // used to calculate the users average shakiness
@@ -188,18 +204,15 @@ class RestTremorConclusion: UIViewController {
                 // take average
                 avgStat = avgStat/Double( restTremorResultArray.count )
                 
-                // declare conclusionString to display results to the user
-                var conclusionString: String!
-                
                 // if the users average was higher than our baseline plus our standard deviation --> they are higher than average but not drastically
                 if ( avgStat > AVG_PERSON_PLUS_TWO_STDDEV ) {
                     
                     // string for if they do not have many factors
-                    conclusionString = "You shake statistically higher than the average person. You do not have many contributing factors, but you should still consult a doctor for proper diagnosis. "
+                    conclusionString = conclusionString + "It has been found from the rest tremor tests you have completed that you shake statistically higher than the average person. You do not have many contributing factors, but you should still consult a doctor for proper diagnosis. "
                     
                     // if the user does have a lot of additional factors in their profile, this higher than average value might not be a fluke...
                     if ( stringCount > 1 ) {
-                        conclusionString = "You shake statistically higher than the average person. Additionally you have some factors that increase your risk. You should consult a doctor for proper diagnosis. "
+                        conclusionString = conclusionString + "It has been found from the rest tremor tests you have completed that you shake statistically higher than the average person. Additionally you have some factors that increase your risk. You should consult a doctor for proper diagnosis. "
                     }
                     
                 }
@@ -208,15 +221,15 @@ class RestTremorConclusion: UIViewController {
                 else if ( avgStat > AVG_PERSON_PLUS_STDDEV ) {
                     
                     // regardless of user profile we will recommend diagnosis at this point, but change message regardless
-                    conclusionString = "You do shake more than the average person. You do not have many contributing factors though. The results are inconclusive."
+                    conclusionString = conclusionString + "It has been found from the rest tremor tests you have completed that you do shake more than the average person. You do not have many contributing factors though. The results are inconclusive."
                     if ( stringCount > 1 ) {
-                        conclusionString = "You do shake more than the average person. As you do have some contributing factors there is a possibility that you have Parkinsons's. Consult a doctor for proper diagnosis. "
+                        conclusionString = conclusionString + "It has been found from the rest tremor tests you have completed that you do shake more than the average person. As you do have some contributing factors there is a possibility that you have Parkinsons's. Consult a doctor for proper diagnosis. "
                     }
                     
                 }
                 else {
                     // user's average was within "average" range
-                    conclusionString = "You are within the average ranges of shakiness that someone without Parkinson's has. So far you are fine. "
+                    conclusionString = conclusionString + "It has been found from the rest tremor tests you have completed that you are within the average ranges of shakiness that someone without Parkinson's has. So far you are fine. "
                 }
                 
                 // update label text based on calculations above
