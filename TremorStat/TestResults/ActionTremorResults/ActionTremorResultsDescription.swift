@@ -47,6 +47,35 @@ class ActionTremorResultsDescription: UIViewController {
         frequencyLabel.text = String(Double(round(10000*results[AT_FREQUENCY][0])/10000))
         devianceLabel.text = String(Double(round(10000*results[AT_DEVIANCE][0])/10000))
         tapsNumLabel.text = String(Int(results[AT_NUMTAPS][0]))
+        
+        
+        // Prepare Data arrays to plot the data
+        var timeArray = Array(repeating: 0.0, count: results[AT_TAPS].count*3)
+        var dataArray = Array(repeating: 0, count: timeArray.count)
+        
+        var j=1 //loop control variable
+        //Assign values to arrays used in plotting
+        for i in stride (from: 1, to: dataArray.count-1, by: 3){
+            dataArray[i]=1
+            timeArray[i]=results[AT_TAPS][i-j]
+            
+            if (i-j > 0) {
+                timeArray[i-1] = timeArray[i] - (timeArray[i] - results[AT_TAPS][i-j-1])/100
+            }
+            else {timeArray[i-1] = timeArray[i] - 0.0001}
+            
+            if (i+j < results[AT_TAPS].count) {
+                timeArray[i+1] = timeArray[i] + (results[AT_TAPS][i-j+1] - timeArray[i])/100
+            }
+            else {timeArray[i+1]=timeArray[i] + 0.0001}
+            
+            j += 2
+            
+            print(timeArray[i-1]," : ",dataArray[i-1])
+            print(timeArray[i]," : ",dataArray[i])
+            print(timeArray[i+1]," : ",dataArray[i+1])
+        
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
