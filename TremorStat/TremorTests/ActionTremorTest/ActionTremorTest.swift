@@ -153,13 +153,13 @@ class ActionTremorTest: UIViewController {
                 avgDeviance = 0.0
             }
         
-            var results = [Double]()
-            results.append(Double(Date().timeIntervalSince1970))
-            results.append(avgTime)
-            results.append(avgDeviance)
-            results.append(Double(numTaps))
+            var results = Array(repeating: [0.0], count: 10)
+            results[AT_TIME]=[Double(Date().timeIntervalSince1970)]
+            results[AT_FREQUENCY]=[avgTime]
+            results[AT_DEVIANCE]=[avgDeviance]
+            results[AT_NUMTAPS]=[Double(numTaps)]
             
-            actionTremorResultArray.append( [results] )
+            actionTremorResultArray.append( results )
             //Store test results under associated key
             UserDefaults.standard.set(actionTremorResultArray, forKey: "actionTremorResultArray")
             performSegue(withIdentifier: "ApprovePage", sender: self)
