@@ -21,6 +21,10 @@ let AT_FREQUENCY = 1
 let AT_DEVIANCE = 2
 let AT_NUMTAPS = 3
 let AT_TAPS = 4
+
+// variable that transforms currentTime to an appropriate format
+var timeReverser = 0.0
+
 //Unsigned int to track number of taps
 var numTaps = 0
 
@@ -93,7 +97,7 @@ class ActionTremorTest: UIViewController {
             tapTimes.append(lastTapTime - currentTime)
         }
         
-        tapsArray.append(currentTime)
+        tapsArray.append(timeReverser)
         //Set time of last tap to current time
         lastTapTime = currentTime
         
@@ -120,6 +124,7 @@ class ActionTremorTest: UIViewController {
         // if the seconds remaining is above zero, decrement
         if currentTime>0 {
             currentTime -= 0.1
+            timeReverser += 0.1
         }
         // display new time remaining
         MyLabel?.text=String(Int(currentTime))
