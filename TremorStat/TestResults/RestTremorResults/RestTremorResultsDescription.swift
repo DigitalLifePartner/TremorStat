@@ -123,6 +123,9 @@ class RestTremorResultsDescription: UIViewController {
             
             // make data set based on values and give it a name
             let lineY = LineChartDataSet( values: displayChartEntries, label: "Total Absolute Offset Per Reading" )
+            lineY.colors = ChartColorTemplates.colorful()
+            lineY.circleRadius = 1.0
+            
             
             // set up a data object
             let restTremorData = LineChartData()
@@ -131,7 +134,7 @@ class RestTremorResultsDescription: UIViewController {
             restTremorData.addDataSet(lineY )
             
             // give chart name and display data
-            displayedChart.chartDescription?.text = "Every Secondary Reading"
+            displayedChart.chartDescription?.text = "Readings at Every Tenth of a Second"
             displayedChart.data = restTremorData
         
         }
