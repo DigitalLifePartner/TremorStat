@@ -153,7 +153,7 @@ class ActionTremorTest: UIViewController {
                 avgDeviance = 0.0
             }
         
-            var results = Array(repeating: [0.0], count: 10)
+            var results = Array(repeating: [0.0], count: 4)
             results[AT_TIME]=[Double(Date().timeIntervalSince1970)]
             results[AT_FREQUENCY]=[avgTime]
             results[AT_DEVIANCE]=[avgDeviance]
