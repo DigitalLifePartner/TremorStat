@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Used to save test result graphs to the camera roll.</string>
+	<string>Save Graphs to Camera Roll.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to save test result plots to the camera roll.</string>
 	<key>CFBundleDevelopmentRegion</key>
