@@ -466,15 +466,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PwU-ON-UYq">
-                                <rect key="frame" x="0.0" y="138" width="375" height="256"/>
+                                <rect key="frame" x="0.0" y="138" width="378" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mv7-U3-FBA" customClass="GraphView" customModule="TremorStat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
-                                        <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="256" id="QQB-4v-jqj"/>
-                                        </constraints>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j8L-Xg-mZc" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="204"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -569,7 +566,7 @@
                     <connections>
                         <outlet property="NoButton" destination="lxl-Kq-Lcl" id="5qF-I9-kvg"/>
                         <outlet property="YesButton" destination="nZO-Ds-tb7" id="aXZ-sr-pyO"/>
-                        <outlet property="graphView" destination="mv7-U3-FBA" id="yTd-um-5wK"/>
+                        <outlet property="displayedChart" destination="j8L-Xg-mZc" id="wko-YY-uuy"/>
                         <outlet property="meanX" destination="A6a-jf-YAQ" id="wos-Jv-rfh"/>
                         <outlet property="meanY" destination="oVp-ZP-jLc" id="6sB-IE-3fj"/>
                         <outlet property="meanZ" destination="4FT-dA-UlV" id="KFt-Ut-vx2"/>
@@ -580,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zA6-AA-J7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-623" y="4563"/>
+            <point key="canvasLocation" x="-623.20000000000005" y="4562.9685157421291"/>
         </scene>
         <!--Action Tremor Countdown-->
         <scene sceneID="QbH-yg-RKV">
@@ -802,6 +799,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mAy-My-HXi"/>
-        <segue reference="CE8-YE-1Rc"/>
+        <segue reference="7Dk-XC-qz3"/>
     </inferredMetricsTieBreakers>
 </document>
