@@ -126,6 +126,7 @@ class RestTremorResultsDescription: UIViewController {
             lineY.colors = ChartColorTemplates.colorful()
             lineY.circleRadius = 1.0
             
+            let averageLimit = ChartLimitLine(limit: AVG_PERSON_PLUS_STDDEV, label: "Average")
             
             // set up a data object
             let restTremorData = LineChartData()
@@ -136,6 +137,12 @@ class RestTremorResultsDescription: UIViewController {
             // give chart name and display data
             displayedChart.chartDescription?.text = "Readings at Every Tenth of a Second"
             displayedChart.data = restTremorData
+            displayedChart.rightAxis.addLimitLine(averageLimit)
+            
+            
+            //barChartView.xAxis.labelPosition = .Bottom
+            
+            displayedChart.xAxis.labelPosition = .top
         
         }
     }
