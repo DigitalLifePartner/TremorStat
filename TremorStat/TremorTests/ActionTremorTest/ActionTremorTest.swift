@@ -20,6 +20,7 @@ let AT_TIME = 0
 let AT_FREQUENCY = 1
 let AT_DEVIANCE = 2
 let AT_NUMTAPS = 3
+let AT_TAPS = 4
 //Unsigned int to track number of taps
 var numTaps = 0
 
@@ -27,6 +28,9 @@ class ActionTremorTest: UIViewController {
     
     // Array containing all Action Tremor Test results
     var actionTremorResultArray = [[[Double]]]()
+    
+    // Array containing times at which taps have occured
+    var tapsArray = [Double]()
     
     @IBOutlet weak var ActionTremorButton: UIView!
     
@@ -89,6 +93,7 @@ class ActionTremorTest: UIViewController {
             tapTimes.append(lastTapTime - currentTime)
         }
         
+        tapsArray.append(currentTime)
         //Set time of last tap to current time
         lastTapTime = currentTime
         
@@ -153,11 +158,12 @@ class ActionTremorTest: UIViewController {
                 avgDeviance = 0.0
             }
         
-            var results = Array(repeating: [0.0], count: 10)
+            var results = Array(repeating: [0.0], count: 5)
             results[AT_TIME]=[Double(Date().timeIntervalSince1970)]
             results[AT_FREQUENCY]=[avgTime]
             results[AT_DEVIANCE]=[avgDeviance]
             results[AT_NUMTAPS]=[Double(numTaps)]
+            results[AT_TAPS]=tapsArray
             
             actionTremorResultArray.append( results )
             //Store test results under associated key
