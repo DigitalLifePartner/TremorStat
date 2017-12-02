@@ -110,10 +110,10 @@ class RestTremorResultsDescription: UIViewController {
         // go thru all y values
         if ( totalOffset.count > 0 ) {
             
-            for i in 0...(totalOffset.count/4 - 1 ) {
+            for i in stride(from: 0, to: totalOffset.count - 1, by: 4) {
                 
                 // set up the x and y axis values
-                let value = ChartDataEntry( x: xValues[4*i], y: totalOffset[4*i] )
+                let value = ChartDataEntry( x: xValues[i], y: totalOffset[i] )
                 print( "adding to x coord " , xValues[i], " and y coord " , totalOffset[i] )
                 
                 // add to the chartdataentry object
