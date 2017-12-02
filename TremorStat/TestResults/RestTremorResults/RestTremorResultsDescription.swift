@@ -110,10 +110,10 @@ class RestTremorResultsDescription: UIViewController {
         // go thru all y values
         if ( totalOffset.count > 0 ) {
             
-            for i in 0...(totalOffset.count/4 - 1 ) {
+            for i in stride(from: 0, to: totalOffset.count - 1, by: 4) {
                 
                 // set up the x and y axis values
-                let value = ChartDataEntry( x: xValues[4*i], y: totalOffset[4*i] )
+                let value = ChartDataEntry( x: xValues[i], y: totalOffset[i] )
                 print( "adding to x coord " , xValues[i], " and y coord " , totalOffset[i] )
                 
                 // add to the chartdataentry object
@@ -123,6 +123,10 @@ class RestTremorResultsDescription: UIViewController {
             
             // make data set based on values and give it a name
             let lineY = LineChartDataSet( values: displayChartEntries, label: "Total Absolute Offset Per Reading" )
+            lineY.colors = ChartColorTemplates.colorful()
+            lineY.circleRadius = 1.0
+            
+            let averageLimit = ChartLimitLine(limit: AVG_PERSON_PLUS_STDDEV, label: "Average")
             
             // set up a data object
             let restTremorData = LineChartData()
@@ -131,10 +135,21 @@ class RestTremorResultsDescription: UIViewController {
             restTremorData.addDataSet(lineY )
             
             // give chart name and display data
-            displayedChart.chartDescription?.text = "Every Secondary Reading"
+            displayedChart.chartDescription?.text = "Readings at Every Tenth of a Second"
             displayedChart.data = restTremorData
+            displayedChart.rightAxis.addLimitLine(averageLimit)
+            
+            
+            //barChartView.xAxis.labelPosition = .Bottom
+            
+            displayedChart.xAxis.labelPosition = .top
         
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 }
 
