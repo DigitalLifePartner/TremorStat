@@ -228,12 +228,15 @@ class ActionTremorUserProfile: UIViewController {
     
     // save chart
     @IBAction func saveChart(_ sender: UIButton) {
-        let theDate = Date()
+        //let theDate = Date()
         
-        setCalendarDate(enteredDate: theDate.description)
-        let theName = "/Action Tremor Chart - " + String( calendarDate[DAY] ) + " - " + String( calendarDate[ MONTH ] ) + " - " + String( calendarDate[YEAR] ) + ".png/"
+        //setCalendarDate(enteredDate: theDate.description)
+        //let theName = "/Action Tremor Chart - " + String( calendarDate[DAY] ) + " - " + String( calendarDate[ MONTH ] ) + " - " + String( calendarDate[YEAR] ) + ".png/"
         
-        displayedChart.save(to: theName, format: ChartViewBase.ImageFormat.png, compressionQuality: 1.0)
+        //displayedChart.save(to: theName, format: ChartViewBase.ImageFormat.png, compressionQuality: 1.0)
+        
+        let image = displayedChart.getChartImage(transparent: false)
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
     }
     
     /*
@@ -247,3 +250,4 @@ class ActionTremorUserProfile: UIViewController {
      */
     
 }
+
