@@ -258,14 +258,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4u-fx-zFs" customClass="GraphView" customModule="TremorStat" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="256"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="274"/>
                                 <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="78g-TS-fKi"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wF-9I-Q9o">
-                                <rect key="frame" x="121" y="374" width="132" height="20"/>
+                                <rect key="frame" x="121" y="392" width="132" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Hl4-ef-daP"/>
                                     <constraint firstAttribute="width" constant="132" id="XjP-Z5-7SO"/>
@@ -275,9 +275,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hU2-Ad-ldS">
-                                <rect key="frame" x="159" y="402" width="56" height="68"/>
+                                <rect key="frame" x="157" y="420" width="60" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="tG1-wg-ps2"/>
+                                    <constraint firstAttribute="height" constant="50" id="hX6-PA-MQt"/>
+                                    <constraint firstAttribute="width" constant="60" id="tG1-wg-ps2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="textColor"/>
@@ -309,7 +310,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test in Progress..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8H-s1-sai">
-                                <rect key="frame" x="98" y="331" width="178" height="35"/>
+                                <rect key="frame" x="98" y="349" width="178" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="6Z1-Al-C9N"/>
                                 </constraints>
@@ -591,10 +592,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbH-fT-S8e">
-                                <rect key="frame" x="20" y="27" width="334" height="140"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbH-fT-S8e">
+                                <rect key="frame" x="15.5" y="27" width="334" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="Ben-WT-RX1"/>
+                                    <constraint firstAttribute="width" constant="334" id="nNB-la-cH7"/>
                                 </constraints>
                                 <string key="text">Rest your device on a flat surface and place your hand palm down directly above. Place your finger in such a way that you are able to comfortably hit the target on screen. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -602,10 +604,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Active_Tremor_Test_InAction.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UOp-nz-cx2">
-                                <rect key="frame" x="16" y="175" width="343" height="223"/>
+                                <rect key="frame" x="16" y="175" width="334" height="223"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Ready!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGO-Qr-AUw">
-                                <rect key="frame" x="25" y="419" width="324" height="95"/>
+                                <rect key="frame" x="25" y="419" width="315" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="Tpm-jX-2ak"/>
                                 </constraints>
@@ -623,6 +625,7 @@
                             <constraint firstItem="UOp-nz-cx2" firstAttribute="leading" secondItem="nF7-30-O37" secondAttribute="leadingMargin" id="Nq0-Ax-tDd"/>
                             <constraint firstItem="nbH-fT-S8e" firstAttribute="centerX" secondItem="UOp-nz-cx2" secondAttribute="centerX" id="gWp-F5-4m8"/>
                             <constraint firstItem="UOp-nz-cx2" firstAttribute="trailing" secondItem="nF7-30-O37" secondAttribute="trailingMargin" id="ibC-qy-sqo"/>
+                            <constraint firstItem="nbH-fT-S8e" firstAttribute="width" secondItem="UOp-nz-cx2" secondAttribute="width" id="l0k-X0-dJX"/>
                             <constraint firstItem="zGO-Qr-AUw" firstAttribute="top" secondItem="UOp-nz-cx2" secondAttribute="bottom" constant="21" id="lt8-Lt-eac"/>
                             <constraint firstItem="zGO-Qr-AUw" firstAttribute="leading" secondItem="nF7-30-O37" secondAttribute="leadingMargin" constant="9" id="px5-Mq-Dyu"/>
                         </constraints>
@@ -798,7 +801,7 @@
         <image name="User_Holding_Device.png" width="928" height="1065"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mAy-My-HXi"/>
-        <segue reference="9I2-BQ-R9X"/>
+        <segue reference="WtU-QR-ER0"/>
+        <segue reference="vph-jE-4xU"/>
     </inferredMetricsTieBreakers>
 </document>
