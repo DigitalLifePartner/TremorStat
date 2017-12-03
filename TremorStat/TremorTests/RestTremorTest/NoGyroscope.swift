@@ -21,7 +21,7 @@ class NoGyroscope: UIViewController {
     var restTremorResultArray = [[[Double]]]()
     
     // Create an array for the result data
-    var results = Array(repeating: [0.0], count: 10)
+    var results = Array(repeating: [0.0], count: 12)
     
     // component arrays of the X Y Z values
     // each is of size 1200 elements as 30 seconds divided by 0.025 second intervals is 1200
@@ -65,6 +65,10 @@ class NoGyroscope: UIViewController {
         results[RT_XOFFSET]=gyroArrayX
         results[RT_YOFFSET]=gyroArrayY
         results[RT_ZOFFSET]=gyroArrayZ
+        
+        //Store information about medicine taken and supplements
+        results[RT_MED]=getDoubleDrugArray()[0]
+        results[RT_SUP]=getDoubleDrugArray()[1]
         
         // segue back to the test approval page
         goToApprove()

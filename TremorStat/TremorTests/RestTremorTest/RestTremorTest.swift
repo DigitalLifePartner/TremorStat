@@ -19,6 +19,7 @@ import simd
 let TEST_DURATION = 30.0
 let PERIOD_FOR_READINGS = 0.025
 let READINGS_PER_TEST = Int(TEST_DURATION/PERIOD_FOR_READINGS)
+
 // Indeces constants to access particular elements of the test
 let RT_TIME = 0
 let RT_XAVERAGE = 1
@@ -30,6 +31,8 @@ let RT_ZSTDEV = 6
 let RT_XOFFSET = 7
 let RT_YOFFSET = 8
 let RT_ZOFFSET = 9
+let RT_MED = 10
+let RT_SUP = 11
 
 // class to handle rest tremor test
 class RestTremorTest: UIViewController, MotionGraphContainer {
@@ -54,7 +57,7 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
     var motionManager: CMMotionManager?
     
     // Create an array for the result data
-    var results = Array(repeating: [0.0], count: 10)
+    var results = Array(repeating: [0.0], count: 12)
     
     //Instantiating Statistics class for data representation
     var statisticsCalculator = StatisticsCalculator()
@@ -164,6 +167,10 @@ class RestTremorTest: UIViewController, MotionGraphContainer {
         results[RT_XOFFSET]=gyroArrayX
         results[RT_YOFFSET]=gyroArrayY
         results[RT_ZOFFSET]=gyroArrayZ
+        
+        //Store information about medicine taken and supplements
+        results[RT_MED]=getDoubleDrugArray()[0]
+        results[RT_SUP]=getDoubleDrugArray()[1]
         
         // get the data from associated key
         restTremorResultArray = getDataFromKey(key: "restTremorResultArray")
