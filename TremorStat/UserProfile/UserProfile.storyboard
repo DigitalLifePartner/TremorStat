@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,7 +29,8 @@
         <!--Settings-->
         <scene sceneID="Yql-ue-FQA">
             <objects>
-                <viewController id="vCf-Ny-rSf" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ivb-c2-Nko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="vCf-Ny-rSf" customClass="SettingsView" customModule="TremorStat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jGY-tv-S89"/>
                         <viewControllerLayoutGuide type="bottom" id="Eco-0d-yHu"/>
@@ -37,37 +39,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6xa-A6-AyI">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xa-A6-AyI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Application Settings" id="fPp-4E-dYo"/>
                                 </items>
                             </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon60x60.png" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-Uc-2bt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon60x60.png" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-Uc-2bt">
                                 <rect key="frame" x="157" y="102" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TremorStat " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTf-hn-BGc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TremorStat " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTf-hn-BGc">
                                 <rect key="frame" x="142" y="183" width="90" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best Software 2017 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccp-wP-OL3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Software 2017 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccp-wP-OL3">
                                 <rect key="frame" x="111" y="212" width="153" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.0099999997764825821" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7FM-VF-jW0">
+                                <rect key="frame" x="14" y="318" width="347" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Update Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXR-B2-IzQ">
+                                <rect key="frame" x="15" y="289" width="120" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="eR5-ZJ-zif"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interval" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXq-5o-Qmw">
+                                <rect key="frame" x="298" y="289" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="LsF-S2-5jf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7FM-VF-jW0" firstAttribute="top" secondItem="tXq-5o-Qmw" secondAttribute="bottom" constant="8" symbolic="YES" id="Cct-Tk-Qvf"/>
+                            <constraint firstItem="7FM-VF-jW0" firstAttribute="centerY" secondItem="tDe-ax-K8n" secondAttribute="centerY" id="Eo6-Vw-nsL"/>
+                            <constraint firstItem="Ccp-wP-OL3" firstAttribute="centerX" secondItem="6xa-A6-AyI" secondAttribute="centerX" id="IQw-sW-toK"/>
+                            <constraint firstItem="WTf-hn-BGc" firstAttribute="centerX" secondItem="6xa-A6-AyI" secondAttribute="centerX" id="L3g-Tg-sNW"/>
+                            <constraint firstItem="7FM-VF-jW0" firstAttribute="top" secondItem="JXR-B2-IzQ" secondAttribute="bottom" constant="8" symbolic="YES" id="QJV-pA-Wi1"/>
+                            <constraint firstItem="KVX-Uc-2bt" firstAttribute="top" secondItem="jGY-tv-S89" secondAttribute="bottom" constant="38" id="RFQ-gb-rn0"/>
+                            <constraint firstItem="KVX-Uc-2bt" firstAttribute="centerX" secondItem="tDe-ax-K8n" secondAttribute="centerX" id="bpN-7O-hdz"/>
+                            <constraint firstItem="6xa-A6-AyI" firstAttribute="top" secondItem="tDe-ax-K8n" secondAttribute="top" id="gcZ-bF-QJU"/>
+                            <constraint firstItem="6xa-A6-AyI" firstAttribute="leading" secondItem="tDe-ax-K8n" secondAttribute="leading" id="iet-Sp-HzN"/>
+                            <constraint firstItem="7FM-VF-jW0" firstAttribute="leading" secondItem="tDe-ax-K8n" secondAttribute="leadingMargin" id="igp-zS-AWz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tXq-5o-Qmw" secondAttribute="trailing" constant="1" id="kh8-1d-d2B"/>
+                            <constraint firstItem="KVX-Uc-2bt" firstAttribute="centerX" secondItem="6xa-A6-AyI" secondAttribute="centerX" id="ktY-kK-IlX"/>
+                            <constraint firstItem="6xa-A6-AyI" firstAttribute="centerX" secondItem="7FM-VF-jW0" secondAttribute="centerX" id="nEV-tI-Gyu"/>
+                            <constraint firstItem="WTf-hn-BGc" firstAttribute="top" secondItem="KVX-Uc-2bt" secondAttribute="bottom" constant="21" id="nGj-vU-D9m"/>
+                            <constraint firstItem="JXR-B2-IzQ" firstAttribute="leading" secondItem="tDe-ax-K8n" secondAttribute="leadingMargin" constant="-1" id="rJF-Lc-cVd"/>
+                            <constraint firstItem="Ccp-wP-OL3" firstAttribute="top" secondItem="WTf-hn-BGc" secondAttribute="bottom" constant="8" symbolic="YES" id="sSH-sW-hqe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Taf-di-Lgx"/>
+                    <connections>
+                        <outlet property="UpdateIntervalLabel" destination="tXq-5o-Qmw" id="j5X-0L-oLL"/>
+                        <outlet property="UpdateIntervalSlider" destination="7FM-VF-jW0" id="NXw-rl-moX"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ivb-c2-Nko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3253.5999999999999" y="1136.5817091454273"/>
         </scene>

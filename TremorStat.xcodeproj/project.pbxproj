@@ -51,6 +51,7 @@
 		BF0EFFF41FAEB2690076F4E2 /* TremorTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */; };
 		BF0EFFF71FAEBAAA0076F4E2 /* TestResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */; };
 		BF0EFFF91FAEBABA0076F4E2 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */; };
+		BF1733E21FD3C3B200A3B9B6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1733E11FD3C3B200A3B9B6 /* SettingsView.swift */; };
 		BF5E8B431FB1108900559754 /* TremorStatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E8B421FB1108900559754 /* TremorStatUITests.swift */; };
 		BF7CC9D51FCA565F001B9ECD /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7CC9D21FCA5609001B9ECD /* Charts.framework */; };
 		BF7CC9D61FCA565F001B9ECD /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF7CC9D21FCA5609001B9ECD /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -197,6 +198,7 @@
 		BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TremorTests.storyboard; sourceTree = "<group>"; };
 		BF0EFFF61FAEBAAA0076F4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TremorStat/Base.lproj/TestResults.storyboard; sourceTree = "<group>"; };
 		BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
+		BF1733E11FD3C3B200A3B9B6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BF5E8B421FB1108900559754 /* TremorStatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TremorStatUITests.swift; sourceTree = "<group>"; };
 		BF5E8B441FB1108900559754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF7CC9CC1FCA5608001B9ECD /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = charts/Charts.xcodeproj; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			children = (
 				BF0A0B291FB91CEC00357132 /* UserProfileView.swift */,
 				BFB1E6801FBFBCDC000B6ED8 /* UserProfileClass.swift */,
+				BF1733E11FD3C3B200A3B9B6 /* SettingsView.swift */,
 				BF0EFFF81FAEBABA0076F4E2 /* UserProfile.storyboard */,
 			);
 			path = UserProfile;
@@ -370,8 +373,8 @@
 				408E5E561FB0223F00C24543 /* RestTremorTestInfoView.swift */,
 				99F924CB1FB7BA5400E8436A /* DataStorage.swift */,
 				99F924CD1FB7BCCF00E8436A /* ConfigDataStorage.swift */,
-				BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */,
 				E8B9B32F1FD3B348005410D9 /* DrugsArrayTranslator.swift */,
+				BF0EFFF31FAEB2690076F4E2 /* TremorTests.storyboard */,
 			);
 			path = TremorTests;
 			sourceTree = "<group>";
@@ -381,9 +384,9 @@
 			children = (
 				407DE79A1FC10E10003EBE39 /* ActionTremorResults */,
 				407DE79C1FC10E21003EBE39 /* RestTremorResults */,
-				BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */,
 				9939694E1FD388D10009F977 /* TremorStatConclusion.swift */,
 				407343AF1FC12437004E75E4 /* TestResultsView.swift */,
+				BF0EFFF51FAEBAAA0076F4E2 /* TestResults.storyboard */,
 			);
 			path = TestResults;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				407343B01FC12437004E75E4 /* TestResultsView.swift in Sources */,
 				407DE79F1FC11386003EBE39 /* getDataFromKey.swift in Sources */,
 				99F924CC1FB7BA5400E8436A /* DataStorage.swift in Sources */,
+				BF1733E21FD3C3B200A3B9B6 /* SettingsView.swift in Sources */,
 				408E5E571FB0223F00C24543 /* RestTremorTestInfoView.swift in Sources */,
 				B50882BD1DDE4A4600B4C55D /* GraphView.swift in Sources */,
 				9939694F1FD388D10009F977 /* TremorStatConclusion.swift in Sources */,

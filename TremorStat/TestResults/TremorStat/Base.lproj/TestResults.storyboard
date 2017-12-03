@@ -231,7 +231,7 @@
                                     <segue destination="J8m-lP-KQn" kind="embed" id="siq-ga-mgl"/>
                                 </connections>
                             </containerView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Not Implemented Yet" translatesAutoresizingMaskIntoConstraints="NO" id="eA1-Vd-1iO">
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search Test Results" translatesAutoresizingMaskIntoConstraints="NO" id="eA1-Vd-1iO">
                                 <rect key="frame" x="0.0" y="62" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -343,7 +343,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Not Implemented Yet" translatesAutoresizingMaskIntoConstraints="NO" id="uZA-VQ-k4Q">
+                            <searchBar contentMode="redraw" fixedFrame="YES" text="" placeholder="Search Test Results" translatesAutoresizingMaskIntoConstraints="NO" id="uZA-VQ-k4Q">
                                 <rect key="frame" x="0.0" y="62" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
