@@ -12,8 +12,19 @@ import Charts
 
 class RestTremorResultsDescription: UIViewController {
     
+    
     // Lable declaration for various test parameters
     @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var xOffSet: UILabel!
+    @IBOutlet weak var xStdDev: UILabel!
+    
+    @IBOutlet weak var yOffSet: UILabel!
+    @IBOutlet weak var yStdDev: UILabel!
+    
+    @IBOutlet weak var zOffSet: UILabel!
+    @IBOutlet weak var zStdDev: UILabel!
+    
     
     @IBOutlet weak var xOffsetLabel: UILabel!
     @IBOutlet weak var yOffsetLabel: UILabel!
@@ -51,18 +62,7 @@ class RestTremorResultsDescription: UIViewController {
         let updatedDateString = dateFormatter.string(from: yourDate!)
         dateLabel.text = updatedDateString;
         
-        // Print x,y,z offsets in appropriate labels
-        xOffsetLabel.text = String(Double(round(10000*results[RT_XAVERAGE][0])/10000))
-        yOffsetLabel.text = String(Double(round(10000*results[RT_YAVERAGE][0])/10000))
-        zOffsetLabel.text = String(Double(round(10000*results[RT_ZAVERAGE][0])/10000))
-        
-        // Print x,y,z deviations in appropriate labels
-        xDeviationLabel.text = String(Double(round(10000*results[RT_XSTDEV][0])/10000))
-        yDeviationLabel.text = String(Double(round(10000*results[RT_YSTDEV][0])/10000))
-        zDeviationLabel.text = String(Double(round(10000*results[RT_ZSTDEV][0])/10000))
-        
-        // find out how many of the users results are within the average range
-        var statCalc = StatisticsCalculator()
+        updateToBasicView();
         
         // get total offset for the test
         var totalOffset = Array(repeating: 0.0, count: READINGS_PER_TEST)
@@ -91,18 +91,11 @@ class RestTremorResultsDescription: UIViewController {
             
             totalOffset[i] = xOff + yOff + zOff
             xValues[i] = Double(i)
-         }
+        }
         
-        // get an array of doubles that are within the average tremor ranges
-        let inAverageRange = statCalc.searchAndMakeWithinInterval( theArray: totalOffset, leftMostVal: 0.0, rightMostVal: AVG_PERSON_PLUS_STDDEV )
-        
-        // compare sizes of the returned array with the original and get the percentage
-        var percentage = ( Double( inAverageRange.count - 1 )/Double( READINGS_PER_TEST ) )*100.0
-        percentage = Double ( round( 100*percentage ) )
-        percentage = percentage/100.0
-        
+    
         // display the percentage
-        amountWithinAverageLabel.text = String( percentage ) + "% of your results are within average ranges."
+        //amountWithinAverageLabel.text = String( percentage ) + "% of your results are within average ranges."
         
         // prep the displayed chart
         var displayChartEntries = [ChartDataEntry]()
@@ -147,6 +140,126 @@ class RestTremorResultsDescription: UIViewController {
         
         }
     }
+    
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBAction func IndexChanged(_ sender: Any)
+    {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            updateToBasicView();
+            
+        case 1:
+            updateToScientificView()
+            
+        default:
+            break
+        }
+        
+        
+    }
+    
+    func updateToBasicView()
+    {
+        xStdDev.isHidden = true;
+        xOffSet.isHidden = true;
+        yStdDev.isHidden = true;
+        yOffSet.isHidden = true;
+        zStdDev.isHidden = true;
+        zOffSet.isHidden = true;
+        xOffsetLabel.isHidden = true;
+        yOffsetLabel.isHidden = true;
+        zOffsetLabel.isHidden = true;
+        xDeviationLabel.isHidden = true;
+        yDeviationLabel.isHidden = true;
+        zDeviationLabel.isHidden = true;
+        
+    }
+    
+    func updateToScientificView()
+    {
+        
+        xStdDev.text = "X offset (rad/s):"
+        xOffSet.text = "X StdDeviation (rad/s)"
+        
+        yStdDev.text = "Y offset (rad/s):"
+        yOffSet.text = "Y StdDeviation (rad/s)"
+        
+        zStdDev.text = "Z offset (rad/s):"
+        zOffSet.text = "Z StdDeviation (rad/s)"
+        
+        yStdDev.isHidden = true;
+        yOffSet.isHidden = true;
+        zStdDev.isHidden = true;
+        zOffSet.isHidden = true;
+        
+        xStdDev.isHidden = false;
+        xOffSet.isHidden = false;
+        yStdDev.isHidden = false;
+        yOffSet.isHidden = false;
+        zStdDev.isHidden = false;
+        zOffSet.isHidden = false;
+        xOffsetLabel.isHidden = false;
+        yOffsetLabel.isHidden = false;
+        zOffsetLabel.isHidden = false;
+        xDeviationLabel.isHidden = false;
+        yDeviationLabel.isHidden = false;
+        zDeviationLabel.isHidden = false;
+        
+        
+        // Print x,y,z offsets in appropriate labels
+        xOffsetLabel.text = String(Double(round(10000*results[RT_XAVERAGE][0])/10000))
+        yOffsetLabel.text = String(Double(round(10000*results[RT_YAVERAGE][0])/10000))
+        zOffsetLabel.text = String(Double(round(10000*results[RT_ZAVERAGE][0])/10000))
+        
+        // Print x,y,z deviations in appropriate labels
+        xDeviationLabel.text = String(Double(round(10000*results[RT_XSTDEV][0])/10000))
+        yDeviationLabel.text = String(Double(round(10000*results[RT_YSTDEV][0])/10000))
+        zDeviationLabel.text = String(Double(round(10000*results[RT_ZSTDEV][0])/10000))
+        
+        // find out how many of the users results are within the average range
+        var statCalc = StatisticsCalculator()
+        
+        // get total offset for the test
+        var totalOffset = Array(repeating: 0.0, count: READINGS_PER_TEST)
+        var xValues = Array( repeating: 0.0, count: READINGS_PER_TEST )
+        
+        var xOff = 0.0
+        var yOff = 0.0
+        var zOff = 0.0
+        
+        // go thru all elements
+        for i in 0...( READINGS_PER_TEST - 1 ) {
+            
+            // add all offsets ( absolute value )
+            xOff = results[ RT_XOFFSET ][ i ]
+            if ( xOff < 0 ) {
+                xOff = (-1)*xOff
+            }
+            yOff = results[ RT_YOFFSET ][ i ]
+            if ( yOff < 0 ) {
+                yOff = (-1)*yOff
+            }
+            zOff = results[ RT_ZOFFSET ][ i ]
+            if ( zOff < 0 ) {
+                zOff = (-1)*zOff
+            }
+            
+            totalOffset[i] = xOff + yOff + zOff
+            xValues[i] = Double(i)
+        }
+        
+        // get an array of doubles that are within the average tremor ranges
+        let inAverageRange = statCalc.searchAndMakeWithinInterval( theArray: totalOffset, leftMostVal: 0.0, rightMostVal: AVG_PERSON_PLUS_STDDEV )
+        
+        // compare sizes of the returned array with the original and get the percentage
+        var percentage = ( Double( inAverageRange.count - 1 )/Double( READINGS_PER_TEST ) )*100.0
+        percentage = Double ( round( 100*percentage ) )
+        percentage = percentage/100.0
+    
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
