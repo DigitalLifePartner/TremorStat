@@ -17,6 +17,11 @@ class ActionTremorResultsDescription: UIViewController {
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var devianceLabel: UILabel!
     @IBOutlet weak var tapsNumLabel: UILabel!
+    
+    @IBOutlet weak var FreqLabel: UILabel!
+    @IBOutlet weak var DevLabel: UILabel!
+    @IBOutlet weak var NumberLabel: UILabel!
+    
     // Array storing result of the test
     var results = [[Double]]()
     
@@ -28,6 +33,9 @@ class ActionTremorResultsDescription: UIViewController {
     // Print test results when view appears
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
+        
+        
+        updateToBasicView()
         
         // Code below transforms a Date type in a readable format
         var dateString = Date(timeIntervalSince1970:(results[AT_TIME][0]))
@@ -42,12 +50,6 @@ class ActionTremorResultsDescription: UIViewController {
         // Print an date of the test in the appropriate labels
         let updatedDateString = dateFormatter.string(from: yourDate!)
         dateLabel.text = updatedDateString;
-        
-        // Print frequency, deviance and number of taps in appropriate labels
-        frequencyLabel.text = String(Double(round(10000*results[AT_FREQUENCY][0])/10000))
-        devianceLabel.text = String(Double(round(10000*results[AT_DEVIANCE][0])/10000))
-        tapsNumLabel.text = String(Int(results[AT_NUMTAPS][0]))
-        
         
         // Prepare Data arrays to plot the data
         var timeArray = Array(repeating: 0.0, count: results[AT_TAPS].count*3)
@@ -113,6 +115,42 @@ class ActionTremorResultsDescription: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBAction func indexChanged(_ sender: Any)
     {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            updateToBasicView();
+            
+        case 1:
+            updateToScientificView()
+            
+        default:
+            break
+        }
+    }
+    
+    func updateToBasicView()
+    {
+        frequencyLabel.isHidden = true;
+        devianceLabel.isHidden = true;
+        tapsNumLabel.isHidden = true;
+        FreqLabel.isHidden = true;
+        DevLabel.isHidden = true;
+        NumberLabel.isHidden = true;
+    }
+    
+    func updateToScientificView()
+    {
+        FreqLabel.isHidden = false;
+        DevLabel.isHidden = false;
+        NumberLabel.isHidden = false;
+        frequencyLabel.isHidden = false;
+        devianceLabel.isHidden = false;
+        tapsNumLabel.isHidden = false;
+        
+        // Print frequency, deviance and number of taps in appropriate labels
+        frequencyLabel.text = String(Double(round(10000*results[AT_FREQUENCY][0])/10000))
+        devianceLabel.text = String(Double(round(10000*results[AT_DEVIANCE][0])/10000))
+        tapsNumLabel.text = String(Int(results[AT_NUMTAPS][0]))
         
     }
     
