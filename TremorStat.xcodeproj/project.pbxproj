@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4022E0031FD387F7005A1030 /* screenshot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4022E0021FD387F7005A1030 /* screenshot@3x.png */; };
 		404B32071FC12AC600BB3146 /* ActionTremorResultsDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B32061FC12AC600BB3146 /* ActionTremorResultsDescription.swift */; };
 		404B32091FC138E700BB3146 /* RestTremorResultsDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B32081FC138E700BB3146 /* RestTremorResultsDescription.swift */; };
 		4062253F1FCD1D1500D483B9 /* ActionTremorResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4062253E1FCD1D1500D483B9 /* ActionTremorResultsView.swift */; };
@@ -148,6 +149,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4022E0021FD387F7005A1030 /* screenshot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot@3x.png"; sourceTree = "<group>"; };
 		404B32061FC12AC600BB3146 /* ActionTremorResultsDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTremorResultsDescription.swift; sourceTree = "<group>"; };
 		404B32081FC138E700BB3146 /* RestTremorResultsDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTremorResultsDescription.swift; sourceTree = "<group>"; };
 		4062253E1FCD1D1500D483B9 /* ActionTremorResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTremorResultsView.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		B579FE361DDD1D2700A8C0C7 = {
 			isa = PBXGroup;
 			children = (
+				4022E0021FD387F7005A1030 /* screenshot@3x.png */,
 				406225421FCD20FE00D483B9 /* AppIcon60x60@3x.png */,
 				40AA818B1FCD0F48001AC9E2 /* settings@3x.png */,
 				40AA818D1FCD0F66001AC9E2 /* services@3x.png */,
@@ -600,6 +603,7 @@
 				BF0EFFF71FAEBAAA0076F4E2 /* TestResults.storyboard in Resources */,
 				B579FE481DDD1D2700A8C0C7 /* Main.storyboard in Resources */,
 				40AA818A1FCD0CAA001AC9E2 /* combo_chart@3x.png in Resources */,
+				4022E0031FD387F7005A1030 /* screenshot@3x.png in Resources */,
 				40AA81821FCD0B2A001AC9E2 /* user_male.svg in Resources */,
 				406225431FCD20FE00D483B9 /* AppIcon60x60@3x.png in Resources */,
 			);
