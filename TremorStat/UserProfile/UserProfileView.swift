@@ -149,26 +149,9 @@ class UserProfileView: Eureka.FormViewController {
                     to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileView.multipleSelectorDone(_:)))
             }
             <<< MultipleSelectorRow<String>() {
-                $0.title = "Prescription Drugs"
-                $0.options = ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"]
-                if let UserDrugs = UserDefaults.standard.object(forKey: "UserDrugs")as? Array<Any>
-                {
-                    let temp_UserDrugs = Set(UserDrugs as! [String])
-                    $0.value = temp_UserDrugs
-                }
-                }
-                .onChange { row in
-                    userProfileResults.drugs = row.value!
-                    let dataToStore = Array(userProfileResults.drugs);
-                    UserDefaults.standard.set(dataToStore, forKey: "UserDrugs")
-                }
-                .onPresent { from, to in
-                    to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileView.multipleSelectorDone(_:)))
-            }
-            <<< MultipleSelectorRow<String>() {
                 $0.title = "Supplements"
                 $0.selectorTitle = "Supplements"
-                $0.options = ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"]
+                $0.options = ["Coffee", "Green Tea", "Lycopene", "Vitamin E", "Caffeine", "Black Tea"]
                 if let UserSupp = UserDefaults.standard.object(forKey: "UserSupp") as? Array<Any>
                 {
                     let temp_UserSupp = Set(UserSupp as! [String])
@@ -183,11 +166,10 @@ class UserProfileView: Eureka.FormViewController {
                 .onPresent { from, to in
                     to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileView.multipleSelectorDone(_:)))
             }
-            
             <<< MultipleSelectorRow<String>() {
                 $0.title = "Parkinson's Medication"
                 $0.selectorTitle = "Medication"
-                $0.options = ["Medication A", "Medication B", "Medication C", "Medication D", "None"]
+                $0.options = ["Levodopa", "Duopa", "Mirapex", "Requip", "Neupro", "Apokyn", "Elderly", "Zelapar", "Azilect", "Comtan", "Tasmar", "Cogentin"]
                 if let UserMed = UserDefaults.standard.object(forKey: "UserMed") as? Array<Any>
                 {
                     let temp_UserMed = Set(UserMed as! [String])
@@ -202,12 +184,6 @@ class UserProfileView: Eureka.FormViewController {
                 .onPresent { from, to in
                     to.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: from, action: #selector(UserProfileView.multipleSelectorDone(_:)))
         }
-        
-        
-        
-        
-        
-        
     }
     
     @objc func multipleSelectorDone(_ item:UIBarButtonItem) {
