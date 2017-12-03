@@ -20,7 +20,7 @@ class ActionTremorUserProfile: UIViewController {
     
     // MARK: properties
     
-    
+    @IBOutlet weak var SaveChartButton: UIButton!
     @IBOutlet var displayedChart: LineChartView!
     
     // indices indicating date
@@ -52,6 +52,7 @@ class ActionTremorUserProfile: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SaveChartButton.layer.cornerRadius = 25; 
         // Do any additional setup after loading the view.
     }
     
@@ -72,6 +73,23 @@ class ActionTremorUserProfile: UIViewController {
    // func setChart( xVals: Double, yVals: Double ) {
     //    displayedChart.noDataText = "NO DATA"
    // }
+    
+
+    
+    
+    // save chart
+    @IBAction func saveChart(_ sender: UIButton) {
+        //let theDate = Date()
+        
+        //setCalendarDate(enteredDate: theDate.description)
+        //let theName = "/Action Tremor Chart - " + String( calendarDate[DAY] ) + " - " + String( calendarDate[ MONTH ] ) + " - " + String( calendarDate[YEAR] ) + ".png/"
+        
+        //displayedChart.save(to: theName, format: ChartViewBase.ImageFormat.png, compressionQuality: 1.0)
+        
+        let image = displayedChart.getChartImage(transparent: false)
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+    }
+    
     
     func setCalendarDate( enteredDate: String )
     {
@@ -226,16 +244,6 @@ class ActionTremorUserProfile: UIViewController {
         }
     }
     
-    // save chart
-    @IBAction func saveChart(_ sender: UIButton) {
-        let theDate = Date()
-        
-        setCalendarDate(enteredDate: theDate.description)
-        let theName = "/Action Tremor Chart - " + String( calendarDate[DAY] ) + " - " + String( calendarDate[ MONTH ] ) + " - " + String( calendarDate[YEAR] ) + ".png/"
-        
-        displayedChart.save(to: theName, format: ChartViewBase.ImageFormat.png, compressionQuality: 1.0)
-    }
-    
     /*
      // MARK: - Navigation
      
@@ -247,3 +255,4 @@ class ActionTremorUserProfile: UIViewController {
      */
     
 }
+

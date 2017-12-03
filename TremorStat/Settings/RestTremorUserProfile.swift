@@ -23,6 +23,8 @@ class RestTremorUserProfile: UIViewController {
     
     @IBOutlet weak var restTremorChart: LineChartView!
 
+    @IBOutlet weak var SaveChartButton: UIButton!
+    
     // indices indicating date
     let YEAR = 2
     let MONTH = 1
@@ -48,6 +50,7 @@ class RestTremorUserProfile: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         restTremorChart.noDataText = "No Chart Data Available"
+        SaveChartButton.layer.cornerRadius = 25;
         // Do any additional setup after loading the view.
     }
     
@@ -197,15 +200,16 @@ class RestTremorUserProfile: UIViewController {
     // save chart to camera roll
     @IBAction func saveChart(_ sender: Any) {
         
-        let theDate = Date()
+        //let theDate = Date()
         
-        setCalendarDate(enteredDate: theDate.description)
-        let theName = "Rest Tremor Chart - " + String( calendarDate[DAY] ) + " - " + String( calendarDate[ MONTH ] ) + " - " + String( calendarDate[YEAR] ) + ".png"
+        //setCalendarDate(enteredDate: theDate.description)
+       // let theName = "Rest Tremor Chart - " + String( calendarDate[DAY] ) + " - " + String( calendarDate[ MONTH ] ) + " - " + String( calendarDate[YEAR] ) + ".png"
         
-        restTremorChart.save(to: theName, format: ChartViewBase.ImageFormat.png, compressionQuality: 1.0)
-
-    }
-    
+        //restTremorChart.save(to: theName, format: ChartViewBase.ImageFormat.png, compressionQuality: 1.0)
+        
+            let image = restTremorChart.getChartImage(transparent: false)
+            UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        }
     /*
     // MARK: - Navigation
 

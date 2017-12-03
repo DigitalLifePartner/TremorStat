@@ -166,6 +166,14 @@ class RestTremorApproval: UIViewController {
         
         }
     
+  
+    @IBAction func SaveChartData(_ sender: Any)
+    {
+        let image = displayedChart.getChartImage(transparent: false)
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
