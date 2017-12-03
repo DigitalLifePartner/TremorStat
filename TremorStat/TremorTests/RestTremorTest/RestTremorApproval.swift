@@ -53,6 +53,7 @@ class RestTremorApproval: UIViewController {
         //print ( "count before removal = " , restTremorResultArray.count )
         //print ( "trying to remove element " , lastElement )
         restTremorResultArray.remove(at: lastElement)
+        UserDefaults.standard.set(restTremorResultArray, forKey: "restTremorResultArray")
         //print ( "removed last element, count is now " , restTremorResultArray.count )
         performSegue(withIdentifier: "noMainPage", sender: self)
     }

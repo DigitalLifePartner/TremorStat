@@ -550,13 +550,12 @@
                     <navigationItem key="navigationItem" title="Test Result" id="mvp-mN-4uW">
                         <barButtonItem key="rightBarButtonItem" image="screenshot.png" id="gfC-MC-u8o">
                             <connections>
-                                <action selector="SaveChartData:" destination="H95-bk-B4w" id="gXV-5a-n5z"/>
+                                <action selector="SaveChartData:" destination="H95-bk-B4w" id="tGC-rT-x1w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="SaveChartData" destination="gfC-MC-u8o" id="wP4-2b-nmw"/>
                         <outlet property="dateLabel" destination="5Ut-Qb-ZcW" id="WNJ-Rj-MYH"/>
                         <outlet property="devianceLabel" destination="V7h-BS-UnI" id="zXI-Ep-eDx"/>
                         <outlet property="displayedChart" destination="c90-jV-rt0" id="wWT-Ws-G41"/>
