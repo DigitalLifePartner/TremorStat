@@ -8,11 +8,8 @@
 
 /* Abstract
  
- Use collected data to make educated conclusion as to whether or not the person has parkinsons disease
+Display to user their risk factors based on their profile
  
- OR
- 
- prevents user from seeing conclusion until sufficient data has been collected
  */
 
 import UIKit
@@ -43,9 +40,6 @@ class TremorStatConclusion: UIViewController {
     @IBOutlet weak var TraumaFactor: UILabel!
     @IBOutlet weak var NoFactors: UILabel!
     // if the user wishes to know how they're doing recently, this button will cause recalculations based on only recent results
-    @IBAction func recentTestsOnly(_ sender: Any) {
-        displayInfo( displayRecentInfoOnly: true )
-    }
     
     // MARK: overrides
     override func viewDidLoad() {
@@ -133,23 +127,31 @@ class TremorStatConclusion: UIViewController {
         
         var noFactors = true
         
+        // if user is in age range, let them know
         if ( currentYear - birthYear >= 45 ) {
             AgeFactor.text! = "You are " + String( currentYear - birthYear ) + " years of age. Most cases of Parkinson's are diagnosed when the patient is over 50 years of age. Aging also affects neurological processes, increasing your risk."
             noFactors = false
         }
+        
+        // if user is male, then let them know they are more at risk
         if ( userGender == "Male" ) {
             GenderFactor.text! = "You are male. Men have been found to be more susceptible to Parkinson's than women."
             noFactors = false
         }
+        
+        // let the user know that genetics is a factor
         if ( userGenetics == "Yes" ) {
             HistoryFactor.text! = "Your family has a history of getting the disease. Genetics has been found to be a risk factor."
             noFactors = false
         }
+        
+        // head trauma obviously affects their risk
         if ( userHeadTrauma == "Yes" ) {
             TraumaFactor.text! = "You have had head trauma in the past. This may have affected your neurological processes, increasing your risk."
             noFactors = false
         }
         
+        // display this if they "don't have factors"
         if ( noFactors ) {
             NoFactors.text! = "Based on your user profile, you do not have any risk factors."
         }
