@@ -109,6 +109,21 @@ class ActionTremorResultsDescription: UIViewController {
             
         displayedChart.xAxis.labelPosition = .top
     }
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBAction func indexChanged(_ sender: Any)
+    {
+        
+    }
+    
+    @IBAction func SaveChartData(_ sender: Any)
+    {
+        let image = displayedChart.getChartImage(transparent: false)
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
