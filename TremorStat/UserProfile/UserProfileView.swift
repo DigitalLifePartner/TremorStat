@@ -20,6 +20,7 @@ class UserProfileView: Eureka.FormViewController {
             +++ Section("Default Questions")
             <<< DateRow() {
                 $0.value = Date()
+                $0.maximumDate = Date()
                 $0.title = "Date of Birth"
                 if let UserDOB = UserDefaults.standard.object(forKey: "UserDOB") as? Date
                 {

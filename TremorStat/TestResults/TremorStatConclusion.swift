@@ -65,7 +65,7 @@ class TremorStatConclusion: UIViewController {
         
         // Get the data from the key
         
-        var userAgeRange: String!
+        var userAgeRange = Date()
         var userGender: String!
         var userGenetics: String!
         var userHeadTrauma: String!
@@ -73,7 +73,7 @@ class TremorStatConclusion: UIViewController {
         var actionTremorResultArray = [[[Double]]]()
         
         // get age from storage
-        if let userAgeRangeKey = UserDefaults.standard.object(forKey: "UserDOB") as? String
+        if let userAgeRangeKey = UserDefaults.standard.object(forKey: "UserDOB") as? Date
         {
             userAgeRange = userAgeRangeKey
         }
@@ -110,7 +110,6 @@ class TremorStatConclusion: UIViewController {
             var yearString = userAgeRange.description
             var yearIndex = yearString.index( yearString.startIndex, offsetBy: 4 )
             birthYear = Int( yearString.substring( to: yearIndex ) )!
-            print ( "birthYear = " , birthYear)
             
             // current year
             yearString = Date().description
@@ -129,7 +128,7 @@ class TremorStatConclusion: UIViewController {
         
         // if user is in age range, let them know
         if ( currentYear - birthYear >= 45 ) {
-            AgeFactor.text! = "You are " + String( currentYear - birthYear ) + " years of age. Most cases of Parkinson's are diagnosed when the patient is over 50 years of age. Aging also affects neurological processes, increasing your risk."
+            AgeFactor.text! = "You are around " + String( currentYear - birthYear ) + " years of age. Most cases of Parkinson's are diagnosed when the patient is over 50 years of age. Aging also affects neurological processes, increasing your risk."
             noFactors = false
         }
         
