@@ -1,5 +1,5 @@
 //  File Information:
-//  TestResultsViewController
+//  TestResultsView
 //
 //  Created by Best Software
 //  Copyright © 2017 Best Software. All rights reserved.
@@ -10,7 +10,7 @@
 
 import UIKit
 
-class TestResultsViewController: UIViewController {
+class TestResultsView: UIViewController {
     
     @IBOutlet weak var ActiveTremorTestResultsButton: UIButton!
     @IBOutlet weak var RestTremorTestResultsButton: UIButton!
