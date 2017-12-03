@@ -15,12 +15,14 @@ var avgTime = 0.0
 var avgDeviance = 0.0
 
 
-// for use when accessing stored action tremor data
+// Indeces constants to access particular elements of the test
 let AT_TIME = 0
 let AT_FREQUENCY = 1
 let AT_DEVIANCE = 2
 let AT_NUMTAPS = 3
 let AT_TAPS = 4
+let AT_MED = 5
+let AT_SUP = 6
 
 // variable that transforms currentTime to an appropriate format
 var timeReverser = 0.0
@@ -163,12 +165,14 @@ class ActionTremorTest: UIViewController {
                 avgDeviance = 0.0
             }
         
-            var results = Array(repeating: [0.0], count: 5)
+            var results = Array(repeating: [0.0], count: 7)
             results[AT_TIME]=[Double(Date().timeIntervalSince1970)]
             results[AT_FREQUENCY]=[avgTime]
             results[AT_DEVIANCE]=[avgDeviance]
             results[AT_NUMTAPS]=[Double(numTaps)]
             results[AT_TAPS]=tapsArray
+            results[AT_MED]=getDoubleDrugArray()[0]
+            results[AT_SUP]=getDoubleDrugArray()[1]
             
             actionTremorResultArray.append( results )
             //Store test results under associated key
