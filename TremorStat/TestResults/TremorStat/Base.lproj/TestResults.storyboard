@@ -662,13 +662,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveChart:" destination="B8y-mm-2Yg" eventType="touchUpInside" id="tQd-Vx-K0t"/>
+                                    <action selector="saveChart:" destination="B8y-mm-2Yg" eventType="touchUpInside" id="Zti-Zt-g2Q"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="SaveChartButton" destination="40f-OU-MkG" id="9mY-el-cpp"/>
                         <outlet property="displayedChart" destination="O4r-Bk-Vc4" id="qXe-4a-6J6"/>
                     </connections>
                 </viewController>
@@ -702,17 +703,20 @@
                                 </state>
                                 <connections>
                                     <action selector="saveChart:" destination="bxw-pj-Ozk" eventType="touchUpInside" id="p2n-yz-SXl"/>
+                                    <action selector="sjdsd:" destination="VN4-od-Ark" eventType="touchUpInside" id="GVl-aR-7dd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="SaveChartButton" destination="qJG-hx-0Ih" id="r6p-K3-NXb"/>
                         <outlet property="restTremorChart" destination="JWq-91-3Ht" id="o0M-zd-9TU"/>
                         <segue destination="h6k-Dg-I9U" kind="show" id="XCU-ft-qdf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yys-ZX-WZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VN4-od-Ark" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="798" y="2723"/>
         </scene>
